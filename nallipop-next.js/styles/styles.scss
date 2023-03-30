@@ -1,0 +1,17 @@
+@import "./settings/_colors.scss";
+@import "./settings/_fonts.scss";
+@import "reset";
+@import "settings/mixins.scss";
+@import "Home.module";
+
+
+body {
+font-family: $font-base;
+  font-size: 16px;
+  color: $color-grey;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
