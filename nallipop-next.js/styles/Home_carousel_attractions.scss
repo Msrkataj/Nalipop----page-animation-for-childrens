@@ -1,0 +1,72 @@
+.home_carousel {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #8bacc0;
+  .home_carousel-content {
+    .control-next.control-arrow {
+      left: 200px;
+      &::before {
+        font-size: 50px;
+        border-left: 18px solid #8151e2;
+      }
+      .control-prev {
+        left: 100px;
+      }
+    }
+
+
+    .control-prev.control-arrow:before  {
+      font-size: 50px;
+      border-right: 18px solid #8151e2;
+      left: 10px;
+    }
+  }
+
+  .home_carousel_title {
+    color: #8151e2;
+    font-weight: bold;
+  }
+  .home_carousel-content {
+    width: 100%;
+    max-width: 70vw;
+    margin-bottom: 20px;
+
+    .carousel-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .carousel-description {
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.control-next::before {
+  font-size: 50px;
+  color: #8151e2;
+}
+
+.home_carousel-content .carousel .control-dots .dot {
+  background-color: #8151e2; /* Zmień ten kolor na pożądany kolor kropek */
+  opacity: 1;
+  box-shadow: none;
+}
+
+.home_carousel-content .carousel .control-dots .dot.selected {
+  background-color: #8151e2; /* Zmień ten kolor na pożądany kolor wybranej kropki */
+}
+
+

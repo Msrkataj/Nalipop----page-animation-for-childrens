@@ -13,19 +13,19 @@ const HomeHeader = ({close}) => {
             href: '#',
         },
         {
-            name: 'O co chodzi?',
-            href: 'Why',
+            name: 'O MNIE',
+            href: 'me',
         },
         {
-            name: 'O nas',
-            href: 'team',
+            name: 'OFERTA',
+            href: 'offer',
         },
         {
-            name: 'Fundacja i organizacje',
-            href: 'events',
+            name: 'ATRAKCJE',
+            href: 'attractions',
         },
         {
-            name: 'Kontakt',
+            name: 'KONTAKT',
             href: 'contact',
         },
     ];
@@ -91,7 +91,15 @@ const HomeHeader = ({close}) => {
                                 <h1>ANIMACJE DLA DZIECI</h1>
                                 <p>Animacje Nallipop - <br/> dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze</p>
                             </div>
-                            <div className="header-bottom">
+                            <div className="header-button">
+                                {data.map((item) => {
+                                    if (item.name === "OFERTA") {
+                                        return (
+                                            <Link key={item.href} href={item.href} className="header-button button-clasic">SPRAWDŹ!
+                                            </Link>
+                                        );
+                                    } return null;
+                                })}
                             </div>
                         </div>
                         </div>
