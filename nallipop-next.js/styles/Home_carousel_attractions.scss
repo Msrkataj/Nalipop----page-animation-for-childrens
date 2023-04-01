@@ -5,68 +5,77 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #8bacc0;
-  .home_carousel-content {
-    .control-next.control-arrow {
-      left: 200px;
-      &::before {
-        font-size: 50px;
-        border-left: 18px solid #8151e2;
-      }
-      .control-prev {
-        left: 100px;
-      }
-    }
-
-
-    .control-prev.control-arrow:before  {
-      font-size: 50px;
-      border-right: 18px solid #8151e2;
-      left: 10px;
-    }
-  }
 
   .home_carousel_title {
     color: #8151e2;
     font-weight: bold;
+    margin-bottom: 40px;
   }
+
   .home_carousel-content {
-    width: 100%;
-    max-width: 70vw;
+    max-width: 75vw;
     margin-bottom: 20px;
 
+    .carousel {
+      justify-content: center;
+      width: 100%;
+    }
+    .carousel-prev,
+    .carousel-next {
+      font-size: 50px;
+      color: #8151e2;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+    }
+    .carousel-next {
+      right: -5px;
+    }
     .carousel-item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      img {
-        width: 100%;
-        height: auto;
+      width: 110%;
+      .carousel-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 380px;
       }
-
+      img {
+        width: 40%;
+        height: auto;
+        max-height: 300px;
+      }
       .carousel-description {
-        margin-top: 10px;
+        padding-bottom: 50px;
         text-align: center;
+        font-weight: bold;
+      };
+      .description-1 {
+        color: #FAD648; // Ustaw kolor dla pierwszego opisu
+      }
+      .description-2 {
+        color: cornflowerblue; // Ustaw kolor dla drugiego opisu
+      }
+      .description-3 {
+        color: darksalmon; // Ustaw kolor dla trzeciego opisu
+        margin-top: 95px;
       }
     }
   }
 }
 
-.control-next::before {
-  font-size: 50px;
-  color: #8151e2;
-}
-
 .home_carousel-content .carousel .control-dots .dot {
-  background-color: #8151e2; /* Zmień ten kolor na pożądany kolor kropek */
+  background-color: #8151e2;
   opacity: 1;
-  box-shadow: none;
 }
 
 .home_carousel-content .carousel .control-dots .dot.selected {
-  background-color: #8151e2; /* Zmień ten kolor na pożądany kolor wybranej kropki */
+  background-color: aqua;
 }
-
 

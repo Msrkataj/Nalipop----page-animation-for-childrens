@@ -53,8 +53,8 @@ const HomeFirstStep = ({close}) => {
                          </div>
                          </div>
                      </div>
-                    <div className="home-word">
-                        <div className="home-word-overlay"></div>
+                    <div className="home-back">
+                        <div className="home-back-overlay"></div>
                         <img className="home-word-hands" src="/assets/home-hands.jpg" alt="Children-hands" />
                         <div className="home-word-title">
                             <h2>ZAJEBISTA ZABAWA<br/>DO ZAPAMIĘTANIA NA CAŁE ŻYCIE</h2>
