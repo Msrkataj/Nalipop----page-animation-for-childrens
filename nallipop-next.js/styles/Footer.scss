@@ -1,0 +1,148 @@
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 60px;
+
+  h1 {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  form {
+    input {
+      margin-bottom: 25px;
+      border: 1px solid black;
+      border-radius: 10px;
+      height: 20px;
+      width: 150px;
+
+    }
+
+    textarea {
+      border: 1px solid black;
+      border-radius: 10px;
+      height: 70px;
+      width: 280px;
+    }
+  }
+
+  .button-footer {
+    justify-content: flex-end;
+
+    .button-footer-classic {
+      border: none;
+      width: 130px;
+    }
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+  font-size: 11px;
+  font-style: italic;
+  opacity: 1;
+  padding-top: 5px;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #cccccc;
+}
+
+.success-message {
+  color: green;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.footer-background {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+
+  .footer-image {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .footer-content {
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 10px;
+
+    &-logo {
+      position: relative;
+      width: 30%;
+      margin-top: 10px;
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 4vw;
+      text-align: center;
+      font-weight: bold;
+    }
+    .footer-menu-link {
+      color: white;
+    }
+
+    .blue-link {
+      color: aqua;
+    }
+    &-contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 4vw;
+      margin-left: 10px;
+      .contact-info {
+        display: flex;
+        color: rgba(255, 255, 255, 0.5);;
+      }
+
+
+      &-h2 {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 2.5vw;
+        padding: 4px 4px;
+        color: white;
+      }
+    }
+    &-media {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+      svg {
+        font-size: 7vw;
+        padding: 5px 0;
+      }
+    }
+  }
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

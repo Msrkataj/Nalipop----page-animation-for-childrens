@@ -4,9 +4,7 @@ import {Link as Scroll} from "react-scroll"
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
 
 const HomeCarouselOpinions= ({close}) => {
     const [active, setActive] = useState(false);

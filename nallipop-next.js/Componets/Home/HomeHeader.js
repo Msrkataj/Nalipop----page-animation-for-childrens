@@ -28,6 +28,10 @@ const HomeHeader = ({close}) => {
             name: 'KONTAKT',
             href: 'contact',
         },
+        {
+            name: 'FORMULARZ',
+            href: 'form',
+        },
     ];
 
 
@@ -91,11 +95,11 @@ const HomeHeader = ({close}) => {
                                 <h1>ANIMACJE DLA DZIECI</h1>
                                 <p>Animacje Nallipop - <br/> dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze</p>
                             </div>
-                            <div className="header-button">
+                            <div className="button">
                                 {data.map((item) => {
                                     if (item.name === "OFERTA") {
                                         return (
-                                            <Link key={item.href} href={item.href} className="header-button button-clasic">SPRAWDŹ!
+                                            <Link key={item.href} href={item.href} className="button-classic">SPRAWDŹ!
                                             </Link>
                                         );
                                     } return null;
