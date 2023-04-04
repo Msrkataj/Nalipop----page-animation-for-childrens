@@ -9,10 +9,6 @@ const HomeHeader = ({close}) => {
 
     const data = [
         {
-            name: 'Start',
-            href: '#',
-        },
-        {
             name: 'O MNIE',
             href: 'me',
         },
@@ -23,6 +19,10 @@ const HomeHeader = ({close}) => {
         {
             name: 'ATRAKCJE',
             href: 'attractions',
+        },
+        {
+            name: 'GALERIA',
+            href: 'gallery',
         },
         {
             name: 'KONTAKT',
@@ -38,7 +38,7 @@ const HomeHeader = ({close}) => {
 
     return (
         <>
-            <div className="page">
+                    <div className="header-central-background"></div>
                 <div className="container">
                     <div id="#" className="header">
                         <div className="header-top">
@@ -53,7 +53,7 @@ const HomeHeader = ({close}) => {
                                 <div className="nav">
                                     <ul style={{ display: close ? 'none' : null }}>
                                         <ul>
-                                            {data.map((item, index) => (
+                                            {data.slice(0, -1).map((item, index) => (
                                                 <li key={index}>
                                                     <Link href={item.href} passHref>
                                                         {item.name}
@@ -63,14 +63,11 @@ const HomeHeader = ({close}) => {
                                         </ul>
                                     </ul>
                                     <ul style={{ display: !close ? 'none' : null }}>
-                                        {/*<Link href="../" passHref>*/}
-                                        {/*    <a className="scroll">Home</a>*/}
-                                        {/*</Link>*/}
                                     </ul>
                                 </div>
                                 <div className={active ? "activeSidenav " : "sidenav"}>
                                     <ul className="ul" style={{display: close ? "none" : null}}>
-                                        {data.map((item, index) => (
+                                        {data.slice(0, -1).map((item, index) => (
                                             <li key={index}>
                                                 <Link href={item.href} passHref>
                                                     {item.name}
@@ -78,15 +75,9 @@ const HomeHeader = ({close}) => {
                                             </li>
                                         ))}
                                     </ul>
-                                    {/*<ul className="home-mobile" style={{display: !close ? "none" : null}}>*/}
-                                    {/*    <Link href="../">*/}
-                                    {/*        Home*/}
-                                    {/*    </Link>*/}
-                                    {/*</ul>*/}
                                 </div>
                             </div>
                             <div className="header-central-image-container">
-                                <div className="header-central-background"></div>
                                 <img className="header-central-image" src="/assets/background-home.png" alt="Opis obrazka" />
                             </div>
                         </div>
@@ -95,7 +86,7 @@ const HomeHeader = ({close}) => {
                                 <h1>ANIMACJE DLA DZIECI</h1>
                                 <p>Animacje Nallipop - <br/> dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze</p>
                             </div>
-                            <div className="button">
+                            <div className="button button-header">
                                 {data.map((item) => {
                                     if (item.name === "OFERTA") {
                                         return (
@@ -108,7 +99,7 @@ const HomeHeader = ({close}) => {
                         </div>
                         </div>
                     </div>
-                </div>
+
         </>
     )
 }

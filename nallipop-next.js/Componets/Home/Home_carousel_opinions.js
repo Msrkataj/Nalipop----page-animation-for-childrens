@@ -5,10 +5,11 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import storage from "../../firebase";
+import { getDownloadURL, listAll, ref } from "firebase/storage";
 
 const HomeCarouselOpinions= ({close}) => {
-    const [active, setActive] = useState(false);
-    const [user, setUser] = useState({});
+
 
     const data = [
         {
@@ -33,24 +34,25 @@ const HomeCarouselOpinions= ({close}) => {
         },
     ];
 
-    const carousel = [
-        {
-            name: 'balloons',
-            href: '/assets/balon.png',
-            description: "Modelowanie balonów"
-        },
-        {
-            name: 'piniata',
-            href: '/assets/piniata.png',
-            description: "Piniaty!"
+    const [images, setImages] = useState([]);
 
-        },
-        {
-            name: 'women',
-            href: '/assets/women-paint.png',
-            description: "Malowanie twarzy"
-        },
-    ];
+    useEffect(() => {
+        const storageRef = ref(storage, "opinions");
+
+        listAll(storageRef)
+            .then((res) => {
+                const promises = res.items.map((itemRef) =>
+                    getDownloadURL(itemRef).then((url) => ({
+                        name: itemRef.name,
+                        href: url,
+                        description: itemRef.name,
+                    }))
+                );
+                return Promise.all(promises);
+            })
+            .then((carouselItems) => setImages(carouselItems))
+            .catch((error) => console.error("Error listing images:", error));
+    }, []);
 
 
 
@@ -89,13 +91,12 @@ const HomeCarouselOpinions= ({close}) => {
                                                 )
                                             }
                                         >
-                                            {carousel.map((item, index) => (
-                                                <div key={index} className="carousel-item">
-                                                    <img src={item.href} alt={item.name} />
-                                                    <p className={`carousel-description description-${index + 1}`}>{item.description}</p>
-                                                </div>
-                                            ))}
-                                        </Carousel>
+                                             {images.map((image, index) => (
+                                                    <div key={index} className="carousel-item">
+                                                        <img src={image.href} alt={image.name} />
+                                                    </div>
+                                                ))}
+                                                </Carousel>
                                     </div>
                                 </div>
                             </div>

@@ -4,13 +4,14 @@ import {Link as Scroll} from "react-scroll"
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
+import storage from "../../firebase";
+import { ref, getDownloadURL } from "firebase/storage";
 
 const HomeCarouselAttractions = ({close}) => {
-    const [active, setActive] = useState(false);
-    const [user, setUser] = useState({});
+    const [balloonsImageUrl, setBalloonsImageUrl] = useState(null);
+    const [piniataImageUrl, setPiniataImageUrl] = useState(null);
+    const [womenImageUrl, setWomenImageUrl] = useState(null);
 
     const data = [
         {
@@ -35,21 +36,41 @@ const HomeCarouselAttractions = ({close}) => {
         },
     ];
 
+
+
+    useEffect(() => {
+        const storageRefBalloons = ref(storage, "atractions/balon.png");
+        const storageRefPiniata = ref(storage, "atractions/piniata.png");
+        const storageRefWomen = ref(storage, "atractions/women-paint.png");
+        getDownloadURL(storageRefBalloons)
+            .then((url) => setBalloonsImageUrl(url))
+            .catch((error) => console.error("Error getting balloons image URL:", error));
+
+        getDownloadURL(storageRefPiniata)
+            .then((url) => setPiniataImageUrl(url))
+            .catch((error) => console.error("Error getting piniata image URL:", error));
+
+        getDownloadURL(storageRefWomen)
+            .then((url) => setWomenImageUrl(url))
+            .catch((error) => console.error("Error getting women image URL:", error));
+    }, []);
+
+
     const carousel = [
         {
             name: 'balloons',
-            href: '/assets/balon.png',
+            href: balloonsImageUrl, // Użyj URL pobranego z Firebase Storage
             description: "Modelowanie balonów"
         },
         {
             name: 'piniata',
-            href: '/assets/piniata.png',
+            href: piniataImageUrl,
             description: "Piniaty!"
 
         },
         {
             name: 'women',
-            href: '/assets/women-paint.png',
+            href: womenImageUrl,
             description: "Malowanie twarzy"
         },
     ];
