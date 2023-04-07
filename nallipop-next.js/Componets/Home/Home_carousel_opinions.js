@@ -59,9 +59,9 @@ const HomeCarouselOpinions= ({close}) => {
     return (
         <>
             <div className="page">
-                <div className="container">
                     <h1 className="opinion-title">PRZEŻYJ NIESAMOWITE EMOCJE!</h1>
-                    <div className="home_carousel home_carousel-opinion">
+                    <div className="home_carousel-opinion">
+                        <div className="grey-background"></div>
                         <div className="home-back home-back-opinions">
                                 <img className="home-word-hands" src="/assets/bear.jpg" alt="Children-hands" />
                                 <div className="home-back-overlay home-back-overlay-opinions">
@@ -109,7 +109,7 @@ const HomeCarouselOpinions= ({close}) => {
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
         </>
     )

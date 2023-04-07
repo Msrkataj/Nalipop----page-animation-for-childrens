@@ -38,10 +38,11 @@ const HomeHeader = ({close}) => {
 
     return (
         <>
-                    <div className="header-central-background"></div>
                 <div className="container">
                     <div id="#" className="header">
+                        <img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>
                         <div className="header-top">
+                            <div className="header-central-background"></div>
                             <img className="header-image" src="/assets/natalka_strona_góra_ bez_chmur.png" alt="Opis obrazka" />
                             <div className="header-top-content">
                                 <img className="header-logo" src="/assets/logo.png" alt="Opis obrazka" />

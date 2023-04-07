@@ -1,9 +1,29 @@
 .container {
-  max-width: 1400px;
+  max-width: 2000px;
+  margin: 0 auto;
+  @include mobile-mini-minus {
+    width: 110vw;
+  }
 }
 
 .header {
   position: relative;
+  width: 100%;
+
+  .header-image-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 150vw;
+    z-index: -10;
+    transform: translateX(-50%);
+    @media (min-width: 2300px) {
+      height: 150vw;
+    }
+  }
+
+
   .header-top {
 
     .header-top-content {
@@ -11,7 +31,6 @@
       margin: -10px 0;
       display: flex;
       justify-content: space-between;
-
     }
   }
 
@@ -42,12 +61,19 @@
   @include tablet {
     position: relative;
     top: 50px;
-    left: 150px;
+    left: 0px;
     z-index: 0;
-    padding-top: 200px;
+    padding-top: 300px;
+  }
+  @include notebook {
+    height: 800px;
+  }
+  @include nbpp {
+    padding: 600px 400px;
   }
 
   .header-text {
+
     @include mobile-mini-plus {
       position: absolute;
       height: 200px;
@@ -56,34 +82,63 @@
       top: 300px;
       left: -10px;
     }
+
     @include tablet {;
-      left: 20vw;
+      left: 17vw;
+      top: 15vw;
+      width: 800px;
     }
     @include notebook {
-      position: static;
+      position: absolute;
       left: 320px;
+      top: 200px;
+    }
+    @include notebook-big-plus {
+      position: absolute;
+      //width: 1200px;
+      left: 380px;
+      top: 300px;
     }
 
     h1 {
-      font-size: 7vw;
+      font-size: 9vw;
       margin-bottom: 30px;
+      font-weight: normal;
       @include mobile-mini-plus {
         font-size: 3rem;
+      }
+      @include mobile-mini-minus {
+        font-size: 2rem
+      }
+      @include tablet {
+        font-size: 6vw;
+      }
+      @include nbpp {
+        font-size: 8rem;
       }
     }
 
     p {
-      font-size: 3vw;
+      font-size: 4vw;
       @include mobile-mini-plus {
-        font-size: 1rem;
+        font-size: 2vw;
       }
       @include notebook {
-        font-size: 1.4rem;
-
+        width: 1000px;
+        font-size: 2vw;
+      }
+      @include nbpp {
+        width: 1000px;
+        font-size: 2.4rem;
+      }
+      @include mobile-mini-minus {
+        font-size: 0.9rem
       }
     }
+
     color: white;
   }
+
   .button-header {
     @include mobile-mini-plus {
       margin-right: 100px;
@@ -91,13 +146,19 @@
     }
     @include mobile {
       margin-right: 80px;
-      margin-top: 80px;
+      margin-top: 15vw;
     }
     @include notebook {
       position: absolute;
       top: 50%;
-      left: 35%;
-      transform: translate(-50%, -50%);    }
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @include nbpp {
+      top: 600px;
+      left: 900px;
+      margin-top: 350px;
+    }
   }
 }
 
@@ -108,6 +169,7 @@
   overflow: hidden;
   width: 100%;
   z-index: -2;
+
 }
 
 .header-central-background {
@@ -115,43 +177,70 @@
   width: 100%;
   left: 0;
   height: 85vw;
-  z-index: -70;
+  z-index: -8;
   background: #8bacc0;
+
   @include mobile-mini-plus {
     height: 650px;
+  }
+  @include tablet {
+    height: 90%;
+  }
+  @include notebook {
+    height: 100%;
+  }
+  @include notebook-big {
+    height: 110%;
+  }
+  @include nbpp {
+    height: 1200px;
+    //width: 100vw;
+    //left: 50%;
+    //transform: translateX(-50%);
+    //z-index: -8;
   }
 }
 
 .header-central-image {
   position: relative;
-  width: 200%;
+  width: 300%;
   left: 60%;
-  top: -28vw;
+  top: -40vw;
   transform: translateX(-50%);
   z-index: 2;
+
   @include mobile-mini-plus {
     top: -20vw;
     width: calc(200% - (100vw - 450px) * 0.8);
   }
   @include tablet {
     top: -15vw;
-    width: 130vw;
-    left: 70vw;
+    width: 140vw;
+    left: 65vw;
   }
   @include notebook {
-    top: -120px;
-    width: 1500px;
-    left: 900px;
+    //top: -120px;
+    //width: 1500px;
+    left: 65vw;
   }
+  @include nbpp {
+    top: -210px;
+    width: 2702px;
+    left: 1285px;
+  }
+
 }
 
 .nav {
+  font-size: 4vw;
+  font-family: $font-head;
+
   @include mobile-mini-plus {
     display: flex;
-flex-direction: column;
+    flex-direction: column;
     width: 480px;
     height: 100px;
-    margin-top: 20px;
+    margin-top: 15px;
     color: white;
     ul {
       ul {
@@ -161,11 +250,32 @@ flex-direction: column;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
+
         li {
           padding: 10px;
+          @include notebook-big {
+            padding: 25px;
+          }
         }
       }
     }
+  }
+  @include mobile {
+    width: 600px;
+    //font-size: 2vw;
+  }
+  @include tablet {
+    width: 700px;
+    //font-size: 4vw;
+  }
+  @include notebook {
+    width: 800px;
+    font-size: 4rem;
+  }
+  @include notebook-big {
+    width: 1000px;
+  }
+  @include nbpp {
   }
   display: none;
 }

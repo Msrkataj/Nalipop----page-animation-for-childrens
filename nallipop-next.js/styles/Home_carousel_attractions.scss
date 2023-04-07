@@ -1,25 +1,119 @@
 .home_carousel {
-  height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include notebook {
+    .home_carousel_button {
+      .button-classic {
+        font-size: 3rem;
+        border-radius: 30px;
+      }
+    }
+  }
+
+  .home_attractions {
+    display: none;
+  }
+
+  @include mobile-mini {
+    height: 500px;
+    margin: 10vw 0;
+  }
+  @include notebook {
+    height: 500px;
+    margin-top: 1700px;
+    margin-bottom: 200px;
+  }
+  @media (min-width: 1400px) {
+    height: 50vw;
+    @include nbpp {
+      height: 1200px
+    }
+    .home_attractions {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid gray;
+    }
+
+    .home_attractions-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 20vw;
+      margin: 40px 70px;
+      @include nbpp {
+        width: 400px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .attractions-description {
+        padding-bottom: 150px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3rem;
+        position: relative;
+      }
+
+      .description-1 {
+        color: #FAD648; // Ustaw kolor dla pierwszego opisu
+      }
+
+      .description-2 {
+        color: cornflowerblue; // Ustaw kolor dla drugiego opisu
+      }
+
+      .description-3 {
+        top: 16%;
+        color: darksalmon; // Ustaw kolor dla trzeciego opisu
+      }
+    }
+
+  }
 
   .home_carousel_title {
     color: #8151e2;
     font-weight: bold;
     margin-bottom: 40px;
+    font-size: 8vw;
+    @include mobile-mini {
+      font-size: 3rem;
+      @include notebook {
+      font-size: 4rem;
+      margin-bottom: 80px;
+      }
+    }
   }
 
   .home_carousel-content {
     max-width: 75vw;
     margin-bottom: 20px;
+    @include mobile-mini {
+      max-width: 75%;
+    }
+    @include notebook {
+      display: none;
+
+    }
 
     .carousel {
       justify-content: center;
       width: 100%;
     }
+
+    .carousel .slider-wrapper.axis-horizontal .slider .slide {
+      display: flex;
+      align-items: center;
+    }
+
     .carousel-prev,
     .carousel-next {
       font-size: 50px;
@@ -30,15 +124,21 @@
       background: none;
       border: none;
     }
+
     .carousel-next {
       right: -5px;
     }
+
     .carousel-item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 110%;
+      @include mobile-mini {
+        width: 500px;
+      }
+
       .carousel-content-container {
         display: flex;
         flex-direction: column;
@@ -46,22 +146,28 @@
         align-items: center;
         width: 380px;
       }
+
       img {
         width: 40%;
         height: auto;
         max-height: 300px;
       }
+
       .carousel-description {
         padding-bottom: 50px;
         text-align: center;
         font-weight: bold;
-      };
+      }
+    ;
+
       .description-1 {
         color: #FAD648; // Ustaw kolor dla pierwszego opisu
       }
+
       .description-2 {
         color: cornflowerblue; // Ustaw kolor dla drugiego opisu
       }
+
       .description-3 {
         color: darksalmon; // Ustaw kolor dla trzeciego opisu
         margin-top: 95px;

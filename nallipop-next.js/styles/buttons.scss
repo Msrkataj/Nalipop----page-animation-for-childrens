@@ -8,15 +8,19 @@
   display: inline-block;
   background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
   color: #ffffff;
-  font-weight: bold;
-  width: 180px;
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 40px;
   border-radius: 20px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  @include mobile {
-
+  font-family: $font-poppins;
+  @include tablet {
+    padding: 15px 55px;
+    font-size: 2vw;
+  }
+  @include notebook {
+    padding: 20px 60px;
+    font-size: 2rem;
   }
 }

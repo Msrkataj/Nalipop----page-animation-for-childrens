@@ -1,3 +1,19 @@
+@mixin nbpp {
+  @media (min-width: 2000px) {
+    @content;
+  }
+}
+@mixin notebook-big-plus {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+@mixin notebook-big {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
 @mixin notebook {
   @media (min-width: 1400px) {
     @content;
@@ -19,6 +35,12 @@
 
 @mixin mobile-mini {
   @media (min-width: 450px) {
+    @content;
+  }
+}
+
+@mixin mobile-mini-minus {
+  @media (max-width: 350px) {
     @content;
   }
 }

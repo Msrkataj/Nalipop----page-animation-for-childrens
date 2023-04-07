@@ -114,6 +114,14 @@ const HomeCarouselAttractions = ({close}) => {
                                 ))}
                             </Carousel>
                         </div>
+                        <div className="home_attractions">
+                            {carousel.map((item, index) => (
+                                <div key={index} className="home_attractions-item">
+                                    <img src={item.href} alt={item.name} />
+                                    <p className={`attractions-description description-${index + 1}`}>{item.description}</p>
+                                </div>
+                            ))}
+                        </div>
                         <div className="home_carousel_button">
                             {data.map((item) => {
                                 if (item.name === "ATRAKCJE") {
