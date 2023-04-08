@@ -9,6 +9,7 @@
     width: 100vw;
     height: 100%;
     background-color: #7d5eae87;
+    z-index: -5;
   }
 }
 
@@ -86,7 +87,7 @@
       background: none;
       border: none;
       @include nbpp {
-       font-size: 6rem;
+        font-size: 6rem;
       }
     }
 
@@ -230,6 +231,9 @@
     @include notebook {
       width: calc(200% - (100vw - 450px) * 0.5);
     }
+    @media (min-width: 4500px) {
+      width: 100%;
+    }
   }
 
   .home-word-title {
@@ -270,7 +274,8 @@
   right: 0;
   overflow: hidden;
   width: 100%;
-  max-width: 2000px;
+  max-height: 1500px;
+  z-index: -5;
 
   .home-blonde-jpg-overlay {
     position: absolute;

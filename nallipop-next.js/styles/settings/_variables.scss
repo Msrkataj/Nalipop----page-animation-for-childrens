@@ -1,3 +1,8 @@
+@mixin max {
+  @media (min-width: 2690px) {
+    @content;
+  }
+}
 @mixin nbpp {
   @media (min-width: 2000px) {
     @content;

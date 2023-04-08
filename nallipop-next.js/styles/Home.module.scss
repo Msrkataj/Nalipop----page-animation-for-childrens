@@ -1,6 +1,7 @@
 .container {
   max-width: 2000px;
-  margin: 0 auto;
+  display: contents;
+
   @include mobile-mini-minus {
     width: 110vw;
   }
@@ -9,6 +10,12 @@
 .header {
   position: relative;
   width: 100%;
+  height: auto;
+  margin: 0 auto;
+  @include max {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   .header-image-top {
     position: absolute;
@@ -25,25 +32,46 @@
 
 
   .header-top {
+    width: 100%;
+    @include nbpp {
+    }
 
     .header-top-content {
+      position: absolute;
+      width: 100%;
       height: 40px;
-      margin: -10px 0;
       display: flex;
       justify-content: space-between;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      @include nbpp {
+      }
     }
   }
 
   .header-image {
-    max-width: 100%;
     position: absolute;
     z-index: -1;
+    left: 0;
+    width: 100vw;
+    @include nbpp {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include max {
+      transform: translateX(-50%);
+    }
   }
 
   .header-logo {
     position: absolute;
     width: 20%;
     margin-top: 10px;
+    @include max {
+      left: 50px;
+      width: 500px;
+    }
   }
 }
 
@@ -71,6 +99,12 @@
   @include nbpp {
     padding: 600px 400px;
   }
+  @include max {
+    padding: 20vw 400px;
+  }
+  @media (min-width: 5400px) {
+    padding: 1000px 400px;
+  }
 
   .header-text {
 
@@ -96,8 +130,16 @@
     @include notebook-big-plus {
       position: absolute;
       //width: 1200px;
-      left: 380px;
-      top: 300px;
+      left: 31vw;
+      top: 15vw;
+    }
+    @include nbpp {
+
+    }
+    @include max {
+      width: 1800px;
+      left: 15vw;
+      top: 18vw;
     }
 
     h1 {
@@ -134,6 +176,10 @@
       @include mobile-mini-minus {
         font-size: 0.9rem
       }
+      @include max {
+        width: 1400px;
+        font-size: 3rem;
+      }
     }
 
     color: white;
@@ -155,8 +201,13 @@
       transform: translate(-50%, -50%);
     }
     @include nbpp {
-      top: 600px;
-      left: 900px;
+      top: 25vw;
+      left: 40vw;
+      margin-top: 350px;
+    }
+    @include max {
+      top: 20vw;
+      left: 30vw;
       margin-top: 350px;
     }
   }
@@ -166,9 +217,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  overflow: hidden;
   width: 100%;
   z-index: -2;
+  overflow: hidden;
 
 }
 
@@ -193,11 +244,12 @@
     height: 110%;
   }
   @include nbpp {
-    height: 1200px;
-    //width: 100vw;
-    //left: 50%;
-    //transform: translateX(-50%);
-    //z-index: -8;
+    height: 50vw;
+    width: 100vw;
+  }
+  @include max {
+    height: 40vw;
+    max-height: 2000px;
   }
 }
 
@@ -208,6 +260,7 @@
   top: -40vw;
   transform: translateX(-50%);
   z-index: 2;
+  overflow: hidden;
 
   @include mobile-mini-plus {
     top: -20vw;
@@ -224,11 +277,22 @@
     left: 65vw;
   }
   @include nbpp {
-    top: -210px;
-    width: 2702px;
-    left: 1285px;
+    top: -200px;
+    width: 100vw;
+    left: 70vw;
   }
-
+  @include max {
+    width: 80vw;
+    max-width: 3500px;
+    margin-top: 9vw;
+    top: -380px;
+  }
+  @media (min-width: 3400px) {
+    width: 80vw;
+    max-width: 3500px;
+    margin-top: 7vw;
+    top: -400px;
+  }
 }
 
 .nav {

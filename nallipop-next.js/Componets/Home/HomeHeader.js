@@ -40,7 +40,7 @@ const HomeHeader = ({close}) => {
         <>
                 <div className="container">
                     <div id="#" className="header">
-                        <img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>
+                        {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                         <div className="header-top">
                             <div className="header-central-background"></div>
                             <img className="header-image" src="/assets/natalka_strona_góra_ bez_chmur.png" alt="Opis obrazka" />
@@ -100,7 +100,6 @@ const HomeHeader = ({close}) => {
                         </div>
                         </div>
                     </div>
-
         </>
     )
 }

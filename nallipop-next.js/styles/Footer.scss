@@ -1,6 +1,9 @@
 .footer {
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 70px;
+  @include notebook {
+    margin-bottom: 190px;
+  }
 }
 
 .footer-contact {
@@ -15,6 +18,16 @@
     align-items: flex-start;
     padding-left: 20px;
   }
+  @include notebook {
+    padding-left: 80px;
+  }
+  @media (min-width: 2600px) {
+    padding-left: 10vw;
+  }
+  @media (min-width: 3100px){
+    padding-bottom: 40px;
+    padding-left: 20vw;
+  }
   form {
     @include mobile-mini {
       display: flex;
@@ -27,9 +40,11 @@
     font-weight: bold;
     margin-bottom: 30px;
     @include tablet {
-     font-size: 3rem;
+      font-size: 3rem;
     }
     @include notebook {
+      font-size: 5rem;
+      color: white;
     }
   }
 
@@ -44,6 +59,10 @@
         height: 30px;
         width: 20vw;
       }
+      @include notebook {
+        height: 2vw;
+        width: 20vw;
+      }
     }
 
     textarea {
@@ -51,8 +70,8 @@
       border-radius: 10px;
       height: 70px;
       width: 280px;
-      @include tablet {
-        height: 90px;
+      @include notebook {
+        height: 5vw;
         width: 40vw;
       }
     }
@@ -67,6 +86,10 @@
         padding: 10px 55px;
         font-size: 1rem;
         font-weight: bold;
+        @include notebook {
+          padding: 15px 80px;
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -79,6 +102,9 @@ textarea::placeholder {
   font-style: italic;
   opacity: 1;
   padding-top: 5px;
+  @include notebook {
+    font-size: 1.5rem;
+  }
 }
 
 input:focus::placeholder,
@@ -121,14 +147,26 @@ textarea:focus::placeholder {
     left: 0;
     right: 0;
 
+    @include notebook {
+      top: 10px;
+    }
+    @include notebook {
+      justify-content: center
+    }
+
     &-logo {
       position: relative;
       width: 30%;
       margin-top: 10px;
       @include tablet {
-        width: 20%;
+        width: 15%;
         margin-left: -30px;
-        margin-top: -190px;
+        margin-top: -90px;
+      }
+      @include notebook {
+        width: 600px;
+        margin-left: -30px;
+        margin-top: -2vw;
       }
     }
 
@@ -146,9 +184,36 @@ textarea:focus::placeholder {
         margin-bottom: -50px;
       }
       @include tablet {
-        margin-bottom: -25px;
+        margin-bottom: 3px;
       }
+      @include notebook {
+        margin-bottom: -200px;
+        font-size: 2rem;
+        width: 800px;
+        height: 150px;
+      }
+      @include nbpp {
+
+        font-size: 3rem;
+        width: 1300px;
+        height: 150px;
+      }
+      //@include max {
+      //  font-size: 2rem;
+      //  width: 800px;
+      //  height: 150px;
+      //}
+
       ul {
+        @include notebook {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          li {
+            padding: 5px 5px;
+          }
+        }
+
         li {
           @include mobile-mini {
             padding: 2px 0;
@@ -156,12 +221,13 @@ textarea:focus::placeholder {
               padding: 4px 0;
             }
             @include tablet {
-              padding: 6px 0;
+              padding: 6px 10px;
             }
           }
         }
       }
     }
+
     .footer-menu-link {
       color: white;
     }
@@ -169,6 +235,7 @@ textarea:focus::placeholder {
     .blue-link {
       color: aqua;
     }
+
     &-contact {
       display: flex;
       flex-direction: column;
@@ -183,7 +250,12 @@ textarea:focus::placeholder {
       @include tablet {
         margin-bottom: -40px;
       }
+      @include notebook {
+        font-size: 4rem;
+      }
+      @include nbpp {
 
+      }
 
       .contact-info {
         display: flex;
@@ -203,8 +275,12 @@ textarea:focus::placeholder {
         @include tablet {
           font-size: 1.3rem;
         }
+        @include notebook {
+          font-size: 3rem;
+        }
       }
     }
+
     &-media {
       display: flex;
       flex-direction: column;
@@ -215,17 +291,22 @@ textarea:focus::placeholder {
         margin-bottom: -50px;
       }
       @include tablet {
-        margin-bottom: -80px;
+        margin-bottom: 3px;
       }
+
       svg {
         font-size: 7vw;
         padding: 5px 0;
         @include tablet {
           font-size: 3rem;
         }
+        @include notebook {
+          font-size: 6rem;
+        }
       }
     }
   }
+
   a {
     color: white;
     font-weight: bold;
