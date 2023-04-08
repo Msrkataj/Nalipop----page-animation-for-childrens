@@ -1,13 +1,36 @@
+.footer {
+  position: relative;
+  margin-bottom: 35px;
+}
+
 .footer-contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 0 60px;
+  @include mobile-mini-plus {
+    align-items: center;
+  }
+  @include tablet {
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  form {
+    @include mobile-mini {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
   h1 {
     font-size: 5vw;
     font-weight: bold;
     margin-bottom: 30px;
+    @include tablet {
+     font-size: 3rem;
+    }
+    @include notebook {
+    }
   }
 
   form {
@@ -17,7 +40,10 @@
       border-radius: 10px;
       height: 20px;
       width: 150px;
-
+      @include tablet {
+        height: 30px;
+        width: 20vw;
+      }
     }
 
     textarea {
@@ -25,6 +51,10 @@
       border-radius: 10px;
       height: 70px;
       width: 280px;
+      @include tablet {
+        height: 90px;
+        width: 40vw;
+      }
     }
   }
 
@@ -33,7 +63,11 @@
 
     .button-footer-classic {
       border: none;
-      width: 130px;
+      @include tablet {
+        padding: 10px 55px;
+        font-size: 1rem;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -65,9 +99,11 @@ textarea:focus::placeholder {
 
 .footer-background {
   width: 100%;
+  height: 100%;
   position: relative;
   z-index: -1;
   display: flex;
+  justify-content: flex-end;
   align-items: flex-end;
 
   .footer-image {
@@ -78,16 +114,22 @@ textarea:focus::placeholder {
 
   .footer-content {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
-    margin-bottom: 10px;
 
     &-logo {
       position: relative;
       width: 30%;
       margin-top: 10px;
+      @include tablet {
+        width: 20%;
+        margin-left: -30px;
+        margin-top: -190px;
+      }
     }
 
     &-menu {
@@ -97,6 +139,28 @@ textarea:focus::placeholder {
       font-size: 4vw;
       text-align: center;
       font-weight: bold;
+      margin-bottom: -35px;
+      font-family: $font-base;
+      @include mobile-mini-plus {
+        font-size: 1.5rem;
+        margin-bottom: -50px;
+      }
+      @include tablet {
+        margin-bottom: -25px;
+      }
+      ul {
+        li {
+          @include mobile-mini {
+            padding: 2px 0;
+            @include mobile-mini-plus {
+              padding: 4px 0;
+            }
+            @include tablet {
+              padding: 6px 0;
+            }
+          }
+        }
+      }
     }
     .footer-menu-link {
       color: white;
@@ -111,6 +175,15 @@ textarea:focus::placeholder {
       justify-content: flex-end;
       font-size: 4vw;
       margin-left: 10px;
+      margin-bottom: -35px;
+      @include mobile-mini-plus {
+        font-size: 1.5rem;
+        margin-bottom: -50px;
+      }
+      @include tablet {
+        margin-bottom: -40px;
+      }
+
 
       .contact-info {
         display: flex;
@@ -127,6 +200,9 @@ textarea:focus::placeholder {
         font-size: 2.5vw;
         padding: 4px 4px;
         color: white;
+        @include tablet {
+          font-size: 1.3rem;
+        }
       }
     }
     &-media {
@@ -134,9 +210,19 @@ textarea:focus::placeholder {
       flex-direction: column;
       justify-content: flex-end;
       color: white;
+      @include mobile-mini-plus {
+        margin-left: 20px;
+        margin-bottom: -50px;
+      }
+      @include tablet {
+        margin-bottom: -80px;
+      }
       svg {
         font-size: 7vw;
         padding: 5px 0;
+        @include tablet {
+          font-size: 3rem;
+        }
       }
     }
   }

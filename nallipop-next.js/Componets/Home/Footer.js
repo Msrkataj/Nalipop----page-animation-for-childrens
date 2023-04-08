@@ -43,6 +43,7 @@ const Footer = ({close}) => {
             <div className="page">
             </div>
             <div className="container">
+                <div className="footer">
                 <div className="footer-contact">
                     <h1>MASZ PYTANIA!<br/> NAPISZ DO MNIE</h1>
                     <div className="footer-contact-form">
@@ -125,6 +126,7 @@ const Footer = ({close}) => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </>
     )

@@ -42,11 +42,11 @@ const HomeForm = ({close}) => {
                     <div className="home-form">
                        <h1>UMÓW SIĘ JUŻ DZIŚ</h1>
                         <p>SZYBKA REZERWACJA ONLINE</p>
-                        <div className="button">
+                        <div className="button ">
                             {data.map((item) => {
                                 if (item.name === "OFERTA") {
                                     return (
-                                        <Link key={item.href} href={item.href} className="button-classic">FORMULARZ ZGŁOSZENIOWY
+                                        <Link key={item.href} href={item.href} className="button-classic button-form">FORMULARZ ZGŁOSZENIOWY
                                         </Link>
                                     );
                                 } return null;
