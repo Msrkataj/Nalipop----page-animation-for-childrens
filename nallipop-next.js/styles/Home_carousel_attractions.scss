@@ -23,7 +23,7 @@
   }
   @include notebook {
     height: 500px;
-    margin-top: 1700px;
+    margin-top: 315px;
     margin-bottom: 200px;
   }
   @media (min-width: 1400px) {
@@ -87,8 +87,9 @@
     @include mobile-mini {
       font-size: 3rem;
       @include notebook {
-      font-size: 4rem;
+      font-size: 6rem;
       margin-bottom: 80px;
+        color: darkcyan;
       }
     }
   }

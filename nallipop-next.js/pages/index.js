@@ -4,7 +4,7 @@ import Home_carousel_attractions from "../Componets/Home/Home_carousel_attractio
 import Home_carousel_opinions from "../Componets/Home/Home_carousel_opinions"
 import HomeForm from "../Componets/Home/Home-form"
 import Footer from "../Componets/Home/Footer";
-
+import Home_offer from "../Componets/Home/Home_offer";
 export default function Home() {
 
 
@@ -13,6 +13,7 @@ export default function Home() {
         <>
             <HomeHeader/>
             <Home_first_step/>
+            <Home_offer/>
             <Home_carousel_attractions/>
             <Home_carousel_opinions/>
             <HomeForm/>

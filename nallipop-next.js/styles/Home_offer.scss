@@ -1,0 +1,132 @@
+.home_offer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  z-index: 5;
+  @include mobile-mini {
+    margin-top: 150px;
+  }
+  @include notebook {
+    margin-top: 1500px;
+  }
+  @include notebook {
+    .home_carousel_button {
+      .button-classic {
+        font-size: 3rem;
+        border-radius: 30px;
+      }
+    }
+  }
+
+  .home_offer_title {
+    color: #8151e2;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 8vw;
+    text-align: center;
+    @include mobile-mini {
+      font-size: 3rem;
+      @include notebook {
+        font-size: 6rem;
+        margin-bottom: 80px;
+        color: darkcyan;
+      }
+    }
+  }
+
+  .home_offer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+    height: 110vw;
+    @include mobile {
+      width: 900px;
+      height: 100%;
+    }
+    @include notebook {
+      width: 1200px;
+    }
+    .home_offer_square {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid $color-grey;
+      border-radius: 50px;
+      width: 40%;
+      height: 30vw;
+      margin: 10px;
+      font-weight: bold;
+      background-color: #8bacc0;
+
+      svg {
+        font-size: 15vw;
+        @include mobile {
+          font-size: 6rem;
+        }
+        @include notebook {
+          font-size: 9rem;
+        }
+      }
+
+      h2 {
+        font-size: 6vw;
+        margin-top: 10px;
+        color: white;
+        @include mobile {
+          font-size: 2rem;
+        }
+        @include notebook {
+          font-size: 4rem;
+        }
+      }
+
+      @include mobile-mini {
+        width: 45%;
+      }
+      @include mobile {
+        width: 200px;
+        height: 250px;
+        margin: 40px;
+        transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      @include notebook {
+        width: 400px;
+        height: 450px;
+      }
+    }
+
+    .home_offer_square_birthday {
+      background-color: #FAD648;
+    }
+
+    .home_offer_square_christening {
+      background-color: #8bacc0;
+    }
+
+    .home_offer_square_wedding {
+      background-color: darksalmon;
+    }
+
+    .home_offer_square_family {
+      background-color: burlywood;
+    }
+
+    .home_offer_square_other {
+      background-color: darkcyan;
+    }
+  }
+
+  .home_offer_button {
+    margin-top: 50px;
+  }
+}
