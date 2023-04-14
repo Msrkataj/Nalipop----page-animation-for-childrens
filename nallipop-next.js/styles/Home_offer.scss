@@ -45,7 +45,7 @@
     width: 95%;
     height: 110vw;
     @include mobile {
-      width: 900px;
+      //max-width: 900px;
       height: 100%;
     }
     @include notebook {
@@ -94,6 +94,7 @@
         width: 200px;
         height: 250px;
         margin: 40px;
+        z-index: 10;
         transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
         &:hover {
           transform: scale(1.2);

@@ -1,0 +1,120 @@
+.header .header-top .header-central-background-about {
+  height: 100vw;
+  @include nbpp {
+    height: 70vw;
+    width: 100vw;
+  }
+}
+.header-central-image-about {
+  @include max {
+    top: -430px;
+    width: 2700px;
+  }
+}
+.header-text-about {
+  position: absolute;
+  top: 100vw;
+  left: 88px;
+
+  @include mobile-mini-plus {
+    top: 470px;
+    left: 33px;
+  }
+
+  @include tablet {;
+    left: 20vw;
+  }
+  @include notebook {
+
+  }
+  @include notebook-big-plus {
+    left: 11vw;
+    top: 50vw;
+  }
+  @include nbpp {
+    left: 20vw;
+    top: 25vw;
+  }
+  @include max {
+    width: 1800px;
+    left: 15vw;
+    top: 18vw;
+  }
+
+
+  h1 {
+    color: #FFFFFF;
+    font-size: 15vw;
+    margin-bottom: 30px;
+    font-weight: normal;
+    @include mobile-mini-plus {
+    }
+    @include mobile-mini-minus {
+      font-size: 6rem
+    }
+    @include tablet {
+      font-size: 10rem;
+    }
+    @include nbpp {
+      font-size: 12rem;
+    }
+    @include max {
+      font-size: 15rem;
+    }
+  }
+}
+
+.about_me {
+  width: 100%;
+  margin-top: 140vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  @include mobile-mini-plus {
+    margin-top: 40vw;
+  }
+  @include tablet {
+    margin-top: 50vw;
+  }
+  @include notebook {
+    margin-top: 60vw;
+  }
+  @include nbpp {
+       margin-top: 40vw;
+  }
+  @include max {
+    margin-top: 1200px;
+    margin-left: 400px;
+  }
+  @media (min-width: 3800px) {
+    margin-top: 900px;
+    margin-left: 800px;
+
+
+  }
+
+  h1 {
+    font-size: 10vw;
+    @include notebook {
+      margin-top: 12rem;
+    }
+    @include nbpp {
+      font-size: 15rem;
+    }
+  }
+  .about_me-content {
+    margin-top: 50px;
+    width: 90%;
+    height: 1000px;
+    background-color: #8bacc0;
+    border-radius: 50px;
+    .about_me-content-text {
+      padding: 10px;
+      font-size: 2rem;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+}

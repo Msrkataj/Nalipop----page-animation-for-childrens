@@ -1,13 +1,21 @@
 .color-line {
   position: absolute;
   overflow: hidden;
-  top: 2320px;
-  left: 208px;
+  top: 20px;
+  //left: 20px;
+  //top: 2320px;
+  //left: 208px;
+  width: 100vw;
   z-index: -10;
+  //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
   img {
-    width: 150vw;
+    width: 100vw;
     height: auto;
+    overflow: hidden;
+
     @include notebook {
+      width: 150vw;
     }
     @media (min-width: 3500px){
       width: 4000px;
@@ -17,27 +25,27 @@
     }
   }
   @include mobile-mini {
-    top: 1800px;
+    //top: 1800px;
   }
   @include mobile{
-    left: -300px;
-    top: -200px;
+    //left: -300px;
+    //top: -200px;
   }
   @include tablet{
-    left: -200px;
-    top: -200px;
+    //left: -200px;
+    //top: -200px;
   }
   @include max {
     rotate: -40deg;
   }
   @media (min-width: 3500px){
-    left: -65vw;
+    left: -70vw;
     top: -1300px;
     transform: scaleX(-1);
     rotate: 325deg;
   }
   @media (min-width: 4460px){
-    left: -40vw;
+    left: -70vw;
     rotate: 332deg;
   }
 }
@@ -307,6 +315,9 @@
     z-index: 3;
     color: #ffffff;
     font-family: $font-head;
+    animation: pulsate 10s infinite;
+    text-indent: 50px;
+
     @include mobile-mini {
       top: 50%;
     }
@@ -314,6 +325,8 @@
       font-size: 12vw;
       text-align: center;
       font-weight: bold;
+      text-indent: 50px;
+
       @include mobile {
         font-size: 6rem;
       }
@@ -321,5 +334,17 @@
         font-size: 10rem;
       }
     }
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #FF69B4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }

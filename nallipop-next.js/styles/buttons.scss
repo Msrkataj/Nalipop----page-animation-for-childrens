@@ -22,6 +22,10 @@
   @include notebook {
     padding: 20px 60px;
     font-size: 2rem;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &:hover {
+      transform: scale(1.2);
+    }
   }
   @include max {
     padding: 30px 80px;

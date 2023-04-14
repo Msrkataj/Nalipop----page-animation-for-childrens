@@ -68,6 +68,8 @@
     position: absolute;
     width: 20%;
     margin-top: 10px;
+    cursor: pointer;
+    z-index: 10;
     @include max {
       left: 50px;
       width: 500px;
@@ -252,7 +254,16 @@
     max-height: 2000px;
   }
 }
-
+.header-central-clouds {
+  position: relative;
+  width: 100%;
+  left: 94vw;
+  top: -105vw;
+  transform: translateX(-50%);
+  z-index: -20;
+  overflow: hidden;
+  rotate: 315deg;
+}
 .header-central-image {
   position: relative;
   width: 300%;
@@ -298,6 +309,7 @@
 .nav {
   font-size: 4vw;
   font-family: $font-head;
+  z-index: 10;
 
   @include mobile-mini-plus {
     display: flex;
@@ -306,6 +318,7 @@
     height: 100px;
     margin-top: 15px;
     color: white;
+
     ul {
       ul {
         display: flex;
@@ -313,12 +326,18 @@
         color: white;
         font-weight: bold;
         text-decoration: none;
-        cursor: pointer;
 
         li {
           padding: 10px;
+          cursor: pointer;
+          transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+          &:hover {
+            transform: scale(1.2);
+          }
+
           @include notebook-big {
             padding: 25px;
+
           }
         }
       }

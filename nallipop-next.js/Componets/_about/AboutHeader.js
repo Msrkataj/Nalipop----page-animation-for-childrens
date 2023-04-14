@@ -42,7 +42,7 @@ const HomeHeader = ({close}) => {
                     <div id="#" className="header">
                         {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                         <div className="header-top">
-                            <div className="header-central-background"></div>
+                            <div className="header-central-background header-central-background-about"></div>
                             <img className="header-image" src="/assets/natalka_strona_góra_ bez_chmur.png" alt="Opis obrazka" />
                             <div className="header-top-content">
                                 <Link href="/">
@@ -81,24 +81,13 @@ const HomeHeader = ({close}) => {
                                 </div>
                             </div>
                             <div className="header-central-image-container">
-                                <img className="header-central-image" src="/assets/background-home.png" alt="Opis obrazka" />
+                                <img className="header-central-image header-central-image-about" src="/assets/about-me.png" alt="Opis obrazka" />
                                 <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
                             </div>
                         </div>
                         <div className="header-central">
-                            <div className="header-text">
-                                <h1>ANIMACJE DLA DZIECI</h1>
-                                <p>Animacje Nallipop - <br/> dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze</p>
-                            </div>
-                            <div className="button button-header">
-                                {data.map((item) => {
-                                    if (item.name === "OFERTA") {
-                                        return (
-                                            <Link key={item.href} href={item.href} className="button-classic">SPRAWDŹ!
-                                            </Link>
-                                        );
-                                    } return null;
-                                })}
+                            <div className="header-text-about">
+                                <h1>O MNIE</h1>
                             </div>
                         </div>
                         </div>
