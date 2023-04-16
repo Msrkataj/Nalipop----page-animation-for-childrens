@@ -11,7 +11,10 @@
 @import "Footer";
 @import "Home_offer";
 @import "about_me/me";
-
+@import "offer/offer";
+@import "offer/OfferList";
+@import "offer/OfferCarouselAttractions";
+@import "offer/OfferMap";
 
 body {
   font-family: $font-alt;

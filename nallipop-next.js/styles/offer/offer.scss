@@ -1,0 +1,169 @@
+.header .header-top .header-central-background-about {
+  height: 100vw;
+  @include nbpp {
+    height: 70vw;
+    width: 100vw;
+  }
+}
+.header-central-image-about {
+  @include max {
+    top: -430px;
+    width: 2700px;
+  }
+}
+.header-text-about {
+  position: absolute;
+  top: 100vw;
+  left: 88px;
+
+  @include mobile-mini-plus {
+    top: 470px;
+    left: 33px;
+  }
+
+  @include tablet {;
+    left: 20vw;
+  }
+  @include notebook {
+
+  }
+  @include notebook-big-plus {
+    left: 11vw;
+    top: 50vw;
+  }
+  @include nbpp {
+    left: 20vw;
+    top: 25vw;
+  }
+  @include max {
+    width: 1800px;
+    left: 15vw;
+    top: 18vw;
+  }
+
+
+  h1 {
+    color: #FFFFFF;
+    font-size: 15vw;
+    margin-bottom: 30px;
+    font-weight: normal;
+    @include mobile-mini-plus {
+    }
+    @include mobile-mini-minus {
+      font-size: 6rem
+    }
+    @include tablet {
+      font-size: 10rem;
+    }
+    @include nbpp {
+      font-size: 12rem;
+    }
+    @include max {
+      font-size: 15rem;
+    }
+  }
+}
+
+.offer {
+  width: 100%;
+  margin-top: 140vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include mobile-mini-plus {
+    margin-top: 40vw;
+  }
+  @include tablet {
+    margin-top: 50vw;
+  }
+  @include notebook {
+    margin-top: 60vw;
+  }
+  @include nbpp {
+    margin-top: 40vw;
+  }
+  @include max {
+    margin-top: calc(100% - (100vw - 1500px) / 0.75);
+    margin-left: 400px;
+    margin-bottom: 200px;
+  }
+  @media (min-width: 5000px) {
+    margin-top: calc(100% - (100vw - 1500px) / 0.8);
+
+
+  }
+
+  .offer-content {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 100%;
+    background-color: #8bacc0;
+    border-radius: 50px;
+    z-index: 1;
+    @include notebook {
+      width: 80vw;
+    }
+    @include max {
+      width: 1800px;
+    }
+    .offer-content-text {
+      padding: 12px;
+      font-size: 0.7rem;
+      text-align: center;
+      font-family: $font-primary;
+      line-height: 30px;
+      @include mobile-mini {
+        font-size: 1rem;
+      }
+      @include mobile-mini-plus {
+        font-size: 1.2rem;
+        line-height: 40px;
+      }
+      @include mobile {
+        font-size: 1.5rem;
+      }
+      @include tablet {
+        font-size: 1.5rem;
+        line-height: 70px;
+      }
+      @include notebook {
+        padding: 30px;
+        font-size: 2rem;
+      }
+      @include nbpp {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.button-offer {
+  margin-bottom: 50px;
+  z-index: 5;
+  @include mobile-mini-plus {
+    //margin-right: 100px;
+    //margin-top: 150px;
+  }
+  @include mobile {
+    //margin-right: 80px;
+    //margin-top: 15vw;
+  }
+  @include notebook {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+  }
+  @include nbpp {
+    //top: 25vw;
+    //left: 40vw;
+    //margin-top: 350px;
+  }
+  @include max {
+    //top: 20vw;
+    //left: 30vw;
+    //margin-top: 350px;
+  }
+}

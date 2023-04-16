@@ -1,0 +1,46 @@
+.offer_map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin-top: 30px;
+    color: $color-green;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  .close {
+    display: none;
+  }
+  p {
+    font-size: 1rem;
+    text-align: center;
+    color: $color-yellow;
+  }
+  .offer-list-section-photo {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+
+    &.zoomed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .offer_map_description {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 6vw;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+}

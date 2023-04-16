@@ -71,7 +71,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10;
   @include mobile-mini-plus {
     margin-top: 40vw;
   }
@@ -85,36 +84,70 @@
        margin-top: 40vw;
   }
   @include max {
-    margin-top: 1200px;
+    margin-top: calc(100% - (100vw - 1500px) / 0.75);
     margin-left: 400px;
+    margin-bottom: 200px;
   }
-  @media (min-width: 3800px) {
-    margin-top: 900px;
-    margin-left: 800px;
+  @media (min-width: 5000px) {
+    margin-top: calc(100% - (100vw - 1500px) / 0.8);
 
 
   }
 
   h1 {
     font-size: 10vw;
+    z-index: 5;
+    @include mobile-mini {
+      margin-top: 8vw;
+      font-size: 12vw;
+    }
+    @include tablet {
+      margin-top: 1rem;
+      font-size: 7vw;
+    }
     @include notebook {
-      margin-top: 12rem;
+      margin-top: 0;
     }
     @include nbpp {
-      font-size: 15rem;
+      margin-top: 1vw;
+      font-size: 11rem;
+    }
+    @include max {
+      margin-top: 200px;
+      font-size: 13rem;
     }
   }
   .about_me-content {
-    margin-top: 50px;
+    margin: 50px 0;
     width: 90%;
-    height: 1000px;
+    height: 100%;
     background-color: #8bacc0;
     border-radius: 50px;
+    z-index: 5;
+    @include notebook {
+      width: 80vw;
+    }
+    @include max {
+      width: 1800px;
+    }
     .about_me-content-text {
-      padding: 10px;
-      font-size: 2rem;
+      padding: 12px;
+      font-size: 1rem;
       text-align: center;
       line-height: 40px;
+      @include mobile {
+        font-size: 1.5rem;
+      }
+      @include tablet {
+        font-size: 1.5rem;
+      }
+      @include notebook {
+        padding: 30px;
+        font-size: 2rem;
+      }
+      @include nbpp {
+        font-size: 3rem;
+      }
     }
   }
 }
