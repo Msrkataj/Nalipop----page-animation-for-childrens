@@ -3,6 +3,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  .offer-list-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    @include nbpp {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
 
   h2 {
     font-family: $font-alt;
@@ -11,6 +25,16 @@
     text-align: center;
     color: #8151e2;
     margin: 25px 0;
+    z-index: 1;
+    @include tablet {
+      font-size: 4vw;
+    }
+    @include nbpp {
+      font-size: 6rem;
+    }
+    @include max {
+      font-size: 9rem;
+    }
   }
 
   .offer-list-section {
@@ -20,17 +44,33 @@
     justify-content: center;
     width: 100%;
     height: 65vw;
-    //margin: 10px 0;
+    @include nbpp {
+      height: 1000px;
+    }
+
     .offer-list-section-photo {
       width: 60%;
       border-radius: 60px;
-      margin: 20px;
+      margin: 30px;
+      @include nbpp {
+        border-radius: 100px;
+        margin: 75px;
+        width: 90%;
+      }
     }
 
     .offer-list-section-header {
       font-size: 1.4rem;
       text-align: center;
+      font-family: $font-alt;
       font-weight: bold;
+      @include tablet {
+        font-size: 3vw;
+      }
+
+      @include nbpp {
+        font-size: 4rem;
+      }
     }
   }
 }
@@ -39,6 +79,9 @@
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
+  @include nbpp {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
 
   .offer-list-section-header {
     color: $color-green;
@@ -55,6 +98,9 @@
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
+  @include nbpp {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
 
   .offer-list-section-header {
     color: $color-yellow;
@@ -64,6 +110,8 @@
 .offer-list {
   .offer-list-family {
     margin: 20px 0 0 0;
+    @include max {
+    }
 
     .offer-list-section-header {
       color: $color-bordo;
@@ -71,6 +119,13 @@
 
     .offer-list-section-photo {
       width: 40vw;
+      @include nbpp {
+        width: 600px;
+      }
+      @include max {
+        border-radius: 100px;
+        width: 600px
+      }
     }
   }
 }
@@ -80,9 +135,16 @@
     margin: 40px 0;
     background-color: rgba(0, 0, 0, 0.2);
     height: 80vw;
+    @include nbpp {
+      background-color: rgba(0, 0, 0, 0.0);
+      height: auto;
+    }
 
     .offer-list-section-photo {
       width: 40vw;
+      @include nbpp {
+        width: 600px;
+      }
     }
 
     .offer-list-section-header {
@@ -106,6 +168,18 @@
     align-items: center;
     margin-bottom: 50px;
     border: 1px solid $color-grey;
+    @include mobile {
+      height: 200px;
+    }
+    @include notebook {
+      margin: 150px 0;
+      width: 1200px;
+      height: 300px;
+    }
+    @include nbpp {
+      width: 1800px;
+      height: 300px;
+    }
 
     .offer-info-price-number {
       color: $color-limon;
@@ -119,6 +193,17 @@
       border-radius: 70px;
       padding: 30px;
       border: 0.3px solid $color-grey;
+      @include mobile {
+        padding: 60px;
+        font-size: 6vw;
+      }
+      @include notebook {
+        font-size: 7rem;
+        padding: 90px;
+      }
+      @include nbpp {
+        font-size: 9rem;
+      }
     }
   }
 
@@ -126,33 +211,67 @@
     width: 80vw;
     height: 100%;
     padding: 20px 20px 0 20px;
-    background:linear-gradient(180deg, rgba(79, 170, 197, 1) 0%, rgba(200, 83, 194, 1) 100%);
+    background: linear-gradient(180deg, rgba(79, 170, 197, 1) 0%, rgba(200, 83, 194, 1) 100%);
     border-radius: 50px;
     margin-bottom: 20px;
     text-align: center;
     color: white;
+    @include tablet {
+      width: 900px;
+    }
+    @include notebook {
+      width: 1100px;
+    }
     h3 {
-      text-align: left;
+      text-align: center;
       padding: 30px;
       font-weight: bold;
       font-size: 4vw;
+      @include mobile {
+        font-size: 4.5vw;
+        padding: 60px;
+      }
+      @include tablet {
+        font-size: 5vw;
+        padding: 80px 5px;
+      }
+      @include notebook {
+        font-size: 5rem;
+      }
     }
+
     .offer-info-package-list {
       margin-bottom: 50px;
+
       ul {
         list-style: none;
         padding-left: 0;
+
         li {
           position: relative;
           padding-left: 1.2rem;
           margin-bottom: 0.9rem;
+          @include mobile {
+            font-size: 2rem;
+            line-height: 70px;
+          }
+          @include tablet {
+            font-size: 3rem;
+          }
           &::before {
             content: "•";
             position: absolute;
-            left: 0;
+            left: 20px;
             color: $color-limon;
             font-size: 1.5rem;
-            line-height: 1;
+            @include mobile {
+              font-size: 3rem;
+              line-height: 70px;
+              @include notebook {
+                left: 80px;
+                font-size: 5rem;
+              }
+            }
           }
         }
       }

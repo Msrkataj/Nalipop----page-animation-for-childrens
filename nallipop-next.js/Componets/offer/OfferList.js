@@ -40,6 +40,7 @@ const OfferList = ({close}) => {
             <div className="container">
                 <section className="offer-list">
                     <h2>JEDNA CENA NA KAŻDĄ OKAZJĘ!</h2>
+                    <div className="offer-list-row">
                     <div className="offer-list-section offer-list-birthday">
                         <img className="offer-list-section-photo" src="/assets/birthday.jpg" alt="birthday"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA URODZINY</div>
@@ -48,6 +49,8 @@ const OfferList = ({close}) => {
                         <img className="offer-list-section-photo" src="/assets/communion.jpg" alt="communion"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA KOMUNIĘ</div>
                     </div>
+                    </div>
+                    <div className="offer-list-row">
                     <div className="offer-list-section offer-list-christening">
                         <img className="offer-list-section-photo" src="/assets/christening.jpg" alt="christening"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA CHRZCINY</div>
@@ -55,6 +58,7 @@ const OfferList = ({close}) => {
                     <div className="offer-list-section offer-list-family">
                         <img className="offer-list-section-photo" src="/assets/family.jpg" alt="family"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA UROCZYSTOŚCI RODZINNE</div>
+                    </div>
                     </div>
                     <div className="offer-list-section offer-list-wedding">
                         <img className="offer-list-section-photo" src="/assets/wedding.jpg" alt="wedding"/>
