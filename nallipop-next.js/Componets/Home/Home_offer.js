@@ -39,45 +39,6 @@ const HomeOffer = ({close}) => {
 
 
 
-    // useEffect(() => {
-    //     const storageRefBalloons = ref(storage, "atractions/balon.png");
-    //     const storageRefPiniata = ref(storage, "atractions/piniata.png");
-    //     const storageRefWomen = ref(storage, "atractions/women-paint.png");
-    //     getDownloadURL(storageRefBalloons)
-    //         .then((url) => setBalloonsImageUrl(url))
-    //         .catch((error) => console.error("Error getting balloons image URL:", error));
-    //
-    //     getDownloadURL(storageRefPiniata)
-    //         .then((url) => setPiniataImageUrl(url))
-    //         .catch((error) => console.error("Error getting piniata image URL:", error));
-    //
-    //     getDownloadURL(storageRefWomen)
-    //         .then((url) => setWomenImageUrl(url))
-    //         .catch((error) => console.error("Error getting women image URL:", error));
-    // }, []);
-    //
-    //
-    // const carousel = [
-    //     {
-    //         name: 'balloons',
-    //         href: balloonsImageUrl, // Użyj URL pobranego z Firebase Storage
-    //         description: "Modelowanie balonów"
-    //     },
-    //     {
-    //         name: 'piniata',
-    //         href: piniataImageUrl,
-    //         description: "Piniaty!"
-    //
-    //     },
-    //     {
-    //         name: 'women',
-    //         href: womenImageUrl,
-    //         description: "Malowanie twarzy"
-    //     },
-    // ];
-
-
-
     return (
         <>
             <div className="page">

@@ -1,0 +1,50 @@
+.attractions-header {
+  text-align: center;
+  color: $color-main;
+  font-size: 6vw;
+  font-weight: bold;
+  font-family: $font-alt;
+  @include mobile {
+    font-size: 4vw;
+  }
+}
+.attractions-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 40px 0;
+  @include mobile {
+  }
+  .attractions-list-content {
+    width: 40%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+    .attractions-list-content-photo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      background-color: #8bacc0;
+      @include mobile {
+        width: 50%;
+        height: 75%;
+      }
+    }
+    h2 {
+      font-size: 4vw;
+      text-align: center;
+      font-weight: bold;
+      color: $color-main;
+      @include mobile {
+        font-size: 2vw;
+
+      }
+    }
+  }
+}

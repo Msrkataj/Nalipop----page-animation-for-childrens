@@ -1,16 +1,38 @@
 .header .header-top .header-central-background-about {
-  height: 100vw;
-  @include nbpp {
-    height: 70vw;
+  height: 200vw;
+  @include mobile-mini-plus {
+    height: 130vw;
     width: 100vw;
   }
+  @include tablet {
+    height: 100vw;
+  }
+  @include nbpp {
+    height: 70vw;
+  }
 }
-.header-central-image-about {
+
+.header-central-image-attractions {
+  top: -100px;
+  @include mobile-mini {
+    top: -150px;
+  }
+  @include mobile-mini-plus {
+    top: -100px;
+  }
+  @include notebook {
+    left: 700px
+  }
+  @include nbpp {
+    left: 1200px;
+  }
   @include max {
-    top: -430px;
+    left: 60%;
+    top: -330px;
     width: 2700px;
   }
 }
+
 .header-text-about {
   position: absolute;
   top: 100vw;
@@ -44,46 +66,48 @@
 
   h1 {
     color: #FFFFFF;
-    font-size: 15vw;
+    font-size: 12vw;
     margin-bottom: 30px;
     font-weight: normal;
     @include mobile-mini-plus {
     }
     @include mobile-mini-minus {
-      font-size: 6rem
+      font-size: 5rem
     }
     @include tablet {
-      font-size: 10rem;
+      font-size: 8rem;
     }
     @include nbpp {
-      font-size: 12rem;
+      font-size: 10rem;
     }
     @include max {
-      font-size: 15rem;
+      font-size: 13rem;
     }
   }
 }
-.color-line-offer {
+
+.color-line-attractions {
   top: 1500px;
 }
-.offer {
+
+.attractions {
   width: 100%;
-  margin-top: 140vw;
+  margin-top: 120vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @include mobile-mini-plus {
-    margin-top: 40vw;
-  }
-  @include tablet {
     margin-top: 50vw;
   }
+  @include tablet {
+    margin-top: 30vw;
+  }
   @include notebook {
-    margin-top: 60vw;
+    margin-top: 40vw;
   }
   @include nbpp {
-    margin-top: 40vw;
+    margin-top: 20vw;
   }
   @include max {
     margin-top: calc(100% - (100vw - 1500px) / 0.75);
@@ -100,21 +124,38 @@
 
   }
 
-  .offer-content {
+  .attractions-content {
     margin-top: 50px;
     margin-bottom: 20px;
     width: 90%;
     height: 100%;
-    background-color: #8bacc0;
-    border-radius: 50px;
     z-index: 1;
+
+    h1 {
+      font-family: $font-base;
+      font-weight: bold;
+      color: $color-main;
+      text-align: center;
+      font-size: 4vw;
+      margin: 20px 0;
+      @include notebook {
+        font-size: 5rem;
+      }
+    }
+
+    @include tablet {
+      width: 80%;
+    }
     @include notebook {
+      background-color: #8bacc0;
+      border-radius: 50px;
       width: 80vw;
     }
     @include max {
       width: 1800px;
     }
-    .offer-content-text {
+
+    .attractions-content-text {
       padding: 12px;
       font-size: 0.7rem;
       text-align: center;
@@ -145,7 +186,7 @@
   }
 }
 
-.button-offer {
+.button-attractions {
   margin-bottom: 50px;
   z-index: 5;
   @include mobile-mini-plus {
