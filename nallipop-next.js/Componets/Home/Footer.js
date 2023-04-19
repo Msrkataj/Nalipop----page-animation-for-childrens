@@ -84,7 +84,7 @@ const Footer = ({close}) => {
                     </div>
                 </div>
                 <div className="footer-background">
-                    <img className="footer-image" src="/assets/background-footer.png" alt="background-footer"/>
+                    <img className="footer-image" src="/assets/footer.png" alt="background-footer"/>
                     <div className="footer-content">
                         <img className="footer-content-logo" src="/assets/logo.png" alt="Opis obrazka"/>
                         <div className="footer-content-menu">

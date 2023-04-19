@@ -1,0 +1,111 @@
+.atr-extra-header {
+  width: 100%;
+  height: 14vw;
+  background-color: rgb(0, 0, 0, 0.4);
+  color: $color-limon;
+  font-size: 7vw;
+  text-align: center;
+  font-family: $font-base;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.atr-extra {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  .atr-extra-content-background {
+    margin-top: -20px;
+    width: 100vw;
+    background-color: rgb(0, 0, 0, 0.2);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  .atr-extra-content {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 6vw;
+    }
+
+    p {
+      margin: 30px 15px -20px 15px;
+      font-family: sergoe UI;
+      line-height: 30px;
+      font-size: 4.5vw;
+    }
+
+    .atr-extra-content-others {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      .atr-extra-content-photo {
+        width: 50%;
+      }
+      .atr-extra-content-photo-face {
+        margin-top: 50px;
+      }
+      .atr-extra-content-photo-soapbox {
+        margin-top: 50px;
+      }
+      .atr-extra-content-photo-slime {
+        margin-top: 50px;
+      }
+      .atr-extra-content-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7vw;
+        font-weight: bold;
+        width: 40vw;
+        height: 20vw;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid $color-main2;
+        color: $color-main2;
+      }
+      .atr-extra-content-price-piniata {
+      }
+      .atr-extra-content-price-face {
+        border: 2px solid cornflowerblue;
+        color: cornflowerblue;
+      }
+      .atr-extra-content-price-soapbox {
+        border: 2px solid #e65721;
+        color: #e65721;
+      }
+      .atr-extra-content-price-closeSoapbox {
+        border: 2px solid #0edf61;
+        color: #0edf61;
+      }
+      .atr-extra-content-price-slime {
+        border: 2px solid #cf5bb5;
+        color: #cf5bb5
+      }
+      .atr-extra-content-price-bag {
+        border: 2px solid saddlebrown;
+        color: saddlebrown;
+      }
+    }
+    .atr-extra-content-others-reverse {
+      flex-direction: row;
+    }
+  }
+  .atr-extra-content-end {
+  }
+}

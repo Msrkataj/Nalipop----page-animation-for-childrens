@@ -43,7 +43,7 @@ const HomeHeader = ({close}) => {
                     {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                     <div className="header-top">
                         <div className="header-central-background header-central-background-about"></div>
-                        <img className="header-image" src="/assets/natalka_strona_góra_ bez_chmur.png" alt="Opis obrazka" />
+                        <img className="header-image" src="/assets/top.png" alt="top" />
                         <div className="header-top-content">
                             <Link href="/">
                                 <img className="header-logo" src="/assets/logo.png" alt="Opis obrazka" />
@@ -81,7 +81,7 @@ const HomeHeader = ({close}) => {
                             </div>
                         </div>
                         <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-about" src="/assets/offer_header.png" alt="Opis obrazka" />
+                            <img className="header-central-image header-central-image-about" src="/assets/offer.png" alt="offer" />
                             <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
                         </div>
                     </div>
