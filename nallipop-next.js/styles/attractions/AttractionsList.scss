@@ -1,3 +1,8 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .attractions-header {
   text-align: center;
   color: $color-main;
@@ -7,10 +12,16 @@
   @include mobile {
     font-size: 4vw;
   }
+  @include notebook {
+    color: #b840f5;
+    font-size: 7rem;
+    margin: 100px 0;
+  }
 }
 .attractions-list {
   display: flex;
   flex-wrap: wrap;
+  max-width: 2000px;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -25,6 +36,11 @@
     flex-direction: column;
     align-items: center;
     margin: 0 5px;
+    @include notebook {
+      width: 500px;
+      height: 500px;
+      margin: 50px;
+    }
     .attractions-list-content-photo {
       width: 150px;
       height: 150px;
@@ -34,6 +50,10 @@
       @include mobile {
         width: 50%;
         height: 75%;
+      }
+      @include notebook {
+        width: 50%;
+        height: 50%;;
       }
     }
     h2 {

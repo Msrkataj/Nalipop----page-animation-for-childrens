@@ -78,7 +78,7 @@ const AttractionsExtra = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="atr-extra-content">
+                        <div className="atr-extra-content atr-extra-content-second">
                             <div className="atr-extra-content-background"></div>
                             <div className="atr-extra-content-text">
                                 <h2>Malowanie twarzy - Face Painting</h2>
@@ -89,6 +89,7 @@ const AttractionsExtra = () => {
                                 <div className="atr-extra-content-price atr-extra-content-price-face">
                                     + 100 zł <br/>
                                 </div>
+
                             </div>
                         </div>
                         <div className="atr-extra-content">
@@ -103,14 +104,14 @@ const AttractionsExtra = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="atr-extra-content">
+                        <div className="atr-extra-content atr-extra-content-second">
                             <div className="atr-extra-content-background atr-extra-content-background2"></div>
                             <div className="atr-extra-content-text">
                                 <h2>Zamykanie w bańce mydlanej</h2>
                                 <p>Chcesz zaskoczyć swoje dziecko lub jego małych gości niesamowitą atrakcją? Zamów a pokaże dzieciom, jak zamykać się w bańce mydlanej! To niezwykłe widowiskowa atrakcja, która zapewni maluchom świetną zabawę i wiele niezapomnianych chwil.</p>
                             </div>
                             <div className="atr-extra-content-others atr-extra-content-others-reverse">
-                                <img className="atr-extra-content-photo" src={imageUrls.banki} alt="piniata-creep" />
+                                <img className="atr-extra-content-photo atr-extra-content-photo-closeSoapbox" src={imageUrls.banki} alt="piniata-creep" />
                                 <div className="atr-extra-content-price atr-extra-content-price-closeSoapbox">
                                     + 150 zł
                                 </div>
@@ -128,14 +129,14 @@ const AttractionsExtra = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="atr-extra-content atr-extra-content-end">
+                        <div className="atr-extra-content atr-extra-content-second atr-extra-content-end">
                             <div className="atr-extra-content-background atr-extra-content-background3"></div>
                             <div className="atr-extra-content-text">
                                 <h2>Malowanie toreb</h2>
                                 <p>To świetna zabawa dla wszystkich, niezależnie od wieku. Wymyśl swoją ulubioną piniatę, my ją przygotujemy na imprezę, a dzieci będą mogli ją zniszczyć i zobaczyć, jak wypełniające ją słodycze i niespodzianki wylatują na wszystkie strony, dając Im prawdziwe poczucie spełnienia.</p>
                             </div>
                             <div className="atr-extra-content-others atr-extra-content-others-reverse">
-                                <img className="atr-extra-content-photo" src={imageUrls.piniataCreep} alt="piniata-creep" />
+                                <img className="atr-extra-content-photo atr-extra-content-photo-bag" src={imageUrls.piniataCreep} alt="piniata-creep" />
                                 <div className="atr-extra-content-price atr-extra-content-price-bag">
                                     + 150 zł
                                 </div>

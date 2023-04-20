@@ -88,6 +88,15 @@
 
 .color-line-attractions {
   top: 1200px;
+  @include mobile-mini-plus {
+    top: 800px;
+  }
+  @include tablet {
+    top: 200px;
+  }
+  @include max {
+    top: -2000px;
+  }
 }
 
 .attractions {
@@ -150,6 +159,7 @@
       background-color: #8bacc0;
       border-radius: 50px;
       width: 80vw;
+
     }
     @include max {
       width: 1800px;
