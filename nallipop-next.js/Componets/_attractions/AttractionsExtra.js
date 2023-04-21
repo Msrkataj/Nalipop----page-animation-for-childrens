@@ -67,7 +67,7 @@ const AttractionsExtra = () => {
                     <h1 className="atr-extra-header">ATRAKCJE DODATKOWE</h1>
                     <section className="atr-extra">
                         <div className="atr-extra-content">
-                            <div className="atr-extra-content-text">
+                            <div className="atr-extra-content-text atr-extra-content-text-piniata">
                                 <h2>Rozbijanie piniaty</h2>
                                 <p>To świetna zabawa dla wszystkich, niezależnie od wieku. Wymyśl swoją ulubioną pinatę, my ją przygotujemy na imprezę, a dzieci będą mogli ją zniszczyć i zobaczyć, jak wypełniające ją słodycze i niespodzianki wylatują na wszystkie strony, dając Im prawdziwe poczucie spełnienia.</p>
                             </div>

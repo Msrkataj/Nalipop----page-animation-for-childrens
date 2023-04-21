@@ -1,0 +1,66 @@
+.header .header-top .header-central-background-gallery {
+  height: 100vw;
+
+  @include nbpp {
+    height: 70vw;
+    width: 100vw;
+  }
+}
+.header-central-image-gallery {
+  @include max {
+    top: -430px;
+    width: 2700px;
+  }
+}
+.header-text-gallery {
+  position: absolute;
+  top: 100vw;
+  left: 88px;
+
+  @include mobile-mini-plus {
+    top: 470px;
+    left: 33px;
+  }
+
+  @include tablet {;
+    left: 20vw;
+  }
+  @include notebook {
+
+  }
+  @include notebook-big-plus {
+    left: 11vw;
+    top: 50vw;
+  }
+  @include nbpp {
+    left: 20vw;
+    top: 25vw;
+  }
+  @include max {
+    width: 1800px;
+    left: 15vw;
+    top: 18vw;
+  }
+
+
+  h1 {
+    color: #FFFFFF;
+    font-size: 15vw;
+    margin-bottom: 30px;
+    font-weight: normal;
+    @include mobile-mini-plus {
+    }
+    @include mobile-mini-minus {
+      font-size: 6rem
+    }
+    @include tablet {
+      font-size: 10rem;
+    }
+    @include nbpp {
+      font-size: 12rem;
+    }
+    @include max {
+      font-size: 15rem;
+    }
+  }
+}
