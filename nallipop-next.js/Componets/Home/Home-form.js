@@ -53,6 +53,11 @@ const HomeForm = ({close}) => {
                             })}
                         </div>
                     </div>
+                    <div className="form-image">
+                        <div className="form-image-girl-border">
+                            <img className="form-image-girl" src="/assets/blonde-girl.png" alt="blonde-girl" />
+                        </div>
+                    </div>
             </div>
         </>
     )

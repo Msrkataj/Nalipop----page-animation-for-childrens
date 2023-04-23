@@ -94,9 +94,9 @@
     z-index: -1;
     @include mobile {
       position: absolute;
-      width: 473px;
-      height: 750px;
-      top: 75%;
+      width: 335px;
+      height: 590px;
+      top: 80%;
       left: 51%;
       transform: translate(-50%, -50%);
     }
@@ -107,16 +107,25 @@
 
   .home-about_me-content-movie {
     position: relative;
-    height: 150vw;
+    height: 90vw;
     margin: 40px 30px;
     width: calc(100% - 60px);
+    @include mobile-mini {
+      width: calc(100% - 150px);
+      left: 9%;
+    }
+    @include mobile-mini-plus {
+      width: 300px;
+      left: 24%;
+      height: auto;
+    }
     @include mobile {
       position: static;
-      width: 400px;
+      width: 350px;
       height: auto;
       margin: 0;
       top: 50%;
-      left: 49%;
+      left: 55%;
       transform: translate(-50%, -50%);
     }
     @include tablet {
@@ -163,8 +172,9 @@
       height: 100%;
       object-fit: cover;
       z-index: 1;
+
       @include mobile {
-        width: 400px;
+        width: 300px;
         top: 185px;
         left: 210px;
       }
@@ -209,15 +219,18 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
+      @include mobile-mini-plus {
+        width: 200px;
+      }
       @include mobile {
         top: 150px;
-        left: 405px;
+        left: 360px;
         width: 20vw;
         display: flex;
         justify-content: center;
       }
       @include tablet {
-        //width: 300px;
+        width: 300px;
         top: 0;
         left: 50%;
       }
@@ -272,10 +285,20 @@
     font-size: 1.5rem;
   }
   p {
-    margin: 30px 50px;
+    font-size: 4vw;
+    margin: 10px 20px;
     text-align: center;
+    @include mobile-mini {
+      font-size: 3vw;
+    }
+    @include mobile-mini-plus {
+      font-size: 2vh;
+    }
     @include tablet {
       margin: 30px 20px;
+    }
+    @include notebook_only_width {
+      font-size: 2rem;
     }
   }
 }
@@ -372,7 +395,6 @@
     color: #ffffff;
     font-family: $font-head;
     animation: pulsate 10s infinite;
-    text-indent: 50px;
 
     //@include mobile-mini {
     //  top: 50%;
@@ -380,14 +402,16 @@
    @include tablet_minHeight {
       top: 20vw;
     }
+    @include notebook_only_width {
+      top: 45%;
+    }
     @include notebook_minHeight {
-      top: 14vw;
+      top: 40%w;
     }
     h2 {
       font-size: 12vw;
       text-align: center;
       font-weight: bold;
-      text-indent: 50px;
 
       @include mobile {
         font-size: 6rem;

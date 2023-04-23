@@ -9,7 +9,8 @@
   background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
   color: #ffffff;
   text-align: center;
-  padding: 10px 40px;
+  padding: 5px 20px;
+  font-size: 0.5rem;
   border-radius: 20px;
   text-decoration: none;
   cursor: pointer;
@@ -19,6 +20,10 @@
   z-index: 5;
   &:hover {
     transform: scale(1.2);
+  }
+  @include mobile-mini {
+    padding: 10px 40px;
+    font-size: 2vw;
   }
   @include tablet {
     padding: 15px 55px;

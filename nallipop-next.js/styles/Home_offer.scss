@@ -4,13 +4,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
   z-index: 5;
+  margin-bottom: 30px;
+
   @include mobile-mini {
     margin-top: 150px;
   }
   @include notebook {
     //margin-top: 1500px;
+    margin-bottom: 100px;
+
   }
   @include notebook_minHeight {
     margin-bottom: 100px;
@@ -51,8 +54,12 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 95%;
-    height: 110vw;
+    width: 90%;
+    height: 100vw;
+    @include mobile-mini {
+      width: 90%;
+      height: 100%;
+    }
     @include mobile {
       //max-width: 900px;
       height: 100%;
@@ -73,17 +80,25 @@
       text-align: center;
       border: 1px solid $color-grey;
       border-radius: 50px;
-      width: 40%;
-      height: 30vw;
+      width: 30vw;
+      height: 20vw;
       margin: 10px;
       font-weight: bold;
       background-color: #8bacc0;
+      @include mobile-mini {
+        width: 130px;
+        height: 12vh;
+      }
+      @include mobile-mini-plus {
+        width: 100px;
+        height: 15vh;
+      }
       @include notebook_minHeight {
         width: 20%;
         height: 10vw;
       }
       svg {
-        font-size: 15vw;
+        font-size: 8vw;
         @include mobile {
           font-size: 6rem;
         }
@@ -96,7 +111,7 @@
       }
 
       h2 {
-        font-size: 6vw;
+        font-size: 4vw;
         margin-top: 10px;
         color: white;
         @include mobile {
@@ -155,6 +170,6 @@
   }
 
   .home_offer_button {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }

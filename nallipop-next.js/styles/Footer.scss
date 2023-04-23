@@ -1,12 +1,20 @@
 .footer {
   position: relative;
+  margin-top: 50px;
   @include notebook {
   }
   @include tablet_minHeight {
     margin-top: 190px;
   }
 }
-
+.footer-backgroundBlue {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: -10px;
+  z-index: -1;
+  background: #8bacc0;
+}
 .footer-contact {
   display: flex;
   justify-content: center;
@@ -20,14 +28,11 @@
     padding-left: 20px;
   }
   @include notebook {
-    padding-left: 80px;
   }
   @media (min-width: 2600px) {
-    padding-left: 10vw;
   }
   @media (min-width: 3100px){
     padding-bottom: 40px;
-    padding-left: 20vw;
   }
   @include tablet_minHeight {
     margin-bottom: 150px;
@@ -40,7 +45,7 @@
   }
 
   h1 {
-    font-size: 5vw;
+    font-size: 6vw;
     font-weight: bold;
     margin-bottom: 30px;
     @include tablet {
@@ -56,8 +61,8 @@
       margin-bottom: 25px;
       border: 1px solid black;
       border-radius: 10px;
-      height: 20px;
-      width: 450px;
+      height: 30px;
+      width: 200px;
       @include mobile-mini-minus {
         height: 30px;
         width: 200px;
@@ -67,22 +72,22 @@
         width: 30vw;
       }
       @include notebook {
-        height: 2vw;
-        width: 20vw;
+        height: 100px;
+        width: 1200px;
       }
       @include tablet_minHeight {
         height: 30px;
-        width: 300px;
+        width: 800px;
       }
     }
 
     textarea {
       border: 1px solid black;
       border-radius: 10px;
-      height: 80px;
-      width: 450px;
+      height: 150px;
+      width: 300px;
       @include mobile-mini-minus {
-        height: 80px;
+        height: 100px;
         width: 200px;
       }
       @include tablet {
@@ -90,13 +95,13 @@
         width: 60vw;
       }
       @include notebook {
-        height: 5vw;
-        width: 40vw;
+        height: 400px;
+        width: 1200px;
       }
-      @include tablet_minHeight {
-        height: 100px;
-        width: 800px;
-      }
+      //@include tablet_minHeight {
+      //  height: 200px;
+      //  width: 800px;
+      //}
     }
   }
 
@@ -174,9 +179,14 @@ textarea:focus::placeholder {
       top: 10px;
     }
     @include notebook {
-      justify-content: center
+      justify-content: center;
+      align-items: flex-end;
+      margin-bottom: 100px;
     }
-
+    @include nbpp {
+      align-items: flex-end;
+      margin-bottom: 100px;
+    }
     &-logo {
       position: relative;
       width: 30%;
@@ -187,7 +197,7 @@ textarea:focus::placeholder {
         margin-top: -90px;
       }
       @include notebook {
-        width: 600px;
+        width: 400px;
         margin-left: -30px;
         margin-top: -2vw;
       }
@@ -197,11 +207,10 @@ textarea:focus::placeholder {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      font-size: 4vw;
+      font-size: 3vw;
       text-align: center;
-      font-weight: bold;
-      margin-bottom: -35px;
-      font-family: $font-base;
+      margin-bottom: -30px;
+      font-family: $font-alt;
       @include mobile-mini-plus {
         font-size: 1.5rem;
         margin-bottom: -50px;
@@ -209,16 +218,17 @@ textarea:focus::placeholder {
       @include tablet {
         margin-bottom: 3px;
       }
-      @include notebook {
-        margin-bottom: -200px;
-        font-size: 2rem;
-        width: 800px;
+
+
+      @include notebook_only_width {
+        font-size: 1.5rem;
+        width: 600px;
         height: 150px;
       }
       @include nbpp {
 
-        font-size: 3rem;
-        width: 1300px;
+        font-size: 2.5rem;
+        width: 1000px;
         height: 150px;
       }
       //@include max {
@@ -228,8 +238,11 @@ textarea:focus::placeholder {
       //}
 
       ul {
-        @include notebook {
+        display: flex;
+        flex-direction: column;
+        @include notebook_only_width {
           display: flex;
+          flex-direction: row;
           justify-content: center;
           align-items: flex-end;
           li {
@@ -238,6 +251,7 @@ textarea:focus::placeholder {
         }
 
         li {
+          padding: 2px 0;
 
           @include mobile-mini {
             padding: 2px 0;
@@ -268,9 +282,9 @@ textarea:focus::placeholder {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      font-size: 4vw;
+      font-size: 3vw;
       margin-left: 10px;
-      margin-bottom: -35px;
+      margin-bottom: -30px;
       @include mobile-mini-plus {
         font-size: 1.5rem;
         margin-bottom: -50px;
@@ -278,22 +292,21 @@ textarea:focus::placeholder {
       @include tablet {
         margin-bottom: -40px;
       }
-      @include notebook {
-        font-size: 4rem;
+      @include notebook_only_width {
+        font-size: 2rem;
       }
-      @include nbpp {
 
-      }
 
       .contact-info {
         display: flex;
+        align-items: center;
         color: rgba(255, 255, 255, 0.5);;
       }
 
 
       &-h2 {
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 3px;
       }
 
       p {
@@ -304,7 +317,10 @@ textarea:focus::placeholder {
           font-size: 1.3rem;
         }
         @include notebook {
-          font-size: 3rem;
+          font-size: 2rem;
+        }
+        @include nbpp {
+          font-size: 2.5rem;
         }
       }
     }
@@ -314,6 +330,7 @@ textarea:focus::placeholder {
       flex-direction: column;
       justify-content: flex-end;
       color: white;
+      margin-right: 10px;
       @include mobile-mini-plus {
         margin-left: 20px;
         margin-bottom: -50px;
@@ -321,15 +338,20 @@ textarea:focus::placeholder {
       @include tablet {
         margin-bottom: 3px;
       }
-
+      @include notebook_only_width {
+        margin-bottom: 50px;
+      }
+      @include nbpp {
+        margin-left: -20px;
+      }
       svg {
         font-size: 7vw;
         padding: 5px 0;
         @include tablet {
           font-size: 3rem;
         }
-        @include notebook {
-          font-size: 6rem;
+        @include notebook_only_width {
+          font-size: 4rem;
         }
       }
     }

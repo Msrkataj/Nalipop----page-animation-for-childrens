@@ -4,11 +4,24 @@
     height: 70vw;
     width: 100vw;
   }
+  @include tablet_minHeight {
+    height: 800px;
+  }
+
 }
 .header-central-image-about {
   @include max {
     top: -430px;
     width: 2700px;
+  }
+  @include tablet_minHeight {
+    left: 75vw;
+    top: -60px;
+    width: 1053px;
+  }
+  @include minHeight_nbpp {
+    left: 60vw;
+
   }
 }
 .header-text-about {
@@ -40,6 +53,10 @@
     left: 15vw;
     top: 18vw;
   }
+  @include minHeight_notebookBig {
+    left: 20vw;
+    top: 470px;
+  }
 
 
   h1 {
@@ -60,6 +77,9 @@
     }
     @include max {
       font-size: 15rem;
+    }
+    @include tablet_minHeight {
+      font-size: 10vh;
     }
   }
 }
@@ -90,8 +110,12 @@
   }
   @media (min-width: 5000px) {
     margin-top: calc(100% - (100vw - 1500px) / 0.8);
-
-
+  }
+  @include tablet_minHeight {
+    margin-top: 100px;
+  }
+  @include minHeight_notebookBig {
+    margin-top: 80px;
   }
 
   h1 {
@@ -115,6 +139,9 @@
     @include max {
       margin-top: 200px;
       font-size: 13rem;
+    }
+    @include tablet_minHeight {
+      font-size: 8vh;
     }
   }
   .about_me-content {

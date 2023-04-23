@@ -1,17 +1,17 @@
-.header .header-top .header-central-background-about {
+.header .header-top .header-central-background-offer {
   height: 100vw;
   @include nbpp {
     height: 70vw;
     width: 100vw;
   }
 }
-.header-central-image-about {
+.header-central-image-offer {
   @include max {
     top: -430px;
     width: 2700px;
   }
 }
-.header-text-about {
+.header-text-offer {
   position: absolute;
   top: 100vw;
   left: 88px;

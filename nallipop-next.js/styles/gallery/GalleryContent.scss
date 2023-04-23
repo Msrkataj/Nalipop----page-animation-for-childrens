@@ -102,16 +102,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include notebook {
-      width: 900px;
+    @include tablet {
+      width: 40%;
+    }
+    @include notebook_only_width {
+      width: 800px;
       border: 6px solid $color-grey;
-
+    }
+    @include notebook_minHeight {
+      width: 500px;
+      border: 6px solid $color-grey;
     }
   }
 
   img {
     width: 100%;
-    padding: 5px
+    padding: 5px;
+
   }
 }
 .container-gallery {

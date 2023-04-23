@@ -136,17 +136,22 @@
       display: flex;
       align-items: center;
     }
-
-    .carousel-prev,
-    .carousel-next {
-      font-size: 50px;
-      color: #8151e2;
-      position: absolute;
+  .carousel-prev,
+  .carousel-next {
+    font-size: 20px;
+    color: #8151e2;
+    position: absolute;
+    top: 50vw;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    @include mobile-mini-plus {
       top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
+      font-size: 40px;
     }
+  }
+
+
 
     .carousel-next {
       right: -5px;
@@ -193,7 +198,10 @@
 
       .description-3 {
         color: darksalmon; // Ustaw kolor dla trzeciego opisu
-        margin-top: 95px;
+        margin-top: 30px;
+        @include mobile {
+          margin-top: 95px;
+        }
       }
     }
   }

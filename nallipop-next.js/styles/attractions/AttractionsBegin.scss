@@ -1,4 +1,4 @@
-.header .header-top .header-central-background-about {
+.header .header-top .header-central-background-attractions {
   height: 200vw;
   @include mobile-mini-plus {
     height: 130vw;
@@ -33,7 +33,7 @@
   }
 }
 
-.header-text-about {
+.header-text-attractions {
   position: absolute;
   top: 100vw;
   left: 88px;
