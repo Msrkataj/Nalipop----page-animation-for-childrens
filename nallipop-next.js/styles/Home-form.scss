@@ -18,6 +18,9 @@
       margin-top: 100px;
       font-size: 7rem;
     }
+    @include tablet_minHeight {
+      font-size: 5rem;
+    }
   }
   p {
     margin-bottom: 20px;
@@ -31,6 +34,9 @@
     }
     @include nbpp {
       font-size: 3rem;
+    }
+    @include tablet_minHeight {
+      font-size: 2rem;
     }
   }
   .button{

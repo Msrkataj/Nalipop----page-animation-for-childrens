@@ -12,11 +12,17 @@
   @include notebook {
     //margin-top: 1500px;
   }
+  @include notebook_minHeight {
+    margin-bottom: 100px;
+  }
   @include notebook {
     .home_carousel_button {
       .button-classic {
         font-size: 3rem;
         border-radius: 30px;
+        @include notebook_minHeight {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -33,6 +39,9 @@
         font-size: 6rem;
         margin-bottom: 80px;
         color: darkcyan;
+      }
+      @include notebook_minHeight {
+        font-size: 4rem;
       }
     }
   }
@@ -51,6 +60,11 @@
     @include notebook {
       width: 1200px;
     }
+    @include notebook_minHeight {
+      height: 50vh;
+      margin-bottom: 0;
+    }
+
     .home_offer_square {
       display: flex;
       justify-content: center;
@@ -64,7 +78,10 @@
       margin: 10px;
       font-weight: bold;
       background-color: #8bacc0;
-
+      @include notebook_minHeight {
+        width: 20%;
+        height: 10vw;
+      }
       svg {
         font-size: 15vw;
         @include mobile {
@@ -72,6 +89,9 @@
         }
         @include notebook {
           font-size: 9rem;
+        }
+        @include notebook_minHeight {
+          font-size: 8vh;
         }
       }
 
@@ -84,6 +104,9 @@
         }
         @include notebook {
           font-size: 4rem;
+        }
+        @include notebook_minHeight {
+          font-size: 3vh;
         }
       }
 
@@ -103,6 +126,10 @@
       @include notebook {
         width: 400px;
         height: 450px;
+      }
+      @include notebook_minHeight {
+        width: 20vh;
+        height: 20vh;
       }
     }
 

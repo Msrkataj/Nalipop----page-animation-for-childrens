@@ -24,6 +24,9 @@
   @include notebook-big {
     font-size: 12rem;
   }
+  @include tablet_minHeight {
+    font-size: 8rem;
+  }
 }
 
 
@@ -57,6 +60,10 @@
       padding: 30px 20px;
       font-size: 4rem;
     }
+    @include tablet_minHeight {
+      margin-bottom: 50px;
+      font-size: 3rem;
+    }
   }
 
   .home_carousel-content-opinions {
@@ -70,11 +77,20 @@
     @include nbpp {
       max-width: 1500px;
     }
-
+    //@include minHeight {
+    //  max-width: 1000px;
+    //}
     .carousel {
       display: flex;
       justify-content: center;
       width: 100%;
+      //@include minHeight {
+      //  width: 50%;
+      //
+        .slide {
+          align-items: center;
+        }
+      //}
     }
 
     .carousel-prev,
@@ -106,7 +122,10 @@
         width: 100%;
         height: 100%;
       }
-
+      @include tablet_minHeight {
+        width: 100%;
+        height: 90%;
+      }
       .carousel-content-container {
         display: flex;
         flex-direction: column;
@@ -127,15 +146,15 @@
           max-width: 80vw;
           max-height: 500px;
         }
-        @include tablet {
-          width: 60vw;
-          max-width: 100vw;
-          max-height: 100vw;
-        }
         @include nbpp {
-          width: 80%;
+          width: 70%;
           max-width: 100%;
           max-height: 100%;
+        }
+        @include tablet_minHeight {
+          width: 70vh;
+          max-width: 100vw;
+          max-height: 100vw;
         }
       }
 
@@ -175,6 +194,16 @@
     margin-bottom: 0;
     margin-top: 0;
   }
+  @include tablet_minHeight {
+    height: 100vh;
+  }
+  //@include notebook_minHeight {
+  //  height: 60vh;
+  //}
+  //@include minHeight_notebookBig {
+  //  height: 50vw;
+  //}
+
 
   .home-back-overlay-opinions {
     position: absolute;
@@ -209,6 +238,8 @@
     transform: translate(-50%, -50%);
     width: 200%;
     z-index: 1;
+    object-fit: cover;
+
     @include mobile-mini {
       //top: 0;
       //left: 0;
@@ -230,6 +261,11 @@
     }
     @include notebook {
       width: calc(200% - (100vw - 450px) * 0.5);
+    }
+    @media (max-height: 1300px) {
+      height: 100vh;
+      max-height: 100vh;
+      object-position: center;
     }
     @media (min-width: 4500px) {
       width: 100%;
@@ -276,7 +312,9 @@
   width: 100%;
   max-height: 1500px;
   z-index: -5;
-
+  @include tablet_minHeight {
+    height: 80vh;
+  }
   .home-blonde-jpg-overlay {
     position: absolute;
     top: 0;
@@ -285,18 +323,18 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
+    @include tablet_minHeight {
+      height: 58vw;
+    }
+    @include minHeight_notebookBig {
+      height: 80vh;
+    }
   }
 
   .home-blonde-jpg {
     width: 100%;
     filter: blur(2px);
 
-    //@include mobile-mini {
-    //  top: 0;
-    //  left: 0;
-    //  transform: translateX(0%);
-    //  width: calc(200% - (100vw - 450px) * 2);
-    //}
   }
 
   .home-blonde-jpg-overlay-title {

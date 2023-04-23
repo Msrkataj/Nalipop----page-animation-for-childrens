@@ -9,6 +9,9 @@
       .button-classic {
         font-size: 3rem;
         border-radius: 30px;
+        @include notebook_minHeight {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -26,10 +29,17 @@
     margin-top: 315px;
     margin-bottom: 200px;
   }
+  @include notebook_minHeight {
+    height: 300px;
+    margin-bottom: 200px;
+  }
   @media (min-width: 1400px) {
     height: 50vw;
     @include nbpp {
       height: 1200px
+    }
+    @include minHeight_notebookBig {
+      height: 80vh;
     }
     .home_attractions {
       height: 100%;
@@ -49,6 +59,9 @@
       @include nbpp {
         width: 400px;
       }
+      @include notebook_minHeight {
+        width: 20vh;
+      }
 
       img {
         width: 100%;
@@ -61,19 +74,26 @@
         font-weight: bold;
         font-size: 3rem;
         position: relative;
+        @include notebook_minHeight {
+          padding-bottom: 100px;
+          font-size: 2rem;
+        }
       }
 
       .description-1 {
-        color: #FAD648; // Ustaw kolor dla pierwszego opisu
+        color: #FAD648;
       }
 
       .description-2 {
-        color: cornflowerblue; // Ustaw kolor dla drugiego opisu
+        color: cornflowerblue;
       }
 
       .description-3 {
         top: 16%;
-        color: darksalmon; // Ustaw kolor dla trzeciego opisu
+        color: darksalmon;
+        @include notebook_minHeight {
+          top: 10%;
+        }
       }
     }
 
@@ -87,9 +107,12 @@
     @include mobile-mini {
       font-size: 3rem;
       @include notebook {
-      font-size: 6rem;
-      margin-bottom: 80px;
+        font-size: 6rem;
+        margin-bottom: 80px;
         color: darkcyan;
+      }
+      @include notebook_minHeight {
+        font-size: 4rem;
       }
     }
   }
@@ -100,9 +123,8 @@
     @include mobile-mini {
       max-width: 75%;
     }
-    @include notebook {
+    @include notebook_only_width {
       display: none;
-
     }
 
     .carousel {

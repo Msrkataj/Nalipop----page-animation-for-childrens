@@ -160,6 +160,9 @@
       @include nbpp {
         font-size: 8rem;
       }
+      @include tablet_minHeight {
+        font-size: 4rem;
+      }
     }
 
     p {
@@ -181,6 +184,9 @@
       @include max {
         width: 1400px;
         font-size: 3rem;
+      }
+      @include tablet_minHeight {
+        font-size: 1.5rem;
       }
     }
 
@@ -212,6 +218,7 @@
       left: 30vw;
       margin-top: 350px;
     }
+
   }
 }
 
@@ -252,6 +259,9 @@
   @include max {
     height: 40vw;
     max-height: 2000px;
+  }
+  @media (max-height: 1300px) and (min-width: 1600px) {
+    height: 100%;
   }
 }
 .header-central-clouds {
@@ -304,6 +314,11 @@
     margin-top: 7vw;
     top: -400px;
   }
+  @include tablet_minHeight {
+    top: -5vw;
+    width: 100vw;
+    left: 65vw;
+  }
 }
 
 .nav {
@@ -337,7 +352,6 @@
 
           @include notebook-big {
             padding: 25px;
-
           }
         }
       }
@@ -360,8 +374,17 @@
   }
   @include nbpp {
   }
+  @include tablet_minHeight {
+    width: 550px;
+    font-size: 2rem;
+  }
+  @include minHeight_notebookBig {
+    width: 40vw;
+    font-size: 2rem;
+  }
   display: none;
 }
+
 
 .hamburger {
   right: 40px;

@@ -1,8 +1,9 @@
 .footer {
   position: relative;
-  margin-bottom: 70px;
   @include notebook {
-    margin-bottom: 190px;
+  }
+  @include tablet_minHeight {
+    margin-top: 190px;
   }
 }
 
@@ -28,6 +29,9 @@
     padding-bottom: 40px;
     padding-left: 20vw;
   }
+  @include tablet_minHeight {
+    margin-bottom: 150px;
+  }
   form {
     @include mobile-mini {
       display: flex;
@@ -44,7 +48,6 @@
     }
     @include notebook {
       font-size: 5rem;
-      color: white;
     }
   }
 
@@ -54,25 +57,45 @@
       border: 1px solid black;
       border-radius: 10px;
       height: 20px;
-      width: 150px;
+      width: 450px;
+      @include mobile-mini-minus {
+        height: 30px;
+        width: 200px;
+      }
       @include tablet {
         height: 30px;
-        width: 20vw;
+        width: 30vw;
       }
       @include notebook {
         height: 2vw;
         width: 20vw;
+      }
+      @include tablet_minHeight {
+        height: 30px;
+        width: 300px;
       }
     }
 
     textarea {
       border: 1px solid black;
       border-radius: 10px;
-      height: 70px;
-      width: 280px;
+      height: 80px;
+      width: 450px;
+      @include mobile-mini-minus {
+        height: 80px;
+        width: 200px;
+      }
+      @include tablet {
+        height: 100px;
+        width: 60vw;
+      }
       @include notebook {
         height: 5vw;
         width: 40vw;
+      }
+      @include tablet_minHeight {
+        height: 100px;
+        width: 800px;
       }
     }
   }
@@ -215,6 +238,7 @@ textarea:focus::placeholder {
         }
 
         li {
+
           @include mobile-mini {
             padding: 2px 0;
             @include mobile-mini-plus {
@@ -225,10 +249,14 @@ textarea:focus::placeholder {
             }
           }
         }
+        Link {
+
+        }
       }
     }
 
     .footer-menu-link {
+      cursor: pointer;
       color: white;
     }
 
@@ -306,8 +334,8 @@ textarea:focus::placeholder {
       }
     }
   }
-
-  a {
+  .footer-content-menu a {
+    z-index: 50;
     color: white;
     font-weight: bold;
     text-decoration: none;

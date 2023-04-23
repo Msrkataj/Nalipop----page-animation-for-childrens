@@ -28,11 +28,11 @@
     padding: 20px 60px;
     font-size: 2rem;
   }
-@include mobile-mini-minus {
-  @media (max-width: 350px) {
-    padding: 5px 5px;
+  @include notebook_minHeight {
+    padding: 10px 30px;
+    font-size: 1rem;
   }
-}  @include max {
+  @include max {
     padding: 30px 80px;
     font-size: 2.5rem;
     border-radius: 30px;

@@ -91,8 +91,8 @@ const Footer = ({close}) => {
                             <ul>
                                 {data.map((item, index) => (
                                     <li key={index}>
-                                        <Link href={item.href} passHref>
-                                            <span className={`footer-menu-link${item.name === 'OFERTA' || item.name === 'GALERIA' ? ' blue-link' : ''}`}>{item.name}</span>
+                                        <Link className={`footer-menu-link${item.name === 'OFERTA' || item.name === 'GALERIA' ? ' blue-link' : ''}`} href={item.href}>
+                                            {item.name}
                                         </Link>
                                     </li>
                                 ))}
