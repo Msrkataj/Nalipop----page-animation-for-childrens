@@ -7,7 +7,19 @@
   @include tablet_minHeight {
     height: 800px;
   }
-
+  @include minHeight_nbpp {
+    height: 35vw;
+  }
+}
+.header-central-clouds-about {
+  position: relative;
+  width: 100%;
+  left: 94vw;
+  top: -105vw;
+  transform: translateX(-50%);
+  z-index: -20;
+  overflow: hidden;
+  rotate: 315deg;
 }
 .header-central-image-about {
   @include max {
@@ -20,8 +32,13 @@
     width: 1053px;
   }
   @include minHeight_nbpp {
-    left: 60vw;
-
+    top: calc(200% - (100vw - 100px) * 0.75);
+  }
+  @include minHeight_max {
+    position: absolute;
+    width: 1500px;
+    left: 74vw;
+    top: calc((20vw - 1000px) * 0.8);
   }
 }
 .header-text-about {
@@ -57,6 +74,10 @@
     left: 20vw;
     top: 470px;
   }
+  @include minHeight_max {
+    left: 10vw;
+    top: 600px;
+  }
 
 
   h1 {
@@ -80,6 +101,9 @@
     }
     @include tablet_minHeight {
       font-size: 10vh;
+    }
+    @include minHeight_max {
+      font-size: 14vh;
     }
   }
 }
@@ -117,6 +141,9 @@
   @include minHeight_notebookBig {
     margin-top: 80px;
   }
+  @include minHeight_nbpp {
+    margin-top: -100px;
+  }
 
   h1 {
     font-size: 10vw;
@@ -152,10 +179,13 @@
     border-radius: 50px;
     z-index: 5;
     @include notebook {
-      width: 80vw;
+      width: 60vw;
     }
     @include max {
       width: 1800px;
+    }
+    @include tablet_minHeight {
+      width: 60vw;
     }
     .about_me-content-text {
       padding: 12px;
@@ -168,12 +198,12 @@
       @include tablet {
         font-size: 1.5rem;
       }
-      @include notebook {
+      @include notebook_only_width {
         padding: 30px;
-        font-size: 2rem;
+        font-size: 1rem;
       }
       @include nbpp {
-        font-size: 3rem;
+        font-size: 2rem;
       }
     }
   }

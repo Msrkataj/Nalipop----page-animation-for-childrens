@@ -31,16 +31,34 @@
     top: -330px;
     width: 2700px;
   }
+  @include tablet_minHeight {
+    top: -20px;
+  }
+  @include notebook_minHeight {
+    width: 1200px;
+    top: 1vw;
+    left: 60vw;
+  }
+  @include minHeight_nbpp {
+    left: 60vw;
+  }
 }
-
+.header-central-attractions {
+  @include tablet_minHeight {
+    padding: 460px 400px;
+  }
+  @include minHeight_max {
+    padding: 400px 400px;
+  }
+}
 .header-text-attractions {
   position: absolute;
   top: 100vw;
-  left: 88px;
+  left: 58px;
 
   @include mobile-mini-plus {
     top: 470px;
-    left: 33px;
+    left: 10px;
   }
 
   @include tablet {;
@@ -62,7 +80,10 @@
     left: 15vw;
     top: 18vw;
   }
-
+  @include notebook_minHeight {
+    width: 800px;
+    top: 20vw;
+  }
 
   h1 {
     color: #FFFFFF;
@@ -72,7 +93,7 @@
     @include mobile-mini-plus {
     }
     @include mobile-mini-minus {
-      font-size: 5rem
+      font-size: 12vw;
     }
     @include tablet {
       font-size: 8rem;
@@ -82,6 +103,9 @@
     }
     @include max {
       font-size: 13rem;
+    }
+    @include tablet_minHeight {
+    font-size: 7rem;
     }
   }
 }
@@ -123,23 +147,32 @@
     //margin-left: 400px;
     //margin-bottom: 200px;
   }
-  @media (min-width: 3700px) {
+  @media (min-width: 3700px) and (min-height: 1300px) {
     margin-top: calc(100% - (100vw - 500px) / 0.8);
     margin-left: -950px;
     margin-bottom: 700px;
   }
-  @media (min-width: 5000px) {
+  @media (min-width: 5000px) and (min-height: 1300px)  {
     margin-top: calc(100% - (100vw - 600px) / 0.85);
-
   }
-
+  @include tablet_minHeight {
+    margin-top: 10vw;
+  }
+  @include notebook_minHeight {
+    margin-top: 1vw;
+  }
+  @media (min-width: 3000px) and (max-height: 1300px)  {
+    margin-top: calc(100% - (100vw - 2000px) / 0.85);
+  }
   .attractions-content {
     margin-top: 50px;
     margin-bottom: 20px;
     width: 90%;
     height: 100%;
     z-index: 1;
-
+   @include notebook_minHeight {
+     margin-bottom: 150px;
+   }
     h1 {
       font-family: $font-base;
       font-weight: bold;
@@ -149,6 +182,9 @@
       margin: 20px 0;
       @include notebook {
         font-size: 5rem;
+      }
+      @include tablet_minHeight {
+        font-size: 3rem;
       }
     }
 
@@ -192,6 +228,9 @@
       @include nbpp {
         font-size: 3rem;
       }
+      @include tablet_minHeight {
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -222,5 +261,11 @@
     //top: 20vw;
     //left: 30vw;
     //margin-top: 350px;
+  }
+  @include tablet_minHeight {
+    margin-bottom: 150px;
+  }
+  @include minHeight_nbpp {
+    margin-bottom: -150px;
   }
 }

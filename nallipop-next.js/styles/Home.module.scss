@@ -236,7 +236,6 @@
   position: absolute;
   width: 100%;
   left: 0;
-  height: 85vw;
   z-index: -8;
   background: #8bacc0;
 
@@ -319,6 +318,11 @@
     width: 100vw;
     left: 65vw;
   }
+  @include minHeight_max {
+    top: -430px;
+    width: 100vw;
+    left: 65vw;
+  }
 }
 
 .nav {
@@ -378,7 +382,7 @@
     width: 550px;
     font-size: 2rem;
   }
-  @include minHeight_notebookBig {
+  @media (max-height: 1300px) and (min-width: 1600px) {
     width: 40vw;
     font-size: 2rem;
   }
