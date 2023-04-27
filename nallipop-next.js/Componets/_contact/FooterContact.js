@@ -44,7 +44,8 @@ const FooterContact = ({close}) => {
             </div>
             <div className="container">
                 <div className="footer footer-contact">
-                <div className="footer-contact footer-contact-page">
+                    <div className="footer-backgroundBlue"></div>
+                    <div className="footer-contact footer-contact-page">
                     <h1>MASZ PYTANIA!<br/> NAPISZ DO MNIE</h1>
                     <div className="footer-contact-form">
                         <form onSubmit={handleSubmit}>

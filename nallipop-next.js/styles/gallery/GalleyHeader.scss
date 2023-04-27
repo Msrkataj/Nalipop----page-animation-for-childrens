@@ -5,13 +5,31 @@
     height: 70vw;
     width: 100vw;
   }
+  @include tablet_minHeight {
+    height: 50vw;
+  }
 }
+
 .header-central-image-gallery {
   @include max {
     top: -430px;
     width: 2700px;
   }
+  @include tablet_minHeight {
+    top: -20px;
+  }
+  @include notebook_minHeight {
+    width: 1200px;
+    top: -7vw;
+    left: 65vw;
+  }
+  @include minHeight_nbpp {
+    top: 1vw;
+    width: 1400px;
+    left: 70vw;
+  }
 }
+
 .header-text-gallery {
   position: absolute;
   top: 100vw;
@@ -41,7 +59,13 @@
     left: 15vw;
     top: 18vw;
   }
-
+  @include tablet_minHeight {
+    top: 15vw;
+  }
+  @include notebook_minHeight {
+    width: 800px;
+    top: 20vw;
+  }
 
   h1 {
     color: #FFFFFF;

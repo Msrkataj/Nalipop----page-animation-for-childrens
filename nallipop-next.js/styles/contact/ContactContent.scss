@@ -30,6 +30,9 @@
   @media (min-width: 6000px) {
     margin-top: calc(100% - (100vw - 1800px) / 0.8);
   }
+  @include tablet_minHeight {
+   margin-top: 50px;
+  }
     .contact-phone, .contact-mail {
     display: flex;
     justify-content: center;
@@ -51,7 +54,7 @@
       @include tablet {
         font-size: 4rem;
       }
-      @include notebook {
+      @include notebook_only_width {
         font-size: 5rem;
       }
       @include notebook-big-plus {
@@ -60,12 +63,15 @@
       @include max {
         font-size: 9rem;
       }
+      @include tablet_minHeight {
+        font-size: 3rem;
+      }
     }
 
     @include tablet {
       font-size: 3rem;
     }
-    @include notebook {
+    @include notebook_only_width {
       font-size: 3.5rem;
     }
     @include notebook-big-plus {
@@ -74,6 +80,9 @@
     @include max {
       font-size: 6rem;
     }
+      @include tablet_minHeight {
+        font-size: 2rem;
+      }
   }
 
   .contact-phone {
@@ -91,7 +100,7 @@
       height: 100px;
       margin-bottom: 100px;
     }
-    @include notebook {
+    @include notebook_only_width {
       width: 800px;
       height: 130px;
       margin-left: 90px;
@@ -104,6 +113,10 @@
     @include max {
       width: 1500px;
       height: 220px;
+    }
+    @include tablet_minHeight {
+      width: 600px;
+      height: 80px;
     }
     svg {
       color: $color-pink;
@@ -123,7 +136,7 @@
       width: 800px;
       height: 100px;
     }
-    @include notebook {
+    @include notebook_only_width {
       width: 800px;
       height: 130px;
       margin-left: -100px;
@@ -132,6 +145,11 @@
     @include notebook-big-plus {
       width: 1200px;
       height: 180px;
+    }
+
+    @include tablet_minHeight {
+      width: 600px;
+      height: 80px;
     }
     @include max {
       width: 1500px;
@@ -148,6 +166,9 @@
     margin-top: 50px;
     background-image: linear-gradient(45deg, rgb(67, 95, 221) 0%, rgb(67, 95, 221) 22%, rgb(80, 115, 203) 22%, rgb(80, 115, 203) 48%, rgb(92, 135, 185) 48%, rgb(92, 135, 185) 73%, rgb(105, 156, 167) 73%, rgb(105, 156, 167) 77%, rgb(118, 176, 149) 77%, rgb(118, 176, 149) 87%, rgb(130, 196, 131) 87%, rgb(130, 196, 131) 89%, rgb(143, 216, 113) 89%, rgb(143, 216, 113) 100%), linear-gradient(90deg, rgb(67, 95, 221) 0%, rgb(67, 95, 221) 22%, rgb(80, 115, 203) 22%, rgb(80, 115, 203) 48%, rgb(92, 135, 185) 48%, rgb(92, 135, 185) 73%, rgb(105, 156, 167) 73%, rgb(105, 156, 167) 77%, rgb(118, 176, 149) 77%, rgb(118, 176, 149) 87%, rgb(130, 196, 131) 87%, rgb(130, 196, 131) 89%, rgb(143, 216, 113) 89%, rgb(143, 216, 113) 100%), linear-gradient(67.5deg, rgb(67, 95, 221) 0%, rgb(67, 95, 221) 22%, rgb(80, 115, 203) 22%, rgb(80, 115, 203) 48%, rgb(92, 135, 185) 48%, rgb(92, 135, 185) 73%, rgb(105, 156, 167) 73%, rgb(105, 156, 167) 77%, rgb(118, 176, 149) 77%, rgb(118, 176, 149) 87%, rgb(130, 196, 131) 87%, rgb(130, 196, 131) 89%, rgb(143, 216, 113) 89%, rgb(143, 216, 113) 100%), linear-gradient(157.5deg, rgb(67, 95, 221) 0%, rgb(67, 95, 221) 22%, rgb(80, 115, 203) 22%, rgb(80, 115, 203) 48%, rgb(92, 135, 185) 48%, rgb(92, 135, 185) 73%, rgb(105, 156, 167) 73%, rgb(105, 156, 167) 77%, rgb(118, 176, 149) 77%, rgb(118, 176, 149) 87%, rgb(130, 196, 131) 87%, rgb(130, 196, 131) 89%, rgb(143, 216, 113) 89%, rgb(143, 216, 113) 100%), linear-gradient(90deg, rgb(195, 223, 84), rgb(118, 43, 234));
     background-blend-mode: overlay, overlay, overlay, overlay, normal;
+    @include tablet_minHeight {
+      font-size: 1.2vw;
+    }
   }
 }
 
@@ -179,12 +200,12 @@
     padding: 20px 0;
     background-image: linear-gradient(to bottom, #e2cdff 0%, $color-main2 200px, rgba(0, 0, 0, 0) 80px);
   }
-  @include notebook {
+  @include notebook_only_width {
     background-image: linear-gradient(to bottom, #e2cdff 0%, $color-main2 280px, rgba(0, 0, 0, 0) 80px);
     margin: -80px 50px 150px 50px;
     height: 900px;
   }
-  @include nbpp {
+  @include notebook_only_width {
     border: 4px solid black;
     background-image: none;;
     flex-direction: row;
@@ -192,9 +213,18 @@
     width: 2000px;
     padding: 0 50px;
   }
-  @include nbpp {
-    margin: -300px 0 20px 0;
+  @include tablet_minHeight {
+    width: 800px;
+    height: 700px;
+  }
 
+  @include notebook_minHeight {
+    width: 1200px;
+    height: 700px;
+  }
+  @include minHeight_nbpp {
+    width: 1800px;
+    height: 700px;
   }
 
   h1 {
@@ -203,19 +233,26 @@
     @include mobile-mini-plus {
       font-size: 6vw;
     }
-    @include nbpp {
+
+
+    @include notebook_only_width {
       text-align: center;
       padding: 30px;
       background: rgba(222, 197, 255, 0.4);
       font-size: 6rem;
       color: black
     }
+    @include tablet_minHeight {
+      font-size: 4rem;
+    }
   }
 
   .footer-contact-form {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 90%;
+    width: 100%;
     padding: 0 50px;
     .button-footer {
       justify-content: center;
@@ -234,9 +271,13 @@
       @include mobile {
         width: 70vw;
       }
-      @include notebook {
+      @include notebook_only_width {
         height: 80px;
         width: 80vw;
+      }
+      @include tablet_minHeight {
+        width: 600px;
+        height: 50px;
       }
       @include nbpp {
         height: 80px;
@@ -248,7 +289,16 @@
       border-radius: 20px;
       height: 200px;
       width: 100%;
-      @include notebook {
+      @include notebook_only_width {
+        height: 300px;
+      }
+
+      @include tablet_minHeight {
+        width: 60%;
+        height: 30%;
+      }
+      @include tablet_minHeight {
+        width: 600px;
         height: 300px;
       }
       @include nbpp {
@@ -278,10 +328,13 @@
       font-size: 5rem;
       line-height: 80px;
     }
-    @include notebook {
+    @include notebook_only_width {
       line-height: 110px;
       font-size: 7rem;
       color: black;
+    }
+    @include notebook_only_width {
+      font-size: 5rem;
     }
   }
 }

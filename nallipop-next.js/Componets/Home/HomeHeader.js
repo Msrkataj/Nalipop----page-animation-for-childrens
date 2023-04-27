@@ -34,6 +34,30 @@ const HomeHeader = ({close}) => {
         },
     ];
 
+        const [visible, setVisible] = useState(false);
+
+        const handleScroll = () => {
+            if (window.pageYOffset > 100) {
+                setVisible(true);
+            } else {
+                setVisible(false);
+            }
+        };
+
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+            });
+        };
+
+        useEffect(() => {
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
 
 
     return (
@@ -82,7 +106,7 @@ const HomeHeader = ({close}) => {
                             </div>
                             <div className="header-central-image-container">
                                 <img className="header-central-image" src="/assets/background-home.png" alt="Opis obrazka" />
-                                <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
+                                <div className="header-central-clouds" />
                             </div>
                         </div>
                         <div className="header-central">
@@ -102,7 +126,12 @@ const HomeHeader = ({close}) => {
                             </div>
                         </div>
                         </div>
-                    </div>
+                    <button
+                        id="back-to-top"
+                        className={`back-to-top-button${visible ? ' visible' : ''}`}
+                        onClick={scrollToTop}
+                    >&#x25B2;</button>
+                </div>
         </>
     )
 }

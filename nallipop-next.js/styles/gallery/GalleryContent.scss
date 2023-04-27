@@ -47,7 +47,9 @@
     width: 800px;
     padding: 40px;
   }
-
+  @include tablet_minHeight {
+    width: 30vw;
+  }
   &:hover {
     z-index: 1;
   }
@@ -60,6 +62,9 @@
 
   &:hover {
     transform: scale(1.5);
+    @include tablet_minHeight {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -87,6 +92,10 @@
       font-size: 8rem;
       line-height: 8rem;
     }
+    @include tablet_minHeight {
+      font-size: 6rem;
+      line-height: 6rem;
+    }
   }
 }
 
@@ -113,6 +122,7 @@
       width: 500px;
       border: 6px solid $color-grey;
     }
+
   }
 
   img {
@@ -171,6 +181,9 @@
     @include nbpp {
       margin-top: 100px;
       font-size: 7rem;
+    }
+    @include tablet_minHeight {
+      font-size: 4rem;
     }
   }
 

@@ -11,6 +11,7 @@
     width: 2700px;
   }
 }
+
 .header-text-offer {
   position: absolute;
   top: 100vw;
@@ -63,9 +64,11 @@
     }
   }
 }
+
 .color-line-offer {
   top: 1500px;
 }
+
 .offer {
   width: 100%;
   margin-top: 140vw;
@@ -79,7 +82,7 @@
   @include tablet {
     margin-top: 50vw;
   }
-  @include notebook {
+  @include notebook_only_width {
     margin-top: 60vw;
   }
   @include nbpp {
@@ -97,7 +100,9 @@
   }
   @media (min-width: 5000px) {
     margin-top: calc(100% - (100vw - 600px) / 0.85);
-
+  }
+  @include tablet_minHeight {
+    margin-top: 2vw;
   }
 
   .offer-content {
@@ -108,12 +113,22 @@
     background-color: #8bacc0;
     border-radius: 50px;
     z-index: 1;
-    @include notebook {
+    @include notebook_only_width {
       width: 80vw;
     }
     @include max {
       width: 1800px;
     }
+    @include tablet_minHeight {
+      width: 50%;
+    }
+    @include tablet_minHeight {
+      width: 50%;
+    }
+    @include minHeight_notebookBig {
+      margin-top: -10vw;
+    }
+
     .offer-content-text {
       padding: 12px;
       font-size: 0.7rem;
@@ -134,12 +149,16 @@
         font-size: 1.5rem;
         line-height: 70px;
       }
-      @include notebook {
+      @include notebook_only_width {
         padding: 30px;
         font-size: 2rem;
       }
       @include nbpp {
         font-size: 3rem;
+      }
+      @include tablet_minHeight {
+        line-height: 50px;
+        font-size: 1.5vw;
       }
     }
   }

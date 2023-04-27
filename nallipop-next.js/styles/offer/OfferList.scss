@@ -12,7 +12,7 @@
     width: 100%;
     max-width: 2000px;
     margin: 0 auto;
-    @include nbpp {
+    @include notebook_only_width {
       flex-direction: row;
       justify-content: center;
     }
@@ -35,6 +35,9 @@
     @include max {
       font-size: 9rem;
     }
+    @include notebook_minHeight {
+      font-size: 3rem;
+    }
   }
 
   .offer-list-section {
@@ -44,6 +47,9 @@
     justify-content: center;
     width: 100%;
     height: 65vw;
+    @include notebook_minHeight {
+      height: 40vw;
+    }
     @include nbpp {
       height: 1000px;
     }
@@ -52,6 +58,16 @@
       width: 60%;
       border-radius: 60px;
       margin: 30px;
+      @include notebook_only_width {
+        border-radius: 100px;
+        margin: 75px;
+        width: 80%;
+      }
+      @include notebook_minHeight {
+        border-radius: 100px;
+        margin: 75px;
+        width: 60%;
+      }
       @include nbpp {
         border-radius: 100px;
         margin: 75px;
@@ -67,9 +83,11 @@
       @include tablet {
         font-size: 3vw;
       }
-
       @include nbpp {
         font-size: 4rem;
+      }
+      @include notebook_minHeight {
+        font-size: 2rem;
       }
     }
   }
@@ -79,8 +97,11 @@
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
-  @include nbpp {
+  @include notebook_only_width {
     background-color: rgba(0, 0, 0, 0.0);
+  }
+  @include notebook_minHeight {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .offer-list-section-header {
@@ -92,13 +113,17 @@
   .offer-list-section-header {
     color: $color-blue;
   }
+
+  @include notebook_minHeight {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 .offer-list-christening {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
-  @include nbpp {
+  @include notebook_only_width {
     background-color: rgba(0, 0, 0, 0.0);
   }
 
@@ -119,6 +144,12 @@
 
     .offer-list-section-photo {
       width: 40vw;
+      @include notebook_only_width {
+        width: 400px;
+      }
+      @include notebook_minHeight {
+        width: 300px
+      }
       @include nbpp {
         width: 600px;
       }
@@ -126,6 +157,8 @@
         border-radius: 100px;
         width: 600px
       }
+
+
     }
   }
 }
@@ -134,14 +167,34 @@
   .offer-list-wedding {
     margin: 40px 0;
     background-color: rgba(0, 0, 0, 0.2);
-    height: 80vw;
+    height: 90vw;
+    @include notebook_minHeight {
+      margin: 0 0;
+      height: 45vw;
+    }
+    @include minHeight_notebookBig {
+      margin: 0 0;
+      height: 40vw;
+    }
     @include nbpp {
       background-color: rgba(0, 0, 0, 0.0);
       height: auto;
     }
 
+    @include notebook_minHeight {
+      background-color: rgba(0, 0, 0, 0.2);
+      height: 40vw;
+    }
+    @include minHeight_nbpp {
+      background-color: rgba(0, 0, 0, 0.2);
+      height: 55vw;
+    }
+
     .offer-list-section-photo {
       width: 40vw;
+      @include notebook_minHeight {
+        width: 300px;
+      }
       @include nbpp {
         width: 600px;
       }
@@ -171,13 +224,18 @@
     @include mobile {
       height: 200px;
     }
-    @include notebook {
+    @include notebook_only_width {
       margin: 150px 0;
       width: 1200px;
       height: 300px;
     }
     @include nbpp {
       width: 1800px;
+      height: 300px;
+    }
+    @include notebook_minHeight {
+      margin: 150px 0;
+      width: 1000px;
       height: 300px;
     }
 
@@ -197,12 +255,15 @@
         padding: 60px;
         font-size: 6vw;
       }
-      @include notebook {
+      @include notebook_only_width {
         font-size: 7rem;
         padding: 90px;
       }
       @include nbpp {
         font-size: 9rem;
+      }
+      @include tablet_minHeight {
+        font-size: 5rem;
       }
     }
   }
@@ -219,8 +280,15 @@
     @include tablet {
       width: 900px;
     }
-    @include notebook {
+    @include notebook_only_width {
       width: 1100px;
+    }
+    @include tablet_minHeight {
+      width: 600px;
+    }
+    @include minHeight_nbpp {
+      width: 600px;
+      height: 100%;
     }
     h3 {
       text-align: center;
@@ -235,8 +303,11 @@
         font-size: 5vw;
         padding: 80px 5px;
       }
-      @include notebook {
+      @include notebook_only_width {
         font-size: 5rem;
+      }
+      @include tablet_minHeight {
+        font-size: 2rem;
       }
     }
 
@@ -258,6 +329,14 @@
           @include tablet {
             font-size: 3rem;
           }
+          @include tablet_minHeight {
+            font-size: 1.5rem;
+            line-height: 30px;
+          }
+          @include minHeight_nbpp {
+            font-size: 2rem;
+            line-height: 50px;
+          }
           &::before {
             content: "•";
             position: absolute;
@@ -267,9 +346,18 @@
             @include mobile {
               font-size: 3rem;
               line-height: 70px;
-              @include notebook {
+              @include notebook_only_width {
                 left: 80px;
                 font-size: 5rem;
+              }
+              @include tablet_minHeight {
+                left: 10px;
+                font-size: 3rem;
+                line-height: 30px;
+              }
+              @include minHeight_nbpp {
+                font-size: 2rem;
+                line-height: 50px;
               }
             }
           }

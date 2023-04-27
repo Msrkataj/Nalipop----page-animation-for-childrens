@@ -7,6 +7,7 @@
     margin-top: 190px;
   }
 }
+
 .footer-backgroundBlue {
   position: absolute;
   width: 100vw;
@@ -15,28 +16,37 @@
   z-index: -1;
   background: #8bacc0;
 }
+
+.footer-backgroundBlue-offer {
+  @include tablet_minHeight {
+    height: 100%;
+    top: -18vw;
+  }
+}
+
 .footer-contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 60px;
+  align-items: center;
   @include mobile-mini-plus {
     align-items: center;
   }
   @include tablet {
     align-items: flex-start;
-    padding-left: 20px;
+    //padding-left: 20px;
   }
-  @include notebook {
+  @include notebook_only_width {
   }
   @media (min-width: 2600px) {
   }
-  @media (min-width: 3100px){
-    padding-bottom: 40px;
+  @media (min-width: 3100px) {
+    //padding-bottom: 40px;
   }
   @include tablet_minHeight {
-    margin-bottom: 150px;
+    padding: 0;
   }
+
   form {
     @include mobile-mini {
       display: flex;
@@ -48,6 +58,7 @@
     font-size: 6vw;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center;
     @include tablet {
       font-size: 3rem;
     }
@@ -57,51 +68,96 @@
   }
 
   form {
+    display: flex;
+    flex-direction: column;
+
     input {
       margin-bottom: 25px;
       border: 1px solid black;
       border-radius: 10px;
+      font-size: 0.5rem;
       height: 30px;
       width: 200px;
       @include mobile-mini-minus {
         height: 30px;
         width: 200px;
       }
+      @include mobile-mini {
+        font-size: 1rem;
+      }
       @include tablet {
         height: 30px;
         width: 30vw;
       }
-      @include notebook {
-        height: 100px;
-        width: 1200px;
+      @include notebook_only_width {
+        height: 50px;
+        width: 1000px;
+        font-size: 1.5rem;
       }
       @include tablet_minHeight {
         height: 30px;
         width: 800px;
+      }
+
+      @include max {
+        font-size: 2rem;
+        height: 50px;
+        width: 1200px;
       }
     }
 
     textarea {
       border: 1px solid black;
       border-radius: 10px;
+      font-size: 0.5rem;
       height: 150px;
       width: 300px;
+      resize: inherit;
       @include mobile-mini-minus {
         height: 100px;
         width: 200px;
+      }
+      @include mobile-mini {
+        font-size: 1rem;
       }
       @include tablet {
         height: 100px;
         width: 60vw;
       }
-      @include notebook {
+      @include notebook_only_width {
+        height: 200px;
+        width: 1000px;
+        font-size: 1.5rem;
+      }
+      @include max {
+        font-size: 2rem;
         height: 400px;
         width: 1200px;
       }
-      //@include tablet_minHeight {
-      //  height: 200px;
-      //  width: 800px;
-      //}
+
+      &::-webkit-scrollbar {
+        width: 15px;
+        background-color: transparent;
+      }
+
+      // Stylowanie tła paska przewijania
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      // Stylowanie przesuwnego elementu paska przewijania
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      // Zmiana koloru przesuwnego elementu paska przewijania na hover
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: $color-main2;
+      }
     }
   }
 
@@ -126,12 +182,15 @@
 input::placeholder,
 textarea::placeholder {
   color: #999999;
-  font-size: 11px;
+  font-size: 0.8rem;
   font-style: italic;
   opacity: 1;
   padding-top: 5px;
   @include notebook {
     font-size: 1.5rem;
+  }
+  @include max {
+    font-size: 2rem;
   }
 }
 
@@ -187,6 +246,7 @@ textarea:focus::placeholder {
       align-items: flex-end;
       margin-bottom: 100px;
     }
+
     &-logo {
       position: relative;
       width: 30%;
@@ -263,6 +323,7 @@ textarea:focus::placeholder {
             }
           }
         }
+
         Link {
 
         }
@@ -344,6 +405,7 @@ textarea:focus::placeholder {
       @include nbpp {
         margin-left: -20px;
       }
+
       svg {
         font-size: 7vw;
         padding: 5px 0;
@@ -356,6 +418,7 @@ textarea:focus::placeholder {
       }
     }
   }
+
   .footer-content-menu a {
     z-index: 50;
     color: white;

@@ -15,12 +15,15 @@
     @include mobile {
       font-size: 4rem;
     }
-    @include notebook {
+    @include notebook_only_width {
       font-size: 6rem;
       margin-bottom: 80px;
     }
     @include nbpp {
       font-size: 9rem;
+    }
+    @include tablet_minHeight {
+      font-size: 4rem;
     }
   }
 
@@ -127,13 +130,16 @@
       position: relative; // Dodaj tę linijkę
     }
 
-    @include notebook {
-      font-size: 5rem;
+    @include notebook_only_width {
+      font-size: 4rem;
       margin-bottom: 300px;
     }
     @include max {
-      font-size: 6rem;
+      font-size: 5rem;
       margin-bottom: 500px;
+    }
+    @include tablet_minHeight {
+      margin-bottom: -100px;
     }
   }
 }

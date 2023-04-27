@@ -11,6 +11,7 @@
     height: 35vw;
   }
 }
+
 .header-central-clouds-about {
   position: relative;
   width: 100%;
@@ -21,11 +22,8 @@
   overflow: hidden;
   rotate: 315deg;
 }
+
 .header-central-image-about {
-  @include max {
-    top: -430px;
-    width: 2700px;
-  }
   @include tablet_minHeight {
     left: 75vw;
     top: -60px;
@@ -40,12 +38,23 @@
     left: 74vw;
     top: calc((20vw - 1000px) * 0.8);
   }
+  @include max {
+    top: -500px;
+    width: 2700px;
+  }
+  @media (min-width: 5000px) {
+    top: -700px;
+
+  }
 }
+
 .header-text-about {
   position: absolute;
   top: 100vw;
   left: 88px;
-
+  @include mobile-mini-minus {
+    left: 20px;
+  }
   @include mobile-mini-plus {
     top: 470px;
     left: 33px;
@@ -88,7 +97,8 @@
     @include mobile-mini-plus {
     }
     @include mobile-mini-minus {
-      font-size: 6rem
+      left: 10px;
+      font-size: 4rem
     }
     @include tablet {
       font-size: 10rem;
@@ -125,15 +135,16 @@
     margin-top: 60vw;
   }
   @include nbpp {
-       margin-top: 40vw;
+    margin-top: 40vw;
   }
   @include max {
-    margin-top: calc(100% - (100vw - 1500px) / 0.75);
+    margin-top: calc(100% - (100vw - 1800px) / 0.75);
     margin-left: 400px;
-    margin-bottom: 200px;
+    margin-bottom: 400px;
   }
   @media (min-width: 5000px) {
-    margin-top: calc(100% - (100vw - 1500px) / 0.8);
+    margin-top: calc(100% - (100vw - 2000px) / 0.8);
+    margin-bottom: 600px;
   }
   @include tablet_minHeight {
     margin-top: 100px;
@@ -171,6 +182,7 @@
       font-size: 8vh;
     }
   }
+
   .about_me-content {
     margin: 50px 0;
     width: 90%;
@@ -187,6 +199,7 @@
     @include tablet_minHeight {
       width: 60vw;
     }
+
     .about_me-content-text {
       padding: 12px;
       font-size: 1rem;

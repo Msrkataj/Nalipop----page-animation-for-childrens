@@ -34,7 +34,19 @@ const HomeHeader = ({close}) => {
         },
     ];
 
+    const backToTopButton = document.getElementById("back-to-top");
 
+    window.addEventListener("scroll", () => {
+        window.pageYOffset > 100 ? backToTopButton.classList.add("show") : backToTopButton.classList.remove("none");
+    });
+
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    });
 
     return (
         <>
@@ -91,6 +103,7 @@ const HomeHeader = ({close}) => {
                         </div>
                     </div>
                 </div>
+                <button id="back-to-top" title="Do góry">&#x25B2;</button>
             </div>
         </>
     )

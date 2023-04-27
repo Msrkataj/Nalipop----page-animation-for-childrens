@@ -85,16 +85,6 @@ const OfferMap = ({ close }) => {
                         alt="map"
                         onClick={handleImageClick}
                     />
-                    <div className="offer_map_description">
-                        <div className="background"></div>
-                        <h2>
-                            MASZ PYTANIA DO LOKALIZACJI?
-                            <br />
-                            NAPISZ!
-                            <br />
-                            NA PEWNO POMOŻEMY
-                        </h2>
-                    </div>
                 </section>
             </div>
         </>
