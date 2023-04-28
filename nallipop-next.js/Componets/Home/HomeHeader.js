@@ -130,7 +130,8 @@ const HomeHeader = ({close}) => {
                         id="back-to-top"
                         className={`back-to-top-button${visible ? ' visible' : ''}`}
                         onClick={scrollToTop}
-                    >&#x25B2;</button>
+                    >&#x25B2;
+                    </button>
                 </div>
         </>
     )

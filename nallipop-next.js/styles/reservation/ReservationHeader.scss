@@ -1,81 +1,97 @@
 .header .header-top .header-central-background-reservation {
   height: 100vw;
+
   @include mobile-mini-plus {
     height: 110vw;
-}
+  }
+  @include tablet {
+    height: 70vw;
+  }
+  @include notebook_only_width {
+    top: -400px;
+  }
+  @include nbpp {
+    height: 1000px;
+  }
   @include nbpp {
     height: 70vw;
     width: 100vw;
+  }
 }
-}
+
 .header-central-image-reservation {
   top: -220px;
   @include mobile-mini {
     top: -400px;
-}
+  }
   @include mobile-mini-plus {
     top: -200px;
-}
+  }
   @include mobile {
     top: -250px;
-}
-  @include notebook {
+  }
+  @include notebook_only_width {
     top: -400px;
-}
+  }
   @include max {
     top: -430px;
     width: 2700px;
+  }
 }
+.header-central-reservation {
+  @include notebook_only_width {
+    padding-top: 80px;
+  }
 }
 .header-text-reservation {
   position: absolute;
-  top: 100vw;
-  left: 88px;
-
+  top: 40vw;
+  left: 0;
   @include mobile-mini-plus {
-    top: 470px;
+    top: 350px;
     left: 33px;
-}
+  }
 
   @include tablet {;
-    left: 20vw;
-}
-  @include notebook {
-
-}
+    left: 10vw;
+  }
+  @include notebook_only_width {
+    left: 15vw;
+    top: 25vw;
+  }
   @include notebook-big-plus {
-    left: 11vw;
-    top: 50vw;
-}
-  @include nbpp {
     left: 20vw;
     top: 25vw;
-}
+  }
+  @include nbpp {
+    left: 10vw;
+    top: 500px;
+  }
   @include max {
     width: 1800px;
     left: 15vw;
     top: 18vw;
-}
+  }
 
 
   h1 {
     color: #FFFFFF;
-    font-size: 15vw;
+    font-size: 13vw;
     margin-bottom: 30px;
     font-weight: normal;
     @include mobile-mini-plus {
-  }
+    }
     @include mobile-mini-minus {
       font-size: 13vw
-  }
+    }
     @include tablet {
-      font-size: 10rem;
-  }
+      font-size: 5rem;
+    }
     @include nbpp {
-      font-size: 12rem;
-  }
+      font-size: 8rem;
+    }
     @include max {
       font-size: 15rem;
+    }
   }
-}
 }

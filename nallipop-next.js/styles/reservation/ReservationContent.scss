@@ -1,0 +1,193 @@
+.reservation {
+  @include nbpp {
+    margin-top: 20vw;
+    margin-bottom: 300px;
+  }
+
+  .reservation-personal_data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .reservation-title {
+      padding: 13vw 4vw;
+      border-radius: 30%;
+      font-size: 9vw;
+      line-height: 14vw;
+      text-align: center;
+      margin: 50px;
+      @include mobile-mini {
+        font-size: 2rem;
+        line-height: 3rem;
+        padding: 30px 20px;
+        margin: 85px;
+      }
+      @include mobile-mini-plus {
+        font-size: 2rem;
+        line-height: 3rem;
+        padding: 40px 20px;
+        margin: 50px 200px;
+      }
+      @include nbpp {
+        font-size: 3rem;
+        line-height: 3rem;
+        padding: 120px 100px;
+        margin: 200px 200px;
+      }
+      @include notebook_minHeight {
+        //font-size: 2rem;
+        //line-height: 3rem;
+        //padding: 40px 20px;
+        margin: 100px 200px;
+      }
+    }
+
+    .reservation-data-form {
+      form {
+        h2 {
+          font-size: 4vw;
+          font-weight: bold;
+          margin-bottom: 20px;
+          @include mobile {
+            font-size: 1.5rem;
+          }
+          @include nbpp {
+            font-size: 3rem;
+          }
+        }
+
+        input {
+          margin-bottom: 20px;
+          border-radius: 50px;
+          height: 30px;
+          width: 80vw;
+          @include mobile {
+            width: 400px;
+          }
+          @include nbpp {
+            height: 50px;
+            width: 600px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reservation-data-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservation-personal_data-title {
+  background-color: rgba(241, 231, 255, 0.7);
+}
+
+.reservation-personal_data-form {
+  @include notebook_only_width {
+    flex-direction: row;
+  }
+
+  input {
+    border: 2px solid $color-main2;
+  }
+}
+
+.reservation-about_party-title {
+  background-color: rgba(170, 222, 242, 0.7);
+}
+
+.reservation-about_party-form {
+  @include notebook_only_width {
+    flex-direction: row-reverse;
+  }
+
+  input {
+    border: 2px solid $color-lightBlue;
+  }
+}
+
+.reservation-about_animations-title {
+  background-color: rgba(198, 255, 221);
+}
+
+.reservation-about_animations-form {
+  @include notebook_only_width {
+    flex-direction: row;
+  }
+
+  input {
+    border: 2px solid $color-green;
+  }
+}
+
+.reservation {
+  .reservation-personal_data {
+    .reservation-about_animations {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 150px;
+      width: 80vw;
+      height: 80vw;
+      @include mobile {
+        width: 400px;
+        height: 400px;
+      }
+      @include notebook_only_width {
+        margin-right: 210px;
+      }
+      @include nbpp {
+        margin-right: 20px;
+        width: 800px;
+        height: 800px;
+      }
+      //@include notebook_minHeight {
+      //  margin-right: 210px;
+      //  width: 400px;
+      //  height: 400px;
+      //}
+      .reservation-about_animations-border {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $color-grey;
+        width: 90%;
+        height: 90%;
+
+        .reservation-about_animations-background {
+          background-image: url('/assets/blonde-girl.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 95%;
+          height: 95%;
+          z-index: -1;
+        }
+      }
+
+      .reservation-about_animations-title {
+        position: absolute;
+        margin-top: 100%;
+        @include mobile {
+          margin-top: 330px;
+        }
+        @include notebook_only_width {
+          margin-top: 330px;
+        }
+        @include nbpp {
+          margin-top: 900px;
+
+        }
+      }
+    }
+  }
+}
+
+.button-reservation {
+  button {
+    background: linear-gradient(150deg, $color-lightBlue 0%, #a079dd 74%);
+    border: none;
+  }
+}

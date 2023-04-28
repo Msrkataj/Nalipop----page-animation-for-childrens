@@ -34,19 +34,26 @@ const GalleryHeader = ({close}) => {
         },
     ];
 
-    const backToTopButton = document.getElementById("back-to-top");
+    const [visible, setVisible] = useState(false);
 
-    window.addEventListener("scroll", () => {
-        window.pageYOffset > 100 ? backToTopButton.classList.add("show") : backToTopButton.classList.remove("none");
-    });
+    const handleScroll = () => {
+        window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
+    };
 
-    backToTopButton.addEventListener("click", () => {
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth"
+            behavior: 'smooth',
         });
-    });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <>
@@ -102,7 +109,12 @@ const GalleryHeader = ({close}) => {
                         </div>
                     </div>
                 </div>
-                <button id="back-to-top" title="Do góry">&#x25B2;</button>
+                <button
+                    id="back-to-top"
+                    className={`back-to-top-button${visible ? ' visible' : ''}`}
+                    onClick={scrollToTop}
+                >&#x25B2;
+                </button>
             </div>
         </>
     )

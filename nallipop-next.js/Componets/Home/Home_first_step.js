@@ -36,7 +36,7 @@ const HomeFirstStep = ({close}) => {
         <>
             <div className="page">
                 <div className="color-line">
-                    <img className="home-about_me-logo" src="/assets/line2.png" alt="Opis obrazka" />
+                    <div   />
                 </div>
                 <div className="container">
                      <div className="home-about_me">

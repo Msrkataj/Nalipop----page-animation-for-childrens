@@ -97,11 +97,11 @@
       font-size: 6vw;
       color: #8151e2;
       position: absolute;
-      top: 100%;
+      top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
-      @include mobile-mini {
+      @include mobile-mini-minus {
         top: 50%;
       }
       @include nbpp {

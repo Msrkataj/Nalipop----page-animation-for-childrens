@@ -5,7 +5,6 @@ import {Link as Scroll} from "react-scroll"
 
 const HomeHeader = ({close}) => {
     const [active, setActive] = useState(false);
-    const [user, setUser] = useState({});
 
     const data = [
         {
@@ -34,25 +33,31 @@ const HomeHeader = ({close}) => {
         },
     ];
 
-    const backToTopButton = document.getElementById("back-to-top");
+    const [visible, setVisible] = useState(false);
 
-    window.addEventListener("scroll", () => {
-        window.pageYOffset > 100 ? backToTopButton.classList.add("show") : backToTopButton.classList.remove("none");
-    });
+    const handleScroll = () => {
+        window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
+    };
 
-    backToTopButton.addEventListener("click", () => {
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth"
+            behavior: 'smooth',
         });
-    });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <>
             <div className="container">
                 <div id="#" className="header">
-                    {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                     <div className="header-top">
                         <div className="header-central-background header-central-background-reservation"></div>
                         <img className="header-image" src="/assets/top.png" alt="top" />
@@ -96,13 +101,18 @@ const HomeHeader = ({close}) => {
                             <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
                         </div>
                     </div>
-                    <div className="header-central">
+                    <div className="header-central header-central-reservation">
                         <div className="header-text-reservation">
                             <h1>FORMULARZ KONTAKTOWY</h1>
                         </div>
                     </div>
                 </div>
-                <button id="back-to-top" title="Do góry">&#x25B2;</button>
+                <button
+                    id="back-to-top"
+                    className={`back-to-top-button${visible ? ' visible' : ''}`}
+                    onClick={scrollToTop}
+                >&#x25B2;
+                </button>
             </div>
         </>
     )

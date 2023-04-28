@@ -34,19 +34,30 @@ const HomeHeader = ({close}) => {
         },
     ];
 
-    const backToTopButton = document.getElementById("back-to-top");
+    const [visible, setVisible] = useState(false);
 
-    window.addEventListener("scroll", () => {
-        window.pageYOffset > 100 ? backToTopButton.classList.add("show") : backToTopButton.classList.remove("none");
-    });
+    const handleScroll = () => {
+        if (window.pageYOffset > 100) {
+            setVisible(true);
+        } else {
+            setVisible(false);
+        }
+    };
 
-    backToTopButton.addEventListener("click", () => {
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth"
+            behavior: 'smooth',
         });
-    });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <>
@@ -55,10 +66,10 @@ const HomeHeader = ({close}) => {
                     {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                     <div className="header-top">
                         <div className="header-central-background header-central-background-about"></div>
-                        <img className="header-image" src="/assets/top.png" alt="top" />
+                        <img className="header-image" src="/assets/top.png" alt="top"/>
                         <div className="header-top-content">
                             <Link href="/">
-                                <img className="header-logo" src="/assets/logo.png" alt="Opis obrazka" />
+                                <img className="header-logo" src="/assets/logo.png" alt="Opis obrazka"/>
                             </Link>
                             <div className="menu">
                             </div>
@@ -66,7 +77,7 @@ const HomeHeader = ({close}) => {
                                 <div className={active ? "activeHamburger" : "hamburger"}/>
                             </div>
                             <div className="nav">
-                                <ul style={{ display: close ? 'none' : null }}>
+                                <ul style={{display: close ? 'none' : null}}>
                                     <ul>
                                         {data.slice(0, -1).map((item, index) => (
                                             <li key={index}>
@@ -77,7 +88,7 @@ const HomeHeader = ({close}) => {
                                         ))}
                                     </ul>
                                 </ul>
-                                <ul style={{ display: !close ? 'none' : null }}>
+                                <ul style={{display: !close ? 'none' : null}}>
                                 </ul>
                             </div>
                             <div className={active ? "activeSidenav " : "sidenav"}>
@@ -93,8 +104,10 @@ const HomeHeader = ({close}) => {
                             </div>
                         </div>
                         <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-attractions" src="/assets/attractions.png" alt="attractions" />
-                            <img className="header-central-clouds header-central-clouds-attractions" src="/assets/clouds.png" alt="Opis obrazka" />
+                            <img className="header-central-image header-central-image-attractions"
+                                 src="/assets/attractions.png" alt="attractions"/>
+                            <img className="header-central-clouds header-central-clouds-attractions"
+                                 src="/assets/clouds.png" alt="Opis obrazka"/>
                         </div>
                     </div>
                     <div className="header-central header-central-attractions">
@@ -103,7 +116,12 @@ const HomeHeader = ({close}) => {
                         </div>
                     </div>
                 </div>
-                <button id="back-to-top" title="Do góry">&#x25B2;</button>
+                <button
+                    id="back-to-top"
+                    className={`back-to-top-button${visible ? ' visible' : ''}`}
+                    onClick={scrollToTop}
+                >&#x25B2;
+                </button>
             </div>
         </>
     )

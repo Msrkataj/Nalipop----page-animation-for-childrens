@@ -44,7 +44,7 @@ const OfferBegin = () => {
                         </div>
                         <div className="button button-header button-offer">
                             {data.map((item) => {
-                                if (item.name === "OFERTA") {
+                                if (item.name === "FORMULARZ") {
                                     return (
                                         <Link key={item.href} href={item.href} className="button-classic">FORMULARZ KONTAKTOWY
                                         </Link>

@@ -37,11 +37,7 @@ const HomeHeader = ({close}) => {
     const [visible, setVisible] = useState(false);
 
     const handleScroll = () => {
-        if (window.pageYOffset > 100) {
-            setVisible(true);
-        } else {
-            setVisible(false);
-        }
+        window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
     };
 
     const scrollToTop = () => {
@@ -120,7 +116,8 @@ const HomeHeader = ({close}) => {
                     id="back-to-top"
                     className={`back-to-top-button${visible ? ' visible' : ''}`}
                     onClick={scrollToTop}
-                >&#x25B2;</button>
+                >&#x25B2;
+                </button>
             </div>
         </>
     )
