@@ -1,4 +1,5 @@
 .reservation {
+  z-index: 1;
   @include nbpp {
     margin-top: 20vw;
     margin-bottom: 300px;
@@ -10,7 +11,7 @@
     align-items: center;
 
     .reservation-title {
-      padding: 13vw 4vw;
+      padding: 13vw 5vw;
       border-radius: 30%;
       font-size: 9vw;
       line-height: 14vw;
@@ -29,8 +30,8 @@
         margin: 50px 200px;
       }
       @include nbpp {
-        font-size: 3rem;
-        line-height: 3rem;
+        font-size: 4rem;
+        line-height: 5rem;
         padding: 120px 100px;
         margin: 200px 200px;
       }
@@ -56,7 +57,8 @@
           }
         }
 
-        input {
+        input, select {
+          padding-left: 20px;
           margin-bottom: 20px;
           border-radius: 50px;
           height: 30px;
@@ -65,8 +67,45 @@
             width: 400px;
           }
           @include nbpp {
+            font-size: 2rem;
             height: 50px;
             width: 600px;
+          }
+        }
+
+        @include minHeight_nbpp {
+          ::placeholder {
+            font-size: 1.5rem;
+          }
+        }
+        input[type="number"] {
+          padding-left: 20px;
+          margin-bottom: 20px;
+          border-radius: 50px;
+          height: 30px;
+          width: 80vw;
+          @include mobile {
+            width: 180px;
+          }
+          @include nbpp {
+            font-size: 2rem;
+            height: 50px;
+            width: 280px;
+          }
+        }
+        input[type="time"] {
+          padding-left: 20px;
+          margin-bottom: 20px;
+          border-radius: 50px;
+          height: 30px;
+          width: 180vw;
+          @include mobile {
+            width: 180px;
+          }
+          @include nbpp {
+            font-size: 2rem;
+            height: 50px;
+            width: 280px;
           }
         }
       }
@@ -103,8 +142,9 @@
     flex-direction: row-reverse;
   }
 
-  input {
+  input, select {
     border: 2px solid $color-lightBlue;
+    background: none;
   }
 }
 
@@ -117,8 +157,9 @@
     flex-direction: row;
   }
 
-  input {
+  input, select {
     border: 2px solid $color-green;
+    background: none;
   }
 }
 
@@ -183,6 +224,11 @@
       }
     }
   }
+}
+.error-message {
+  color: red;
+  font-size: 2rem;
+  margin-top: 5px;
 }
 
 .button-reservation {

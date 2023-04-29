@@ -14,8 +14,13 @@
     height: 1000px;
   }
   @include nbpp {
-    height: 70vw;
+    top: 5vw;
+    height: 40vw;
     width: 100vw;
+  }
+  @include max {
+    top: 2vw;
+    height: 40vw;
   }
 }
 
