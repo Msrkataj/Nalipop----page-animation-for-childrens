@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import storage from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const HomeCarouselAttractions = ({close}) => {
     const [balloonsImageUrl, setBalloonsImageUrl] = useState(null);
     const [piniataImageUrl, setPiniataImageUrl] = useState(null);
     const [womenImageUrl, setWomenImageUrl] = useState(null);
+    const isVisible = useScrollAnimation('.home_carousel');
 
     const data = [
         {
@@ -81,7 +83,7 @@ const HomeCarouselAttractions = ({close}) => {
         <>
             <div className="page">
                 <div className="container">
-                    <div className="home_carousel">
+                    <div className={`home_carousel${isVisible ? ' visible' : ''}`}>
                         <div className="home_carousel_title">NASZE ATRAKCJE</div>
                         <div className="home_carousel-content">
                             <Carousel

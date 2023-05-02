@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
 import {Link as Scroll} from "react-scroll"
+import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
 
 const HomeForm = ({close}) => {
+    const isVisible = useScrollAnimation('.home-form');
 
     const data = [
         {
@@ -39,7 +41,7 @@ const HomeForm = ({close}) => {
             <div className="page">
                 </div>
                 <div className="container">
-                    <div className="home-form">
+                    <div className={`home-form${isVisible ? ' visible' : ''}`}>
                        <h1>UMÓW SIĘ JUŻ DZIŚ</h1>
                         <p>SZYBKA REZERWACJA ONLINE</p>
                         <div className="button ">

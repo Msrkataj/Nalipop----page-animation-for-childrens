@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
 const AboutMeSection = () => {
+    const isVisible = useScrollAnimation('.about_me');
+
     return (
         <>
             <div className="page">
                 <div className="container">
-                    <section className="about_me">
+                    <section className={`about_me${isVisible ? ' visible' : ''}`}>
                         <h1>Natalia Marciniak</h1>
                         <div className="about_me-content">
                             <div className="about_me-content-text">

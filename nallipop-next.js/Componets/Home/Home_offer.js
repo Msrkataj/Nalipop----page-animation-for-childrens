@@ -2,17 +2,17 @@ import React, {useState, useEffect} from "react";
 import Link from 'next/link';
 import {Link as Scroll} from "react-scroll"
 import { Carousel } from 'react-responsive-carousel';
+// import { isInViewport } from '/utils/isInViewport.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBirthdayCake } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faBirthdayCake);
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 
-const HomeOffer = ({close}) => {
-    const [balloonsImageUrl, setBalloonsImageUrl] = useState(null);
-    const [piniataImageUrl, setPiniataImageUrl] = useState(null);
-    const [womenImageUrl, setWomenImageUrl] = useState(null);
+const HomeOffer = () => {
+    const isVisible = useScrollAnimation('.home_offer');
 
     const data = [
         {
@@ -37,14 +37,12 @@ const HomeOffer = ({close}) => {
         },
     ];
 
-
-
     return (
         <>
             <div className="page">
                 <div className="container">
-                    <div className="home_offer">
-                        <div className="home_offer_title">ANIMACJĘ NA KAŻDĄ IMPREZĘ</div>
+                    <div className={`home_offer${isVisible ? ' visible' : ''}`}>
+                        <div className="home_offer_title">ANIMACJĘ NA KAŻDĄ OKAZJĘ</div>
                         <div className="home_offer-content">
                            <div className="home_offer_square home_offer_square_birthday">
                                <FontAwesomeIcon icon={faBirthdayCake} />
@@ -84,4 +82,5 @@ const HomeOffer = ({close}) => {
     )
 }
 
-export default HomeOffer
+export default HomeOffer;
+

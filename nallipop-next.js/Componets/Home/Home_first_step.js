@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
 import {Link as Scroll} from "react-scroll"
-
+import { isInViewport } from '/utils/isInViewport.js';
+import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
 const HomeFirstStep = ({close}) => {
-    const [active, setActive] = useState(false);
-    const [user, setUser] = useState({});
+    const isVisible = useScrollAnimation('.home-about_me');
 
     const data = [
         {
@@ -30,16 +30,15 @@ const HomeFirstStep = ({close}) => {
         },
     ];
 
-
-
     return (
+
         <>
             <div className="page">
                 <div className="color-line">
                     <div   />
                 </div>
                 <div className="container">
-                     <div className="home-about_me">
+                     <div className={`home-about_me${isVisible ? ' visible' : ''}`}>
                          <div className="home-about-me-background">
                          </div>
                          <div className="home-about_me-content">
