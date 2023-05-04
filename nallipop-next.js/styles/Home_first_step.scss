@@ -3,13 +3,9 @@
   background-size: contain;
   position: absolute;
   top: 20px;
-  //left: 20px;
-  //top: 2320px;
-  //left: 208px;
   width: 100vw;
   height: 3000px;
   z-index: -10;
-  //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   @include notebook_only_width{
     height: 5402px ;
 

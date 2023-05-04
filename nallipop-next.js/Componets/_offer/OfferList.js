@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
 import {Link as Scroll} from "react-scroll"
+import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
 
 const OfferList = ({close}) => {
-    const [active, setActive] = useState(false);
-    const [user, setUser] = useState({});
+    const isVisible = useScrollAnimation('.offer-list-birthday');
+    const isVisible2 = useScrollAnimation('.offer-list-communion');
+    const isVisible3 = useScrollAnimation('.offer-list-christening');
+    const isVisible4 = useScrollAnimation('.offer-list-family');
+    const isVisible5 = useScrollAnimation('.offer-list-wedding');
+    const isVisible6 = useScrollAnimation('.offer-info-price');
+    const isVisible7 = useScrollAnimation('.offer-info-package');
 
     const data = [
         {
@@ -41,35 +47,37 @@ const OfferList = ({close}) => {
                 <section className="offer-list">
                     <h2>JEDNA CENA NA KAŻDĄ OKAZJĘ!</h2>
                     <div className="offer-list-row">
-                    <div className="offer-list-section offer-list-birthday">
+                    <div className={`offer-list-section offer-list-birthday${isVisible ? ' visible' : ''}`}>
                         <img className="offer-list-section-photo" src="/assets/birthday.jpg" alt="birthday"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA URODZINY</div>
                     </div>
-                    <div className="offer-list-section offer-list-communion">
+                    <div className={`offer-list-section offer-list-communion${isVisible2 ? ' visible' : ''}`}>
                         <img className="offer-list-section-photo" src="/assets/communion.jpg" alt="communion"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA KOMUNIĘ</div>
                     </div>
                     </div>
                     <div className="offer-list-row">
-                    <div className="offer-list-section offer-list-christening">
+                    <div className={`offer-list-section offer-list-christening${isVisible3 ? ' visible' : ''}`}>
                         <img className="offer-list-section-photo" src="/assets/christening.jpg" alt="christening"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA CHRZCINY</div>
                     </div>
-                    <div className="offer-list-section offer-list-family">
+                    <div className={`offer-list-section offer-list-family${isVisible4 ? ' visible' : ''}`}>
                         <img className="offer-list-section-photo" src="/assets/family.jpg" alt="family"/>
-                        <div className="offer-list-section-header">ANIMACJĘ NA UROCZYSTOŚCI RODZINNE</div>
+                        <div className="offer-list-section-header">UROCZYSTOŚCI RODZINNE</div>
                     </div>
                     </div>
-                    <div className="offer-list-section offer-list-wedding">
+                    <div className={`offer-list-section offer-list-wedding${isVisible5 ? ' visible' : ''}`}>
                         <img className="offer-list-section-photo" src="/assets/wedding.jpg" alt="wedding"/>
                         <div className="offer-list-section-header">ANIMACJĘ NA WESELE</div>
                     </div>
                 </section>
                 <section className="offer-info">
-                    <div className="offer-info-price">
+                    <div className={`offer-info-price${isVisible6 ? ' visible' : ''}`}>
                         <div className="offer-info-price-number">150 zł/h</div>
                     </div>
-                    <div className="offer-info-package">
+                    <div className="curve-line-left"></div>
+                    <div className="curve-line-right"></div>
+                    <div className={`offer-info-package${isVisible7 ? ' visible' : ''}`}>
                         <h3>ATRAKCJE W PAKIECIE</h3>
                         <div className="offer-info-package-list">
                             <ul>

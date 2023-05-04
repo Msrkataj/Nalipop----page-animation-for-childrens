@@ -91,6 +91,13 @@
     border: 2px solid $color-pink;
     margin-left: 60px;
     margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     @include mobile-mini-plus {
       width: 70vw;
       height: 110px;
@@ -128,6 +135,13 @@
     height: 70px;
     border: 2px solid $color-lightBlue;
     margin-left: -40px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     @include mobile-mini-plus {
       width: 70vw;
       height: 110px;

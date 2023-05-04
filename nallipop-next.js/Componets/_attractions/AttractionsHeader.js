@@ -65,7 +65,7 @@ const HomeHeader = ({close}) => {
                 <div id="#" className="header">
                     {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                     <div className="header-top">
-                        <div className="header-central-background header-central-background-about"></div>
+                        <div className="header-central-background header-central-background-attractions"></div>
                         <img className="header-image" src="/assets/top.png" alt="top"/>
                         <div className="header-top-content">
                             <Link href="/">
@@ -106,8 +106,7 @@ const HomeHeader = ({close}) => {
                         <div className="header-central-image-container">
                             <img className="header-central-image header-central-image-attractions"
                                  src="/assets/attractions.png" alt="attractions"/>
-                            <img className="header-central-clouds header-central-clouds-attractions"
-                                 src="/assets/clouds.png" alt="Opis obrazka"/>
+                            <div className="header-central-clouds header-central-clouds-attractions"/>
                         </div>
                     </div>
                     <div className="header-central header-central-attractions">

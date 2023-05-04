@@ -76,6 +76,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @include mobile-mini-plus {
     margin-top: 40vw;
   }

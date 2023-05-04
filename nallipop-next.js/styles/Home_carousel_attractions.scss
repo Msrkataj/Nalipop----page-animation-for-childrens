@@ -49,11 +49,24 @@
       height: 80vh;
     }
     .home_attractions {
+      position: relative;
       height: 100%;
       width: 100%;
       display: flex;
       justify-content: center;
-      border-top: 1px solid gray;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 1px;
+        width: 100%;
+        background-color: gray;
+        transform-origin: center;
+        transform: translateX(-50%) scaleX(0);
+        animation: draw-border 4s infinite alternate;
+      }
     }
 
     .home_attractions-item {
@@ -223,3 +236,11 @@
   background-color: aqua;
 }
 
+@keyframes draw-border {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+}

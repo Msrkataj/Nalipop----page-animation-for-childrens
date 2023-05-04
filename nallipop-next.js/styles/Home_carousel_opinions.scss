@@ -21,6 +21,8 @@
   margin: 20px 0 10px 0;
   font-size: 9vw;
   font-family: $font-head;
+  transform: translate(-50%, -50%);
+  animation: pulsate 10s infinite;
   @include notebook-big {
     font-size: 12rem;
   }
@@ -329,6 +331,10 @@
   width: 100%;
   max-height: 1500px;
   z-index: -5;
+  @include nbpp {
+    transform: translate(-50%, -50%);
+    animation: pulsate 10s infinite;
+  }
   @include tablet_minHeight {
     height: 80vh;
   }
@@ -361,6 +367,8 @@
     z-index: 3;
     height: 100%;
     color: #ffffff;
+    transform: translate(-50%, -50%);
+    animation: pulsate 10s infinite;
 
     h2 {
       font-size: 6vw;
@@ -380,5 +388,17 @@
         line-height: 130px;
       }
     }
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #FF69B4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }

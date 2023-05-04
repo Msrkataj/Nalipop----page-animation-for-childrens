@@ -4,6 +4,7 @@ import storage from "../../firebase";
 import { ref, getDownloadURL, list, listAll } from "firebase/storage";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
 const data = [
     {
@@ -33,17 +34,19 @@ const data = [
 ];
 
 const ContactContent = () => {
+    const isVisible = useScrollAnimation('.contact-phone');
+    const isVisible2 = useScrollAnimation('.contact-mail');
 
     return (
         <>
             <div className="page">
                 <div className="container">
                     <section className="contact">
-                        <div className="contact-phone">
+                        <div className={`contact-phone${isVisible ? ' visible' : ''}`}>
                             <FontAwesomeIcon icon={faPhone} />
                             +48 795 103 108
                         </div>
-                        <div className="contact-mail">
+                        <div className={`contact-mail${isVisible2 ? ' visible' : ''}`}>
                             <FontAwesomeIcon icon={faEnvelope} />
                         animacje@nallipop.pl
                         </div>

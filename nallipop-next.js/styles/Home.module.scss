@@ -363,7 +363,6 @@
         color: white;
         font-weight: bold;
         text-decoration: none;
-
         li {
           padding: 10px;
           cursor: pointer;
@@ -375,6 +374,11 @@
 
           @include notebook-big {
             padding: 25px;
+          }
+          a {
+            &:hover {
+              color: $color-limon;
+            }
           }
         }
       }

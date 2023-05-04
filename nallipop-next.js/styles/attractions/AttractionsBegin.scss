@@ -2,12 +2,14 @@
   height: 200vw;
   @include mobile-mini-plus {
     height: 130vw;
+    max-height: 1600px;
     width: 100vw;
   }
   @include tablet {
     height: 100vw;
   }
   @include nbpp {
+    max-height: 2000px;
     height: 70vw;
   }
 }
@@ -130,6 +132,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   @include mobile-mini-plus {
     margin-top: 50vw;
   }

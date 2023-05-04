@@ -46,7 +46,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 65vw;
+    height: 70vw;
     @include notebook_minHeight {
       height: 40vw;
     }
@@ -80,10 +80,14 @@
       text-align: center;
       font-family: $font-alt;
       font-weight: bold;
+
       @include tablet {
         font-size: 3vw;
       }
       @include nbpp {
+        border: 1px solid black;
+        border-radius: 40px;
+        padding: 40px;
         font-size: 4rem;
       }
       @include notebook_minHeight {
@@ -97,6 +101,15 @@
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @include notebook_only_width {
     background-color: rgba(0, 0, 0, 0.0);
   }
@@ -110,6 +123,15 @@
 }
 
 .offer-list-communion {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .offer-list-section-header {
     color: $color-blue;
   }
@@ -123,6 +145,15 @@
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @include notebook_only_width {
     background-color: rgba(0, 0, 0, 0.0);
   }
@@ -135,6 +166,15 @@
 .offer-list {
   .offer-list-family {
     margin: 20px 0 0 0;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @include max {
     }
 
@@ -168,6 +208,15 @@
     margin: 40px 0;
     background-color: rgba(0, 0, 0, 0.2);
     height: 90vw;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @include notebook_minHeight {
       margin: 0 0;
       height: 45vw;
@@ -207,6 +256,7 @@
 }
 
 .offer-info {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -221,6 +271,15 @@
     align-items: center;
     margin-bottom: 50px;
     border: 1px solid $color-grey;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @include mobile {
       height: 200px;
     }
@@ -267,6 +326,33 @@
       }
     }
   }
+  .curve-line-left {
+    background-image: url('../../public/assets/curve-left.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 10vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -20;
+    overflow: hidden;
+  }
+  .curve-line-right {
+    background-image: url('../../public/assets/curve-right.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 10vw;
+    height: 100%;
+    left: auto;
+    right: 0;
+    top: 0;
+    z-index: -20;
+    overflow: hidden;
+  }
 
   .offer-info-package {
     width: 80vw;
@@ -277,6 +363,15 @@
     margin-bottom: 20px;
     text-align: center;
     color: white;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @include tablet {
       width: 900px;
     }
@@ -290,6 +385,7 @@
       width: 600px;
       height: 100%;
     }
+
     h3 {
       text-align: center;
       padding: 30px;
@@ -337,6 +433,7 @@
             font-size: 2rem;
             line-height: 50px;
           }
+
           &::before {
             content: "•";
             position: absolute;
