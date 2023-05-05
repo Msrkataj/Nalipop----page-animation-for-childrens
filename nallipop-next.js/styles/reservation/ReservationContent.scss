@@ -11,7 +11,7 @@
     align-items: center;
 
     .reservation-title {
-      padding: 13vw 5vw;
+      padding: 13vw 15vw;
       border-radius: 30%;
       font-size: 9vw;
       line-height: 14vw;
@@ -44,7 +44,6 @@
     }
 
     .reservation-data-form {
-      form {
         h2 {
           font-size: 4vw;
           font-weight: bold;
@@ -57,7 +56,7 @@
           }
         }
 
-        input, select {
+        input, select, textarea {
           padding-left: 20px;
           margin-bottom: 20px;
           border-radius: 50px;
@@ -78,6 +77,7 @@
             font-size: 1.5rem;
           }
         }
+
         input[type="number"] {
           padding-left: 20px;
           margin-bottom: 20px;
@@ -93,6 +93,7 @@
             width: 280px;
           }
         }
+
         input[type="time"] {
           padding-left: 20px;
           margin-bottom: 20px;
@@ -108,9 +109,151 @@
             width: 280px;
           }
         }
+
+        .custom-select__control {
+          padding-left: 20px;
+          margin-bottom: 20px;
+          border-radius: 50px;
+          height: 100px;
+          width: 80vw;
+          border: 2px solid $color-green;
+          overflow: auto;
+          @include mobile {
+            width: 400px;
+          }
+
+          @include nbpp {
+            font-size: 2rem;
+
+          }
+        }
+
+        .custom-select__option {
+          padding-left: 20px;
+          font-size: 1rem;
+          @include nbpp {
+            font-size: 2rem;
+          }
+        }
+
+        .custom-select__menu {
+          z-index: 15;
+        }
+
       }
     }
   }
+
+
+.react-datepicker {
+  font-family: inherit;
+  @include nbpp {
+    width: 650px;
+    height: 600px;
+    .react-datepicker__header {
+      background-color: #f8f9fa;
+      width: 650px;
+      font-size: 2rem;
+      border-bottom: none;
+    }
+    .react-datepicker__week,
+    .react-datepicker__day-names {
+      margin: 30px 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    button {
+      font-size: 2rem;
+    }
+    .react-datepicker__navigation-icon {
+      font-size: 20px;
+    }
+    .react-datepicker__current-month {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .react-datepicker__day-name,
+    .react-datepicker__day,
+    .react-datepicker__time-name {
+      color: #495057;
+    }
+
+    .react-datepicker__day--selected,
+    .react-datepicker__day--keyboard-selected,
+    .react-datepicker__day:hover {
+      text-align: center;
+      padding: 5px 40px 5px 0;
+      text-align: center;
+      background-color: #495057;
+      color: #fff;
+    }
+    .react-datepicker__month-container {
+      font-size: 2rem;
+    }
+  }
+
+
+  .react-datepicker__input-container {
+    input {
+      padding-left: 20px;
+      //border-radius: 50px;
+      height: 30px;
+      width: 80vw;
+      //border: 1px solid #ced4da;
+      outline: none;
+
+      @include mobile {
+        width: 400px;
+      }
+
+      @include nbpp {
+        font-size: 2rem;
+        height: 50px;
+        width: 600px;
+      }
+    }
+  }
+
+}
+
+
+.react-time-picker__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.react-time-picker__inputGroup {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include nbpp {
+    width: 300px;
+  }
+}
+
+.react-time-picker__inputGroup__input {
+  width: 30% !important;
+  text-align: center;
+  padding: 0 !important;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.react-time-picker__inputGroup__leadingZero {
+  display: none;
+}
+
+.react-time-picker__inputGroup__divider {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.react-time-picker__clear-button {
+  display: none;
 }
 
 .reservation-data-form {
@@ -157,7 +300,7 @@
     flex-direction: row;
   }
 
-  input, select {
+  input, select, textarea {
     border: 2px solid $color-green;
     background: none;
   }
@@ -225,10 +368,23 @@
     }
   }
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include notebook_only_width {
+    align-items: flex-start;
+  }
+}
+
+
 .error-message {
   color: red;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-top: 5px;
+  @include nbpp {
+    font-size: 2rem;
+  }
 }
 
 .button-reservation {

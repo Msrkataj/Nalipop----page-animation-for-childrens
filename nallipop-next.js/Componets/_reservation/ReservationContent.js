@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
-import {ValidationError} from "@formspree/react";
 import TimePicker from 'react-time-picker';
+import Select from "react-select";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { useForm, ValidationError } from '@formspree/react';
 
 const data = [
     {
@@ -30,12 +33,22 @@ const data = [
     },
 ];
 
+const attractionsOptions = [
+    { value: "piniata", label: "Piniata" },
+    { value: "banki_xxl", label: "Bańki XXL" },
+    { value: "zamykanie_w_bance", label: "Zamykanie w bańce mydlanej" },
+    { value: "malowanie_toreb", label: "Malowanie toreb" },
+    { value: "facepainting", label: "Facepainting" },
+    { value: "inne", label: "Inne (proszę napisać w uwagach)" },
+];
 const ReservationContent = () => {
-    const [time, setTime] = useState('10:00');
-
+    const [time, setTime] = useState(new Date());
     const [nameValid, setNameValid] = useState(true);
     const [phoneValid, setPhoneValid] = useState(true);
     const [emailValid, setEmailValid] = useState(true);
+    const [selectedAttractions, setSelectedAttractions] = useState([]);
+    const [startDate, setStartDate] = useState(new Date());
+
     function onChange(value) {
         setTime(value);
     }
@@ -67,20 +80,31 @@ const ReservationContent = () => {
         setEmailValid(validateEmail(event.target.value));
     };
 
+    function handleAttractionsChange(event) {
+        const selectedOptions = Array.from(event.target.selectedOptions).map(
+            (option) => option.value
+        );
+        setSelectedAttractions(selectedOptions);
+    }
 
+    const [state, handleSubmitForm] = useForm("mzbqojvb");
+    if (state.succeeded) {
+        return <p>Thanks for joining!</p>;
+    }
     return (
         <>
             <div className="page">
                 <div className="container">
                     <section className="reservation">
+                        <form onSubmit={handleSubmitForm}>
                         <div className="reservation-personal_data">
                             <div className="reservation-data-form reservation-personal_data-form">
                                 <h2 className="reservation-title reservation-personal_data-title">DANE<br/>OSOBOWE</h2>
-                                <form>
-                                    <h2>Imię i nazwisko</h2>
+                                <div className="form">
+                                <h2>Imię i nazwisko</h2>
                                     <input
                                         type="text"
-                                        name="name"
+                                        name="Imię i nazwisko"
                                         id="name"
                                         placeholder="Imię i nazwisko"
                                         required
@@ -92,7 +116,7 @@ const ReservationContent = () => {
                                     <h2>Telefon</h2>
                                     <input
                                         type="number"
-                                        name="phone"
+                                        name="Telefon"
                                         id="phone"
                                         placeholder="Telefon"
                                         required
@@ -104,7 +128,7 @@ const ReservationContent = () => {
                                     <h2>Email</h2>
                                     <input
                                         type="email"
-                                        name="email"
+                                        name="Email"
                                         id="email"
                                         placeholder="Email"
                                         required
@@ -114,39 +138,30 @@ const ReservationContent = () => {
                                     {!emailValid && (
                                         <p className="error-message">Prosze wprowadzić poprawny email</p>
                                     )}
-                                </form>
+                                </div>
                             </div>
                             <div className="reservation-data-form reservation-about_party-form">
                                 <h2 className="reservation-title reservation-about_party-title">O<br/>IMPREZIE</h2>
-                                <form>
-                                    <h2>Data imprezy</h2>
-                                    <input
-                                        type="date"
-                                        name="eventDate"
-                                        id="eventDate"
-                                        placeholder="dd.mm.rrrr"
-                                        required
+                                <div className="form">
+                                <h2>Data imprezy</h2>
+                                    <div className="custom-datepicker">
+                                    <DatePicker
+                                        name="Data imprezy"
+                                        selected={startDate}
+                                        onChange={(date) => setStartDate(date)}
+                                        dateFormat="dd.MM.yyyy"
                                     />
-                                    <ValidationError
-                                        prefix="name"
-                                        field="name"
-                                        // errors={state.errors}
-                                    />
+                                    </div>
                                     <h2>Adres imprezy</h2>
                                     <input
                                         type="adress"
-                                        name="adress"
+                                        name="Adres imprezy"
                                         id="adress"
                                         placeholder="Adres imprezy"
                                         required
                                     />
-                                    <ValidationError
-                                        prefix="adress"
-                                        field="adress"
-                                        // errors={state.errors}
-                                    />
                                     <h2>Rodzaj imprezy</h2>
-                                    <select name="event-type" id="event-type" required>
+                                    <select name="Rodzaj imprezy" id="event-type" required>
                                         <option value="">Wybierz rodzaj imprezy</option>
                                         <option value="urodziny">Urodziny</option>
                                         <option value="chrzciny">Chrzest</option>
@@ -155,12 +170,7 @@ const ReservationContent = () => {
                                         <option value="uroczystość domowa">Uroczystość domowa</option>
                                         <option value="inne">Inne (proszę napisać w uwagach)</option>
                                     </select>
-                                    <ValidationError
-                                        prefix="email"
-                                        field="email"
-                                        // errors={state.errors}
-                                    />
-                                </form>
+                                </div>
                             </div>
                             <div className="reservation-data-form reservation-about_animations-form">
                                 <div className="reservation-about_animations">
@@ -170,11 +180,11 @@ const ReservationContent = () => {
                                     <h2 className="reservation-title reservation-about_animations-title">O<br/>ANIMACJI
                                     </h2>
                                 </div>
-                                <form>
-                                    <h2>Liczba dzieci</h2>
+                                <div className="form">
+                                <h2>Liczba dzieci</h2>
                                     <input
                                         type="number"
-                                        name="countChildren"
+                                        name="Liczba dzieci"
                                         id="countChildren"
                                         placeholder="Licza dzieci"
                                         min="0"
@@ -184,7 +194,7 @@ const ReservationContent = () => {
                                     <h2>Wiek dzieci</h2>
                                     <input
                                         type="number"
-                                        name="age-min"
+                                        name="Wiek min"
                                         id="age-min"
                                         placeholder="Wiek od"
                                         min="0"
@@ -193,45 +203,32 @@ const ReservationContent = () => {
                                     />
                                     <input
                                         type="number"
-                                        name="age-max"
+                                        name="Wiek max"
                                         id="age-max"
                                         placeholder="Wiek do"
                                         min="0"
                                         max="100"
                                         required
                                     />
-                                    <ValidationError
-                                        prefix="age"
-                                        field="age"
-                                        // errors={state.errors}
-                                    />
                                     <h2>Liczba godzin</h2>
                                     <input
                                         type="number"
-                                        name="hours"
+                                        name="Liczba godzin"
                                         id="hours"
                                         placeholder="Licza godzin"
                                         required
                                     />
-                                    <ValidationError
-                                        prefix="hours"
-                                        field="hours"
-                                        // errors={state.errors}
-                                    />
                                     <h2>Orientacyjne godzinna</h2>
                                     <TimePicker
-                                        disableClock
-                                        format="HH:mm"
                                         onChange={onChange}
                                         value={time}
-                                    />
-                                    <ValidationError
-                                        prefix="clock"
-                                        field="clock"
-                                        // errors={state.errors}
+                                        name="Orientacyjne godzinna"
+                                        disableClock={true}
                                     />
                                     <h2>Miejsce imprezy</h2>
-                                    <select name="event-location" id="event-location" required>
+                                    <select name="Miejsce imprezy"
+                                            id="event-location"
+                                            required>
                                         <option value="">Wybierz miejsce imprezy</option>
                                         <option value="dom">Dom</option>
                                         <option value="sala">Sala</option>
@@ -241,26 +238,31 @@ const ReservationContent = () => {
                                         {/*<option value="inne">Inne (proszę napisać w uwagach)</option>*/}
                                     </select>
                                     <h2>Dodatkowo płatne atrakcje</h2>
-                                    <select name="event-location" id="event-location" multiple required>
-                                        <option value="piniata">Piniata</option>
-                                        <option value="banki_xxl">Bańki XXL</option>
-                                        <option value="zamykanie_w_bance">Zamykanie w bańce mydlanej</option>
-                                        <option value="malowanie_toreb">Malowanie toreb</option>
-                                        <option value="facepainting">Facepainting</option>
-                                        <option value="inne">Inne (proszę napisać w uwagach)</option>
-                                    </select>
-                                    <ValidationError
-                                        prefix="extraAttractions"
-                                        field="extraAttractions"
-                                        // errors={state.errors}
+                                    <Select
+                                        isMulti
+                                        placeholder={"Wybierz atrakcje"}
+                                        name="Dodatkowo płatne atrakcje"
+                                        options={attractionsOptions}
+                                        onChange={(selectedOptions) => {
+                                            setSelectedAttractions(selectedOptions.map((option) => option.value));
+                                        }}
+                                        value={selectedAttractions.map((value) =>
+                                            attractionsOptions.find((option) => option.value === value)
+                                        )}
+                                        classNamePrefix="custom-select"
                                     />
                                     <h2>Uwagi</h2>
-                                    <input
-                                        type="comments"
-                                        name="comments"
+                                    <textarea
+                                        name="Uwagi"
                                         id="comments"
                                         placeholder="Uwagi"
                                         required
+                                        rows="1"
+                                        style={{ overflow: "hidden", resize: "none" }}
+                                        onChange={(e) => {
+                                            e.target.style.height = "auto";
+                                            e.target.style.height = e.target.scrollHeight + "px";
+                                        }}
                                     />
                                     <ValidationError
                                         prefix="comments"
@@ -268,17 +270,14 @@ const ReservationContent = () => {
                                         // errors={state.errors}
                                     />
                                     <div className="button button-reservation">
-                                        <button
-                                            className="button-classic button-footer-classic"
-                                            type="submit"
-                                            // disabled={state.submitting}
-                                        >
+                                        <button className="button-classic button-footer-classic" type="submit" disabled={state.submitting}>
                                             WYŚLIJ
                                         </button>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
+                        </form>
                     </section>
                 </div>
             </div>
