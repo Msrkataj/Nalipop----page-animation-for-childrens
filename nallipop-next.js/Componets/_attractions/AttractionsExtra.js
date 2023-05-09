@@ -3,33 +3,8 @@ import Link from 'next/link';
 import storage from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
+import data from '../data/data.json';
 
-const data = [
-    {
-        name: 'O MNIE',
-        href: '/me',
-    },
-    {
-        name: 'OFERTA',
-        href: 'offer',
-    },
-    {
-        name: 'ATRAKCJE',
-        href: 'attractions',
-    },
-    {
-        name: 'GALERIA',
-        href: 'gallery',
-    },
-    {
-        name: 'KONTAKT',
-        href: 'contact',
-    },
-    {
-        name: 'FORMULARZ',
-        href: 'form',
-    },
-];
 
 const AttractionsExtra = () => {
 

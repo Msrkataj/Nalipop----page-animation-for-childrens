@@ -8,6 +8,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import storage from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
+import data from '../data/data.json';
 
 const OfferCarouselAttractions = ({close}) => {
     const [balloonsImageUrl, setBalloonsImageUrl] = useState(null);
@@ -15,33 +16,11 @@ const OfferCarouselAttractions = ({close}) => {
     const [womenImageUrl, setWomenImageUrl] = useState(null);
     const isVisible = useScrollAnimation('.home_carousel');
 
-    const data = [
-        {
-            name: 'Start',
-            href: '#',
-        },
-        {
-            name: 'O MNIE',
-            href: 'me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-    ];
 
 
 
     useEffect(() => {
-        const storageRefBalloons = ref(storage, "atractions/balon.png");
+        const storageRefBalloons = ref(storage, "atractions/balony.png");
         const storageRefPiniata = ref(storage, "atractions/piniata.png");
         const storageRefWomen = ref(storage, "atractions/women-paint.png");
         getDownloadURL(storageRefBalloons)

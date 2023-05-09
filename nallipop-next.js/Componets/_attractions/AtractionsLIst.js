@@ -2,32 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
-const data = [
-    {
-        name: 'O MNIE',
-        href: '/me',
-    },
-    {
-        name: 'OFERTA',
-        href: 'offer',
-    },
-    {
-        name: 'ATRAKCJE',
-        href: 'attractions',
-    },
-    {
-        name: 'GALERIA',
-        href: 'gallery',
-    },
-    {
-        name: 'KONTAKT',
-        href: 'contact',
-    },
-    {
-        name: 'FORMULARZ',
-        href: 'form',
-    },
-];
 
 const AttractionsList = () => {
     const isVisible = useScrollAnimation('.attractions-list');

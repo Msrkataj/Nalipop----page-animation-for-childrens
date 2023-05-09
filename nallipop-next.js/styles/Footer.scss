@@ -300,6 +300,7 @@ textarea:focus::placeholder {
       ul {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         @include notebook_only_width {
           display: flex;
           flex-direction: row;

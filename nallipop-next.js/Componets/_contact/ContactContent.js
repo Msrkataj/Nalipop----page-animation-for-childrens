@@ -5,33 +5,8 @@ import { ref, getDownloadURL, list, listAll } from "firebase/storage";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
+import data from '../data/data.json';
 
-const data = [
-    {
-        name: 'O MNIE',
-        href: '/me',
-    },
-    {
-        name: 'OFERTA',
-        href: 'offer',
-    },
-    {
-        name: 'ATRAKCJE',
-        href: 'attractions',
-    },
-    {
-        name: 'GALERIA',
-        href: 'gallery',
-    },
-    {
-        name: 'KONTAKT',
-        href: 'contact',
-    },
-    {
-        name: 'FORMULARZ',
-        href: 'form',
-    },
-];
 
 const ContactContent = () => {
     const isVisible = useScrollAnimation('.contact-phone');

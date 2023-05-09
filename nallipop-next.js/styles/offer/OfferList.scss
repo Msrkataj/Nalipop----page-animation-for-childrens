@@ -182,24 +182,22 @@
       color: $color-bordo;
     }
 
-    .offer-list-section-photo {
-      width: 40vw;
-      @include notebook_only_width {
-        width: 400px;
-      }
-      @include notebook_minHeight {
-        width: 300px
-      }
-      @include nbpp {
-        width: 600px;
-      }
-      @include max {
-        border-radius: 100px;
-        width: 600px
-      }
-
-
-    }
+    //.offer-list-section-photo {
+    //  width: 40vw;
+    //  @include notebook_only_width {
+    //    width: 400px;
+    //  }
+    //  @include notebook_minHeight {
+    //    width: 300px
+    //  }
+    //  @include nbpp {
+    //    width: 600px;
+    //  }
+    //  @include max {
+    //    border-radius: 100px;
+    //    width: 600px
+    //  }
+    //}
   }
 }
 

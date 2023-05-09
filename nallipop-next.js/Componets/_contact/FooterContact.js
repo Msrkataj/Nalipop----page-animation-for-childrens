@@ -5,6 +5,7 @@ import {useForm, ValidationError} from '@formspree/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone, faEnvelope, faClock} from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import data from '../data/data.json';
 
 
 const FooterContact = ({close}) => {
@@ -13,29 +14,6 @@ const FooterContact = ({close}) => {
     if (state.succeeded) {
         return <p className="success-message">Dziękujemy za wysłanie wiadomości!</p>;
     }
-
-    const data = [
-        {
-            name: 'O NAS',
-            href: 'me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'GALERIA',
-            href: 'contact',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-    ];
 
 
     return (

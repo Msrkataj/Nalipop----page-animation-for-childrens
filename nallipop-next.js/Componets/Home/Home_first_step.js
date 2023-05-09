@@ -7,29 +7,6 @@ import {useScrollAnimation} from "../hooks/useScrollAnimation";
 const HomeFirstStep = ({close}) => {
     const isVisible = useScrollAnimation('.home-about_me');
 
-    const data = [
-        {
-            name: 'Start',
-            href: '#',
-        },
-        {
-            name: 'O MNIE',
-            href: 'me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-    ];
-
     return (
 
         <>

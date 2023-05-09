@@ -1,0 +1,26 @@
+[
+    {
+        "name": "O MNIE",
+        "href": "/me"
+    },
+    {
+        "name": "OFERTA",
+        "href": "offer"
+    },
+    {
+        "name": "ATRAKCJE",
+        "href": "attractions"
+    },
+    {
+        "name": "GALERIA",
+        "href": "gallery"
+    },
+    {
+        "name": "KONTAKT",
+        "href": "contact"
+    },
+    {
+        "name": "FORMULARZ REZERWACJI",
+        "href": "form"
+    }
+]

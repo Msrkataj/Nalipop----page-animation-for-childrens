@@ -9,10 +9,12 @@
   opacity: 0;
   transform: translateY(-50px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   &.visible {
     opacity: 1;
     transform: translateY(0);
   }
+
   @include mobile-mini {
     margin-top: 150px;
   }
@@ -35,6 +37,7 @@
       }
     }
   }
+
   .home_offer_title {
     color: #8151e2;
     font-weight: bold;
@@ -90,6 +93,23 @@
       margin: 10px;
       font-weight: bold;
       background-color: #8bacc0;
+
+      div {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: relative;
+        width: 70%;
+        height: 80%;
+        object-fit: cover;
+        @include mobile-mini-plus {
+          height: 60%;
+        }
+        @include tablet {
+          height: 40%;
+        }
+      }
+
       @include mobile-mini {
         width: 130px;
         height: 12vh;
@@ -102,6 +122,7 @@
         width: 20%;
         height: 10vw;
       }
+
       svg {
         font-size: 8vw;
         @include mobile {
@@ -159,22 +180,41 @@
 
     .home_offer_square_christening {
       background-color: #8bacc0;
+
+      div {
+        background-image: url('../public/assets/icon/icon_christening.png');
+      }
     }
 
     .home_offer_square_wedding {
       background-color: darksalmon;
+
+      div {
+        background-image: url('../public/assets/icon/icon_wedding.png');
+      }
     }
 
     .home_offer_square_family {
       background-color: burlywood;
+
+      div {
+        background-image: url('../public/assets/icon/icon_house.png');
+      }
     }
 
     .home_offer_square_other {
       background-color: darkcyan;
+
+      div {
+        background-image: url('../public/assets/icon/icon_other.png');
+      }
     }
   }
 
   .home_offer_button {
     margin-top: 20px;
   }
+}
+.home_offer_square div img {
+  align-self: center;
 }

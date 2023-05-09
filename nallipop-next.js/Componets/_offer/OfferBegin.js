@@ -24,7 +24,7 @@ const data = [
         href: 'contact',
     },
     {
-        name: 'FORMULARZ',
+        name: 'FORMULARZ REZERWACJI',
         href: 'form',
     },
 ];
@@ -47,7 +47,7 @@ const OfferBegin = () => {
                         </div>
                         <div className="button button-header button-offer">
                             {data.map((item) => {
-                                if (item.name === "FORMULARZ") {
+                                if (item.name === "FORMULARZ REZERWACJI") {
                                     return (
                                         <Link key={item.href} href={item.href} className="button-classic">FORMULARZ KONTAKTOWY
                                         </Link>

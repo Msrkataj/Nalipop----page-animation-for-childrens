@@ -11,29 +11,6 @@ import { getDownloadURL, listAll, ref } from "firebase/storage";
 const HomeCarouselOpinions= ({close}) => {
 
 
-    const data = [
-        {
-            name: 'Start',
-            href: '#',
-        },
-        {
-            name: 'O MNIE',
-            href: 'me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-    ];
-
     const [images, setImages] = useState([]);
 
     useEffect(() => {

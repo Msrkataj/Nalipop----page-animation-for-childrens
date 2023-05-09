@@ -9,33 +9,11 @@ import { faBirthdayCake } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faBirthdayCake);
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import data from '../data/data.json';
 
 
 const HomeOffer = () => {
     const isVisible = useScrollAnimation('.home_offer');
-
-    const data = [
-        {
-            name: 'Start',
-            href: '#',
-        },
-        {
-            name: 'O MNIE',
-            href: 'me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-    ];
 
     return (
         <>
@@ -49,19 +27,19 @@ const HomeOffer = () => {
                                <h2>Urodziny</h2>
                            </div>
                             <div className="home_offer_square home_offer_square_christening">
-                                <FontAwesomeIcon icon={faBirthdayCake} />
+                                <div></div>
                                 <h2>Chrzciny</h2>
                             </div>
                             <div className="home_offer_square home_offer_square_wedding">
-                                <FontAwesomeIcon icon={faBirthdayCake} />
+                                <div></div>
                                 <h2>Wesele</h2>
                             </div>
                             <div className="home_offer_square home_offer_square_family">
-                                <FontAwesomeIcon icon={faBirthdayCake} />
+                                <div></div>
                                 <h2>Uroczystości Rodzinne</h2>
                             </div>
                             <div className="home_offer_square home_offer_square_other">
-                                <FontAwesomeIcon icon={faBirthdayCake} />
+                                <div></div>
                                 <h2>Inne</h2>
                             </div>
                         </div>

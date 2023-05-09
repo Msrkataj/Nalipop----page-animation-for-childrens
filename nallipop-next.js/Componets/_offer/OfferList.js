@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
+import data from '../data/data.json';
 
 
 const OfferList = ({close}) => {
@@ -12,33 +12,6 @@ const OfferList = ({close}) => {
     const isVisible5 = useScrollAnimation('.offer-list-wedding');
     const isVisible6 = useScrollAnimation('.offer-info-price');
     const isVisible7 = useScrollAnimation('.offer-info-package');
-
-    const data = [
-        {
-            name: 'O MNIE',
-            href: '/me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'GALERIA',
-            href: 'gallery',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-        {
-            name: 'FORMULARZ',
-            href: 'form',
-        },
-    ];
 
 
     return (
@@ -62,7 +35,7 @@ const OfferList = ({close}) => {
                         <div className="offer-list-section-header">ANIMACJĘ NA CHRZCINY</div>
                     </div>
                     <div className={`offer-list-section offer-list-family${isVisible4 ? ' visible' : ''}`}>
-                        <img className="offer-list-section-photo" src="/assets/family.jpg" alt="family"/>
+                        <img className="offer-list-section-photo" src="/assets/family.png" alt="family"/>
                         <div className="offer-list-section-header">UROCZYSTOŚCI RODZINNE</div>
                     </div>
                     </div>

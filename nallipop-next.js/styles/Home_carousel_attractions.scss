@@ -101,7 +101,11 @@
       }
 
       .description-1 {
+        top: 16%;
         color: #FAD648;
+        @include notebook_minHeight {
+          top: 10%;
+        }
       }
 
       .description-2 {
@@ -209,15 +213,19 @@
     ;
 
       .description-1 {
-        color: #FAD648; // Ustaw kolor dla pierwszego opisu
+        color: #FAD648;
+        margin-top: 30px;
+        @include mobile {
+          margin-top: 95px;
+        }
       }
 
       .description-2 {
-        color: cornflowerblue; // Ustaw kolor dla drugiego opisu
+        color: cornflowerblue;
       }
 
       .description-3 {
-        color: darksalmon; // Ustaw kolor dla trzeciego opisu
+        color: darksalmon;
         margin-top: 30px;
         @include mobile {
           margin-top: 95px;

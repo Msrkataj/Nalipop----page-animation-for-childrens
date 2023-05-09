@@ -6,6 +6,10 @@
     width: 110vw;
   }
 }
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
 
 .header {
   position: relative;
@@ -295,17 +299,17 @@
   width: 300%;
   //height: 150%;
   left: 60%;
-  top: -40vw;
+  top: -15vw;
   transform: translateX(-50%);
   z-index: 2;
   overflow: hidden;
 
   @include mobile-mini-plus {
-    top: -20vw;
+    top: -4vw;
     width: calc(200% - (100vw - 450px) * 0.8);
   }
   @include tablet {
-    top: -15vw;
+    top: -5vw;
     width: 140vw;
     left: 65vw;
   }
@@ -315,27 +319,32 @@
     left: 65vw;
   }
   @include nbpp {
-    top: -200px;
+    top: 100px;
     width: 100vw;
     left: 70vw;
   }
   @include max {
-    width: 80vw;
+    width: -20px;
     max-width: 3500px;
     margin-top: 9vw;
-    top: -380px;
+    top: -270px;
   }
   @media (min-width: 3400px) {
     width: 80vw;
     max-width: 3500px;
     margin-top: 7vw;
-    top: -400px;
+    top: -80px;
   }
   @include tablet_minHeight {
-    top: -5vw;
-    width: 100vw;
+    top: -1vw;
+    width: 120vw;
     left: 65vw;
   }
+  //@include notebook_minHeight {
+  //  top: -2vw;
+  //  width: 100vw;
+  //  left: 65vw;
+  //}
   @include minHeight_max {
     top: -430px;
     width: 100vw;
@@ -344,46 +353,63 @@
 }
 
 .nav {
-  font-size: 4vw;
   font-family: $font-head;
   z-index: 10;
 
   @include mobile-mini-plus {
+    font-size: 3vw;
     display: flex;
     flex-direction: column;
-    width: 480px;
+    width: 400px;
     height: 100px;
     margin-top: 15px;
     color: white;
+  }
+  @include tablet {
+    font-size: 4vw;
+    width: 480px;
+  }
+
 
     ul {
-      ul {
-        display: flex;
-        top: 50px;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      top: 50px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      @include mobile-mini-plus {
+        justify-content: flex-end;
+      }
+      @include notebook_only_width {
+        justify-content: center;
+      }
+
+      li {
+        padding: 10px;
+        cursor: pointer;
+        transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+        &:hover {
+          transform: scale(1.2);
+        }
+
+        @include notebook-big {
+          padding: 25px;
+        }
+        @include minHeight_notebookBig {
           padding: 10px;
-          cursor: pointer;
-          transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
 
+        a {
           &:hover {
-            transform: scale(1.2);
-          }
-
-          @include notebook-big {
-            padding: 25px;
-          }
-          a {
-            &:hover {
-              color: $color-limon;
-            }
+            color: $color-limon;
           }
         }
       }
     }
-  }
+
   @include mobile {
     width: 600px;
     //font-size: 2vw;
@@ -406,7 +432,7 @@
     font-size: 2rem;
   }
   @media (max-height: 1300px) and (min-width: 1600px) {
-    width: 40vw;
+    width: 32vw;
     font-size: 2rem;
   }
   display: none;
@@ -497,7 +523,11 @@
   ul {
     li {
       padding: 20px;
-    }
+      margin: 10px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease-in-out;
+      font-size: 3vw;    }
   }
 
   @media (min-width: 700px) {
@@ -519,6 +549,16 @@
   ul {
     li {
       padding: 20px;
+      margin: 10px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease-in-out;
+      font-size: 3vw;
+    }
+
+    li:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
     }
   }
 
@@ -526,6 +566,12 @@
     color: white;
     font-weight: bold;
     text-decoration: none;
+    //font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+  }
+
+  a:hover {
+    color: #f5f5f5;
   }
 }
 

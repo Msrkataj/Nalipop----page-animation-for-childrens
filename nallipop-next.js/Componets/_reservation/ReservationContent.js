@@ -5,33 +5,8 @@ import Select from "react-select";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm, ValidationError } from '@formspree/react';
+import data from '../data/data.json';
 
-const data = [
-    {
-        name: 'O MNIE',
-        href: '/me',
-    },
-    {
-        name: 'OFERTA',
-        href: 'offer',
-    },
-    {
-        name: 'ATRAKCJE',
-        href: 'attractions',
-    },
-    {
-        name: 'GALERIA',
-        href: 'gallery',
-    },
-    {
-        name: 'KONTAKT',
-        href: 'contact',
-    },
-    {
-        name: 'FORMULARZ',
-        href: 'form',
-    },
-];
 
 const attractionsOptions = [
     { value: "piniata", label: "Piniata" },
@@ -218,12 +193,13 @@ const ReservationContent = () => {
                                         placeholder="Licza godzin"
                                         required
                                     />
-                                    <h2>Orientacyjne godzinna</h2>
+                                    <h2>Orientacyjna godzinna rozpoczęcia:</h2>
                                     <TimePicker
                                         onChange={onChange}
                                         value={time}
                                         name="Orientacyjne godzinna"
                                         disableClock={true}
+                                        isOpen={true}
                                     />
                                     <h2>Miejsce imprezy</h2>
                                     <select name="Miejsce imprezy"
