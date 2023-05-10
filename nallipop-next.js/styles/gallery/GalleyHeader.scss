@@ -6,13 +6,16 @@
     width: 100vw;
   }
   @include tablet_minHeight {
-    height: 50vw;
+    height: 80vw;
+  }
+  @include notebook_minHeight {
+    height: 60vw;
   }
 }
 
 .header-central-image-gallery {
   @include max {
-    top: -430px;
+    top: -10px;
     width: 2700px;
   }
   @include tablet_minHeight {
@@ -20,7 +23,7 @@
   }
   @include notebook_minHeight {
     width: 1200px;
-    top: -7vw;
+    top:  100px;
     left: 65vw;
   }
   @include minHeight_nbpp {
@@ -75,10 +78,10 @@
     @include mobile-mini-plus {
     }
     @include mobile-mini-minus {
-      font-size: 6rem
+      font-size: 2rem
     }
     @include tablet {
-      font-size: 10rem;
+      font-size: 6rem;
     }
     @include nbpp {
       font-size: 12rem;

@@ -1,43 +1,60 @@
 .header .header-top .header-central-background-attractions {
   height: 200vw;
   @include mobile-mini-plus {
-    height: 130vw;
+    height: 100vw;
     max-height: 1600px;
     width: 100vw;
   }
   @include tablet {
-    height: 100vw;
+    height:  90vw;
   }
+  @include notebook_only_width {
+    height:  100vw;
+  }
+  @include tablet-minHeight {
+    height:  900px;
+  }
+  //@include notebook_minHeight {
+  //  height: 80vw;
+  //}
   @include nbpp {
     max-height: 2000px;
     height: 70vw;
   }
 }
-
 .header-central-image-attractions {
+  width: 400vw;
   top: -100px;
   @include mobile-mini {
-    top: -150px;
+    top: -160px;
   }
   @include mobile-mini-plus {
+    width: 200vw;
+    top: -70px;
+    left: 50vw;
+  }
+  @include tablet {
     top: -100px;
   }
-  @include notebook {
-    left: 700px
+  @include notebook_only_width {
+    width: 3000px;
+    top: -130px;
+    left: 35vw
   }
   @include nbpp {
     left: 1200px;
   }
   @include max {
     left: 60%;
-    top: -330px;
-    width: 2700px;
+    top: -290px;
+    width: 200vw;
   }
   @include tablet_minHeight {
-    top: -20px;
+    width: 1500px;
+    top: -40px;
   }
   @include notebook_minHeight {
-    width: 1200px;
+    width: 1500px;
     top: 1vw;
     left: 60vw;
   }
@@ -140,7 +157,7 @@
     transform: translateY(0);
   }
   @include mobile-mini-plus {
-    margin-top: 50vw;
+    margin-top: 20vw;
   }
   @include tablet {
     margin-top: 30vw;
@@ -149,17 +166,17 @@
     margin-top: 40vw;
   }
   @include nbpp {
-    margin-top: 20vw;
+    margin-top: 10vw;
   }
   @include max {
-    margin-top: calc(100% - (100vw - 1000px) / 0.75);
+    margin-top: calc(100% - (100vw - 1500px) / 0.75);
     //margin-left: 400px;
     margin-bottom: 200px;
   }
   @media (min-width: 3700px) and (min-height: 1300px) {
     margin-top: calc(100% - (100vw - 500px) / 0.8);
     margin-left: -950px;
-    margin-bottom: 700px;
+    margin-bottom: 300px;
   }
   @media (min-width: 5000px) and (min-height: 1300px)  {
     margin-top: calc(100% - (100vw - 600px) / 0.85);

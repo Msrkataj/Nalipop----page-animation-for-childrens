@@ -47,7 +47,7 @@ const HomeHeader = () => {
                         </div>
                         <div className="header-central-image-container">
                             <img className="header-central-image header-central-image-attractions"
-                                 src="/assets/attractions.png" alt="attractions"/>
+                                 src="/assets/attractions_header.png" alt="attractions"/>
                             <div className="header-central-clouds header-central-clouds-attractions"/>
                         </div>
                     </div>

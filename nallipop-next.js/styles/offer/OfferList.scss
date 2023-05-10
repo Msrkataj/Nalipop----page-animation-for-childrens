@@ -4,19 +4,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  .offer-list-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 2000px;
-    margin: 0 auto;
-    @include notebook_only_width {
-      flex-direction: row;
-      justify-content: center;
-    }
-  }
+  margin-bottom: 50px;
+  //  .offer-list-row {
+  //    display: flex;
+  //    flex-direction: column;
+  //    align-items: center;
+  //    width: 100%;
+  //    max-width: 2000px;
+  //    margin: 0 auto;
+  //    @include notebook_only_width {
+  //      flex-direction: row;
+  //      justify-content: center;
+  //    }
+  //  }
 
   h2 {
     font-family: $font-alt;
@@ -44,9 +44,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70vw;
+    justify-content: space-around;
+    background: #a079dd;
+    width: 90%;
+    border-radius: 50px;
+    height: 100%;
+    padding: 50px 0;
     @include notebook_minHeight {
       height: 40vw;
     }
@@ -54,204 +57,344 @@
       height: 1000px;
     }
 
-    .offer-list-section-photo {
-      width: 60%;
-      border-radius: 60px;
-      margin: 30px;
-      @include notebook_only_width {
-        border-radius: 100px;
-        margin: 75px;
-        width: 80%;
-      }
-      @include notebook_minHeight {
-        border-radius: 100px;
-        margin: 75px;
-        width: 60%;
-      }
-      @include nbpp {
-        border-radius: 100px;
-        margin: 75px;
+    .offer-list-section-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
         width: 90%;
+        position: relative;
+        margin: 10px;
+        border: 3px solid #8151e2;
+        padding: 15px 30px;
+        border-radius: 50px;
+        background-color: #8151e2;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        overflow: hidden;
+        z-index: 1;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: -3px;
+          left: -3px;
+          right: -3px;
+          bottom: -3px;
+          z-index: -2;
+          background: linear-gradient(90deg, $color-main-blue 0%, $color-lightBlue 100%);
+          border-radius: 50px;
+          transition: transform 0.5s;
+          transform: scale(1);
+        }
+
+        &:hover {
+          color: #8151e2;
+          background: transparent;
+
+          &:before {
+            transform: scale(1);
+            z-index: -3;
+
+          }
+
+          &:after {
+            transform: scale(1.2);
+
+          }
+        }
       }
     }
 
-    .offer-list-section-header {
-      font-size: 1.4rem;
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+
+    .offer-list-section-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .offer-list-section-header {
+        margin-top: 50px;
+        font-size: 1.4rem;
+        text-align: center;
+        font-family: $font-alt;
+        font-weight: bold;
+        color: white;
+        @include tablet {
+          font-size: 3vw;
+        }
+        @include nbpp {
+          border: 1px solid black;
+          border-radius: 40px;
+          padding: 40px;
+          font-size: 4rem;
+        }
+        @include notebook_minHeight {
+          font-size: 2rem;
+        }
+      }
+
+      .offer-list-section-photo {
+        width: 60%;
+        border-radius: 60px;
+        margin: 30px;
+        @include notebook_only_width {
+          border-radius: 100px;
+          margin: 75px;
+          width: 80%;
+        }
+        @include notebook_minHeight {
+          border-radius: 100px;
+          margin: 75px;
+          width: 60%;
+        }
+        @include nbpp {
+          border-radius: 100px;
+          margin: 75px;
+          width: 90%;
+        }
+      }
+
+      .offer-list-section-text {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 20px;
+        font-family: $font-alt;
+        padding: 50px;
+        @include tablet {
+          font-size: 2vw;
+        }
+        @include nbpp {
+          border: 1px solid black;
+          border-radius: 40px;
+          padding: 40px;
+          font-size: 2rem;
+        }
+        @include notebook_minHeight {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .offer-list-section-price {
+      font-size: 1.5rem;
       text-align: center;
       font-family: $font-alt;
       font-weight: bold;
-
+      color: $color-limon;
       @include tablet {
-        font-size: 3vw;
+        font-size: 2vw;
       }
       @include nbpp {
         border: 1px solid black;
         border-radius: 40px;
         padding: 40px;
-        font-size: 4rem;
-      }
-      @include notebook_minHeight {
         font-size: 2rem;
       }
-    }
-  }
-}
-
-.offer-list-birthday {
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @include notebook_only_width {
-    background-color: rgba(0, 0, 0, 0.0);
-  }
-  @include notebook_minHeight {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-
-  .offer-list-section-header {
-    color: $color-green;
-  }
-}
-
-.offer-list-communion {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .offer-list-section-header {
-    color: $color-blue;
-  }
-
-  @include notebook_minHeight {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-}
-
-.offer-list-christening {
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @include notebook_only_width {
-    background-color: rgba(0, 0, 0, 0.0);
-  }
-
-  .offer-list-section-header {
-    color: $color-yellow;
-  }
-}
-
-.offer-list {
-  .offer-list-family {
-    margin: 20px 0 0 0;
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @include max {
-    }
-
-    .offer-list-section-header {
-      color: $color-bordo;
-    }
-
-    //.offer-list-section-photo {
-    //  width: 40vw;
-    //  @include notebook_only_width {
-    //    width: 400px;
-    //  }
-    //  @include notebook_minHeight {
-    //    width: 300px
-    //  }
-    //  @include nbpp {
-    //    width: 600px;
-    //  }
-    //  @include max {
-    //    border-radius: 100px;
-    //    width: 600px
-    //  }
-    //}
-  }
-}
-
-.offer-list {
-  .offer-list-wedding {
-    margin: 40px 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    height: 90vw;
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @include notebook_minHeight {
-      margin: 0 0;
-      height: 45vw;
-    }
-    @include minHeight_notebookBig {
-      margin: 0 0;
-      height: 40vw;
-    }
-    @include nbpp {
-      background-color: rgba(0, 0, 0, 0.0);
-      height: auto;
-    }
-
-    @include notebook_minHeight {
-      background-color: rgba(0, 0, 0, 0.2);
-      height: 40vw;
-    }
-    @include minHeight_nbpp {
-      background-color: rgba(0, 0, 0, 0.2);
-      height: 55vw;
-    }
-
-    .offer-list-section-photo {
-      width: 40vw;
       @include notebook_minHeight {
-        width: 300px;
+        font-size: 3rem;
       }
-      @include nbpp {
-        width: 600px;
-      }
-    }
-
-    .offer-list-section-header {
-      color: $color-lightBlue;
     }
   }
 }
+
+    //
+    //    .offer-list-section-header {
+    //      font-size: 1.4rem;
+    //      text-align: center;
+    //      font-family: $font-alt;
+    //      font-weight: bold;
+    //
+    //      @include tablet {
+    //        font-size: 3vw;
+    //      }
+    //      @include nbpp {
+    //        border: 1px solid black;
+    //        border-radius: 40px;
+    //        padding: 40px;
+    //        font-size: 4rem;
+    //      }
+    //      @include notebook_minHeight {
+    //        font-size: 2rem;
+    //      }
+    //    }
+//  }
+//}
+
+//.offer-list-birthday {
+//  background-color: rgba(0, 0, 0, 0.2);
+//  width: 100%;
+//  height: 100%;
+//  opacity: 0;
+//  transform: translateY(-50px);
+//  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+//
+//  &.visible {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//
+//  @include notebook_only_width {
+//    background-color: rgba(0, 0, 0, 0.0);
+//  }
+//  @include notebook_minHeight {
+//    background-color: rgba(0, 0, 0, 0.2);
+//  }
+//
+//  .offer-list-section-header {
+//    color: $color-green;
+//  }
+//}
+//
+//.offer-list-communion {
+//  opacity: 0;
+//  transform: translateY(-50px);
+//  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+//
+//  &.visible {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//
+//  .offer-list-section-header {
+//    color: $color-blue;
+//  }
+//
+//  @include notebook_minHeight {
+//    background-color: rgba(0, 0, 0, 0.2);
+//  }
+//}
+//
+//.offer-list-christening {
+//  background-color: rgba(0, 0, 0, 0.2);
+//  width: 100%;
+//  height: 100%;
+//  opacity: 0;
+//  transform: translateY(-50px);
+//  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+//
+//  &.visible {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//
+//  @include notebook_only_width {
+//    background-color: rgba(0, 0, 0, 0.0);
+//  }
+//
+//  .offer-list-section-header {
+//    color: $color-yellow;
+//  }
+//}
+//
+//.offer-list {
+//  .offer-list-family {
+//    margin: 20px 0 0 0;
+//    opacity: 0;
+//    transform: translateY(-50px);
+//    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+//
+//    &.visible {
+//      opacity: 1;
+//      transform: translateY(0);
+//    }
+//
+//    @include max {
+//    }
+//
+//    .offer-list-section-header {
+//      color: $color-bordo;
+//    }
+
+//.offer-list-section-photo {
+//  width: 40vw;
+//  @include notebook_only_width {
+//    width: 400px;
+//  }
+//  @include notebook_minHeight {
+//    width: 300px
+//  }
+//  @include nbpp {
+//    width: 600px;
+//  }
+//  @include max {
+//    border-radius: 100px;
+//    width: 600px
+//  }
+//}
+//  }
+//}
+//.offer-list {
+//  .offer-list-wedding {
+//    margin: 40px 0;
+//    background-color: rgba(0, 0, 0, 0.2);
+//    height: 90vw;
+//    opacity: 0;
+//    transform: translateY(-50px);
+//    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+//
+//    &.visible {
+//      opacity: 1;
+//      transform: translateY(0);
+//    }
+//
+//    @include notebook_minHeight {
+//      margin: 0 0;
+//      height: 45vw;
+//    }
+//    @include minHeight_notebookBig {
+//      margin: 0 0;
+//      height: 40vw;
+//    }
+//    @include nbpp {
+//      background-color: rgba(0, 0, 0, 0.0);
+//      height: auto;
+//    }
+//
+//    @include notebook_minHeight {
+//      background-color: rgba(0, 0, 0, 0.2);
+//      height: 40vw;
+//    }
+//    @include minHeight_nbpp {
+//      background-color: rgba(0, 0, 0, 0.2);
+//      height: 55vw;
+//    }
+//
+//    .offer-list-section-photo {
+//      width: 40vw;
+//      @include notebook_minHeight {
+//        width: 300px;
+//      }
+//      @include nbpp {
+//        width: 600px;
+//      }
+//    }
+//
+//    .offer-list-section-header {
+//      color: $color-lightBlue;
+//    }
+//  }
+//}
 
 .offer-info {
   position: relative;
@@ -324,6 +467,7 @@
       }
     }
   }
+
   .curve-line-left {
     background-image: url('../../public/assets/curve-left.png');
     background-repeat: no-repeat;
@@ -337,6 +481,7 @@
     z-index: -20;
     overflow: hidden;
   }
+
   .curve-line-right {
     background-image: url('../../public/assets/curve-right.png');
     background-repeat: no-repeat;

@@ -3,39 +3,52 @@
   @include mobile-mini-plus {
     height: 110vw;
   }
+  @include mobile {
+    height: 80vw;
+  }
+  @include tablet {
+    height: 110vw;
+  }
+
   @include nbpp {
     height: 70vw;
     width: 100vw;
   }
   @include tablet_minHeight {
-    height: 50vw;
+    height: 70vw;
+  }
+  @include notebook_minHeight {
+    height: 1000px;
   }
 }
 .header-central-image-contact {
-  top: -220px;
+  top: -50px;
   @include mobile-mini {
-    top: -400px;
+    top: -100px;
   }
   @include mobile-mini-plus {
-    top: -200px;
+    //top: -200px;
   }
   @include mobile {
-    top: -250px;
+    //top: -250px;
   }
-  @include notebook {
-    top: -400px;
+  @include tablet {
+    //width: 100vw;
+  }
+  @include notebook_only_width {
+    top: 100px;
   }
   @include max {
-    top: -430px;
-    width: 2700px;
+    top: -200px;
+    width: 3500px;
   }
   @include tablet_minHeight {
-    width: 800px;
+    width: 1800px;
     top: -20px;
   }
   @include notebook_minHeight {
-    width: 1200px;
-    top: -7vw;
+    //width: 1200px;
+    //top: -7vw;
     left: 65vw;
   }
   @include minHeight_nbpp {
@@ -83,7 +96,7 @@
 
   h1 {
     color: #FFFFFF;
-    font-size: 15vw;
+    font-size: 13vw;
     margin-bottom: 30px;
     font-weight: normal;
     @include mobile-mini-plus {

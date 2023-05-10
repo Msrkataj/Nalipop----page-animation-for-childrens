@@ -39,8 +39,8 @@ const GalleryHeader = () => {
                             <HeaderMenu/>
                         </div>
                         <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-gallery" src="/assets/gallery.png" alt="gallery.png" />
-                            <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
+                            <img className="header-central-image header-central-image-gallery" src="/assets/gallery_header.png" alt="gallery.png" />
+                            <img className="header-central-clouds" />
                         </div>
                     </div>
                     <div className="header-central">

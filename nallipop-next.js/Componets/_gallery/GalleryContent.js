@@ -29,7 +29,7 @@ const GalleryContent = () => {
             <div className="page">
                 <div className="container">
                     <section className="gallery">
-                        <div className="header-gallery-clouds" />
+                        <div className="header-gallery-clouds gallery-clouds" />
                         {images.map((image, index) => (
                             <div key={index} className="gallery-item">
                                 <img src={image} alt={`Gallery Image ${index + 1}`} />

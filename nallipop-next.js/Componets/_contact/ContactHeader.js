@@ -43,8 +43,8 @@ const ContactHeader = ({close}) => {
                             <HeaderMenu/>
                         </div>
                         <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-contact" src="/assets/contact.png" alt="contact.png" />
-                            <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
+                            <img className="header-central-image header-central-image-contact" src="/assets/contact-header.png" alt="contact.png" />
+                            <div className="header-central-clouds"/>
                         </div>
                     </div>
                     <div className="header-central">
