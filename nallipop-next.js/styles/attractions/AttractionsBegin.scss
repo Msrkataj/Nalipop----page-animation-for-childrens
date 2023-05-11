@@ -197,7 +197,7 @@
     height: 100%;
     z-index: 1;
    @include notebook_minHeight {
-     margin-bottom: 150px;
+     //margin-bottom: 150px;
    }
     h1 {
       font-family: $font-base;

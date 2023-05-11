@@ -68,7 +68,9 @@ const FooterContact = ({close}) => {
                 <div className="footer-background">
                     <img className="footer-image" src="/assets/footer.png" alt="background-footer"/>
                     <div className="footer-content">
-                        <img className="footer-content-logo" src="/assets/logo.png" alt="Opis obrazka"/>
+                        <Link href="/">
+                            <img className="footer-content-logo" src="/assets/logo.png" alt="logo"/>
+                        </Link>
                         <div className="footer-content-menu">
                             <ul>
                                 {data.map((item, index) => (
@@ -103,7 +105,7 @@ const FooterContact = ({close}) => {
                             </div>
                         </div>
                         <div className="footer-content-media">
-                            <FontAwesomeIcon icon={faFacebook} />
+                                <FontAwesomeIcon icon={faFacebook} />
                             <FontAwesomeIcon icon={faInstagram} />
                         </div>
                     </div>

@@ -24,6 +24,10 @@
 }
 
 .header-central-image-about {
+  top: -40vw;
+  @include mobile {
+    top: -35vw;
+  }
   @include tablet_minHeight {
     left: 75vw;
     top: -60px;
@@ -44,7 +48,6 @@
   }
   @media (min-width: 5000px) {
     top: -700px;
-
   }
 }
 

@@ -31,7 +31,7 @@ const HomeHeader = () => {
                 <div id="#" className="header">
                     {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
                     <div className="header-top">
-                        <div className="header-central-background header-central-background-about"></div>
+                        <div className="header-central-background header-central-background-offer"></div>
                         <img className="header-image" src="/assets/top.png" alt="top" />
                         <div className="header-top-content">
                             <Link href="/">
@@ -40,12 +40,12 @@ const HomeHeader = () => {
                             <HeaderMenu/>
                         </div>
                         <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-about" src="/assets/offer.png" alt="offer" />
+                            <img className="header-central-image header-central-image-offer" src="/assets/offer.png" alt="offer" />
                             <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
                         </div>
                     </div>
                     <div className="header-central">
-                        <div className="header-text-about">
+                        <div className="header-text-offer">
                             <h1>OFERTA</h1>
                         </div>
                     </div>

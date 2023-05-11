@@ -4,11 +4,38 @@
     height: 70vw;
     width: 100vw;
   }
+  @include tablet_minHeight {
+    height: 800px;
+  }
+  @include minHeight_nbpp {
+    height: 35vw;
+  }
 }
 .header-central-image-offer {
+  top: -40vw;
+  @include mobile {
+    top: -35vw;
+  }
+  @include tablet_minHeight {
+    left: 75vw;
+    top: -60px;
+    width: 1053px;
+  }
+  @include minHeight_nbpp {
+    top: calc(200% - (100vw - 100px) * 0.75);
+  }
+  @include minHeight_max {
+    position: absolute;
+    width: 1500px;
+    left: 74vw;
+    top: calc((20vw - 1000px) * 0.8);
+  }
   @include max {
-    top: -430px;
+    top: -500px;
     width: 2700px;
+  }
+  @media (min-width: 5000px) {
+    top: -700px;
   }
 }
 
@@ -16,7 +43,9 @@
   position: absolute;
   top: 100vw;
   left: 88px;
-
+  @include mobile-mini-minus {
+    left: 20px;
+  }
   @include mobile-mini-plus {
     top: 470px;
     left: 33px;
@@ -41,6 +70,14 @@
     left: 15vw;
     top: 18vw;
   }
+  @include minHeight_notebookBig {
+    left: 20vw;
+    top: 470px;
+  }
+  @include minHeight_max {
+    left: 10vw;
+    top: 600px;
+  }
 
 
   h1 {
@@ -51,7 +88,8 @@
     @include mobile-mini-plus {
     }
     @include mobile-mini-minus {
-      font-size: 6rem
+      left: 10px;
+      font-size: 4rem
     }
     @include tablet {
       font-size: 10rem;
@@ -61,6 +99,12 @@
     }
     @include max {
       font-size: 15rem;
+    }
+    @include tablet_minHeight {
+      font-size: 10vh;
+    }
+    @include minHeight_max {
+      font-size: 14vh;
     }
   }
 }

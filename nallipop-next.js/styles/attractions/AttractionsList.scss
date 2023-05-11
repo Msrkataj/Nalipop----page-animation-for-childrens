@@ -5,7 +5,7 @@
 }
 .attractions-header {
   text-align: center;
-  color: $color-main;
+  color: #b840f5;
   font-size: 6vw;
   font-weight: bold;
   font-family: $font-alt;
@@ -45,39 +45,41 @@
   }
   .attractions-list-content {
     width: 40%;
-    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 5px;
-    @include notebook {
+    margin: 20px 10px;
+    @include notebook_only_width {
       width: 500px;
-      height: 500px;
       margin: 50px;
     }
     .attractions-list-content-photo {
-      width: 150px;
-      height: 150px;
+      width: 100%;
       margin-bottom: 20px;
-      border-radius: 50%;
+      border-radius: 50px;
       background-color: #8bacc0;
       @include mobile {
-        width: 50%;
-        height: 75%;
+        width: 80%;
       }
-      @include notebook {
-        width: 50%;
-        height: 50%;;
+      @include notebook_only_width {
+        width: 100%;
       }
     }
     h2 {
       font-size: 4vw;
       text-align: center;
       font-weight: bold;
-      color: $color-main;
+      color: $color-main2;
       @include mobile {
         font-size: 2vw;
-
+      }
+      @include notebook_only_width {
+        margin-top: 50px;
+        font-size: 2rem;
+      }
+      @include minHeight_nbpp {
+        margin-top: 50px;
+        font-size: 3rem;
       }
     }
   }

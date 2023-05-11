@@ -5,19 +5,14 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-  //  .offer-list-row {
-  //    display: flex;
-  //    flex-direction: column;
-  //    align-items: center;
-  //    width: 100%;
-  //    max-width: 2000px;
-  //    margin: 0 auto;
-  //    @include notebook_only_width {
-  //      flex-direction: row;
-  //      justify-content: center;
-  //    }
-  //  }
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   h2 {
     font-family: $font-alt;
     font-size: 1.5rem;
@@ -31,6 +26,7 @@
     }
     @include nbpp {
       font-size: 6rem;
+      margin-bottom: 150px;
     }
     @include max {
       font-size: 9rem;
@@ -47,21 +43,56 @@
     justify-content: space-around;
     background: #a079dd;
     width: 90%;
+    margin: 20px;
     border-radius: 50px;
     height: 100%;
     padding: 50px 0;
+    max-width: 2000px;
+    z-index: 5;
+    @include tablet {
+      flex-wrap: wrap;
+    }
+    @include notebook_only_width {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 1300px;
+      padding: 20px 0;
+    }
     @include notebook_minHeight {
-      height: 40vw;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 800px;
+      padding: 20px 0;
+      margin: 20px 0;
+      width: 90%;
     }
     @include nbpp {
-      height: 1000px;
+      height: 1400px;
+      margin: 100px 0 150px 0;
     }
 
     .offer-list-section-options {
+      width: 80%;
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      @include tablet {
+        width: 90%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+      }
+      @include notebook_only_width {
+        height: 100%;
+        width: 30%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      @include nbpp {
+        width: 40%;
+      }
       p {
         width: 90%;
         position: relative;
@@ -80,6 +111,28 @@
         font-weight: bold;
         overflow: hidden;
         z-index: 1;
+        @include tablet {
+          width: 40%;
+          font-size: 1.5rem;
+        }
+        @include notebook_only_width {
+          margin: 20px 0;
+          width: 100%;
+          font-size: 2rem;
+        }
+        @include notebook_minHeight {
+          margin: 20px 0;
+          width: 100%;
+          font-size: 1rem;
+        }
+        @include nbpp {
+          padding: 20px 50px;
+          margin: 30px 0;
+          width: 100%;
+          font-size: 3rem;
+          line-height: 60px;
+
+        }
 
         &:after {
           content: "";
@@ -132,6 +185,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include notebook_only_width {
+        width: 50%;
+      }
 
       .offer-list-section-header {
         margin-top: 50px;
@@ -140,58 +196,83 @@
         font-family: $font-alt;
         font-weight: bold;
         color: white;
-        @include tablet {
-          font-size: 3vw;
+        @include mobile {
+          font-size: 2rem;
         }
-        @include nbpp {
-          border: 1px solid black;
-          border-radius: 40px;
-          padding: 40px;
+        @include tablet {
+          font-size: 4vw;
+        }
+        @include notebook_only_width {
           font-size: 4rem;
+          margin: 0 0 30px 0;
         }
         @include notebook_minHeight {
           font-size: 2rem;
+          margin: 0 0 30px 0;
         }
+        @include nbpp {
+          font-size: 5rem;
+        }
+
       }
 
       .offer-list-section-photo {
-        width: 60%;
+        width: 90%;
         border-radius: 60px;
         margin: 30px;
+        border: 2px solid $color-lightBlue;
+
+        @include mobile {
+          width: 70%;
+        }
+        @include tablet {
+          width: 50%;
+        }
         @include notebook_only_width {
+          margin: 10px;
           border-radius: 100px;
-          margin: 75px;
-          width: 80%;
+          width: 500px;
         }
         @include notebook_minHeight {
+          margin: 10px;
           border-radius: 100px;
-          margin: 75px;
-          width: 60%;
+          width: 400px;
         }
         @include nbpp {
-          border-radius: 100px;
-          margin: 75px;
-          width: 90%;
+          width: 800px;
         }
       }
+
 
       .offer-list-section-text {
         font-size: 1rem;
         text-align: center;
         line-height: 20px;
         font-family: $font-alt;
-        padding: 50px;
+        padding: 30px 50px;
         @include tablet {
-          font-size: 2vw;
+          width: 80%;
+          font-size: 3vw;
+          line-height: 50px;
+          padding: 4vw 50px;
         }
-        @include nbpp {
-          border: 1px solid black;
-          border-radius: 40px;
-          padding: 40px;
+        @include notebook_only_width {
+          width: 600px;
           font-size: 2rem;
+          line-height: 50px;
+          padding: 30px 50px;
         }
         @include notebook_minHeight {
-          font-size: 3rem;
+          font-size: 1.2rem;
+          margin: 10px;
+          border-radius: 100px;
+          width: 100%;
+        }
+        @include nbpp {
+          width: 750px;
+          padding: 0;
+          margin: 60px 10px;
+          font-size: 2rem;
         }
       }
     }
@@ -203,41 +284,59 @@
       font-weight: bold;
       color: $color-limon;
       @include tablet {
-        font-size: 2vw;
+        font-size: 4vw;
       }
-      @include nbpp {
-        border: 1px solid black;
-        border-radius: 40px;
-        padding: 40px;
-        font-size: 2rem;
+      @include notebook_only_width {
+        //border: 1px solid black;
+        //border-radius: 40px;
+        //padding: 20px 80px;
       }
       @include notebook_minHeight {
         font-size: 3rem;
       }
+      @include nbpp {
+        font-size: 5rem;
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+      }
     }
   }
 }
+.fadeInDown {
+  animation: fadeInDown 1s ease-out;
+}
 
-    //
-    //    .offer-list-section-header {
-    //      font-size: 1.4rem;
-    //      text-align: center;
-    //      font-family: $font-alt;
-    //      font-weight: bold;
-    //
-    //      @include tablet {
-    //        font-size: 3vw;
-    //      }
-    //      @include nbpp {
-    //        border: 1px solid black;
-    //        border-radius: 40px;
-    //        padding: 40px;
-    //        font-size: 4rem;
-    //      }
-    //      @include notebook_minHeight {
-    //        font-size: 2rem;
-    //      }
-    //    }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//
+//    .offer-list-section-header {
+//      font-size: 1.4rem;
+//      text-align: center;
+//      font-family: $font-alt;
+//      font-weight: bold;
+//
+//      @include tablet {
+//        font-size: 3vw;
+//      }
+//      @include nbpp {
+//        border: 1px solid black;
+//        border-radius: 40px;
+//        padding: 40px;
+//        font-size: 4rem;
+//      }
+//      @include notebook_minHeight {
+//        font-size: 2rem;
+//      }
+//    }
 //  }
 //}
 

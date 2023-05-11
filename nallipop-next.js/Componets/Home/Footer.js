@@ -64,7 +64,9 @@ const Footer = ({close}) => {
                 <div className="footer-background">
                     <img className="footer-image" src="/assets/footer.png" alt="background-footer"/>
                     <div className="footer-content">
-                        <img className="footer-content-logo" src="/assets/logo.png" alt="Opis obrazka"/>
+                        <Link href="/">
+                            <img className="footer-content-logo" src="/assets/logo.png" alt="logo"/>
+                        </Link>
                         <div className="footer-content-menu">
                             <ul>
                                 {data.map((item, index) => (
