@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import storage from "../../firebase";
 import { ref, getDownloadURL, list, listAll } from "firebase/storage";
-import data from '../data/data.json';
 
 
 const GalleryContent = () => {

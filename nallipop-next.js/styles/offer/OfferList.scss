@@ -13,6 +13,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
   h2 {
     font-family: $font-alt;
     font-size: 1.5rem;
@@ -48,7 +49,7 @@
     height: 100%;
     padding: 50px 0;
     max-width: 2000px;
-    z-index: 5;
+    z-index: 6;
     @include tablet {
       flex-wrap: wrap;
     }
@@ -93,6 +94,7 @@
       @include nbpp {
         width: 40%;
       }
+
       p {
         width: 90%;
         position: relative;
@@ -302,6 +304,7 @@
     }
   }
 }
+
 .fadeInDown {
   animation: fadeInDown 1s ease-out;
 }
@@ -679,10 +682,11 @@
           &::before {
             content: "•";
             position: absolute;
-            left: 20px;
+            left: 0;
             color: $color-limon;
             font-size: 1.5rem;
             @include mobile {
+              left: 10px;
               font-size: 3rem;
               line-height: 70px;
               @include notebook_only_width {

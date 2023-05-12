@@ -3,7 +3,7 @@ import Link from 'next/link';
 import HeaderMenu from "../hooks/header-menu";
 
 
-const HomeHeader = () => {
+const RegulationsHeader = () => {
     const [visible, setVisible] = useState(false);
 
     const handleScroll = () => {
@@ -28,10 +28,9 @@ const HomeHeader = () => {
     return (
         <>
             <div className="container">
-                <div id="#" className="header">
-                    {/*<img className="header-image-top" src="/assets/baner.png" alt="Opis obrazka" loading="lazy"/>*/}
+                <div id="#" className="header regulations-header">
                     <div className="header-top">
-                        <div className="header-central-background header-central-background-offer"></div>
+                        <div className="header-central-background header-central-background-regulations"></div>
                         <img className="header-image" src="/assets/top.png" alt="top" />
                         <div className="header-top-content">
                             <Link href="/">
@@ -40,13 +39,12 @@ const HomeHeader = () => {
                             <HeaderMenu/>
                         </div>
                         <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-offer" src="/assets/offer.png" alt="offer" />
-                            <div className="header-central-clouds" />
+                            <img className="header-central-clouds" src="/assets/clouds.png" alt="Opis obrazka" />
                         </div>
                     </div>
-                    <div className="header-central">
-                        <div className="header-text-offer">
-                            <h1>OFERTA</h1>
+                    <div className="header-central header-central-regulations">
+                        <div className="header-text-regulations">
+                            <h1>REGULAMIN</h1>
                         </div>
                     </div>
                 </div>
@@ -61,4 +59,4 @@ const HomeHeader = () => {
     )
 }
 
-export default HomeHeader
+export default RegulationsHeader

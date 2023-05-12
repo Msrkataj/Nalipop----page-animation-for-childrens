@@ -1,0 +1,195 @@
+.regulations-header {
+  z-index: 3;
+}
+
+.header .header-top .header-central-background-regulations {
+  height: 80vw;
+
+  @include mobile-mini-plus {
+    height: 80vw;
+  }
+  @include tablet {
+    height: 60vw;
+  }
+  @include notebook_only_width {
+    height: 70vw;
+    top: -400px;
+  }
+  @include nbpp {
+    height: 1000px;
+  }
+  @include nbpp {
+    top: 5vw;
+    height: 40vw;
+    width: 100vw;
+  }
+  @include max {
+    top: 2vw;
+    height: 30vw;
+  }
+}
+
+.header-central-image-regulations {
+  top: -220px;
+  @include mobile-mini {
+    top: -400px;
+  }
+  @include mobile-mini-plus {
+    top: -200px;
+  }
+  @include mobile {
+    top: -250px;
+  }
+  @include notebook_only_width {
+    top: -400px;
+  }
+  @include max {
+    top: -430px;
+    width: 2700px;
+  }
+}
+
+.header-central-regulations {
+  //padding-top: 50px;
+  @include notebook_only_width {
+    padding-top: 180px;
+  }
+}
+
+.header-text-regulations {
+  position: absolute;
+  top: 40vw;
+  left: 0;
+  @include mobile-mini-plus {
+    top: 350px;
+    left: 33px;
+  }
+
+  @include tablet {;
+    left: 10vw;
+  }
+  @include notebook_only_width {
+    left: 15vw;
+    top: 25vw;
+  }
+  @include notebook-big-plus {
+    left: 20vw;
+    top: 25vw;
+  }
+  @include nbpp {
+    left: 10vw;
+    top: 500px;
+  }
+  @include max {
+    width: 1800px;
+    left: 15vw;
+    top: 18vw;
+  }
+
+
+  h1 {
+    color: #FFFFFF;
+    font-size: 13vw;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    font-weight: normal;
+    @include mobile-mini-plus {
+    }
+    @include mobile-mini-minus {
+      font-size: 13vw;
+    }
+    @include tablet {
+      font-size: 5rem;
+    }
+    //@include tablet_minHeight {
+    //  font-size: 2rem;
+    //}
+    @include nbpp {
+      font-size: 8rem;
+    }
+    @include max {
+      font-size: 15rem;
+    }
+  }
+}
+
+
+.regulations {
+  margin: 50px;
+  h1 {
+    font-size: 3vw;
+    margin-bottom: 30px;
+    font-weight: bold;
+    @include notebook_only_width {
+      margin-bottom: 60px;
+    }
+    @include nbpp {
+      font-size: 5rem;
+      margin-bottom: 100px;
+    }
+  }
+  h2 {
+    font-size: 2vw;
+    margin: 10px;
+    font-weight: bold;
+    @include notebook_only_width {
+      font-size: 2rem;
+      margin: 50px 30px;
+    }
+    @include nbpp {
+      font-size: 3rem;
+    }
+  }
+  p {
+    font-size: 2vw;
+    margin: 5px 0;
+    @include tablet {
+      font-size: 1.5vw;
+    }
+    @include notebook_only_width {
+      margin: 30px 0;
+      font-size: 1.2rem;
+    }
+    @include nbpp {
+      line-height: 120%;
+      font-size: 2rem;
+    }
+  }
+  b {
+    font-weight: bold;
+    margin-right: 5px;
+    @include notebook_only_width {
+      margin-right: 30px;
+    }
+  }
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .regulations-text {
+    height: auto;
+    z-index: 6;
+    @include mobile {
+      width: 600px;
+    }
+    @include tablet {
+      width: 800px;
+      font-size: 2rem;
+    }
+    @include tablet_minHeight {
+      width: 900px;
+    }
+    @include nbpp {
+      width: 1600px;
+      font-size: 3rem;
+      margin: 10vw 0 20vw 0;
+    }
+    @include max {
+      //margin: 10vw 0 0vw 0;
+      z-index: 4;
+    }
+  }
+}
