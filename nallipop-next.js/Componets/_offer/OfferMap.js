@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react";
-import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
 const OfferMap = ({ close }) => {
     const [isImageZoomed, setIsImageZoomed] = useState(false);
 
@@ -29,7 +27,7 @@ const OfferMap = ({ close }) => {
 
             hammer.on('pan', (e) => {
                 const prevTotalDeltaX = totalDeltaX;
-                totalDeltaX += e.deltaX;
+                totalDeltaX += e.deltaX / 5
 
                 const imgWidth = image.clientWidth;
                 const containerWidth = window.innerWidth;
@@ -54,7 +52,6 @@ const OfferMap = ({ close }) => {
             };
         }
     }, [isImageZoomed]);
-// ...
 
 
 
