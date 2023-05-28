@@ -18,46 +18,38 @@
   @include mobile-mini {
     margin-top: 150px;
   }
-  @include notebook {
-    //margin-top: 1500px;
+  @include notebook_only_width {
     margin-bottom: 100px;
 
   }
-  @include notebook_minHeight {
-    margin-bottom: 100px;
-  }
-  @include notebook {
+  @include notebook_only_width {
     .home_carousel_button {
       .button-classic {
         font-size: 3rem;
         border-radius: 30px;
-        @include notebook_minHeight {
-          font-size: 2rem;
-        }
       }
     }
   }
 
-  .home_offer_title {
-    color: #8151e2;
+  &_title {
+    color: darkcyan;
     font-weight: bold;
     margin-bottom: 40px;
     font-size: 8vw;
     text-align: center;
     @include mobile-mini {
       font-size: 3rem;
-      @include notebook {
-        font-size: 6rem;
-        margin-bottom: 80px;
-        color: darkcyan;
-      }
-      @include notebook_minHeight {
-        font-size: 4rem;
-      }
+    }
+    @include tablet {
+      font-size: 5rem;
+    }
+    @include notebook_only_width {
+      font-size: 6rem;
+      margin-bottom: 80px;
     }
   }
 
-  .home_offer-content {
+  &-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,18 +61,13 @@
       height: 100%;
     }
     @include mobile {
-      //max-width: 900px;
       height: 100%;
     }
-    @include notebook {
-      width: 1200px;
-    }
-    @include notebook_minHeight {
-      height: 50vh;
-      margin-bottom: 0;
+    @include notebook_only_width {
+      width: 900px;
     }
 
-    .home_offer_square {
+    &_square {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -89,71 +76,16 @@
       border: 1px solid $color-grey;
       border-radius: 50px;
       width: 30vw;
-      height: 20vw;
+      height: 25vw;
       margin: 10px;
+      padding: 10px;
       font-weight: bold;
       background-color: #8bacc0;
-
-      div {
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: relative;
-        width: 70%;
-        height: 80%;
-        object-fit: cover;
-        @include mobile-mini-plus {
-          height: 60%;
-        }
-        @include tablet {
-          height: 40%;
-        }
-      }
-
-      @include mobile-mini {
-        width: 130px;
-        height: 12vh;
-      }
-      @include mobile-mini-plus {
-        width: 100px;
-        height: 15vh;
-      }
-      @include notebook_minHeight {
-        width: 20%;
-        height: 10vw;
-      }
-
-      svg {
-        font-size: 8vw;
-        @include mobile {
-          font-size: 6rem;
-        }
-        @include notebook {
-          font-size: 9rem;
-        }
-        @include notebook_minHeight {
-          font-size: 8vh;
-        }
-      }
-
-      h2 {
-        font-size: 4vw;
-        margin-top: 10px;
-        color: white;
-        @include mobile {
-          font-size: 2rem;
-        }
-        @include notebook {
-          font-size: 4rem;
-        }
-        @include notebook_minHeight {
-          font-size: 3vh;
-        }
-      }
 
       @include mobile-mini {
         width: 45%;
       }
+
       @include mobile {
         width: 200px;
         height: 250px;
@@ -164,21 +96,59 @@
           transform: scale(1.2);
         }
       }
-      @include notebook {
-        width: 400px;
-        height: 450px;
+
+      @include notebook_only_width {
+        width: 200px;
+        height: 220px;
       }
-      @include notebook_minHeight {
-        width: 20vh;
-        height: 20vh;
+
+      div {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: relative;
+        width: 60%;
+        height: 70%;
+        object-fit: cover;
+        @include mobile-mini-plus {
+          height: 60%;
+        }
+        @include tablet {
+          height: 40%;
+        }
+        img {
+          align-self: center;
+        }
+      }
+
+      svg {
+        font-size: 8vw;
+        @include mobile {
+          font-size: 8rem;
+        }
+        @include notebook_only_width {
+          font-size: 9rem;
+        }
+      }
+
+      h2 {
+        font-size: 4vw;
+        margin-top: 10px;
+        color: white;
+        @include mobile {
+          font-size: 3rem;
+        }
+        @include notebook_only_width {
+          font-size: 4rem;
+        }
       }
     }
 
-    .home_offer_square_birthday {
+    &_birthday {
       background-color: #FAD648;
     }
 
-    .home_offer_square_christening {
+    &_christening {
       background-color: #8bacc0;
 
       div {
@@ -186,7 +156,7 @@
       }
     }
 
-    .home_offer_square_wedding {
+    &_wedding {
       background-color: darksalmon;
 
       div {
@@ -194,7 +164,7 @@
       }
     }
 
-    .home_offer_square_family {
+    &_family {
       background-color: burlywood;
 
       div {
@@ -202,7 +172,7 @@
       }
     }
 
-    .home_offer_square_other {
+    &_other {
       background-color: darkcyan;
 
       div {
@@ -210,11 +180,7 @@
       }
     }
   }
-
   .home_offer_button {
     margin-top: 20px;
   }
-}
-.home_offer_square div img {
-  align-self: center;
 }

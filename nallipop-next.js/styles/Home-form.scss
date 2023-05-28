@@ -13,37 +13,27 @@
       transform: translateY(0);
     }
     h1 {
-      font-size: 6vw;
+      font-size: 9vw;
       margin-bottom: 20px;
       @include tablet {
+        font-size: 6rem;
         margin-bottom: 40px;
       }
-      @include notebook-big {
-        margin-bottom: 60px;
-      }
-      @include nbpp {
-        margin-top: 100px;
+      @include notebook_only_width {
+        margin-top: 50px;
         font-size: 7rem;
-      }
-      @include tablet_minHeight {
-        font-size: 6vh;
       }
     }
     p {
       margin-bottom: 20px;
-      font-size: 3vw;
+      font-size: 5vw;
       font-family: $font-head2;
       @include tablet {
+        font-size: 2.5rem;
         margin-bottom: 40px;
       }
-      @include notebook-big {
-        margin-bottom: 60px;
-      }
-      @include nbpp {
+      @include notebook_only_width {
         font-size: 3rem;
-      }
-      @include tablet_minHeight {
-        font-size: 4vh;
       }
     }
     .button{
@@ -52,12 +42,8 @@
       @include tablet {
         margin-bottom: 40px;
       }
-      @include notebook {
+      @include notebook_only_width {
         padding: 30px 50px;
       }
-      @include notebook-big {
-        margin-bottom: 60px;
-      }
-
     }
   }

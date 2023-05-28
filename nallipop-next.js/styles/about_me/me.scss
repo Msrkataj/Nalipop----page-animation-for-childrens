@@ -1,57 +1,57 @@
-.header .header-top .header-central-background-about {
-  height: 100vw;
-  @include nbpp {
-    height: 70vw;
-    width: 100vw;
-  }
-  @include tablet_minHeight {
-    height: 800px;
-  }
-  @include minHeight_nbpp {
-    height: 35vw;
+.header {
+  &__top {
+    &__background__about {
+      height: 100vw;
+      @include tablet {
+        height: 70vw;
+      }
+      @include notebook_only_width {
+        max-height: 1200px;
+        height: 70vw;
+        width: 100vw;
+      }
+      @media (min-width: 2500px) {
+        height: 40vw;
+      }
+    }
+
+
+    &__container__about {
+      &__image {
+        max-height: 1800px;
+        top: -36vw;
+        @include mobile {
+          top: -35vw;
+        }
+        @include tablet {
+          left: 75vw;
+          top: -60px;
+          width: 1053px;
+        }
+        @include notebook_only_width {
+          top: -255px;
+          width: 1350px;
+        }
+        @media (min-width: 5000px) {
+          top: -700px;
+        }
+      }
+
+      &__clouds {
+        position: relative;
+        width: 100%;
+        left: 94vw;
+        top: -105vw;
+        transform: translateX(-50%);
+        z-index: -20;
+        overflow: hidden;
+        rotate: 330deg;
+      }
+    }
   }
 }
 
-.header-central-clouds-about {
-  position: relative;
-  width: 100%;
-  left: 94vw;
-  top: -105vw;
-  transform: translateX(-50%);
-  z-index: -20;
-  overflow: hidden;
-  rotate: 315deg;
-}
-
-.header-central-image-about {
-  top: -40vw;
-  @include mobile {
-    top: -35vw;
-  }
-  @include tablet_minHeight {
-    left: 75vw;
-    top: -60px;
-    width: 1053px;
-  }
-  @include minHeight_nbpp {
-    top: calc(200% - (100vw - 100px) * 0.75);
-  }
-  @include minHeight_max {
-    position: absolute;
-    width: 1500px;
-    left: 74vw;
-    top: calc((20vw - 1000px) * 0.8);
-  }
-  @include max {
-    top: -500px;
-    width: 2700px;
-  }
-  @media (min-width: 5000px) {
-    top: -700px;
-  }
-}
-
-.header-text-about {
+.header__central__text__about {
   position: absolute;
   top: 100vw;
   left: 88px;
@@ -66,31 +66,11 @@
   @include tablet {;
     left: 20vw;
   }
-  @include notebook {
-
-  }
-  @include notebook-big-plus {
-    left: 11vw;
-    top: 50vw;
-  }
-  @include nbpp {
-    left: 20vw;
-    top: 25vw;
-  }
-  @include max {
-    width: 1800px;
+  @include notebook_only_width {
+    width: 900px;
     left: 15vw;
     top: 18vw;
   }
-  @include minHeight_notebookBig {
-    left: 20vw;
-    top: 470px;
-  }
-  @include minHeight_max {
-    left: 10vw;
-    top: 600px;
-  }
-
 
   h1 {
     color: #FFFFFF;
@@ -101,29 +81,20 @@
     }
     @include mobile-mini-minus {
       left: 10px;
-      font-size: 4rem
+      font-size: 5rem
     }
     @include tablet {
       font-size: 10rem;
     }
-    @include nbpp {
-      font-size: 12rem;
-    }
-    @include max {
+    @include notebook_only_width {
       font-size: 15rem;
-    }
-    @include tablet_minHeight {
-      font-size: 10vh;
-    }
-    @include minHeight_max {
-      font-size: 14vh;
     }
   }
 }
 
 .about_me {
   width: 100%;
-  margin-top: 145vw;
+  margin-top: 120vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,39 +103,21 @@
   z-index: 5;
   transform: translateY(-50px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
   &.visible {
     opacity: 1;
     transform: translateY(0);
   }
+
   @include mobile-mini-plus {
     margin-top: 40vw;
   }
   @include tablet {
-    margin-top: 50vw;
+    margin-top: 20vw;
   }
-  @include notebook {
-    margin-top: 60vw;
-  }
-  @include nbpp {
-    margin-top: 40vw;
-  }
-  @include max {
-    margin-top: calc(100% - (100vw - 1400px) / 0.75);
-    margin-left: 400px;
-    margin-bottom: 400px;
-  }
-  @media (min-width: 5000px) {
-    margin-top: calc(100% - (100vw - 1500px) / 0.8);
-    margin-bottom: 600px;
-  }
-  @include tablet_minHeight {
-    margin-top: 100px;
-  }
-  @include minHeight_notebookBig {
-    margin-top: 80px;
-  }
-  @include minHeight_nbpp {
-    margin-top: -100px;
+  @include notebook_only_width {
+    margin-top: calc(100% - (100vw - 815px) / 0.75);
+    margin-bottom: 200px;
   }
 
   h1 {
@@ -172,62 +125,44 @@
     z-index: 5;
     @include mobile-mini {
       margin-top: 8vw;
-      font-size: 12vw;
+      font-size: 10vw;
     }
     @include tablet {
       margin-top: 1rem;
       font-size: 7vw;
     }
-    @include notebook {
-      margin-top: 0;
-    }
-    @include nbpp {
-      margin-top: 1vw;
-      font-size: 11rem;
-    }
-    @include max {
-      margin-top: 200px;
+    @include notebook_only_width {
       font-size: 13rem;
-    }
-    @include tablet_minHeight {
-      font-size: 8vh;
     }
   }
 
-  .about_me-content {
+  &-content {
     margin: 50px 0;
     width: 90%;
     height: 100%;
     background-color: #8bacc0;
     border-radius: 50px;
     z-index: 5;
-    @include notebook {
-      width: 60vw;
-    }
-    @include max {
-      width: 1800px;
-    }
-    @include tablet_minHeight {
-      width: 60vw;
+    @include notebook_only_width {
+      width: 900px;
     }
 
-    .about_me-content-text {
+    &-text {
       padding: 12px;
-      font-size: 1rem;
+      font-size: 1.5rem;
       text-align: center;
       line-height: 40px;
       @include mobile {
-        font-size: 1.5rem;
       }
       @include tablet {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
       @include notebook_only_width {
         padding: 30px;
-        font-size: 1rem;
-      }
-      @include nbpp {
         font-size: 2rem;
+      }
+      b {
+        font-weight: bold;
       }
     }
   }

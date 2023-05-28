@@ -1,20 +1,25 @@
+@mixin color-dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
 @mixin max {
-  @media (min-width: 2690px) {
+  @media (min-width: 1400px) {
     @content;
   }
 }
 @mixin nbpp {
-  @media (min-width: 2000px) {
+  @media (min-width: 1400px) {
     @content;
   }
 }
 @mixin notebook-big-plus {
-  @media (min-width: 1800px) {
+  @media (min-width: 1400px) {
     @content;
   }
 }
 @mixin notebook-big {
-  @media (min-width: 1600px) {
+  @media (min-width: 1400px) {
     @content;
   }
 }

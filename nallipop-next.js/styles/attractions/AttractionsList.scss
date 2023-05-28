@@ -6,29 +6,25 @@
 .attractions-header {
   text-align: center;
   color: #b840f5;
-  font-size: 6vw;
+  font-size: 8vw;
   font-weight: bold;
   font-family: $font-alt;
   @include mobile {
     font-size: 4vw;
   }
-  @include tablet_minHeight {
-    font-size: 3rem;
+  @include tablet {
+    font-size: 6rem;
   }
-  @include minHeight_nbpp {
-    margin-top: 260px;
-
-  }
-  @include notebook {
+  @include notebook_only_width {
     color: #b840f5;
     font-size: 7rem;
-    margin: 100px 0;
+    margin: 50px 0;
   }
 }
 .attractions-list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 2000px;
+  max-width: 1400px;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -41,8 +37,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-  @include mobile {
-  }
+
   .attractions-list-content {
     width: 40%;
     display: flex;
@@ -52,8 +47,11 @@
     @include notebook_only_width {
       width: 500px;
       margin: 50px;
+      border: 2px solid black;
+      border-radius: 50px;
+      background-color: #dec5ff;
     }
-    .attractions-list-content-photo {
+    &-photo {
       width: 100%;
       margin-bottom: 20px;
       border-radius: 50px;
@@ -66,21 +64,38 @@
       }
     }
     h2 {
-      font-size: 4vw;
+      font-size: 3vw;
       text-align: center;
       font-weight: bold;
-      color: $color-main2;
+      color: #4929e5;
       @include mobile {
         font-size: 2vw;
       }
       @include notebook_only_width {
-        margin-top: 50px;
-        font-size: 2rem;
+        margin: 20px;
+        font-size: 3.5rem;
       }
-      @include minHeight_nbpp {
-        margin-top: 50px;
-        font-size: 3rem;
-      }
+    }
+    .description-1 {
+      color: orange;
+    }
+    .description-2 {
+      //color: deeppink;
+    }
+    .description-3 {
+      color: deeppink;
+    }
+    .description-4 {
+      color: olivedrab;
+    }
+    .description-5 {
+      color: darkcyan;
+    }
+    .description-6 {
+      color: green;
+    }
+    .description-7 {
+      color: #cf5bb5;
     }
   }
 }

@@ -8,7 +8,7 @@
     margin-top: 30px;
     color: $color-green;
     font-family: $font-alt;
-    font-size: 10vw;
+    font-size: 8vw;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
@@ -16,38 +16,30 @@
       font-size: 4rem;
     }
     @include notebook_only_width {
-      font-size: 6rem;
-      margin-bottom: 80px;
-    }
-    @include nbpp {
-      font-size: 9rem;
-    }
-    @include tablet_minHeight {
-      font-size: 4rem;
+      margin-bottom: 40px;
+      font-size: 8rem;
     }
   }
-
   .close {
     display: none;
   }
-
   p {
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     color: $color-yellow;
     @include mobile {
       font-size: 2rem;
     }
-    @include nbpp {
+    @include notebook_only_width {
       font-size: 3rem;
     }
   }
 
-  .offer-list-section-photo {
+  &-section-photo {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    max-width: 2000px;
+    max-width: 1400px;
     z-index: 8;
     @include nbpp {
       border: 5px solid $color-main;
@@ -58,6 +50,7 @@
       left: 0;
       width: auto;
       height: 100%;
+      max-width: 3000px;
       object-fit: cover;
       z-index: 9;
       overflow: hidden;
@@ -74,8 +67,6 @@
       }
     }
   }
-
-
   .zoomed-bg {
     position: fixed;
     top: 0;
@@ -85,7 +76,6 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 4;
   }
-
   .close-icon {
     position: fixed;
     top: 2vw;
@@ -97,49 +87,6 @@
     @include tablet {
       font-size: 4vw;
       color: white;
-    }
-  }
-
-  .offer_map_description {
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    font-size: 6vw;
-    font-weight: bold;
-    margin-bottom: 100px;
-    position: relative; // Dodaj tę linijkę
-
-    .background {
-      position: absolute; // Dodaj tę linijkę
-      top: 0; // Dodaj tę linijkę
-      left: 0; // Dodaj tę linijkę
-      width: 100%; // Dodaj tę linijkę
-      height: 100%; // Dodaj tę linijkę
-      background-color: rgba(0, 0, 0, 0.1);
-      z-index: -5;
-    }
-
-    h2 {
-      max-width: 2000px;
-      z-index: 1;
-      color: $color-blue;
-      margin: 0 auto;
-      position: relative; // Dodaj tę linijkę
-    }
-
-    @include notebook_only_width {
-      font-size: 4rem;
-      margin-bottom: 300px;
-    }
-    @include max {
-      font-size: 5rem;
-      margin-bottom: 500px;
-    }
-    @include tablet_minHeight {
-      margin-bottom: -100px;
     }
   }
 }

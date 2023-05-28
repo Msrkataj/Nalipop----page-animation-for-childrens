@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +9,7 @@ import { ref, getDownloadURL } from "firebase/storage";
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import data from '../data/data.json';
 
-const HomeCarouselAttractions = ({close}) => {
+const HomeCarouselAttractions = () => {
     const [balloonsImageUrl, setBalloonsImageUrl] = useState(null);
     const [piniataImageUrl, setPiniataImageUrl] = useState(null);
     const [womenImageUrl, setWomenImageUrl] = useState(null);
@@ -39,7 +38,7 @@ const HomeCarouselAttractions = ({close}) => {
     const carousel = [
         {
             name: 'balloons',
-            href: balloonsImageUrl, // Użyj URL pobranego z Firebase Storage
+            href: balloonsImageUrl,
             description: "Modelowanie balonów"
         },
         {

@@ -6,65 +6,48 @@
   width: 100vw;
   height: 3000px;
   z-index: -10;
-  @include notebook_only_width{
-    height: 5402px ;
+  @include notebook_only_width {
+    height: 2500px;
+  }
 
-  }
   div {
-    background-image: url('../public/assets/line2.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    overflow: hidden;
-    @include notebook {
-      width: 150vw;
+    @include notebook_only_width {
+      background-image: url('../public/assets/line2.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      height: 100%;
+      overflow: hidden;
+      width: 80vw;
     }
-    @media (min-width: 3500px){
-      width: 4000px;
-    }
-    @media (min-width: 4460px) {
-      //width: 3200px;
+    @media (min-width: 1500px) {
+      width: 2000px;
     }
   }
-  @include mobile-mini {
-    //top: 1800px;
-  }
-  @include mobile{
-    //left: -300px;
-    //top: -200px;
-  }
-  @include tablet{
-    //left: -200px;
-    //top: -200px;
-  }
-  @include max {
+
+  @include notebook_only_width {
     rotate: -40deg;
   }
-  @media (min-width: 3500px){
+  @media (min-width: 1400px) {
     left: -80vw;
-    top: 400px;
+    top: 200px;
     transform: scaleX(-1);
     rotate: 325deg;
   }
-  @media (min-width: 4460px){
-    left: -75vw;
+  @media (min-width: 2000px) {
+    left: -80vw;
     rotate: 332deg;
   }
 }
+
 .home-about_me {
   position: relative;
   margin: 60vw 30px 0 30px;
   opacity: 0;
   transform: translateY(-50px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
   @include mobile-mini {
-    margin:  60vw 0 30px;
+    margin: 60vw 0 30px;
   }
   @include mobile-mini-plus {
     margin: 100px 30px 0 30px;
@@ -83,18 +66,16 @@
     flex-direction: row;
     margin: 14vw 0 0 0;
   }
-  @include notebook {
-    margin: 200px 0 0 0;
-  }
-  @include tablet_minHeight {
-    margin: 50px 0 0 0;
-  }
-
-  @include minHeight_notebookBig {
+  @include notebook_only_width {
     margin: 150px 0 0 0;
   }
 
-  .home-about-me-background {
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .home-about_me-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -107,7 +88,7 @@
       position: absolute;
       width: 335px;
       height: 590px;
-      top: 80%;
+      top: 82%;
       left: 51%;
       transform: translate(-50%, -50%);
     }
@@ -116,7 +97,7 @@
     }
   }
 
-  .home-about_me-content-movie {
+  &-content-movie {
     position: relative;
     height: 90vw;
     margin: 40px 30px;
@@ -152,27 +133,10 @@
       top: 0;
       left: 0;
     }
-    @include notebook {
-      width: 25vw;
-      height: 40vw;
-    }
-    @include nbpp {
-      width: 700px;
-      height: 1200px;
+    @include notebook_only_width {
+      width: 350px;
+      height: 580px;
       margin-left: 0;
-    }
-    @include tablet_minHeight {
-      position: relative;
-      width: 25vw;
-      height: 40vw;
-      background: #8bacc0;
-      border-radius: 20px;
-      z-index: -1;
-      display: flex;
-      margin-left: 100px;
-      transform: translate(0, 0);
-      top: 0;
-      left: 0;
     }
 
     .home-header-video {
@@ -197,20 +161,8 @@
         width: 30vw;
         height: auto;
       }
-
-      @include notebook {
-        width: 20vw;
-      }
-      @include nbpp {
-        width: 600px;
-        height: auto;
-      }
-      @include tablet_minHeight {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20vw;
+      @include notebook_only_width {
+        width: 300px;
         height: auto;
       }
     }
@@ -223,7 +175,7 @@
       object-position: center;
     }
 
-    .home-header-image {
+    &-image {
       position: absolute;
       width: 60vw;
       top: -2%;
@@ -246,11 +198,8 @@
         left: 50%;
       }
       @include nbpp {
-        width: 600px;
+        width: 300px;
         height: auto;
-      }
-      @include tablet_minHeight {
-        width: 15vw;
       }
     }
   }
@@ -259,11 +208,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
 }
 
-;
 .home-about_me-content {
   position: relative;
   display: flex;
@@ -284,19 +231,24 @@
     width: 50vw;
     font-size: 2vw;
   }
-
-  @include notebook {
-    font-size: 1.5rem;
-  }
-  @include notebook-big {
+  @include notebook_only_width {
     font-size: 2.5rem;
-    width: 1100px;
+    width: 650px;
   }
-  @include tablet_minHeight {
-    font-size: 1.5rem;
+
+  &-logo {
+    width: 40vw;
+    @include tablet {
+      width: 30vw;
+    }
+    @include notebook_only_width {
+      width: 300px;
+    }
   }
+
   p {
     font-size: 4vw;
+    line-height: 5vw;
     margin: 10px 20px;
     text-align: center;
     @include mobile-mini {
@@ -306,31 +258,19 @@
       font-size: 2vh;
     }
     @include tablet {
+      line-height: 40px;
       margin: 30px 20px;
     }
-    @include nbpp {
+    @include notebook_only_width {
       font-size: 2rem;
+    }
+
+    b {
+      font-weight: 700;
     }
   }
 }
 
-.home-about_me-logo {
-  width: 50vw;
-  @include tablet {
-    width: 30vw;
-  }
-  @include notebook {
-    width: 20vw;
-  }
-  @include nbpp {
-    width: 700px;
-  }
-  @include tablet_minHeight {
-    width: 20vw;
-  }
-}
-
-;
 
 .home-back {
   position: relative;
@@ -343,10 +283,8 @@
     display: flex;
     justify-content: center;
   }
-  @include notebook {
-  }
 
-  .home-back-overlay {
+  &-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -358,12 +296,13 @@
       width: 100%;
       height: 100%;
     }
+
   }
 
-  .home-word-hands {
+  &-hands {
     position: relative;
     width: 200%;
-    max-width: 2000px;
+    max-width: 1400px;
     left: 60%;
     top: -28vw;
     transform: translateX(-50%);
@@ -380,23 +319,19 @@
       top: 0;
       left: 0;
       transform: translateX(0%);
+      height: 70vw;
       width: calc(200% - (100vw - 450px) * 0.5);
     }
-    @include notebook {
+    @include notebook_only_width {
       top: 0;
       left: 0;
       transform: translateX(0%);
-      width: calc(200% - (100vw - 450px) * 0.5);
-    }
-    @include tablet_minHeight {
-      height: 70vh;
-      max-height: 100vh;
-      object-position: center;
+      height: 100%;
+      width: calc(100% - (100vw - 400px) * 0.5);
     }
   }
 
-
-  .home-word-title {
+  &-title {
     position: absolute;
     width: 80vw;
     top: 30%;
@@ -407,18 +342,13 @@
     font-family: $font-head;
     animation: pulsate 10s infinite;
 
-    //@include mobile-mini {
-    //  top: 50%;
-    //}
-   @include tablet_minHeight {
-      top: 20vw;
+    @include mobile {
+      top: 50%;
     }
     @include notebook_only_width {
       top: 45%;
     }
-    @include notebook_minHeight {
-      top: 40%w;
-    }
+
     h2 {
       font-size: 12vw;
       text-align: center;
@@ -427,12 +357,14 @@
       @include mobile {
         font-size: 6rem;
       }
-      @include notebook {
+      @include notebook_only_width {
         font-size: 10rem;
       }
     }
   }
 }
+
+
 @keyframes pulsate {
   0% {
     transform: translate(-50%, -50%) scale(1);

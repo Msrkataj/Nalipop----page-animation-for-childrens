@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
 import HeaderMenu from "../hooks/header-menu";
+import Image from "next/image";
 
 
 const ContactHeader = ({close}) => {
@@ -33,22 +34,38 @@ const ContactHeader = ({close}) => {
         <>
             <div className="container">
                 <div id="#" className="header">
-                    <div className="header-top">
-                        <div className="header-central-background header-central-background-contact"></div>
-                        <img className="header-image" src="/assets/top.png" alt="top" />
-                        <div className="header-top-content">
+                    <div className="header__top">
+                        <div className="header__top__background header__top__background__contact"></div>
+                        <Image
+                            className="header__top__image"
+                            src="/assets/top.png"
+                            alt="top"
+                            layout='responsive'
+                            width={1920}
+                            height={1080}
+                        />
+                        <div className="header__top__content">
                             <Link href="/">
-                                <img className="header-logo" src="/assets/logo.png" alt="Opis obrazka" />
+                                <div className="header__top__content__logo">
+                                    <Image
+                                        className="header__top__content__logo"
+                                        src="/assets/logo.png"
+                                        alt="Logo"
+                                        layout='responsive'
+                                        width={1240}
+                                        height={1240}
+                                    />
+                                </div>
                             </Link>
                             <HeaderMenu/>
                         </div>
-                        <div className="header-central-image-container">
-                            <img className="header-central-image header-central-image-contact" src="/assets/contact-header.png" alt="contact.png" />
-                            <div className="header-central-clouds"/>
+                        <div className="header__top__container">
+                            <img className="header__top__container__image header__top__container__contact__image" src="/assets/contact-header.png" alt="contact.png" />
+                            <div className="header__top__container__clouds"/>
                         </div>
                     </div>
-                    <div className="header-central">
-                        <div className="header-text-contact">
+                    <div className="header__central">
+                        <div className="header__central__contact__text">
                             <h1>KONTAKT</h1>
                         </div>
                     </div>

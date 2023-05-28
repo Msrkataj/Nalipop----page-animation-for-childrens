@@ -1,6 +1,6 @@
 .gallery {
   width: 100%;
-  max-width: 2500px;
+  max-width: 1400px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -8,155 +8,131 @@
   @include mobile-mini-plus {
     margin: 200px 10px 80px 10px;
   }
-  @include notebook {
-    margin: 600px 10px 150px 10px;
-  }
-  @include max {
-    margin: 700px 10px 200px 10px;
+  @include notebook_only_width {
+    margin: 350px 5px 100px 5px;
   }
   @media (min-width: 3700px) {
     margin-top: calc(100% - (100vw - 1200px) / 0.8);
   }
   @media (min-width: 5000px) {
     margin-top: calc(100% - (100vw - 1000px) / 0.85);
-
   }
 
-  .header-gallery-clouds {
+  &-clouds-header {
     position: absolute;
     width: 100%;
     height: 80vw;
     top: 2000px;
-    z-index: -1;
+    z-index: -10;
     background-image: url('../../public/assets/clouds.png');
     background-size: cover;
   }
-}
+  &-item {
+    width: 45vw;
+    padding: 15px;
+    position: relative;
+    z-index: 0;
+    @include tablet {
+      width: 30vw;
+    }
+    @include notebook_only_width {
+      width: 400px;
+      padding: 20px;
+    }
+    &:hover {
+      z-index: 1;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
 
-.gallery-item {
-  width: 45vw;
-  padding: 15px;
-  position: relative;
-  z-index: 0;
-  @include notebook {
-    width: 600px;
-    padding: 40px;
-  }
-  @include nbpp {
-    width: 800px;
-    padding: 40px;
-  }
-  @include tablet_minHeight {
-    width: 30vw;
-  }
-  &:hover {
-    z-index: 1;
-  }
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-
-  &:hover {
-    transform: scale(1.5);
-    @include tablet_minHeight {
-      transform: scale(1.2);
+      &:hover {
+        transform: scale(1.2);
+        @include notebook_only_width {
+          transform: scale(1.5);
+        }
+      }
     }
   }
-}
-
-.gallery-banner {
-  width: 100vw;
-  height: 20vw;
-  background-color: $color-pink;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  z-index: 10;
-  @include notebook {
-    height: 300px;
-  }
-
-  p {
-    font-family: $font-head;
-    font-size: 8vw;
-    text-align: center;
-    font-weight: bold;
-    color: $color-main;
-    line-height: 9vw;
-    animation: pulsate 10s infinite;
-    @include notebook {
-      font-size: 8rem;
-      line-height: 8rem;
-    }
-    @include tablet_minHeight {
-      font-size: 6rem;
-      line-height: 6rem;
-    }
-  }
-}
-
-.form-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  z-index: 10;
-
-  .form-image-girl-border {
-    width: 60%;
-    border: 3px solid $color-grey;
+  &-banner {
+    width: 100vw;
+    height: 40vw;
+    background-color: $color-pink;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
     z-index: 10;
-
     @include tablet {
-      width: 40%;
+      height: 100px;
     }
     @include notebook_only_width {
-      width: 800px;
-      border: 6px solid $color-grey;
-    }
-    @include notebook_minHeight {
-      width: 500px;
-      border: 6px solid $color-grey;
+      height: 150px;
     }
 
-  }
-
-  img {
-    width: 100%;
-    padding: 5px;
-
+    p {
+      font-family: $font-head;
+      font-size: 10vw;
+      max-width: 80vw;
+      text-align: center;
+      font-weight: bold;
+      color: $color-main;
+      line-height: 12vw;
+      animation: pulsate 10s infinite;
+      @include tablet {
+        font-size: 6rem;
+        line-height: 5vw;
+      }
+      @include notebook_only_width {
+        font-size: 8rem;
+        line-height: 8rem;
+      }
+    }
   }
 }
+
+
+
 .container-gallery {
   display: flex;
   flex-direction: column;
   z-index: 10;
-  @include nbpp {
+  @include notebook_only_width {
     flex-direction: row;
-    max-width: 2000px;
-    //margin-left: calc(100% - (100vw - 1000px) / 1);
-    margin-left: 10vw;
-  }
-  @media (min-width: 2800px) {
-    margin-left: 15vw;
-  }
-  @media (min-width: 3400px) {
-    margin-left: 20vw;
-  }
-  @media (min-width: 4200px) {
-    margin-left: 25vw;
-  }
-  @media (min-width: 5200px) {
-    margin-left: 30vw;
+    justify-content: center;
   }
 }
+  .form-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+  }
+  .form-image-gallery {
+    @include notebook_only_width {
+      width: 400px;
+    }
+  }
+    .form-image-girl-border {
+      width: 60%;
+      border: 3px solid $color-grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      @include tablet {
+        width: 400px;
+        border: 6px solid $color-grey;
+      }
+      img {
+        width: 100%;
+        padding: 5px;
+      }
+    }
+
+
 .gallery-form {
   display: flex;
   justify-content: center;
@@ -165,32 +141,24 @@
   font-weight: bold;
   margin-bottom: 50px;
   @include nbpp {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    width: 500px;
   }
-
   h1 {
     line-height: 10vw;
     text-align: center;
-    font-size: 7vw;
+    font-size: 6vw;
     margin-bottom: 20px;
     @include tablet {
       margin-bottom: 40px;
       font-size: 5rem;
-      line-height: 200px;
+      line-height: 100px;
     }
-    @include notebook-big {
-      font-size: 6rem;
-      margin-bottom: 60px;
-    }
-    @include nbpp {
-      margin-top: 100px;
+    @include notebook_only_width {
+      margin-top: 50px;
       font-size: 7rem;
     }
-    @include tablet_minHeight {
-      font-size: 4rem;
-    }
   }
-
   p {
     margin-bottom: 20px;
     font-size: 3vw;
@@ -198,10 +166,7 @@
     @include tablet {
       margin-bottom: 40px;
     }
-    @include notebook-big {
-      margin-bottom: 60px;
-    }
-    @include nbpp {
+    @include notebook_only_width {
       font-size: 3rem;
     }
   }

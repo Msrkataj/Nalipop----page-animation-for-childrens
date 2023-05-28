@@ -25,10 +25,18 @@
 @import "reservation/ReservationHeader";
 @import "reservation/ReservationContent";
 @import "regulations/regulations";
+@import "Home_news";
+@import "Home_own-opinions";
+@import "Footer_section";
 
+html {
+  font-size: 8px;
+  text-decoration: none;
+
+}
 body {
   font-family: $font-alt;
-  font-size: 16px;
+  font-size: 8px;
   color: $color-grey;
   overflow-x: hidden;
   @media (min-width: 2690px) {

@@ -1,10 +1,9 @@
 .reservation {
   z-index: 1;
   @include nbpp {
-    margin-top: 20vw;
-    margin-bottom: 300px;
+    margin-top: 50px;
+    margin-bottom: 200px;
   }
-
   .reservation-personal_data {
     display: flex;
     flex-direction: column;
@@ -14,7 +13,7 @@
       padding: 13vw 15vw;
       border-radius: 30%;
       font-size: 9vw;
-      line-height: 14vw;
+      line-height: 5vw;
       text-align: center;
       margin: 50px;
       @include mobile-mini {
@@ -26,195 +25,257 @@
       @include mobile-mini-plus {
         font-size: 2rem;
         line-height: 3rem;
-        padding: 40px 20px;
+        padding: 40px 40px;
         margin: 50px 200px;
       }
       @include nbpp {
         font-size: 4rem;
         line-height: 5rem;
-        padding: 120px 100px;
-        margin: 200px 200px;
-      }
-      @include notebook_minHeight {
-        //font-size: 2rem;
-        //line-height: 3rem;
-        //padding: 40px 20px;
-        margin: 100px 200px;
+        padding: 80px 80px;
+
       }
     }
 
     .reservation-data-form {
-        h2 {
+      h2 {
+        font-size: 5vw;
+        line-height: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        @include mobile-mini {
           font-size: 4vw;
-          font-weight: bold;
-          margin-bottom: 20px;
-          @include mobile {
-            font-size: 1.5rem;
-          }
-          @include nbpp {
-            font-size: 3rem;
-          }
+        }
+        @include mobile {
+          font-size: 2.5rem;
         }
 
-        input, select, textarea {
-          padding-left: 20px;
-          margin-bottom: 20px;
-          border-radius: 50px;
-          height: 30px;
-          width: 80vw;
-          @include mobile {
-            width: 400px;
-          }
-          @include nbpp {
-            font-size: 2rem;
-            height: 50px;
-            width: 600px;
-          }
+        @include nbpp {
+          font-size: 3rem;
         }
-
-        @include minHeight_nbpp {
-          ::placeholder {
-            font-size: 1.5rem;
-          }
-        }
-
-        input[type="number"] {
-          padding-left: 20px;
-          margin-bottom: 20px;
-          border-radius: 50px;
-          height: 30px;
-          width: 80vw;
-          @include mobile {
-            width: 180px;
-          }
-          @include nbpp {
-            font-size: 2rem;
-            height: 50px;
-            width: 280px;
-          }
-        }
-
-        input[type="time"] {
-          padding-left: 20px;
-          margin-bottom: 20px;
-          border-radius: 50px;
-          height: 30px;
-          width: 180vw;
-          @include mobile {
-            width: 180px;
-          }
-          @include nbpp {
-            font-size: 2rem;
-            height: 50px;
-            width: 280px;
-          }
-        }
-
-        .custom-select__control {
-          padding-left: 20px;
-          margin-bottom: 20px;
-          border-radius: 50px;
-          height: 100px;
-          width: 80vw;
-          border: 2px solid $color-green;
-          overflow: auto;
-          @include mobile {
-            width: 400px;
-          }
-
-          @include nbpp {
-            font-size: 2rem;
-
-          }
-        }
-
-        .custom-select__option {
-          padding-left: 20px;
-          font-size: 1rem;
-          @include nbpp {
-            font-size: 2rem;
-          }
-        }
-
-        .custom-select__menu {
-          z-index: 15;
-        }
-
-      }
-    }
-  }
-
-
-.react-datepicker {
-  font-family: inherit;
-  @include nbpp {
-    width: 650px;
-    height: 600px;
-    .react-datepicker__header {
-      background-color: #f8f9fa;
-      width: 650px;
-      font-size: 2rem;
-      border-bottom: none;
-    }
-    .react-datepicker__week,
-    .react-datepicker__day-names {
-      margin: 30px 0;
-      display: flex;
-      justify-content: space-around;
-    }
-    button {
-      font-size: 2rem;
-    }
-    .react-datepicker__navigation-icon {
-      font-size: 20px;
-    }
-    .react-datepicker__current-month {
-      margin-bottom: 30px;
-      font-size: 2rem;
-    }
-    .react-datepicker__day-name,
-    .react-datepicker__day,
-    .react-datepicker__time-name {
-      color: #495057;
-    }
-
-    .react-datepicker__day--selected,
-    .react-datepicker__day--keyboard-selected,
-    .react-datepicker__day:hover {
-      text-align: center;
-      padding: 5px 40px 5px 0;
-      text-align: center;
-      background-color: #495057;
-      color: #fff;
-    }
-    .react-datepicker__month-container {
-      font-size: 2rem;
-    }
-  }
-
-
-  .react-datepicker__input-container {
-    input {
-      padding-left: 20px;
-      //border-radius: 50px;
-      height: 30px;
-      width: 80vw;
-      //border: 1px solid #ced4da;
-      outline: none;
-
-      @include mobile {
-        width: 400px;
       }
 
-      @include nbpp {
+      p {
+        color: red;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        @include nbpp {
+          font-size: 2rem;
+        }
+      }
+
+      input, select, textarea {
+        padding-left: 20px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        height: 30px;
+        width: 50vw;
+        @include mobile {
+          width: 400px;
+        }
+        @include nbpp {
+          font-size: 2rem;
+          height: 40px;
+          width: 400px;
+        }
+      }
+
+      @include minHeight_nbpp {
+        ::placeholder {
+          font-size: 1.5rem;
+        }
+      }
+
+      input[type="number"] {
+        padding-left: 20px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        height: 30px;
+        width: 50vw;
+        @include mobile {
+          width: 180px;
+        }
+        @include nbpp {
+          font-size: 2rem;
+          height: 50px;
+          width: 280px;
+        }
+      }
+
+      input[type="time"] {
+        padding-left: 20px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        height: 30px;
+        width: 80vw;
+        @include mobile {
+          width: 180px;
+        }
+        @include nbpp {
+          font-size: 2rem;
+          height: 50px;
+          width: 280px;
+        }
+      }
+
+      .custom-select__control {
+        padding-left: 20px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        height: 100px;
+        width: 60vw;
+        border: 2px solid $color-green;
         font-size: 2rem;
-        height: 50px;
-        width: 600px;
+        overflow: auto;
+        @include mobile {
+          width: 400px;
+        }
+
+        @include nbpp {
+          font-size: 3rem;
+
+        }
+
+
+        }
       }
+    .custom-select__menu {
+      //scale: 2;
+      //@include mobile {
+      //  scale: 1;
+      //}
+      .custom-select__option {
+        padding-left: 20px;
+        font-size: 2rem;
+        z-index: 15;
+        @include nbpp {
+          font-size: 2rem;
+        }
+      }
+
+      .custom-select__menu {
+        z-index: 15;
+      }
+
     }
   }
-
 }
+
+.success-message-reservation {
+  color: green;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin: 30vw 0;
+  border: 2px solid green;
+  border-radius: 5px;
+  @include notebook_only_width {
+    font-size: 2rem;
+    margin: 200px 0;
+    width: 800px;
+  }
+  @include nbpp {
+    font-size: 3rem;
+    margin: 200px 0 500px 0;
+    width: 800px;
+  }
+}
+
+.success-message-opinions {
+  margin: 0;
+}
+
+.custom-datepicker {
+  .react-datepicker {
+    font-family: inherit;
+    transform: scale(2);
+    transform-origin: top left;
+    font-size: 1rem;
+  }
+
+  .react-datepicker__triangle {
+    display: none;
+  }
+
+  .react-datepicker__navigation {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+//.react-datepicker {
+//  font-family: inherit;
+//  transform: scale(2); /* Zwiększa wielkość o 100% */
+//  transform-origin: top left;
+//  font-size: 1rem;
+//@include nbpp {
+//  //width: 150px;
+//  //height: 150px;
+//  .react-datepicker__header {
+//    background-color: #f8f9fa;
+//    width: 360px;
+//    font-size: 2rem;
+//    border-bottom: none;
+//  }
+//  .react-datepicker__week,
+//  .react-datepicker__day-names {
+//    margin: 20px 0;
+//    display: flex;
+//    justify-content: space-around;
+//  }
+//  button {
+//    font-size: 2rem;
+//  }
+//  .react-datepicker__navigation-icon {
+//    font-size: 20px;
+//  }
+//  .react-datepicker__current-month {
+//    margin-bottom: 20px;
+//    font-size: 2rem;
+//  }
+//  .react-datepicker__day-name,
+//  .react-datepicker__day,
+//  .react-datepicker__time-name {
+//    color: #495057;
+//  }
+//
+//  .react-datepicker__day--selected,
+//  .react-datepicker__day--keyboard-selected,
+//  .react-datepicker__day:hover {
+//    text-align: center;
+//    padding: 5px 20px 5px 0;
+//    background-color: #495057;
+//    color: #fff;
+//  }
+//  .react-datepicker__month-container {
+//    font-size: 2rem;
+//  }
+//}
+
+
+//.react-datepicker__input-container {
+//  input {
+//    //padding-left: 20px;
+//    ////border-radius: 50px;
+//    //height: 30px;
+//    //width: 80vw;
+//    ////border: 1px solid #ced4da;
+//    //outline: none;
+//
+//    //@include mobile {
+//    //  width: 400px;
+//    //}
+//
+//    //@include nbpp {
+//    //  font-size: 2rem;
+//    //  height: 30px;
+//    //  width: 300px;
+//    //}
+//  }
+//}
+
+//}
 
 
 .react-time-picker__wrapper {
@@ -228,9 +289,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @include nbpp {
-    width: 300px;
-  }
+  //@include nbpp {
+  //  width: 150px;
+  //}
 }
 
 .react-time-picker__inputGroup__input {
@@ -268,7 +329,9 @@
 
 .reservation-personal_data-form {
   @include notebook_only_width {
+    align-items: flex-end;
     flex-direction: row;
+    margin-bottom: 100px;
   }
 
   input {
@@ -283,6 +346,7 @@
 .reservation-about_party-form {
   @include notebook_only_width {
     flex-direction: row-reverse;
+    margin-bottom: 100px
   }
 
   input, select {
@@ -317,6 +381,7 @@
       width: 80vw;
       height: 80vw;
       @include mobile {
+        margin-bottom: 100px;
         width: 400px;
         height: 400px;
       }
@@ -325,8 +390,8 @@
       }
       @include nbpp {
         margin-right: 20px;
-        width: 800px;
-        height: 800px;
+        width: 400px;
+        height: 400px;
       }
       //@include notebook_minHeight {
       //  margin-right: 210px;
@@ -361,13 +426,14 @@
           margin-top: 330px;
         }
         @include nbpp {
-          margin-top: 900px;
+          margin-top: 400px;
 
         }
       }
     }
   }
 }
+
 .form {
   display: flex;
   flex-direction: column;
@@ -381,13 +447,14 @@
 .error-message {
   color: red;
   font-size: 1rem;
-  margin-top: 5px;
+  margin-bottom: 5px;
   @include nbpp {
     font-size: 2rem;
   }
 }
 
 .button-reservation {
+  z-index: 0;
   button {
     background: linear-gradient(150deg, $color-lightBlue 0%, #a079dd 74%);
     border: none;

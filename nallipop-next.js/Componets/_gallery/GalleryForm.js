@@ -1,46 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
+import data from '../data/data.json';
 
 
-const HomeForm = ({close}) => {
-
-    const data = [
-        {
-            name: 'Start',
-            href: '#',
-        },
-        {
-            name: 'O MNIE',
-            href: 'me',
-        },
-        {
-            name: 'OFERTA',
-            href: 'offer',
-        },
-        {
-            name: 'ATRAKCJE',
-            href: 'attractions',
-        },
-        {
-            name: 'KONTAKT',
-            href: 'contact',
-        },
-        {
-            name: 'FORMULARZ',
-            href: 'form',
-        },
-    ];
-
+const HomeForm = () => {
 
 
     return (
         <>
-            <div className="page">
-            </div>
             <div className="container">
                 <div className="container-gallery">
-                <div className="form-image">
+                    <div className="form-image form-image-gallery">
                     <div className="form-image-girl-border">
                         <img className="form-image-girl" src="/assets/blonde-girl.png" alt="blonde-girl" />
                     </div>
@@ -49,7 +19,7 @@ const HomeForm = ({close}) => {
                     <h1>ZAREZERWUJ TERMIN JUŻ DZIŚ!</h1>
                     <div className="button ">
                         {data.map((item) => {
-                            if (item.name === "OFERTA") {
+                            if (item.name === "FORMULARZ REZERWACJI") {
                                 return (
                                     <Link key={item.href} href={item.href} className="button-classic button-form">FORMULARZ ZGŁOSZENIOWY
                                     </Link>

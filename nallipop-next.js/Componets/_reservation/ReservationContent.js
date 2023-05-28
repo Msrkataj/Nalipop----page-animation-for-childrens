@@ -23,6 +23,7 @@ const ReservationContent = () => {
     const [emailValid, setEmailValid] = useState(true);
     const [selectedAttractions, setSelectedAttractions] = useState([]);
     const [startDate, setStartDate] = useState(new Date());
+    const [countChildren, setCountChildren] = useState(false);
 
     function onChange(value) {
         setTime(value);
@@ -63,15 +64,14 @@ const ReservationContent = () => {
     }
 
     const [state, handleSubmitForm] = useForm("mzbqojvb");
-    if (state.succeeded) {
-        return <p>Thanks for joining!</p>;
-    }
+
     return (
         <>
             <div className="page">
                 <div className="container">
                     <section className="reservation">
-                        <form onSubmit={handleSubmitForm}>
+                        {state.succeeded ?  (<p className="success-message-reservation">Dziękujemy za rezerwację, wkrótce otrzymasz potwierdzenie SMS :)</p>) : (
+                            <form onSubmit={handleSubmitForm}>
                         <div className="reservation-personal_data">
                             <div className="reservation-data-form reservation-personal_data-form">
                                 <h2 className="reservation-title reservation-personal_data-title">DANE<br/>OSOBOWE</h2>
@@ -164,8 +164,13 @@ const ReservationContent = () => {
                                         placeholder="Licza dzieci"
                                         min="0"
                                         max="100"
+                                        value={countChildren}
+                                        onChange={e => setCountChildren(parseInt(e.target.value))}
                                         required
                                     />
+                                    {countChildren >= 15 ? (
+                                        <p>Powyżej 15 osób, wymagany jest dodatkowy animator</p>
+                                    ) : null}
                                     <h2>Wiek dzieci</h2>
                                     <input
                                         type="number"
@@ -254,6 +259,7 @@ const ReservationContent = () => {
                             </div>
                         </div>
                         </form>
+                        )}
                     </section>
                 </div>
             </div>

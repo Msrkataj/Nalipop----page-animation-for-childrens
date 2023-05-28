@@ -1,102 +1,93 @@
-.header .header-top .header-central-background-reservation {
-  height: 100vw;
+.header {
+  &__top {
+    &__background__reservation {
+      height: 100vw;
 
-  @include mobile-mini-plus {
-    height: 110vw;
+      @include mobile-mini-plus {
+        height: 110vw;
+      }
+      @include tablet {
+        height: 50vw;
+      }
+      @include notebook_only_width {
+        top: 2vw;
+        height: 40vw;
+        max-height: 1000px;
+      }
+    }
+
+    &__container__reservation {
+      &__image {
+        top: -220px;
+        @include mobile-mini {
+          top: -400px;
+        }
+        @include mobile-mini-plus {
+          top: -200px;
+        }
+        @include mobile {
+          top: -250px;
+        }
+        @include notebook_only_width {
+          top: -430px;
+          width: 1200px;
+        }
+      }
+    }
   }
+}
+
+
+.header__central__reservation {
   @include tablet {
-    height: 70vw;
+    padding-top: 100px;
   }
   @include notebook_only_width {
-    top: -400px;
+    padding-top: 500px;
   }
-  @include nbpp {
-    height: 1000px;
-  }
-  @include nbpp {
-    top: 5vw;
-    height: 40vw;
-    width: 100vw;
-  }
-  @include max {
-    top: 2vw;
-    height: 40vw;
-  }
-}
-
-.header-central-image-reservation {
-  top: -220px;
-  @include mobile-mini {
-    top: -400px;
-  }
-  @include mobile-mini-plus {
-    top: -200px;
-  }
-  @include mobile {
-    top: -250px;
-  }
-  @include notebook_only_width {
-    top: -400px;
-  }
-  @include max {
-    top: -430px;
-    width: 2700px;
-  }
-}
-.header-central-reservation {
-  @include notebook_only_width {
-    padding-top: 80px;
-  }
-}
-.header-text-reservation {
-  position: absolute;
-  top: 40vw;
-  left: 0;
-  @include mobile-mini-plus {
-    top: 350px;
-    left: 33px;
-  }
-
-  @include tablet {;
-    left: 10vw;
-  }
-  @include notebook_only_width {
-    left: 15vw;
-    top: 25vw;
-  }
-  @include notebook-big-plus {
-    left: 20vw;
-    top: 25vw;
-  }
-  @include nbpp {
-    left: 10vw;
-    top: 500px;
-  }
-  @include max {
-    width: 1800px;
-    left: 15vw;
-    top: 18vw;
-  }
-
-
-  h1 {
-    color: #FFFFFF;
-    font-size: 13vw;
-    margin-bottom: 30px;
-    font-weight: normal;
+  &__text {
+    position: absolute;
+    top: 40vw;
+    left: 0;
     @include mobile-mini-plus {
+      top: 350px;
+      left: 33px;
     }
-    @include mobile-mini-minus {
-      font-size: 13vw
+
+    @include tablet {;
+      left: 10vw;
     }
-    @include tablet {
-      font-size: 5rem;
+    @include notebook_only_width {
+      width: 1200px;
+      left: 7vw;
+      top: 18vw;
     }
-    @include nbpp {
-      font-size: 8rem;
+    @media (min-width: 3000px) {
+      width: 2000px;
+      left: 690px;
+      top: 460px;
     }
-    @include max {
-      font-size: 15rem;
+
+    h1 {
+      color: #FFFFFF;
+      font-size: 13vw;
+      margin-bottom: 30px;
+      font-weight: normal;
+      @include mobile-mini-plus {
+        font-size: 13vw;
+      }
+      @include mobile-mini-minus {
+        font-size: 13vw
+      }
+      @include tablet {
+        font-size: 8rem;
+      }
+      @include notebook_only_width {
+        font-size: 5vw;
+      }
+      @media (min-width: 3000px) {
+        font-size: 14rem;
+      }
     }
   }
 }

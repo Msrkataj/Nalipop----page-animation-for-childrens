@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import storage from "../../firebase";
-import { ref, getDownloadURL, list, listAll } from "firebase/storage";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
@@ -27,7 +25,7 @@ const ContactContent = () => {
                         </div>
                         <div className="button ">
                             {data.map((item) => {
-                                if (item.name === "OFERTA") {
+                                if (item.href === "form") {
                                     return (
                                         <Link key={item.href} href={item.href} className="button-classic button-form button-contact">PRZEJDŹ DO<br/> FORMULARZA ZGŁOSZENIOWEGO
                                         </Link>

@@ -1,45 +1,41 @@
-.header .header-top .header-central-background-offer {
-  height: 100vw;
-  @include nbpp {
-    height: 70vw;
-    width: 100vw;
-  }
-  @include tablet_minHeight {
-    height: 800px;
-  }
-  @include minHeight_nbpp {
-    height: 35vw;
-  }
-}
-.header-central-image-offer {
-  top: -40vw;
-  @include mobile {
-    top: -35vw;
-  }
-  @include tablet_minHeight {
-    left: 75vw;
-    top: -60px;
-    width: 1053px;
-  }
-  @include minHeight_nbpp {
-    top: calc(200% - (100vw - 100px) * 0.75);
-  }
-  @include minHeight_max {
-    position: absolute;
-    width: 1500px;
-    left: 74vw;
-    top: calc((20vw - 1000px) * 0.8);
-  }
-  @include max {
-    top: -500px;
-    width: 2700px;
-  }
-  @media (min-width: 5000px) {
-    top: -700px;
+.header {
+  &__top {
+    &__background__offer {
+      height: 100vw;
+      @include tablet {
+        height: 800px;
+      }
+      @include notebook_only_width {
+        height: 60vw;
+        max-height: 1500px;
+        width: 100vw;
+      }
+    }
+
+    &__container__offer {
+      &__image {
+        top: -40vw;
+        @include mobile {
+          top: -35vw;
+        }
+        @include tablet_minHeight {
+          left: 75vw;
+          top: -60px;
+          width: 1053px;
+        }
+        @include notebook_only_width {
+          top: -250px;
+          width: 1350px;
+        }
+        @media (min-width: 5000px) {
+          top: -700px;
+        }
+      }
+    }
   }
 }
 
-.header-text-offer {
+.header__central__offer__text {
   position: absolute;
   top: 100vw;
   left: 88px;
@@ -54,29 +50,10 @@
   @include tablet {;
     left: 20vw;
   }
-  @include notebook {
-
-  }
-  @include notebook-big-plus {
-    left: 11vw;
-    top: 50vw;
-  }
-  @include nbpp {
-    left: 20vw;
-    top: 25vw;
-  }
-  @include max {
-    width: 1800px;
+  @include notebook_only_width {
+    width: 900px;
     left: 15vw;
     top: 18vw;
-  }
-  @include minHeight_notebookBig {
-    left: 20vw;
-    top: 470px;
-  }
-  @include minHeight_max {
-    left: 10vw;
-    top: 600px;
   }
 
 
@@ -94,24 +71,12 @@
     @include tablet {
       font-size: 10rem;
     }
-    @include nbpp {
-      font-size: 12rem;
-    }
-    @include max {
+    @include notebook_only_width {
       font-size: 15rem;
-    }
-    @include tablet_minHeight {
-      font-size: 10vh;
-    }
-    @include minHeight_max {
-      font-size: 14vh;
     }
   }
 }
 
-.color-line-offer {
-  top: 1500px;
-}
 
 .offer {
   width: 100%;
@@ -125,32 +90,18 @@
     margin-top: 40vw;
   }
   @include tablet {
-    margin-top: 50vw;
+    margin-top: -5vw;
   }
   @include notebook_only_width {
-    margin-top: 60vw;
+    margin-top: calc(100% - (100vw - 300px) / 0.8);
+    margin-left: -500px;
+    margin-bottom: 220px;
   }
-  @include nbpp {
-    margin-top: 40vw;
-  }
-  @include max {
-    margin-top: calc(100% - (100vw - 1000px) / 0.75);
-    //margin-left: 400px;
+  @media (min-width: 2000px) {
     margin-bottom: 200px;
   }
-  @media (min-width: 3700px) {
-    margin-top: calc(100% - (100vw - 500px) / 0.8);
-    margin-left: -950px;
-    margin-bottom: 700px;
-  }
-  @media (min-width: 5000px) {
-    margin-top: calc(100% - (100vw - 600px) / 0.85);
-  }
-  @include tablet_minHeight {
-    margin-top: 2vw;
-  }
 
-  .offer-content {
+  &-content {
     margin-top: 50px;
     margin-bottom: 20px;
     width: 90%;
@@ -158,52 +109,35 @@
     background-color: #8bacc0;
     border-radius: 50px;
     z-index: 1;
+    @include tablet_minHeight {
+      width: 50%;
+    }
     @include notebook_only_width {
-      width: 80vw;
-    }
-    @include max {
-      width: 1800px;
-    }
-    @include tablet_minHeight {
-      width: 50%;
-    }
-    @include tablet_minHeight {
-      width: 50%;
-    }
-    @include minHeight_notebookBig {
-      margin-top: -10vw;
+      width: 900px;
     }
 
-    .offer-content-text {
+    &-text {
       padding: 12px;
-      font-size: 0.7rem;
+      font-size: 1.5rem;
       text-align: center;
       font-family: $font-primary;
       line-height: 30px;
       @include mobile-mini {
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
       @include mobile-mini-plus {
-        font-size: 1.2rem;
         line-height: 40px;
       }
       @include mobile {
-        font-size: 1.5rem;
-      }
-      @include tablet {
-        font-size: 1.5rem;
-        line-height: 70px;
-      }
-      @include notebook_only_width {
-        padding: 30px;
         font-size: 2rem;
-      }
-      @include nbpp {
-        font-size: 3rem;
       }
       @include tablet_minHeight {
         line-height: 50px;
         font-size: 1.5vw;
+      }
+      @include notebook_only_width {
+        padding: 30px;
+        font-size: 2.5rem;
       }
     }
   }
@@ -212,28 +146,4 @@
 .button-offer {
   margin-bottom: 50px;
   z-index: 5;
-  @include mobile-mini-plus {
-    //margin-right: 100px;
-    //margin-top: 150px;
-  }
-  @include mobile {
-    //margin-right: 80px;
-    //margin-top: 15vw;
-  }
-  @include notebook {
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //transform: translate(-50%, -50%);
-  }
-  @include nbpp {
-    //top: 25vw;
-    //left: 40vw;
-    //margin-top: 350px;
-  }
-  @include max {
-    //top: 20vw;
-    //left: 30vw;
-    //margin-top: 350px;
-  }
 }

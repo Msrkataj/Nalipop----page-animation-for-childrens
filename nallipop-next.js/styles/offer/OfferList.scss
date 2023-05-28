@@ -16,7 +16,7 @@
 
   h2 {
     font-family: $font-alt;
-    font-size: 1.5rem;
+    font-size: 4rem;
     font-weight: bold;
     text-align: center;
     color: #8151e2;
@@ -25,19 +25,13 @@
     @include tablet {
       font-size: 4vw;
     }
-    @include nbpp {
-      font-size: 6rem;
+    @include notebook_only_width {
+      font-size: 7rem;
       margin-bottom: 150px;
-    }
-    @include max {
-      font-size: 9rem;
-    }
-    @include notebook_minHeight {
-      font-size: 3rem;
     }
   }
 
-  .offer-list-section {
+  &-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +42,7 @@
     border-radius: 50px;
     height: 100%;
     padding: 50px 0;
-    max-width: 2000px;
+    max-width: 1400px;
     z-index: 6;
     @include tablet {
       flex-wrap: wrap;
@@ -57,24 +51,12 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      height: 1300px;
-      padding: 20px 0;
-    }
-    @include notebook_minHeight {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
       height: 800px;
+      margin: -50px 0 75px 0;
       padding: 20px 0;
-      margin: 20px 0;
-      width: 90%;
-    }
-    @include nbpp {
-      height: 1400px;
-      margin: 100px 0 150px 0;
     }
 
-    .offer-list-section-options {
+    &-options {
       width: 80%;
       display: flex;
       flex-direction: column;
@@ -87,12 +69,9 @@
       }
       @include notebook_only_width {
         height: 100%;
-        width: 30%;
+        width: 40%;
         flex-direction: column;
         align-items: flex-start;
-      }
-      @include nbpp {
-        width: 40%;
       }
 
       p {
@@ -107,7 +86,7 @@
         text-align: center;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
-        font-size: 1rem;
+        font-size: 2rem;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: bold;
@@ -115,25 +94,14 @@
         z-index: 1;
         @include tablet {
           width: 40%;
-          font-size: 1.5rem;
-        }
-        @include notebook_only_width {
-          margin: 20px 0;
-          width: 100%;
           font-size: 2rem;
         }
-        @include notebook_minHeight {
-          margin: 20px 0;
+        @include notebook_only_width {
+          padding: 10px 25px;
+          margin: 15px 0;
           width: 100%;
-          font-size: 1rem;
-        }
-        @include nbpp {
-          padding: 20px 50px;
-          margin: 30px 0;
-          width: 100%;
-          font-size: 3rem;
-          line-height: 60px;
-
+          font-size: 2rem;
+          line-height: 40px;
         }
 
         &:after {
@@ -157,33 +125,20 @@
           &:before {
             transform: scale(1);
             z-index: -3;
-
           }
 
           &:after {
             transform: scale(1.2);
-
           }
         }
       }
     }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-      }
-      70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-      }
+    .fadeInDown {
+      animation: fadeInDown 1s ease-out;
     }
 
-    .offer-list-section-option {
+    &-option {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -191,9 +146,9 @@
         width: 50%;
       }
 
-      .offer-list-section-header {
+      &-header {
         margin-top: 50px;
-        font-size: 1.4rem;
+        font-size: 2.2rem;
         text-align: center;
         font-family: $font-alt;
         font-weight: bold;
@@ -202,28 +157,19 @@
           font-size: 2rem;
         }
         @include tablet {
-          font-size: 4vw;
+          font-size: 3vw;
         }
         @include notebook_only_width {
+          margin: 0 0 15px 0;
           font-size: 4rem;
-          margin: 0 0 30px 0;
         }
-        @include notebook_minHeight {
-          font-size: 2rem;
-          margin: 0 0 30px 0;
-        }
-        @include nbpp {
-          font-size: 5rem;
-        }
-
       }
 
-      .offer-list-section-photo {
+      &-photo {
         width: 90%;
         border-radius: 60px;
         margin: 30px;
         border: 2px solid $color-lightBlue;
-
         @include mobile {
           width: 70%;
         }
@@ -232,81 +178,64 @@
         }
         @include notebook_only_width {
           margin: 10px;
-          border-radius: 100px;
-          width: 500px;
-        }
-        @include notebook_minHeight {
-          margin: 10px;
-          border-radius: 100px;
           width: 400px;
-        }
-        @include nbpp {
-          width: 800px;
         }
       }
 
-
-      .offer-list-section-text {
-        font-size: 1rem;
+      &-text {
+        font-size: 2rem;
         text-align: center;
         line-height: 20px;
         font-family: $font-alt;
         padding: 30px 50px;
         @include tablet {
           width: 80%;
-          font-size: 3vw;
+          font-size: 1.5vw;
           line-height: 50px;
           padding: 4vw 50px;
         }
         @include notebook_only_width {
-          width: 600px;
-          font-size: 2rem;
-          line-height: 50px;
-          padding: 30px 50px;
-        }
-        @include notebook_minHeight {
-          font-size: 1.2rem;
-          margin: 10px;
           border-radius: 100px;
-          width: 100%;
-        }
-        @include nbpp {
-          width: 750px;
+          line-height: 40px;
+          width: 500px;
           padding: 0;
-          margin: 60px 10px;
+          margin: 30px 5px;
           font-size: 2rem;
         }
       }
-    }
 
-    .offer-list-section-price {
-      font-size: 1.5rem;
-      text-align: center;
-      font-family: $font-alt;
-      font-weight: bold;
-      color: $color-limon;
-      @include tablet {
-        font-size: 4vw;
-      }
-      @include notebook_only_width {
-        //border: 1px solid black;
-        //border-radius: 40px;
-        //padding: 20px 80px;
-      }
-      @include notebook_minHeight {
-        font-size: 3rem;
-      }
-      @include nbpp {
-        font-size: 5rem;
-        border-bottom: 1px solid black;
-        padding-bottom: 10px;
+      &-price {
+        font-size: 2.8rem;
+        text-align: center;
+        font-family: $font-alt;
+        font-weight: bold;
+        color: $color-limon;
+        @include tablet {
+          font-size: 4vw;
+        }
+        @include notebook_only_width {
+          font-size: 5rem;
+          border-bottom: 1px solid black;
+          padding-bottom: 8px;
+        }
       }
     }
   }
 }
 
-.fadeInDown {
-  animation: fadeInDown 1s ease-out;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 
 @keyframes fadeInDown {
@@ -320,255 +249,11 @@
   }
 }
 
-//
-//    .offer-list-section-header {
-//      font-size: 1.4rem;
-//      text-align: center;
-//      font-family: $font-alt;
-//      font-weight: bold;
-//
-//      @include tablet {
-//        font-size: 3vw;
-//      }
-//      @include nbpp {
-//        border: 1px solid black;
-//        border-radius: 40px;
-//        padding: 40px;
-//        font-size: 4rem;
-//      }
-//      @include notebook_minHeight {
-//        font-size: 2rem;
-//      }
-//    }
-//  }
-//}
-
-//.offer-list-birthday {
-//  background-color: rgba(0, 0, 0, 0.2);
-//  width: 100%;
-//  height: 100%;
-//  opacity: 0;
-//  transform: translateY(-50px);
-//  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-//
-//  &.visible {
-//    opacity: 1;
-//    transform: translateY(0);
-//  }
-//
-//  @include notebook_only_width {
-//    background-color: rgba(0, 0, 0, 0.0);
-//  }
-//  @include notebook_minHeight {
-//    background-color: rgba(0, 0, 0, 0.2);
-//  }
-//
-//  .offer-list-section-header {
-//    color: $color-green;
-//  }
-//}
-//
-//.offer-list-communion {
-//  opacity: 0;
-//  transform: translateY(-50px);
-//  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-//
-//  &.visible {
-//    opacity: 1;
-//    transform: translateY(0);
-//  }
-//
-//  .offer-list-section-header {
-//    color: $color-blue;
-//  }
-//
-//  @include notebook_minHeight {
-//    background-color: rgba(0, 0, 0, 0.2);
-//  }
-//}
-//
-//.offer-list-christening {
-//  background-color: rgba(0, 0, 0, 0.2);
-//  width: 100%;
-//  height: 100%;
-//  opacity: 0;
-//  transform: translateY(-50px);
-//  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-//
-//  &.visible {
-//    opacity: 1;
-//    transform: translateY(0);
-//  }
-//
-//  @include notebook_only_width {
-//    background-color: rgba(0, 0, 0, 0.0);
-//  }
-//
-//  .offer-list-section-header {
-//    color: $color-yellow;
-//  }
-//}
-//
-//.offer-list {
-//  .offer-list-family {
-//    margin: 20px 0 0 0;
-//    opacity: 0;
-//    transform: translateY(-50px);
-//    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-//
-//    &.visible {
-//      opacity: 1;
-//      transform: translateY(0);
-//    }
-//
-//    @include max {
-//    }
-//
-//    .offer-list-section-header {
-//      color: $color-bordo;
-//    }
-
-//.offer-list-section-photo {
-//  width: 40vw;
-//  @include notebook_only_width {
-//    width: 400px;
-//  }
-//  @include notebook_minHeight {
-//    width: 300px
-//  }
-//  @include nbpp {
-//    width: 600px;
-//  }
-//  @include max {
-//    border-radius: 100px;
-//    width: 600px
-//  }
-//}
-//  }
-//}
-//.offer-list {
-//  .offer-list-wedding {
-//    margin: 40px 0;
-//    background-color: rgba(0, 0, 0, 0.2);
-//    height: 90vw;
-//    opacity: 0;
-//    transform: translateY(-50px);
-//    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-//
-//    &.visible {
-//      opacity: 1;
-//      transform: translateY(0);
-//    }
-//
-//    @include notebook_minHeight {
-//      margin: 0 0;
-//      height: 45vw;
-//    }
-//    @include minHeight_notebookBig {
-//      margin: 0 0;
-//      height: 40vw;
-//    }
-//    @include nbpp {
-//      background-color: rgba(0, 0, 0, 0.0);
-//      height: auto;
-//    }
-//
-//    @include notebook_minHeight {
-//      background-color: rgba(0, 0, 0, 0.2);
-//      height: 40vw;
-//    }
-//    @include minHeight_nbpp {
-//      background-color: rgba(0, 0, 0, 0.2);
-//      height: 55vw;
-//    }
-//
-//    .offer-list-section-photo {
-//      width: 40vw;
-//      @include notebook_minHeight {
-//        width: 300px;
-//      }
-//      @include nbpp {
-//        width: 600px;
-//      }
-//    }
-//
-//    .offer-list-section-header {
-//      color: $color-lightBlue;
-//    }
-//  }
-//}
-
 .offer-info {
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  .offer-info-price {
-    width: 80vw;
-    height: 25vw;
-    background-color: $color-pink;
-    border-radius: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    border: 1px solid $color-grey;
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @include mobile {
-      height: 200px;
-    }
-    @include notebook_only_width {
-      margin: 150px 0;
-      width: 1200px;
-      height: 300px;
-    }
-    @include nbpp {
-      width: 1800px;
-      height: 300px;
-    }
-    @include notebook_minHeight {
-      margin: 150px 0;
-      width: 1000px;
-      height: 300px;
-    }
-
-    .offer-info-price-number {
-      color: $color-limon;
-      font-weight: bold;
-      font-size: 8vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 70%;
-      height: 5%;
-      border-radius: 70px;
-      padding: 30px;
-      border: 0.3px solid $color-grey;
-      @include mobile {
-        padding: 60px;
-        font-size: 6vw;
-      }
-      @include notebook_only_width {
-        font-size: 7rem;
-        padding: 90px;
-      }
-      @include nbpp {
-        font-size: 9rem;
-      }
-      @include tablet_minHeight {
-        font-size: 5rem;
-      }
-    }
-  }
 
   .curve-line-left {
     background-image: url('../../public/assets/curve-left.png');
@@ -599,13 +284,13 @@
     overflow: hidden;
   }
 
-  .offer-info-package {
+  &-package {
     width: 80vw;
     height: 100%;
     padding: 20px 20px 0 20px;
     background: linear-gradient(180deg, rgba(79, 170, 197, 1) 0%, rgba(200, 83, 194, 1) 100%);
     border-radius: 50px;
-    margin-bottom: 20px;
+    margin-top: 100px;
     text-align: center;
     color: white;
     opacity: 0;
@@ -618,17 +303,7 @@
     }
 
     @include tablet {
-      width: 900px;
-    }
-    @include notebook_only_width {
-      width: 1100px;
-    }
-    @include tablet_minHeight {
-      width: 600px;
-    }
-    @include minHeight_nbpp {
-      width: 600px;
-      height: 100%;
+      width: 550px;
     }
 
     h3 {
@@ -637,22 +312,16 @@
       font-weight: bold;
       font-size: 4vw;
       @include mobile {
-        font-size: 4.5vw;
+        font-size: 3vw;
         padding: 60px;
       }
       @include tablet {
-        font-size: 5vw;
-        padding: 80px 5px;
-      }
-      @include notebook_only_width {
         font-size: 5rem;
-      }
-      @include tablet_minHeight {
-        font-size: 2rem;
+        padding: 40px 5px;
       }
     }
 
-    .offer-info-package-list {
+    &-list {
       margin-bottom: 50px;
 
       ul {
@@ -663,20 +332,14 @@
           position: relative;
           padding-left: 1.2rem;
           margin-bottom: 0.9rem;
+          font-size: 4vw;
+          line-height: 7vw;
           @include mobile {
-            font-size: 2rem;
-            line-height: 70px;
-          }
-          @include tablet {
             font-size: 3rem;
+            line-height: 40px;
           }
-          @include tablet_minHeight {
-            font-size: 1.5rem;
-            line-height: 30px;
-          }
-          @include minHeight_nbpp {
-            font-size: 2rem;
-            line-height: 50px;
+          @include notebook_only_width {
+            font-size: 2.5rem;
           }
 
           &::before {
@@ -684,23 +347,19 @@
             position: absolute;
             left: 0;
             color: $color-limon;
-            font-size: 1.5rem;
+            font-size: 4vw;
+            line-height: 7vw;
             @include mobile {
-              left: 10px;
+              left: 80px;
               font-size: 3rem;
-              line-height: 70px;
+              line-height: 40px;
+              @include tablet {
+                left: 50px;
+                line-height: 40px;
+              }
               @include notebook_only_width {
-                left: 80px;
-                font-size: 5rem;
-              }
-              @include tablet_minHeight {
-                left: 10px;
-                font-size: 3rem;
-                line-height: 30px;
-              }
-              @include minHeight_nbpp {
-                font-size: 2rem;
-                line-height: 50px;
+                left: 40px;
+                font-size: 4rem;
               }
             }
           }

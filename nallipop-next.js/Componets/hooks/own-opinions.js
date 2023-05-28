@@ -102,14 +102,14 @@ const Own_opinions = () => {
                     <h2>LUB ZOSTAW OCENKĘ NA NASZYCH SOCIALACH!</h2>
                     <div className="own-opinion-social">
                         <div className="own-opinion-social-facebook">
-                            <Link href="https://www.facebook.com/profile.php?id=100090355616685">
+                            <Link href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener" target="_blank">
                                 <FontAwesomeIcon icon={faFacebook}/>
                             </Link>
                             <h3>Nallipop</h3>
                         </div>
                         <div className="own-opinion-social-instagram">
                             <Link href="/">
-                                <FontAwesomeIcon icon={faInstagram}/>
+                                <FontAwesomeIcon icon={faInstagram} rel="noopener" target="_blank"/>
                             </Link>
                             <h3>Nallipop</h3>
                         </div>

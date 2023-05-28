@@ -34,17 +34,23 @@ const HeaderMenu = () => {
                             </Link>
                         </li>
                     ))}
+
                 </ul>
             </div>
             <div className={active ? "activeSidenav " : "sidenav"}>
                 <ul className="ul">
                     {data.map((item, index) => (
                         <li key={index} onClick={handleClick}>
-                            <Link href={item.href} passHref>
+                            <Link href={item.href} passHref className={index === 5 ? 'fifth-element' : ''}>
                                 {item.name}
                             </Link>
                         </li>
                     ))}
+                    <li>
+                        <Link href="#opinions" passHref onClick={handleClick}>
+                            OPINIE
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </>

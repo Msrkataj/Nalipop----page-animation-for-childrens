@@ -9,8 +9,8 @@
   background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
   color: #ffffff;
   text-align: center;
-  padding: 5px 20px;
-  font-size: 0.5rem;
+  padding: 10px 20px;
+  font-size: 2rem;
   border-radius: 20px;
   text-decoration: none;
   cursor: pointer;
@@ -29,19 +29,19 @@
     font-size: 2vw;
   }
   @include tablet {
-    padding: 15px 55px;
+    padding: 15px 40px;
     font-size: 2vw;
   }
   @include notebook {
     padding: 20px 60px;
     font-size: 2rem;
   }
-  @include notebook_minHeight {
-    padding: 10px 30px;
-    font-size: 1rem;
-  }
+  //@include notebook_minHeight {
+  //  padding: 10px 30px;
+  //  font-size: 1rem;
+  //}
   @include max {
-    padding: 30px 80px;
+    padding: 15px 40px;
     font-size: 2.5rem;
     border-radius: 30px;
   }

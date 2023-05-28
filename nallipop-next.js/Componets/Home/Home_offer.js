@@ -22,23 +22,23 @@ const HomeOffer = () => {
                     <div className={`home_offer${isVisible ? ' visible' : ''}`}>
                         <div className="home_offer_title">ANIMACJĘ NA KAŻDĄ OKAZJĘ</div>
                         <div className="home_offer-content">
-                           <div className="home_offer_square home_offer_square_birthday">
+                           <div className="home_offer-content_square home_offer-content_birthday">
                                <FontAwesomeIcon icon={faBirthdayCake} />
                                <h2>Urodziny</h2>
                            </div>
-                            <div className="home_offer_square home_offer_square_christening">
+                            <div className="home_offer-content_square home_offer-content_christening">
                                 <div></div>
                                 <h2>Chrzciny</h2>
                             </div>
-                            <div className="home_offer_square home_offer_square_wedding">
+                            <div className="home_offer-content_square home_offer-content_wedding">
                                 <div></div>
                                 <h2>Wesele</h2>
                             </div>
-                            <div className="home_offer_square home_offer_square_family">
+                            <div className="home_offer-content_square home_offer-content_family">
                                 <div></div>
                                 <h2>Uroczystości Rodzinne</h2>
                             </div>
-                            <div className="home_offer_square home_offer_square_other">
+                            <div className="home_offer-content_square home_offer-content_other">
                                 <div></div>
                                 <h2>Inne</h2>
                             </div>

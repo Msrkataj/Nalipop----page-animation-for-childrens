@@ -1,39 +1,33 @@
-.header .header-top .header-central-background-gallery {
-  height: 100vw;
+.header {
+  &__top {
+    &__background__gallery {
+      height: 100vw;
 
-  @include nbpp {
-    height: 70vw;
-    width: 100vw;
-  }
-  @include tablet_minHeight {
-    height: 80vw;
-  }
-  @include notebook_minHeight {
-    height: 60vw;
+      @include nbpp {
+        height: 70vw;
+        width: 100vw;
+      }
+      @include tablet_minHeight {
+        height: 80vw;
+      }
+      @include notebook_only_width {
+        max-height: 1200px;
+        height: 50vw;
+      }
+    }
+
+    &__container__gallery {
+      &__image {
+        @include notebook_only_width {
+          top: -120px;
+          width: 1800px;
+        }
+      }
+    }
   }
 }
 
-.header-central-image-gallery {
-  @include max {
-    top: -10px;
-    width: 2700px;
-  }
-  @include tablet_minHeight {
-    top: -20px;
-  }
-  @include notebook_minHeight {
-    width: 1200px;
-    top:  100px;
-    left: 65vw;
-  }
-  @include minHeight_nbpp {
-    top: 1vw;
-    width: 1400px;
-    left: 70vw;
-  }
-}
-
-.header-text-gallery {
+.header__central__text__gallery {
   position: absolute;
   top: 100vw;
   left: 88px;
@@ -46,27 +40,17 @@
   @include tablet {;
     left: 20vw;
   }
-  @include notebook {
-
+  @include notebook_only_width {
+    width: 1800px;
+    left: -30vw;
+    top: 30vw;
   }
-  @include notebook-big-plus {
-    left: 11vw;
-    top: 50vw;
-  }
-  @include nbpp {
-    left: 20vw;
+  @media (min-width: 1900px) {
+    left: -8vw;
     top: 25vw;
   }
-  @include max {
-    width: 1800px;
-    left: 15vw;
-    top: 18vw;
-  }
-  @include tablet_minHeight {
-    top: 15vw;
-  }
-  @include notebook_minHeight {
-    width: 800px;
+  @media (min-width: 2500px) {
+    left: 5vw;
     top: 20vw;
   }
 
@@ -75,18 +59,13 @@
     font-size: 15vw;
     margin-bottom: 30px;
     font-weight: normal;
-    @include mobile-mini-plus {
-    }
     @include mobile-mini-minus {
       font-size: 2rem
     }
     @include tablet {
-      font-size: 6rem;
+      font-size: 10rem;
     }
-    @include nbpp {
-      font-size: 12rem;
-    }
-    @include max {
+    @include notebook_only_width {
       font-size: 15rem;
     }
   }

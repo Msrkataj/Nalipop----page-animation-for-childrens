@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
 import data from '../data/data.json';
 
 
-const HomeForm = ({close}) => {
+const HomeForm = () => {
     const isVisible = useScrollAnimation('.home-form');
 
 
@@ -29,8 +28,8 @@ const HomeForm = ({close}) => {
                             })}
                         </div>
                     </div>
-                    <div className="form-image">
-                        <div className="form-image-girl-border">
+                    <div className="form-image form-image-home">
+                        <div className="form-image-girl-border form-image-girl-border-home">
                             <img className="form-image-girl" src="/assets/blonde-girl.png" alt="blonde-girl" />
                         </div>
                     </div>

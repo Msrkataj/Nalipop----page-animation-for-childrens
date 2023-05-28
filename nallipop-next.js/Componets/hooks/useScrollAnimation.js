@@ -17,8 +17,8 @@ export const useScrollAnimation = (elementSelector) => {
         };
 
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '0px',
-            threshold: 0.1,
+            rootMargin: '10px 0px',
+            threshold: 0.05,
         });
 
         const element = document.querySelector(elementSelector);

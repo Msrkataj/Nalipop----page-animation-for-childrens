@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import storage from "../../firebase";
-import { ref, getDownloadURL, list, listAll } from "firebase/storage";
+import { ref, getDownloadURL, listAll } from "firebase/storage";
 
 
 const GalleryContent = () => {
@@ -27,7 +27,7 @@ const GalleryContent = () => {
             <div className="page">
                 <div className="container">
                     <section className="gallery">
-                        <div className="header-gallery-clouds gallery-clouds" />
+                        <div className="gallery-clouds-header gallery-clouds" />
                         {images.map((image, index) => (
                             <div key={index} className="gallery-item">
                                 <img src={image} alt={`Gallery Image ${index + 1}`} />

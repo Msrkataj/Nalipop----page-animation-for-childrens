@@ -1,76 +1,49 @@
-.header .header-top .header-central-background-attractions {
-  height: 200vw;
-  @include mobile-mini-plus {
-    height: 100vw;
-    max-height: 1600px;
-    width: 100vw;
-  }
-  @include tablet {
-    height:  90vw;
-  }
-  @include notebook_only_width {
-    height:  100vw;
-  }
-  @include tablet-minHeight {
-    height:  900px;
-  }
-  //@include notebook_minHeight {
-  //  height: 80vw;
-  //}
-  @include nbpp {
-    max-height: 2000px;
-    height: 70vw;
-  }
-}
-.header-central-image-attractions {
-  width: 400vw;
-  top: -100px;
-  @include mobile-mini {
-    top: -160px;
-  }
-  @include mobile-mini-plus {
-    width: 200vw;
-    top: -70px;
-    left: 50vw;
-  }
-  @include tablet {
-    top: -100px;
-  }
-  @include notebook_only_width {
-    width: 3000px;
-    top: -130px;
-    left: 35vw
-  }
-  @include nbpp {
-    left: 1200px;
-  }
-  @include max {
-    left: 60%;
-    top: -290px;
-    width: 200vw;
-  }
-  @include tablet_minHeight {
-    width: 1500px;
-    top: -40px;
-  }
-  @include notebook_minHeight {
-    width: 1500px;
-    top: 1vw;
-    left: 60vw;
-  }
-  @include minHeight_nbpp {
-    left: 60vw;
+.header {
+  &__top {
+    &__background__attractions {
+      height: 200vw;
+      @include mobile-mini-plus {
+        height: 100vw;
+        max-height: 1600px;
+        width: 100vw;
+      }
+      @include tablet {
+        height:  90vw;
+      }
+      @include notebook_only_width {
+        max-height: 1000px;
+        height: 50vw;
+      }
+    }
+
+    &__container__attractions {
+      &__image {
+        width: 400vw;
+        top: -100px;
+        @include mobile-mini {
+          top: -160px;
+        }
+        @include mobile-mini-plus {
+          width: 200vw;
+          top: -70px;
+          left: 50vw;
+        }
+        @include tablet {
+          top: -100px;
+        }
+        @include notebook_only_width {
+          max-width: 1800px;
+          left: 60%;
+          top: -150px;
+          width: 150vw;
+        }
+      }
+    }
   }
 }
-.header-central-attractions {
-  @include tablet_minHeight {
-    padding: 460px 400px;
-  }
-  @include minHeight_max {
-    padding: 400px 400px;
-  }
-}
-.header-text-attractions {
+
+
+.header__central__attractions__text {
   position: absolute;
   top: 100vw;
   left: 58px;
@@ -83,25 +56,10 @@
   @include tablet {;
     left: 20vw;
   }
-  @include notebook {
-
-  }
-  @include notebook-big-plus {
-    left: 11vw;
-    top: 50vw;
-  }
-  @include nbpp {
-    left: 20vw;
-    top: 25vw;
-  }
-  @include max {
-    width: 1800px;
-    left: 15vw;
+  @include notebook_only_width {
+    width: 1300px;
+    left: 5vw;
     top: 18vw;
-  }
-  @include notebook_minHeight {
-    width: 800px;
-    top: 20vw;
   }
 
   h1 {
@@ -117,34 +75,16 @@
     @include tablet {
       font-size: 8rem;
     }
-    @include nbpp {
-      font-size: 10rem;
-    }
-    @include max {
+    @include notebook_only_width {
       font-size: 13rem;
-    }
-    @include tablet_minHeight {
-    font-size: 7rem;
     }
   }
 }
 
-.color-line-attractions {
-  top: 1200px;
-  @include mobile-mini-plus {
-    top: 800px;
-  }
-  @include tablet {
-    top: 200px;
-  }
-  @include max {
-    top: -2000px;
-  }
-}
 
 .attractions {
   width: 100%;
-  margin-top: 120vw;
+  margin-top: 85vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,43 +102,27 @@
   @include tablet {
     margin-top: 30vw;
   }
-  @include notebook {
-    margin-top: 40vw;
+  @include notebook_only_width {
+    margin-top: calc(100% - (100vw - 600px) / 0.75);
+    margin-bottom: 5vw;
   }
-  @include nbpp {
-    margin-top: 10vw;
-  }
-  @include max {
-    margin-top: calc(100% - (100vw - 1500px) / 0.75);
-    //margin-left: 400px;
+  @media (min-width: 2690px)  {
     margin-bottom: 200px;
   }
-  @media (min-width: 3700px) and (min-height: 1300px) {
-    margin-top: calc(100% - (100vw - 500px) / 0.8);
-    margin-left: -950px;
-    margin-bottom: 300px;
-  }
-  @media (min-width: 5000px) and (min-height: 1300px)  {
-    margin-top: calc(100% - (100vw - 600px) / 0.85);
-  }
-  @include tablet_minHeight {
-    margin-top: 10vw;
-  }
-  @include notebook_minHeight {
-    margin-top: 1vw;
-  }
-  @media (min-width: 3000px) and (max-height: 1300px)  {
-    margin-top: calc(100% - (100vw - 2000px) / 0.85);
-  }
-  .attractions-content {
+
+  &-content {
     margin-top: 50px;
     margin-bottom: 20px;
     width: 90%;
     height: 100%;
     z-index: 1;
-   @include notebook_minHeight {
-     //margin-bottom: 150px;
-   }
+    @include tablet {
+      width: 80%;
+    }
+    @include notebook_only_width {
+      width: 1000px;
+    }
+
     h1 {
       font-family: $font-base;
       font-weight: bold;
@@ -206,56 +130,33 @@
       text-align: center;
       font-size: 4vw;
       margin: 20px 0;
-      @include notebook {
+      @include notebook_only_width {
         font-size: 5rem;
       }
-      @include tablet_minHeight {
-        font-size: 3rem;
-      }
     }
 
-    @include tablet {
-      width: 80%;
-    }
-    @include notebook {
-      background-color: #8bacc0;
-      border-radius: 50px;
-      width: 80vw;
-
-    }
-    @include max {
-      width: 1800px;
-    }
-
-    .attractions-content-text {
+    &-text {
       padding: 12px;
-      font-size: 0.7rem;
+      font-size: 1.5rem;
       text-align: center;
       font-family: $font-primary;
       line-height: 30px;
-      @include mobile-mini {
-        font-size: 1rem;
-      }
+
       @include mobile-mini-plus {
-        font-size: 1.2rem;
+        font-size: 2rem;
         line-height: 40px;
       }
       @include mobile {
-        font-size: 1.5rem;
-      }
-      @include tablet {
-        font-size: 1.5rem;
-        line-height: 70px;
-      }
-      @include notebook {
-        padding: 30px;
         font-size: 2rem;
       }
-      @include nbpp {
-        font-size: 3rem;
+      @include tablet {
+        font-size: 2rem;
+        line-height: 50px;
       }
-      @include tablet_minHeight {
-        font-size: 1.5rem;
+      @include notebook_only_width {
+        padding: 30px;
+        line-height: 50px;
+        font-size: 3rem;
       }
     }
   }
@@ -264,34 +165,7 @@
 .button-attractions {
   margin-bottom: 50px;
   z-index: 5;
-  @include mobile-mini-plus {
-    //margin-right: 100px;
-    //margin-top: 150px;
-  }
-  @include mobile {
-    //margin-right: 80px;
-    //margin-top: 15vw;
-  }
-  @include notebook {
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //transform: translate(-50%, -50%);
-  }
-  @include nbpp {
-    //top: 25vw;
-    //left: 40vw;
-    //margin-top: 350px;
-  }
-  @include max {
-    //top: 20vw;
-    //left: 30vw;
-    //margin-top: 350px;
-  }
-  @include tablet_minHeight {
+  @include tablet {
     margin-bottom: 150px;
-  }
-  @include minHeight_nbpp {
-    margin-bottom: -150px;
   }
 }

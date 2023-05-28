@@ -4,14 +4,9 @@ import {useScrollAnimation} from "../hooks/useScrollAnimation";
 import data from '../data/data.json';
 
 
-const OfferList = ({close}) => {
+const OfferList = () => {
     const isVisible = useScrollAnimation('.offer-list');
-    const isVisible2 = useScrollAnimation('.offer-list-communion');
-    const isVisible3 = useScrollAnimation('.offer-list-christening');
-    const isVisible4 = useScrollAnimation('.offer-list-family');
-    const isVisible5 = useScrollAnimation('.offer-list-wedding');
-    const isVisible6 = useScrollAnimation('.offer-info-price');
-    const isVisible7 = useScrollAnimation('.offer-info-package');
+    const isVisible2 = useScrollAnimation('.offer-info-package');
     const [selectedOffer, setSelectedOffer] = useState(null);
     const offerRef = createRef();
 
@@ -31,17 +26,15 @@ const OfferList = ({close}) => {
     ];
 
     const handleOfferClick = (offer) => {
-        setSelectedOffer(offer);
-        if (window.innerWidth <= 1024) {
-            offerRef.current.scrollIntoView({behavior: 'smooth'});
-        }
         if (offerRef.current) {
             offerRef.current.classList.remove('fadeInDown');
             void offerRef.current.offsetWidth;
             offerRef.current.classList.add('fadeInDown');
         }
+        setTimeout(() => {
+            setSelectedOffer(offer);
+        }, 500);
     };
-
 
 
     useEffect(() => {
@@ -60,52 +53,25 @@ const OfferList = ({close}) => {
                     <div className="offer-list-section">
                         <div className="offer-list-section-options">
                             {offers.map(offer => (
-                                <p onClick={() => handleOfferClick(offer)}>
+                                <p key={offer.name} onClick={() => handleOfferClick(offer)}>
                                     {offer.title}
                                 </p>
                             ))}
                         </div>
                         {selectedOffer && (
                             <div ref={offerRef} className="offer-list-section-option fadeInDown">
-                                <div className="fadeInDown offer-list-section-header">{selectedOffer.title}</div>
-                                <img className="fadeInDown offer-list-section-photo" src={selectedOffer.img} alt="offer"/>
-                                <div className="fadeInDown offer-list-section-text">{selectedOffer.text}</div>
-                                <div className="fadeInDown offer-list-section-price">{selectedOffer.price}</div>
+                                <div className="fadeInDown offer-list-section-option-header">{selectedOffer.title}</div>
+                                <img className="fadeInDown offer-list-section-option-photo" src={selectedOffer.img} alt="offer"/>
+                                <div className="fadeInDown offer-list-section-option-text">{selectedOffer.text}</div>
+                                <div className="fadeInDown offer-list-section-option-price">{selectedOffer.price}</div>
                             </div>
                         )}
                     </div>
-                    {/*<div className="offer-list-row">*/}
-                    {/*<div className={`offer-list-section offer-list-birthday${isVisible ? ' visible' : ''}`}>*/}
-                    {/*    <img className="offer-list-section-photo" src="/assets/birthday.jpg" alt="birthday"/>*/}
-                    {/*    <div className="offer-list-section-header">ANIMACJĘ NA URODZINY</div>*/}
-                    {/*</div>*/}
-                    {/*<div className={`offer-list-section offer-list-communion${isVisible2 ? ' visible' : ''}`}>*/}
-                    {/*    <img className="offer-list-section-photo" src="/assets/communion.jpg" alt="communion"/>*/}
-                    {/*    <div className="offer-list-section-header">ANIMACJĘ NA KOMUNIĘ</div>*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="offer-list-row">*/}
-                    {/*<div className={`offer-list-section offer-list-christening${isVisible3 ? ' visible' : ''}`}>*/}
-                    {/*    <img className="offer-list-section-photo" src="/assets/christening.jpg" alt="christening"/>*/}
-                    {/*    <div className="offer-list-section-header">ANIMACJĘ NA CHRZCINY</div>*/}
-                    {/*</div>*/}
-                    {/*<div className={`offer-list-section offer-list-family${isVisible4 ? ' visible' : ''}`}>*/}
-                    {/*    <img className="offer-list-section-photo" src="/assets/family.png" alt="family"/>*/}
-                    {/*    <div className="offer-list-section-header">UROCZYSTOŚCI RODZINNE</div>*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className={`offer-list-section offer-list-wedding${isVisible5 ? ' visible' : ''}`}>*/}
-                    {/*    <img className="offer-list-section-photo" src="/assets/wedding.jpg" alt="wedding"/>*/}
-                    {/*    <div className="offer-list-section-header">ANIMACJĘ NA WESELE</div>*/}
-                    {/*</div>*/}
                 </section>
                 <section className="offer-info">
-                    {/*<div className={`offer-info-price${isVisible6 ? ' visible' : ''}`}>*/}
-                    {/*    <div className="offer-info-price-number">150 zł/h</div>*/}
-                    {/*</div>*/}
                     <div className="curve-line-left"></div>
                     <div className="curve-line-right"></div>
-                    <div className={`offer-info-package${isVisible7 ? ' visible' : ''}`}>
+                    <div className={`offer-info-package${isVisible2 ? ' visible' : ''}`}>
                         <h3>ATRAKCJE W PAKIECIE</h3>
                         <div className="offer-info-package-list">
                             <ul>

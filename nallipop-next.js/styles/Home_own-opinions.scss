@@ -1,0 +1,179 @@
+.own-opinion {
+  height: 100%;
+  background-color: #7d5eae87;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+  @include tablet {
+    border-top: 5px solid black;
+    background: none;
+  }
+
+  h2 {
+    font-size: 5vw;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+    @include mobile-mini {
+      font-size: 3rem;
+    }
+    @include tablet {
+      margin: 60px;
+      font-size: 3rem;
+    }
+    @include notebook_only_width {
+      margin: 50px 0;
+      font-size: 4rem;
+    }
+  }
+
+  &-form {
+    width: 100%;
+    max-width: 80vw;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    @include mobile-mini {
+      max-width: 400px;
+    }
+    @include notebook_only_width {
+      max-width: 700px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input,
+      textarea {
+        width: 90%;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        @include mobile {
+          font-size: 1rem;
+        }
+        @include notebook_only_width {
+          border-radius: 15px;
+          font-size: 2rem;
+          width: 97%;
+        }
+
+
+        &:focus {
+          border-color: #5b9bd5;
+        }
+
+        &::placeholder {
+          font-size: 1.5rem;
+        }
+      }
+
+      textarea {
+        height: 20vw;
+        max-height: 120px;
+        resize: vertical;
+        @include mobile {
+          max-height: 200px;
+        }
+        @include notebook_only_width {
+          max-height: 200px;
+        }
+      }
+
+      button {
+        width: 80%;
+        padding: 5px;
+        border: none;
+        background: $color-main2;
+        color: white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        @include mobile-mini {
+          width: 200px;
+        }
+        @include notebook_only_width {
+          font-size: 1.8rem;
+          width: 300px;
+          padding: 10px;
+        }
+
+        &:hover {
+          background-color: #4a8ac1;
+        }
+
+        &:disabled {
+          background-color: #ddd;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  &-other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      line-height: 20px;
+    }
+    .own-opinion-social {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      @include mobile-mini {
+        width: 400px;
+      }
+      @include notebook_only_width {
+        width: 200px;
+      }
+
+      .own-opinion-social-facebook, .own-opinion-social-instagram {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+      }
+
+      a {
+        color: $color-main2;
+        margin: 0 10px;
+
+        svg {
+          width: 6vw;
+          height: auto;
+          @include tablet {
+            width: 5vw;
+            max-width: 60px;
+          }
+          @include notebook_only_width {
+            max-width: 45px;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 3vw;
+        @include mobile {
+          font-size: 1.2rem;
+        }
+        @include tablet {
+          font-size: 1.5rem;
+        }
+        @include notebook_only_width {
+          font-size: 2.3rem;
+        }
+      }
+    }
+  }
+}

@@ -13,27 +13,16 @@ const AboutMeSection = () => {
                         <h1>Natalia Marciniak</h1>
                         <div className="about_me-content">
                             <div className="about_me-content-text">
-                                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At deserunt dicta dolor
-                                    eveniet explicabo, iure labore laborum maxime molestias porro quaerat quasi quidem
-                                    quisquam ratione sed, totam veniam! Dolores, harum!
-                                </div>
-                                <div>Ad at eos ex itaque nesciunt quae quis reiciendis tempore. Aperiam commodi cum ducimus
-                                    enim facere illo magnam magni, molestias mollitia nemo quae quaerat quia, recusandae,
-                                    reiciendis rem rerum temporibus.
-                                </div>
-                                <div>A accusamus accusantium autem blanditiis commodi corporis culpa cumque deleniti
-                                    doloribus earum excepturi exercitationem fuga impedit laudantium maiores, nisi
-                                    perferendis quas qui, similique sint temporibus tenetur ut. Est, similique, temporibus.
-                                </div>
-                                <div>Alias, aspernatur consequatur, corporis cupiditate dignissimos doloribus eaque expedita
-                                    ipsa ipsam laboriosam pariatur provident quaerat recusandae reiciendis sequi tempora
-                                    temporibus totam unde veritatis voluptate! Accusamus ex ipsum odio repellendus
-                                    voluptates?
-                                </div>
-                                <div>Ad alias aliquam amet beatae commodi consequatur culpa, cumque, dolore ducimus enim eum
-                                    expedita facere facilis impedit itaque modi nemo odio provident quam ratione recusandae
-                                    repudiandae sit tenetur voluptate voluptatibus!
-                                </div>
+                                <p><b>Cześć! Jestem Natalia, animatorka dziecięca, która przyniesie do twojego wydarzenia mnóstwo energii, kreatywności i radości!</b> <br/>
+                                    Moje doświadczenie jako pedagog specjalny, magister terapii pedagogicznej, oraz terapeuta dodatkowo wzbogaca moje podejście do pracy z dziećmi,
+                                    sprawiając, że każde z nich czuje się wyjątkowo.
+                                    Jestem absolwentką Akademii Pedagogiki Specjalnej im. Marii Grzegorzewskiej.
+                                    Tam zdobyłam licencjat z Pedagogiki Specjalnej - wczesne wspomaganie rozwoju dzieci oraz <b>magisterium z Pedagogiki Specjalnej-Terapia Pedagogiczna</b>, co pozwoliło mi na pogłębienie mojej wiedzy o rozwoju i potrzebach dzieci.
+                                    Długoletnie doświadczenie w pracy z dziećmi, zarówno w przedszkolu, jak i w szkole, pozwoliło mi na zdobycie praktycznych umiejętności.Ale to moja pasja do animacji naprawdę przynosi kolor i życie do każdego wydarzenia!
+                                    <br/><b>Ukończyłam specjalistyczne szkolenia z animacji i facepaintingu.</b> Dodatkowo, moje animacje ruchowe, które łączą moją miłość do sportu z zabawą, to prawdziwy hit wśród dzieci.
+                                    Prowadzę animacje na różnego rodzaju imprezach - urodzinach, weselach, komuniach.
+                                    Każda z nich to niepowtarzalna przygoda, która nie tylko bawi, ale także pomaga dzieciom rozwijać umiejętności społeczne, kreatywność i samodzielność.Jeśli planujesz wydarzenie i szukasz niezapomnianych atrakcji dla dzieci, nie wahaj się i skontaktuj ze mną!
+                                </p>
                             </div>
                         </div>
                     </section>

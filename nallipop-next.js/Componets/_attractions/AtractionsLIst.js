@@ -53,8 +53,8 @@ const AttractionsList = () => {
                     <section className={`attractions-list${isVisible ? ' visible' : ''}`}>
                         {attractions.map((attraction, index) => (
                             <div className="attractions-list-content" key={index}>
-                                <img className="attractions-list-content-photo" src={attraction.href} alt={attraction.name} />
-                                <h2>{attraction.description}</h2>
+                                <img className= {`attractions-list-content-photo`} src={attraction.href} alt={attraction.name} />
+                                <h2 className= {`description-${index + 1}`} >{attraction.description}</h2>
                             </div>
                         ))}
                     </section>

@@ -10,9 +10,6 @@ const AttractionsBegin = () => {
     return (
         <>
             <div className="page">
-                {/*<div className="color-line color-line-attractions">*/}
-                {/*    <img className="home-about_me-logo" src="/assets/line2.png" alt="Opis obrazka" />*/}
-                {/*</div>*/}
                 <div className="container">
                     <section className={`attractions${isVisible ? ' visible' : ''}`}>
                         <div className="attractions-content">
