@@ -3,7 +3,7 @@ import {useForm, ValidationError} from '@formspree/react';
 import Footer_section from "../hooks/footer_section";
 
 const Footer = () => {
-    const [state, handleSubmit] = useForm("xoqzkkbn");
+    const [state, handleSubmit] = useForm("meqwwdle");
 
 
     return (

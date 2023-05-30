@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import Link from 'next/link';
 import TimePicker from 'react-time-picker';
 import Select from "react-select";
 import DatePicker from 'react-datepicker';
@@ -63,7 +62,7 @@ const ReservationContent = () => {
         setSelectedAttractions(selectedOptions);
     }
 
-    const [state, handleSubmitForm] = useForm("mzbqojvb");
+    const [state, handleSubmitForm] = useForm("mgebbqlk");
 
     return (
         <>
