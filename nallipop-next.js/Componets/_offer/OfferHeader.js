@@ -32,14 +32,7 @@ const HomeHeader = () => {
                 <div id="#" className="header">
                     <div className="header__top">
                         <div className="header__top__background header__top__background__offer"></div>
-                        <Image
-                            className="header__top__image"
-                            src="/assets/top.png"
-                            alt="top"
-                            layout='responsive'
-                            width={1920}
-                            height={1080}
-                        />
+                        <img className="header__top__image" src="/assets/top.png" alt="top" />
                         <div className="header__top__content">
                             <Link href="/">
                                 <div className="header__top__content__logo">
@@ -56,7 +49,16 @@ const HomeHeader = () => {
                             <HeaderMenu/>
                         </div>
                         <div className="header__top__container">
-                            <img className="header__top__container__image header__top__container__offer__image" src="/assets/offer.png" alt="offer" />
+                            <div className="header__top__container__image header__top__container__offer__image">
+                                <Image
+                                    src='/assets/offer.png'
+                                    alt="offer"
+                                    layout='responsive'
+                                    width={1324}
+                                    height={1324}
+                                    quality={100}
+                                />
+                            </div>
                             <div className="header__top__container__clouds" />
                         </div>
                     </div>

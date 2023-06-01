@@ -17,39 +17,47 @@ const ContactMap = () => {
     useEffect(() => {
         if (isImageZoomed) {
             const image = document.querySelector('.zoomed');
-            const Hammer = require('hammerjs');
-            const hammer = new Hammer(image);
 
-            hammer.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+            const imgWidth = image.clientWidth;
+            const containerWidth = window.innerWidth;
+            const initialTransform = `translateX(${-(imgWidth - containerWidth) / 2}px)`;
+            image.style.transform = (imgWidth > containerWidth) ? initialTransform : '';
 
-            let initialTransform = image.style.transform;
-            let totalDeltaX = 0;
+            import('hammerjs').then(({default: Hammer}) => {
+                const hammer = new Hammer(image);
+                hammer.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
-            hammer.on('pan', (e) => {
-                const prevTotalDeltaX = totalDeltaX;
-                totalDeltaX += e.deltaX /5;
+                let totalDeltaX = -(imgWidth - containerWidth) / 2;
 
-                const imgWidth = image.clientWidth;
-                const containerWidth = window.innerWidth;
-                const maxDeltaX = imgWidth - containerWidth;
+                hammer.on('pan', (e) => {
+                    const prevTotalDeltaX = totalDeltaX;
+                    totalDeltaX += e.deltaX / 50
 
-                if (imgWidth > containerWidth) {
-                    if (Math.abs(totalDeltaX) <= maxDeltaX && totalDeltaX <= 0) {
-                        initialTransform = `translateX(${totalDeltaX}px)`;
-                        image.style.transform = initialTransform;
-                    } else {
-                        totalDeltaX = prevTotalDeltaX;
+                    const maxDeltaX = imgWidth - containerWidth;
+
+                    if (imgWidth > containerWidth) {
+                        if (Math.abs(totalDeltaX) <= maxDeltaX && totalDeltaX <= 0) {
+                            image.style.transform = `translateX(${totalDeltaX}px)`;
+                        } else {
+                            if(Math.abs(totalDeltaX) > maxDeltaX) {
+                                totalDeltaX = -maxDeltaX;
+                            } else if (totalDeltaX > 0) {
+                                totalDeltaX = 0;
+                            }
+                            image.style.transform = `translateX(${totalDeltaX}px)`;
+                        }
                     }
-                }
 
-                hammer.on('panend', () => {
-                    initialTransform = image.style.transform;
+
+                    hammer.on('panend', () => {
+                        image.style.transform = image.style.transform;
+                    });
                 });
-            });
 
-            return () => {
-                hammer.destroy();
-            };
+                return () => {
+                    hammer.destroy();
+                };
+            });
         }
     }, [isImageZoomed]);
 

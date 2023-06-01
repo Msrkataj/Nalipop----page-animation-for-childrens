@@ -30,19 +30,19 @@
 }
 
 @mixin notebook {
-  @media (min-width: 1400px) and (min-height: 1300px) {
+  @media (min-width: 1400px) and (min-height: 2000px) {
     @content;
   }
 }
 
 @mixin tablet_minHeight {
-  @media (min-width: 1024px) and (max-height: 1300px) {
+  @media (min-width: 1024px) and (max-height: 2000px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (min-width: 1024px),(min-height: 1300px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }

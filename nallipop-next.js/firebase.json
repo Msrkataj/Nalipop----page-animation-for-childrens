@@ -9,5 +9,12 @@
   },
   "storage": {
     "rules": "storage.rules"
-  }
+  },
+  "rewrites": [{
+    "source": "**",
+    "run": {
+      "serviceId": "zippy-carving-388316",
+      "region": "europe-central2"
+    }
+  }]
 }

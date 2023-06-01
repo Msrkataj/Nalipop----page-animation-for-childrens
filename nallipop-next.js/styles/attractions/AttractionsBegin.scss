@@ -1,7 +1,7 @@
 .header {
   &__top {
     &__background__attractions {
-      height: 200vw;
+      height: 160vw;
       @include mobile-mini-plus {
         height: 100vw;
         max-height: 1600px;

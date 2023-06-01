@@ -18,7 +18,7 @@ const OfferMap = () => {
             const imgWidth = image.clientWidth;
             const containerWidth = window.innerWidth;
             const initialTransform = `translateX(${-(imgWidth - containerWidth) / 2}px)`;
-            image.style.transform = initialTransform;
+            image.style.transform = (imgWidth > containerWidth) ? initialTransform : '';
 
             import('hammerjs').then(({default: Hammer}) => {
                 const hammer = new Hammer(image);
@@ -36,9 +36,15 @@ const OfferMap = () => {
                         if (Math.abs(totalDeltaX) <= maxDeltaX && totalDeltaX <= 0) {
                             image.style.transform = `translateX(${totalDeltaX}px)`;
                         } else {
-                            totalDeltaX = prevTotalDeltaX;
+                            if(Math.abs(totalDeltaX) > maxDeltaX) {
+                                totalDeltaX = -maxDeltaX;
+                            } else if (totalDeltaX > 0) {
+                                totalDeltaX = 0;
+                            }
+                            image.style.transform = `translateX(${totalDeltaX}px)`;
                         }
                     }
+
 
                     hammer.on('panend', () => {
                         image.style.transform = image.style.transform;

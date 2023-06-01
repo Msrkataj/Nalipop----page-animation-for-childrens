@@ -94,13 +94,13 @@
 
 .about_me {
   width: 100%;
-  margin-top: 120vw;
+  margin-top: 129vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  z-index: 5;
+  z-index: 1;
   transform: translateY(-50px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 

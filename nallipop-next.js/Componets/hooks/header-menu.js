@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import data from '../data/data.json';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
+import {faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons";
 
 const HeaderMenu = () => {
     const [active, setActive] = useState(false);
@@ -34,7 +37,6 @@ const HeaderMenu = () => {
                             </Link>
                         </li>
                     ))}
-
                 </ul>
             </div>
             <div className={active ? "activeSidenav " : "sidenav"}>
@@ -47,11 +49,33 @@ const HeaderMenu = () => {
                         </li>
                     ))}
                     <li>
-                        <Link href="#opinions" passHref onClick={handleClick}>
+                        <Link href="/#opinions" passHref onClick={handleClick}>
                             OPINIE
                         </Link>
                     </li>
                 </ul>
+                <div className="nav-contact">
+                    <div className="footer-section-content-contact nav-contact-content">
+                        <div className="footer-section-content-contact-phone contact-info">
+                            <FontAwesomeIcon icon={faPhone}/>
+                            <p>+48 795 103 108</p>
+                        </div>
+                        <div className="footer-section-content-contact-mail contact-info">
+                            <FontAwesomeIcon icon={faEnvelope}/>
+                            <p>animacje@nallipop.pl</p>
+                        </div>
+                    </div>
+                    <div className="footer-section-content-media nav-contact-media">
+                        <div className="footer-section-content-media-content">
+                            <Link href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener" target="_blank">
+                                <FontAwesomeIcon icon={faFacebook}/>
+                            </Link>
+                            <Link href="/" rel="noopener" target="_blank">
+                                <FontAwesomeIcon icon={faInstagram}/>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )

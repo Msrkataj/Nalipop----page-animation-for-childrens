@@ -57,6 +57,7 @@
         max-height: 1500px;
       }
     }
+
     &__image {
       position: absolute;
       z-index: -1;
@@ -68,6 +69,7 @@
         max-height: 3000px;
       }
     }
+
     &__content {
       position: absolute;
       width: 100%;
@@ -77,6 +79,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
+
       &__logo {
         position: absolute;
         width: 20%;
@@ -104,6 +107,7 @@
       @include notebook_only_width {
         max-height: 3000px;
       }
+
       &__image {
         position: relative;
         width: 300%;
@@ -129,6 +133,7 @@
           top: -20px;
         }
       }
+
       &__clouds {
         background-image: url('../public/assets/clouds.png');
         background-repeat: no-repeat;
@@ -147,104 +152,104 @@
   }
 }
 
-  .header__central {
-    width: 100%;
-    height: 30vh;
-    text-align: center;
-    padding: 40vw 10vw;
-    z-index: -7;
+.header__central {
+  width: 100%;
+  height: 30vh;
+  text-align: center;
+  padding: 40vw 10vw;
+  z-index: -7;
+  @include mobile-mini-plus {
+    top: 50px;
+    left: 50px;
+    z-index: 0;
+  }
+  @include tablet {
+    position: relative;
+    top: 50px;
+    left: 0;
+    z-index: 0;
+    padding-top: 300px;
+  }
+  @include notebook_only_width {
+    height: 400px;
+    padding: 20vw 200px;
+  }
+
+  .header__central__text {
+    color: white;
     @include mobile-mini-plus {
-      top: 50px;
-      left: 50px;
-      z-index: 0;
+      position: absolute;
+      height: 200px;
+      width: 650px;
+      font-size: 2px;
+      top: 300px;
+      left: -10px;
     }
-    @include tablet {
-      position: relative;
-      top: 50px;
-      left: 0;
-      z-index: 0;
-      padding-top: 300px;
+    @include mobile {
+      font-size: 2rem;
+    }
+    @include tablet {;
+      left: 17vw;
+      top: 22vw;
+      width: 800px;
     }
     @include notebook_only_width {
-      height: 400px;
-      padding: 20vw 200px;
+      left: 17vw;
+      top: 16vw;
+      width: 800px;
     }
 
-    .header__central__text {
-      color: white;
+    h1 {
+      font-size: 9vw;
+      margin-bottom: 30px;
+      font-weight: normal;
       @include mobile-mini-plus {
-        position: absolute;
-        height: 200px;
-        width: 650px;
-        font-size: 2px;
-        top: 300px;
-        left: -10px;
+        font-size: 4rem;
       }
-      @include mobile {
+      @include mobile-mini-minus {
+        font-size: 2rem
+      }
+      @include tablet {
+        font-size: 5vw;
+      }
+      @include nbpp {
+        font-size: 7rem;
+      }
+    }
+
+    p {
+      font-size: 4vw;
+      @include mobile-mini-plus {
+        font-size: 2vw;
+      }
+      @include tablet {
         font-size: 2rem;
       }
-      @include tablet {;
-        left: 17vw;
-        top: 22vw;
+      @include nbpp {
         width: 800px;
-      }
-      @include notebook_only_width {
-        left: 17vw;
-        top: 16vw;
-        width: 800px;
-      }
-
-      h1 {
-        font-size: 9vw;
-        margin-bottom: 30px;
-        font-weight: normal;
-        @include mobile-mini-plus {
-          font-size: 4rem;
-        }
-        @include mobile-mini-minus {
-          font-size: 2rem
-        }
-        @include tablet {
-          font-size: 5vw;
-        }
-        @include nbpp {
-          font-size: 7rem;
-        }
-      }
-
-      p {
-        font-size: 4vw;
-        @include mobile-mini-plus {
-          font-size: 2vw;
-        }
-        @include tablet {
-          font-size: 2rem;
-        }
-        @include nbpp {
-          width: 800px;
-          font-size: 2.4rem;
-        }
-      }
-    }
-
-    .button-header {
-      @include mobile-mini-plus {
-        margin-right: 100px;
-        margin-top: 150px;
-      }
-      @include mobile {
-        margin-right: 80px;
-        margin-top: 15vw;
-      }
-      @include notebook_only_width {
-        position: absolute;
-        top: 20vw;
-        left: 30vw;
-        margin-top: 150px;
-        transform: translate(-50%, -50%);
+        font-size: 2.4rem;
       }
     }
   }
+
+  .button-header {
+    @include mobile-mini-plus {
+      margin-right: 100px;
+      margin-top: 150px;
+    }
+    @include mobile {
+      margin-right: 80px;
+      margin-top: 15vw;
+    }
+    @include notebook_only_width {
+      position: absolute;
+      top: 20vw;
+      left: 30vw;
+      margin-top: 150px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
 
 .nav {
   font-family: $font-head;
@@ -292,243 +297,292 @@
 
   display: none;
 }
-  .nav {
-    font-family: $font-head;
-    z-index: 10;
 
+.nav {
+  font-family: $font-head;
+  z-index: 10;
+
+  @include mobile-mini-plus {
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 100px;
+    margin-top: 15px;
+    color: white;
+  }
+  @include tablet {
+    font-size: 4vw;
+    width: 480px;
+  }
+  @include mobile {
+    width: 600px;
+  }
+  @include tablet {
+    width: 500px;
+    font-size: 3.5rem;
+  }
+  @include notebook_only_width {
+    width: 600px;
+    font-size: 4rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 50px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
     @include mobile-mini-plus {
-      font-size: 3vw;
-      display: flex;
-      flex-direction: column;
-      width: 400px;
-      height: 100px;
-      margin-top: 15px;
-      color: white;
+      justify-content: flex-end;
     }
-    @include tablet {
-      font-size: 4vw;
-      width: 480px;
-    }
-    @include mobile {
-      width: 600px;
-    }
-    @include tablet {
-      width: 500px;
-      font-size: 3.5rem;
-    }
-    @include notebook_only_width {
-      width: 600px;
-      font-size: 4rem;
-    }
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      top: 50px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      @include mobile-mini-plus {
-        justify-content: flex-end;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+      &:hover {
+        transform: scale(1.2);
       }
 
-      li {
-        padding: 10px;
-        cursor: pointer;
-        transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+      @include notebook_only_width {
+        padding: 25px;
+      }
 
+      a {
         &:hover {
-          transform: scale(1.2);
-        }
-
-        @include notebook_only_width {
-          padding: 25px;
-        }
-
-        a {
-          &:hover {
-            color: $color-limon;
-          }
+          color: $color-limon;
         }
       }
     }
+  }
+
+  display: none;
+}
+
+
+.hamburger {
+  right: 40px;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(255, 101, 47, .2);
+  margin: 40px 30px 0 0;
+  @media (min-width: 700px) {
     display: none;
   }
 
-
-  .hamburger {
-    right: 40px;
+  &::before {
+    content: '';
+    position: absolute;
     width: 30px;
     height: 3px;
     background: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgb(255, 101, 47, .2);
-    margin: 40px 30px 0 0;
-    @media (min-width: 700px) {
-      display: none;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      background: #fff;
-      border-radius: 5px;
-      transition: all 0.5s ease-in-out;
-      transform: translateY(-10px);
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      background: #fff;
-      border-radius: 5px;
-      transition: all 0.5s ease-in-out;
-      transform: translateY(10px);
-    }
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-10px);
   }
 
-
-  .activeHamburger {
+  &::after {
+    content: '';
     position: absolute;
-    z-index: 6;
-    right: 40px;
     width: 30px;
+    height: 3px;
+    background: #fff;
     border-radius: 5px;
-    transform: translateX(-30px);
-    background: transparent;
-    margin: 40px 0 0 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(10px);
+  }
+}
 
-    &::before {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      background: #fff;
-      border-radius: 5px;
-      transition: all 0.5s ease-in-out;
-      transform: rotate(45deg) translate(35px, -35px);
-    }
 
-    &::after {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      background: #fff;
-      border-radius: 5px;
-      transition: all 0.5s ease-in-out;
-      transform: rotate(-45deg) translate(35px, 35px);
-    }
+.activeHamburger {
+  position: absolute;
+  z-index: 6;
+  right: 40px;
+  width: 30px;
+  border-radius: 5px;
+  transform: translateX(-30px);
+  background: transparent;
+  margin: 40px 0 0 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    transform: rotate(45deg) translate(35px, -35px);
   }
 
-
-  .sidenav {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
-    transform: translateX(100%);
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
     transition: all 0.5s ease-in-out;
-    z-index: 5;
-
-    ul {
-      margin-top: 70px;
-
-      li {
-        padding: 20px;
-        margin: 10px;
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease-in-out;
-        font-size: 3vw;
-      }
-    }
-
-    @media (min-width: 700px) {
-      display: none;
-    }
+    transform: rotate(-45deg) translate(35px, 35px);
   }
+}
 
-  .activeSidenav {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
-    transform: translateX(40%);
-    transition: all 0.5s ease-in-out;
-    z-index: 5;
-    padding: 20px;
 
-    ul {
-      margin-top: 70px;
+.sidenav {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  z-index: 5;
+  padding-top: 50px;
 
-      li {
-        padding: 20px;
-        margin: 20px;
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease-in-out;
-        font-size: 3vw;
-      }
+  ul {
 
-      li:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-        transform: scale(1.1);
-      }
-
-    }
-
-    a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 20px 30vw 20px 25px;
-      transition: color 0.3s ease-in-out;
-    }
-
-    .fifth-element {
+    li {
       padding: 20px;
-    }
-
-    a:hover {
-      color: #f5f5f5;
+      margin: 10px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease-in-out;
+      font-size: 3vw;
     }
   }
 
-  .back-to-top-button {
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px 30vw 20px 25px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .nav-contact {
+    padding-top: 10vw;
+
+    &-content {
+
+    }
+
+    &-media {
+      margin-top: 50px;
+      width: 50vw;
+
+      a {
+        padding: 0;
+      }
+    }
+  }
+
+  .fifth-element {
+    padding: 20px;
+  }
+
+  @media (min-width: 700px) {
     display: none;
-    position: fixed;
-    font-size: 25px;
-    right: 10px;
-    bottom: 30vw;
-    color: $color-main2;
-    padding: 5px;
-    border: none;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1000;
-    @include tablet {
-      padding: 10px;
-      font-size: 40px;
-      right: 20px;
-      bottom: 300px;
+  }
+}
+
+.activeSidenav {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(150deg, #b840f5 0%, #a079dd 74%);
+  transform: translateX(40%);
+  transition: all 0.5s ease-in-out;
+  z-index: 5;
+  padding: 20px;
+  padding-top: 50px;
+  overflow: auto;
+
+  ul {
+
+    li {
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease-in-out;
+      font-size: 3vw;
     }
-    @include nbpp {
-      font-size: 40px;
-      right: 40px;
-      bottom: 150px;
+
+    li:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
     }
   }
 
-  .back-to-top-button.visible {
-    display: block;
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px 30vw 20px 25px;
+    transition: color 0.3s ease-in-out;
   }
 
-  #back-to-top:hover {
-    background-color: $color-lightBlue;
+  .nav-contact {
+    padding-top: 10vw;
+
+    &-content {
+
+    }
+
+    &-media {
+      margin-top: 50px;
+      width: 50vw;
+
+      a {
+        padding: 0;
+      }
+    }
   }
+
+  .fifth-element {
+    padding: 20px;
+  }
+
+  a:hover {
+    color: #f5f5f5;
+  }
+}
+
+.back-to-top-button {
+  display: none;
+  position: fixed;
+  font-size: 25px;
+  right: 10px;
+  bottom: 30vw;
+  color: $color-main2;
+  padding: 5px;
+  border: none;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  @include tablet {
+    padding: 10px;
+    font-size: 40px;
+    right: 20px;
+    bottom: 300px;
+  }
+  @include nbpp {
+    font-size: 40px;
+    right: 40px;
+    bottom: 150px;
+  }
+}
+
+.back-to-top-button.visible {
+  display: block;
+}
+
+#back-to-top:hover {
+  background-color: $color-lightBlue;
+}

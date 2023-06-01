@@ -53,7 +53,7 @@ const Footer_section = () => {
                                 <p>animacje@nallipop.pl</p>
                             </div>
                         </div>
-                        <div className="footer-section-content-media">
+                       <div className="footer-section-content-media">
                             <h2>Media:</h2>
                             <div className="footer-section-content-media-content">
                                 <Link href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener" target="_blank">
