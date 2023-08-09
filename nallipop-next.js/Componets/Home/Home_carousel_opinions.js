@@ -38,11 +38,12 @@ const HomeCarouselOpinions = () => {
                     <div className="home-back home-back-opinions">
                         <div className="home-back-hands">
                             <Image
-                                src="/assets/bear.jpg"
+                                src="/assets/bear.webp"
                                 alt="bear"
                                 layout='responsive'
-                                width={6000}
-                                height={4000}
+                                quality={40}
+                                width={1500}
+                                height={1000}
                             />
                         </div>
                         <div className="home-back-overlay home-back-overlay-opinions">
@@ -88,11 +89,11 @@ const HomeCarouselOpinions = () => {
                 <div className="home-blonde">
                     <div className="home-blonde-jpg">
                         <Image
-                            src="/assets/blonde.png"
+                            src="/assets/child.webp"
                             alt="blonde"
                             layout='responsive'
-                            width={1664}
-                            height={960}
+                            width={1456}
+                            height={816}
                         />
                     </div>
                     <div className="home-blonde-overlay">

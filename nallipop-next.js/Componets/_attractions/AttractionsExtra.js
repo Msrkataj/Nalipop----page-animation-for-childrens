@@ -13,6 +13,8 @@ const AttractionsExtra = () => {
     const isVisible5 = useScrollAnimation('.atr-extra-content-five');
     const isVisible6 = useScrollAnimation('.atr-extra-content-six');
     const isVisible7 = useScrollAnimation('.atr-extra-content-end');
+    const [showVideo, setShowVideo] = useState(false);
+    const [value, setValue] = useState(0);
 
     const [imageUrls, setImageUrls] = useState({
         facepainting: "",
@@ -22,17 +24,19 @@ const AttractionsExtra = () => {
         slime: "",
         bags: "",
         piniata_xxl: "",
+        close: "",
     });
 
     useEffect(() => {
         const fetchImageUrls = async () => {
-            const facepaintingUrl = await getDownloadURL(ref(storage, 'extraAttractions/facepainting.png'));
-            const bankaBigUrl = await getDownloadURL(ref(storage, 'extraAttractions/banka-big.png'));
-            const bankiUrl = await getDownloadURL(ref(storage, 'extraAttractions/banka.png'));
-            const piniataCreepUrl = await getDownloadURL(ref(storage, 'extraAttractions/piniata_group.png'));
-            const slimeUrl = await getDownloadURL(ref(storage, 'extraAttractions/slime.png'));
-            const bags = await getDownloadURL(ref(storage, 'extraAttractions/torba_beztla_polaczone.png'));
-            const piniata_xxl = await getDownloadURL(ref(storage, 'extraAttractions/piniata_premium.png'));
+            const facepaintingUrl = await getDownloadURL(ref(storage, 'extraAttractions/facepainting.webp'));
+            const bankaBigUrl = await getDownloadURL(ref(storage, 'extraAttractions/banka-big.webp'));
+            const bankiUrl = await getDownloadURL(ref(storage, 'extraAttractions/banka.webp'));
+            const piniataCreepUrl = await getDownloadURL(ref(storage, 'extraAttractions/piniata-group.webp'));
+            const slimeUrl = await getDownloadURL(ref(storage, 'extraAttractions/slime.webp'));
+            const bags = await getDownloadURL(ref(storage, 'extraAttractions/torba-beztla-polaczone.webp'));
+            const piniata_xxl = await getDownloadURL(ref(storage, 'extraAttractions/piniata-premium-min.webp'));
+            const close = await getDownloadURL(ref(storage, 'extraAttractions/close.mp4'));
 
             setImageUrls({
                 facepainting: facepaintingUrl,
@@ -42,6 +46,7 @@ const AttractionsExtra = () => {
                 slime: slimeUrl,
                 bags: bags,
                 piniata_xxl: piniata_xxl,
+                close: close,
             });
         };
         fetchImageUrls();
@@ -109,9 +114,31 @@ const AttractionsExtra = () => {
                                 <p>Chcesz zaskoczyć swoje dziecko lub jego małych gości niesamowitą atrakcją? Zamów a pokaże dzieciom, jak zamykać się w bańce mydlanej! To niezwykłe widowiskowa atrakcja, która zapewni maluchom świetną zabawę i wiele niezapomnianych chwil.</p>
                             </div>
                             <div className="atr-extra-content-others">
-                                <img className="atr-extra-content-photo atr-extra-content-photo-closeSoapbox" src={imageUrls.banki} alt="Zamykanie w bańce mydlanej" />
+                                <div className="atr-extra-content-others-more">
+                                    {showVideo ?
+                                        <video className="atr-extra-content-photo atr-extra-content-photo-closeSoapbox" autoPlay loop muted controls>
+                                            <source src={imageUrls.close} type="video/mp4" />
+                                        </video>
+                                        :
+                                        <img className="atr-extra-content-photo atr-extra-content-photo-closeSoapbox" src={imageUrls.banki} alt="Zamykanie w bańce mydlanej" />
+                                    }
+                                </div>
                                 <div className="atr-extra-content-price atr-extra-content-price-closeSoapbox">
-                                    + 150 zł
+                                    + 100 zł
+                                </div>
+                                <div className="atr-extra-content-others-more-btn">
+                                    <button
+                                        className={showVideo ? 'active' : ''}
+                                        onClick={() => setShowVideo(true)}
+                                    >
+                                        Pokaż video
+                                    </button>
+                                    <button
+                                        className={!showVideo ? 'active' : ''}
+                                        onClick={() => setShowVideo(false)}
+                                    >
+                                        Pokaż obrazek
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +156,6 @@ const AttractionsExtra = () => {
                             </div>
                         </div>
                         <div className={`atr-extra-content  atr-extra-content-end${isVisible7 ? ' visible' : ''}`}>
-                            {/*<div className="atr-extra-content-background atr-extra-content-background3"></div>*/}
                             <div className="atr-extra-content-text">
                                 <h2>Malowanie toreb</h2>
                                 <p>Przygotuj swoje dzieci do wyjątkowego doświadczenia twórczego z naszą dodatkową atrakcją - malowaniem toreb! Dostarczymy wszystkie niezbędne materiały, w tym bawełniane torby i bezpieczne, nietoksyczne farby, umożliwiając małym artystom wyrażanie swojej kreatywności. Dzieci będą miały szansę zaprojektować i stworzyć własną, unikalną torbę, którą mogą zabrać ze sobą do domu jako pamiątkę z imprezy. To nie tylko świetna zabawa, ale także doskonała okazja do rozwijania zdolności manualnych i kreatywnego myślenia. Cena tej atrakcji zależy od liczby uczestników i użytych materiałów.</p>

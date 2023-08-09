@@ -12,7 +12,7 @@ const HomeForm = () => {
                 <div className="container-gallery">
                     <div className="form-image form-image-gallery">
                     <div className="form-image-girl-border">
-                        <img className="form-image-girl" src="/assets/blonde-girl.png" alt="blonde-girl" />
+                        <img className="form-image-girl" src="/assets/blonde-girl.webp" alt="blonde-girl" />
                     </div>
                 </div>
                 <div className="gallery-form">

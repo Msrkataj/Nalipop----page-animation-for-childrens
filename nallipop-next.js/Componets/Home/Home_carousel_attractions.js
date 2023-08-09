@@ -8,6 +8,7 @@ import storage from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import data from '../data/data.json';
+import Image from "next/image";
 
 const HomeCarouselAttractions = () => {
     const [balloonsImageUrl, setBalloonsImageUrl] = useState(null);
@@ -18,9 +19,9 @@ const HomeCarouselAttractions = () => {
 
 
     useEffect(() => {
-        const storageRefBalloons = ref(storage, "atractions/balony.png");
-        const storageRefPiniata = ref(storage, "atractions/piniata.png");
-        const storageRefWomen = ref(storage, "atractions/women-paint.png");
+        const storageRefBalloons = ref(storage, "atractions/balony.webp");
+        const storageRefPiniata = ref(storage, "atractions/piniata.webp");
+        const storageRefWomen = ref(storage, "atractions/women-paint.webp");
         getDownloadURL(storageRefBalloons)
             .then((url) => setBalloonsImageUrl(url))
             .catch((error) => console.error("Error getting balloons image URL:", error));
@@ -61,7 +62,7 @@ const HomeCarouselAttractions = () => {
             <div className="page">
                 <div className="container">
                     <div className={`home_carousel${isVisible ? ' visible' : ''}`}>
-                        <div className="home_carousel_title">NASZE ATRAKCJE</div>
+                        <h1 className="home_carousel_title">NASZE ATRAKCJE</h1>
                         <div className="home_carousel-content">
                             <Carousel
                                 className="custom-carousel"
@@ -85,21 +86,43 @@ const HomeCarouselAttractions = () => {
                                     )
                                 }
                             >
-                                {carousel.map((item, index) => (
-                                    <div key={index} className="carousel-item">
-                                        <img src={item.href} alt={item.name} />
-                                        <p className={`carousel-description description-${index + 1}`}>{item.description}</p>
-                                    </div>
-                                ))}
+                                {carousel.map((item, index) => {
+                                    if (item.href) {
+                                        return (
+                                            <div key={index} className="carousel-item">
+                                                <Image
+                                                    src={item.href}
+                                                    alt={item.name}
+                                                    layout='responsive'
+                                                    width={1324}
+                                                    height={1324}
+                                                />
+                                                <p className={`carousel-description description-${index + 1}`}>{item.description}</p>
+                                            </div>
+                                        )
+                                    }
+                                    return null;
+                                })}
                             </Carousel>
                         </div>
                         <div className="home_attractions">
-                            {carousel.map((item, index) => (
-                                <div key={index} className="home_attractions-item">
-                                    <img src={item.href} alt={item.name} />
-                                    <p className={`attractions-description description-${index + 1}`}>{item.description}</p>
-                                </div>
-                            ))}
+                            {carousel.map((item, index) => {
+                                if (item.href) {
+                                    return (
+                                        <div key={index} className="home_attractions-item">
+                                            <Image
+                                                src={item.href}
+                                                alt={item.name}
+                                                layout='responsive'
+                                                width={1324}
+                                                height={1324}
+                                            />
+                                            <p className={`attractions-description description-${index + 1}`}>{item.description}</p>
+                                        </div>
+                                    )
+                                }
+                                return null;
+                            })}
                         </div>
                         <div className="home_carousel_button">
                             {data.map((item) => {

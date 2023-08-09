@@ -15,13 +15,14 @@ const Offer = () => {
                 <meta name="description"
                       content="Sprawdź naszą ofertę! Oferujemy najwyższej jakości animacje dla dzieci na wszelkiego rodzaju wydarzenia."/>
                 <meta name="keywords" content="oferta, animacje, dzieci, eventy, zabawa"/>
-                <link rel="icon" href="/assets/favicon.png"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
                 <meta property="og:title" content="Nasza Oferta - Animacje dla dzieci"/>
                 <meta property="og:description"
                       content="Sprawdź naszą ofertę! Oferujemy najwyższej jakości animacje dla dzieci na wszelkiego rodzaju wydarzenia."/>
                 <meta property="og:url" content="https://www.your-domain.com/offer"/>
-                <script type="application/ld+json">
-                    {`
+                <script type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: `
     {
         "@context": "https://schema.org",
         "@type": "Offer",
@@ -29,7 +30,7 @@ const Offer = () => {
             "@type": "Service",
             "name": "Usługi animacyjne dla dzieci",
             "description": "Oferta animacji dla dzieci na urodziny, chrzciny, wesela, uroczystości rodzinne, komunię i inne eventy. Najlepsza jakość usług dla Twojego dziecka.",
-            "url": "https://www.nallipop.pl/offer",
+            "url": "https://nallipop.pl/offer",
             "serviceType": "Animacje dla dzieci",
             "areaServed": "Warszawa i okolice",
             "provider": {
@@ -125,8 +126,9 @@ const Offer = () => {
             }
         }
     }
-`}
-                </script>
+  `
+                        }}
+                />
             </Head>
             <header>
                 <OfferHeader />

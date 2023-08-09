@@ -33,34 +33,38 @@ const ContactHeader = ({close}) => {
     return (
         <>
             <div className="container">
-                <div id="#" className="header">
+                <div className="header">
                     <div className="header__top">
                         <div className="header__top__background header__top__background__contact"></div>
-                        <Image
-                            className="header__top__image"
-                            src="/assets/top.png"
-                            alt="top"
-                            layout='responsive'
-                            width={1920}
-                            height={1080}
-                        />
+                        <img className="header__top__image" src="/assets/top.webp" alt="top-image"/>
+                        {/*<Image*/}
+                        {/*    className="header__top__image"*/}
+                        {/*    src="/assets/top.webp"*/}
+                        {/*    alt="top-image"*/}
+                        {/*    layout='responsive'*/}
+                        {/*    width={1920}*/}
+                        {/*    height={1080}*/}
+                        {/*/>*/}
                         <div className="header__top__content">
                             <Link href="/">
-                                <div className="header__top__content__logo">
-                                    <Image
-                                        className="header__top__content__logo"
-                                        src="/assets/logo.png"
-                                        alt="Logo"
-                                        layout='responsive'
-                                        width={1240}
-                                        height={1240}
-                                    />
-                                </div>
+                                {/*<div className="header__top__content__logo">*/}
+                                <img  className="header__top__content__logo"
+                                      src="/assets/logo.webp"
+                                      alt="Logo"/>
+                                {/*<Image*/}
+                                {/*    className="header__top__content__logo"*/}
+                                {/*    src="/assets/logo.webp"*/}
+                                {/*    alt="Logo"*/}
+                                {/*    layout='responsive'*/}
+                                {/*    width={1240}*/}
+                                {/*    height={1240}*/}
+                                {/*/>*/}
+                                {/*</div>*/}
                             </Link>
                             <HeaderMenu/>
                         </div>
                         <div className="header__top__container">
-                            <img className="header__top__container__image header__top__container__contact__image" src="/assets/contact-header.png" alt="contact.png" />
+                            <img className="header__top__container__image header__top__container__contact__image" src="/assets/contact_header.webp" alt="contact-image" />
                             <div className="header__top__container__clouds"/>
                         </div>
                     </div>

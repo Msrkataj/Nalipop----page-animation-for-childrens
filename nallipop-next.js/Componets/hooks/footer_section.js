@@ -15,7 +15,7 @@ const Footer_section = () => {
             <div className="footer-section">
                 <div className="footer-section-background">
                     <Image
-                        src="/assets/footer.png"
+                        src="/assets/footer.webp"
                         alt="background-footer"
                         layout='responsive'
                         width={3601}
@@ -25,7 +25,7 @@ const Footer_section = () => {
                 <div className="footer-section-content">
                     <div className="footer-section-content-first">
                         <Link href="/">
-                            <img className="footer-section-content-logo" src="/assets/logo.png" alt="logo"/>
+                            <img className="footer-section-content-logo" src="/assets/logo.webp" alt="logo"/>
                         </Link>
                         <div className="footer-section-content-menu">
                             <ul>
@@ -56,12 +56,12 @@ const Footer_section = () => {
                        <div className="footer-section-content-media">
                             <h2>Media:</h2>
                             <div className="footer-section-content-media-content">
-                                <Link href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener" target="_blank">
+                                <a href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener noreferrer" target="_blank">
                                     <FontAwesomeIcon icon={faFacebook}/>
-                                </Link>
-                                <Link href="/" rel="noopener" target="_blank">
+                                </a>
+                                <a href="https://www.instagram.com/animacje_nallipop/" rel="noopener noreferrer" target="_blank">
                                     <FontAwesomeIcon icon={faInstagram}/>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>

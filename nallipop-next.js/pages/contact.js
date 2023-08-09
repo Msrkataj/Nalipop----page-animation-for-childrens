@@ -15,7 +15,7 @@ const Gallery = () => {
                 <meta name="description"
                       content="Masz pytania? Skontaktuj się z nami! Jesteśmy tutaj, aby odpowiedzieć na wszystkie Twoje pytania o nasze animacje dla dzieci."/>
                 <meta name="keywords" content="animacje dla dzieci, kontakt"/>
-                <link rel="icon" href="/assets/favicon.png"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta property="og:title" content="Kontakt - Skontaktuj się z nami | Nallipop"/>
                 <meta property="og:description"
@@ -23,14 +23,15 @@ const Gallery = () => {
                 <meta property="og:image" content="/assets/logo.png"/>
                 <meta property="og:url" content="https://www.nallipop.com/contact"/>
                 <meta name="twitter:card" content="summary_large_image"/>
-                <script type="application/ld+json">
-                    {`
+                <script type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                    __html: `
     {
         "@context": "https://schema.org",
         "@type": "ContactPage",
         "name": "Kontakt - Nallipop",
         "description": "Masz pytania? Chcesz zarezerwować termin? Skontaktuj się z nami! Jesteśmy dostępni pod numerem telefonu +48795103108 lub przez email contact@nallipop.pl.",
-        "url": "https://www.nallipop.pl/contact",
+        "url": "https://nallipop.pl/contact",
         "sameAs": ["https://www.facebook.com/nallipop"],
         "publisher": {
             "@type": "LocalBusiness",
@@ -44,8 +45,9 @@ const Gallery = () => {
             "email": "contact@nallipop.pl"
         }
     }
-`}
-                </script>
+    `
+                }}
+                    />
             </Head>
             <header>
                 <ContactHeader/>

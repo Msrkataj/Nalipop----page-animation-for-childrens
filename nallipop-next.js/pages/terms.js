@@ -12,13 +12,13 @@ const Terms = () => {
                 <meta name="description"
                       content="Dowiedz się więcej o naszych zasadach. Przeczytaj nasz regulamin, aby dowiedzieć się, jak działamy."/>
                 <meta name="keywords" content="animacje dla dzieci, regulamin, zasady"/>
-                <link rel="icon" href="/assets/favicon.png"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta property="og:title" content="Regulamin - Dowiedz się więcej o naszych zasadach | Nallipop"/>
                 <meta property="og:description"
                       content="Dowiedz się więcej o naszych zasadach. Przeczytaj nasz regulamin, aby dowiedzieć się, jak działamy."/>
                 <meta property="og:image" content="/assets/logo.png"/>
-                <meta property="og:url" content="https://www.nallipop.com/terms"/>
+                <meta property="og:url" content="https://nallipop.com/terms"/>
                 <meta name="twitter:card" content="summary_large_image"/>
             </Head>
             <header>

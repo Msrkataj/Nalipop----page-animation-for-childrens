@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import {useScrollAnimation} from "../hooks/useScrollAnimation";
 
 const AboutMeSection = () => {
@@ -14,7 +13,7 @@ const AboutMeSection = () => {
                         <div className="about_me-content">
                             <div className="about_me-content-text">
                                 <p><b>Cześć! Jestem Natalia, animatorka dziecięca, która przyniesie do twojego wydarzenia mnóstwo energii, kreatywności i radości!</b> <br/>
-                                    Moje doświadczenie jako pedagog specjalny, magister terapii pedagogicznej, oraz terapeuta dodatkowo wzbogaca moje podejście do pracy z dziećmi,
+                                    Moje doświadczenie pedagoga specjalnego; magistra terapii pedagogicznej dodatkowo wzbogaca moje podejście do pracy z dziećmi,
                                     sprawiając, że każde z nich czuje się wyjątkowo.
                                     Jestem absolwentką Akademii Pedagogiki Specjalnej im. Marii Grzegorzewskiej.
                                     Tam zdobyłam licencjat z Pedagogiki Specjalnej - wczesne wspomaganie rozwoju dzieci oraz <b>magisterium z Pedagogiki Specjalnej-Terapia Pedagogiczna</b>, co pozwoliło mi na pogłębienie mojej wiedzy o rozwoju i potrzebach dzieci.

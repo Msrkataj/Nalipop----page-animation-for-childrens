@@ -16,20 +16,22 @@ const Attractions = () => {
                       content="Odkryj nasze wyjątkowe animacje dla dzieci. Zabawa, edukacja i twórczość w jednym!"/>
                 <meta name="keywords" content="animacje dla dzieci, atrakcje, zabawa, edukacja, kreatywność"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
                 <meta property="og:title" content="Atrakcje - Odkryj nasze wyjątkowe animacje dla dzieci | Nallipop"/>
                 <meta property="og:description"
                       content="Odkryj nasze wyjątkowe animacje dla dzieci. Zabawa, edukacja i twórczość w jednym!"/>
                 <meta property="og:image" content="/assets/logo.png"/>
-                <meta property="og:url" content="https://www.nallipopn.com/attractions"/>
+                <meta property="og:url" content="https://nallipopn.com/attractions"/>
                 <meta name="twitter:card" content="summary_large_image"/>
-                <script type="application/ld+json">
-                    {`
+                <script type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: `
     {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Atrakcje dla dzieci",
         "description": "Różnorodne atrakcje dla dzieci, takie jak piniata, facepainting, slime, malowanie toreb, banki mydlane XXL, zabawy z chustą animacyjną, tatuaże brokatowe, zabawy ruchowe i wiele innych. Z nami Twoje dziecko będzie się bawiło jak nigdy!",
-        "url": "https://www.nallipop.pl/attractions",
+        "url": "https://nallipop.pl/attractions",
         "brand": "Nallipop",
         "offers": {
             "@type": "AggregateOffer",
@@ -160,14 +162,15 @@ const Attractions = () => {
             }
         }
     }
-`}
-                </script>
+         `
+                        }}
+                />
             </Head>
             <header>
                 <AttractionsHeader/>
             </header>
             <main>
-            <AttractionsBegin/>
+                <AttractionsBegin/>
                 <AttractionsList/>
                 <AttractionsExtra/>
                 <HomeForm/>

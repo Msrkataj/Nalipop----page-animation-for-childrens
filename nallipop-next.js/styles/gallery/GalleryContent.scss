@@ -24,7 +24,7 @@
     height: 80vw;
     top: 2000px;
     z-index: -10;
-    background-image: url('../../public/assets/clouds.png');
+    background-image: url('../../public/assets/clouds.webp');
     background-size: cover;
   }
   &-item {
@@ -162,7 +162,6 @@
   p {
     margin-bottom: 20px;
     font-size: 3vw;
-    font-family: $font-head2;
     @include tablet {
       margin-bottom: 40px;
     }

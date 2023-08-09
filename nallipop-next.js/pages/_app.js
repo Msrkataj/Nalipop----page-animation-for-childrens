@@ -1,8 +1,5 @@
 import '../styles/styles.scss'
-import {useEffect, useState} from "react";
-// import Step from "./Step";
-// import {onAuthStateChanged} from "firebase/auth";
-// import {auth} from "../firebase";
+import React, {useEffect, useState} from "react";
 
 function MyApp({ Component, pageProps }) {
     const [showing, setShowing] = useState(false);
@@ -19,7 +16,9 @@ function MyApp({ Component, pageProps }) {
         return <></>;
     } else {
         return (
+            <>
             <Component {...pageProps} />
+            </>
         );
     }
 }

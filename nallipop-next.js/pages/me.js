@@ -13,7 +13,7 @@ const AboutMe = () => {
                 <meta name="description"
                       content="Dowiedz się więcej o twórcy Nallipop - twórcy najpiękniejszych animacji dla dzieci. Nasza misja, wartości i wizja."/>
                 <meta name="keywords" content="animacje dla dzieci, o mnie, misja, wartości, wizja"/>
-                <link rel="icon" href="/assets/favicon.png"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta property="og:title"
                       content="O mnie - Poznaj twórcę najpiękniejszych animacji dla dzieci | Nallipop"/>
@@ -22,14 +22,15 @@ const AboutMe = () => {
                 <meta property="og:image" content="/assets/logo.png"/>
                 <meta property="og:url" content="https://www.nallipop.com/about"/>
                 <meta name="twitter:card" content="summary_large_image"/>
-                <script type="application/ld+json">
-                    {`
+                <script type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: `
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Natalia Marciniak",
         "description": "Opis o Tobie. Możesz opowiedzieć o swojej pasji do animacji, jak zaczęła się Twoja przygoda z Nallipop i dlaczego kochasz to, co robisz. Nie zapomnij wspomnieć o swoim doświadczeniu i umiejętnościach.",
-        "url": "https://www.nallipop.pl/about",
+        "url": "https://nallipop.pl/about",
         "sameAs": ["https://www.facebook.com/nallipop"],
         "address": {
             "@type": "PostalAddress",
@@ -38,8 +39,9 @@ const AboutMe = () => {
         },
         "email": "contact@nallipop.pl"
     }
-`}
-                </script>
+  `
+                        }}
+                />
             </Head>
             <header>
                 <AboutHeader/>

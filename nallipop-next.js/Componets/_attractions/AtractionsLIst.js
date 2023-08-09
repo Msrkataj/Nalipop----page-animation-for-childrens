@@ -14,7 +14,7 @@ const AttractionsList = () => {
             .then((res) => {
                 const promises = res.items.map((itemRef) =>
                     getDownloadURL(itemRef).then((url) => ({
-                        name: itemRef.name.split('.')[0], // usuniecie rozszerzenia
+                        name: itemRef.name.split('.')[0],
                         href: url,
                         description: itemRef.name,
                     }))
@@ -23,7 +23,6 @@ const AttractionsList = () => {
             })
             .then((carouselItems) => {
                 setImages(carouselItems)
-                // reszta kodu...
             })
             .catch((error) => console.error("Error listing images:", error));
     }, []);

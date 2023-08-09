@@ -12,7 +12,7 @@
 
   div {
     @include notebook_only_width {
-      background-image: url('../public/assets/line2.png');
+      background-image: url('../public/assets/line2.webp');
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
@@ -24,19 +24,16 @@
       width: 2000px;
     }
   }
-
-  @include notebook_only_width {
-    rotate: -40deg;
-  }
+  
   @media (min-width: 1400px) {
     left: -80vw;
+
     top: 200px;
-    transform: scaleX(-1);
-    rotate: 325deg;
+    transform: scaleX(-1) rotate(40deg);
   }
   @media (min-width: 2000px) {
     left: -80vw;
-    rotate: 332deg;
+    transform: scaleX(-1) rotate(40deg);
   }
 }
 
@@ -265,7 +262,7 @@
       font-size: 2rem;
     }
 
-    b {
+    h1 {
       font-weight: 700;
     }
   }
@@ -319,7 +316,6 @@
       top: 0;
       left: 0;
       transform: translateX(0%);
-      height: 70vw;
       width: calc(200% - (100vw - 450px) * 0.5);
     }
     @include notebook_only_width {

@@ -17,8 +17,8 @@ const HomeFirstStep = () => {
                          <div className="home-about_me-background">
                          </div>
                          <div className="home-about_me-content">
-                             <img className="home-about_me-content-logo" src="/assets/logo-black.png" alt="Opis obrazka" />
-                             <p><b> Zapraszamy do wspaniałego świata Nallipop! </b><br/>
+                             <img className="home-about_me-content-logo" src="/assets/logo-black.webp" alt="logo" />
+                             <p><h1> Zapraszamy do wspaniałego świata Nallipop! </h1>
                              Zajmujemy się tworzeniem animacji dla dzieci, które nie tylko bawią, ale także edukują.
                                  Za naszymi produkcjami stoi doświadczona animatorka, która posiada wykształcenie pedagogiczne oraz prowadzi terapię jako pedagog specjalny.
                                  Dzięki temu nasze animacje są nie tylko interesujące i wciągające, ale także dostosowane do potrzeb najmłodszych.
@@ -31,7 +31,7 @@ const HomeFirstStep = () => {
                              <video className="home-header-video" autoPlay loop muted>
                                  <source src="/assets/piniata.mp4" type="video/mp4" />
                              </video>
-                             <img className="home-about_me-content-movie-image" src="/assets/wstazka.png" alt="wstazka" />
+                             <img className="home-about_me-content-movie-image" src="/assets/wstazka.webp" alt="ribbon" />
                          </div>
                      </div>
                     <Home_news/>
@@ -40,11 +40,12 @@ const HomeFirstStep = () => {
                     <div className="home-back-overlay"></div>
                     <div className="home-back-hands">
                         <Image
-                            src="/assets/home-hands.jpg"
+                            src="/assets/home-hands.webp"
                             alt="Children-hands"
                             layout='responsive'
-                            width={5616}
-                            height={3744}
+                            quality={40}
+                            width={2808}
+                            height={1622}
                         />
                     </div>
                     <div className="home-back-title">

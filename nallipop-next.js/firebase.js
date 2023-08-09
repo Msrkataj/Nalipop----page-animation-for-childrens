@@ -1,16 +1,15 @@
-import firebase from 'firebase/app';
 import 'firebase/storage';
 import { initializeApp } from 'firebase/app';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD_5n4llu6-zkEf-LwPRp7wZwidE_3CxdA",
-    authDomain: "nallipop-2b0a3.firebaseapp.com",
-    projectId: "nallipop-2b0a3",
-    storageBucket: "nallipop-2b0a3.appspot.com",
-    messagingSenderId: "566282488335",
-    appId: "1:566282488335:web:63c2dbedc6922c4d63317a",
-    measurementId: "G-X2G00RK65P"
+    apiKey: "AIzaSyDv1ZA7gwaT2uHoljkSZ8WupSf-NtyxmXk",
+    authDomain: "nallipop-7d9e4.firebaseapp.com",
+    projectId: "nallipop-7d9e4",
+    storageBucket: "nallipop-7d9e4.appspot.com",
+    messagingSenderId: "829834243946",
+    appId: "1:829834243946:web:df72e40549e9605afeff13",
+    measurementId: "G-NN5Q100TDG"
 };
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);

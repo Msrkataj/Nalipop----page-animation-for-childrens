@@ -1,8 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
-import { Carousel } from 'react-responsive-carousel';
-// import { isInViewport } from '/utils/isInViewport.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBirthdayCake } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +17,7 @@ const HomeOffer = () => {
             <div className="page">
                 <div className="container">
                     <div className={`home_offer${isVisible ? ' visible' : ''}`}>
-                        <div className="home_offer_title">ANIMACJĘ NA KAŻDĄ OKAZJĘ</div>
+                        <h1 className="home_offer_title">ANIMACJE NA KAŻDĄ OKAZJĘ</h1>
                         <div className="home_offer-content">
                            <div className="home_offer-content_square home_offer-content_birthday">
                                <FontAwesomeIcon icon={faBirthdayCake} />

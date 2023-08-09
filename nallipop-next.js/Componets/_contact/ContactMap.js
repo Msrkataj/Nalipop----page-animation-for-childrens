@@ -77,7 +77,7 @@ const ContactMap = () => {
                     )}
                     <img
                         className={`offer_map-section-photo ${ isImageZoomed ? "zoomed" : ""}`}
-                        src="/assets/map.png"
+                        src="/assets/map.webp"
                         alt="map"
                         onClick={handleImageClick}
                     />

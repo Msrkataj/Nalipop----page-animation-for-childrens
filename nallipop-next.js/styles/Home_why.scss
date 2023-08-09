@@ -1,0 +1,121 @@
+.home_why {
+  width: 100%;
+  margin: -70px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @include mobile-mini {
+    margin: 10vw 0;
+  }
+  @include mobile-mini-plus {
+  }
+  @include mobile {
+    width: 800px;
+  }
+  @include tablet {
+    margin: 14vw 0 0 0;
+  }
+  @include notebook_only_width {
+    margin: 150px 0 0 0;
+  }
+  h2 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 2em;
+    text-align: center;
+    @include mobile {
+      margin-bottom: 5rem;
+      font-size: 4rem;
+    }
+    @include tablet {
+      font-size: 5rem;
+    }
+  }
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    @include mobile {
+      font-size: 3rem;
+    }
+    @include tablet {
+      margin-bottom: 4rem;
+      font-size: 4rem;
+    }
+  }
+  .home_why_content {
+    margin: 30px ;
+    @include tablet {
+      margin: 70px 30px;
+    }
+  }
+  .animated-title {
+    position: relative;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    &.visible {
+      opacity: 1;
+      animation: slide-in 2s ease;
+    }
+  }
+  &_first, &_third, &_five, &_seven {
+    opacity: 0;
+    color: $color-main;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    &.visible {
+      opacity: 1;
+      animation: slide-in-left 2s ease;
+    }
+  }
+  &_second, &_four, &_six, &_eigh {
+    opacity: 0;
+    color: $color-bordo;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    &.visible {
+      opacity: 1;
+      animation: slide-in-right 2s ease;
+    }
+  }
+  &_seven {
+    margin-bottom: 3em;
+  }
+  .colored-text {
+    font-size: 2rem;
+    text-align: center;
+    color: #666;
+    line-height: 1.5;
+    @include tablet {
+      font-size: 3rem;
+    }
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -19,9 +19,9 @@ const OfferCarouselAttractions = () => {
 
 
     useEffect(() => {
-        const storageRefBalloons = ref(storage, "atractions/balony.png");
-        const storageRefPiniata = ref(storage, "atractions/piniata.png");
-        const storageRefWomen = ref(storage, "atractions/women-paint.png");
+        const storageRefBalloons = ref(storage, "atractions/balony.webp");
+        const storageRefPiniata = ref(storage, "atractions/piniata.webp");
+        const storageRefWomen = ref(storage, "atractions/women-paint.webp");
         getDownloadURL(storageRefBalloons)
             .then((url) => setBalloonsImageUrl(url))
             .catch((error) => console.error("Error getting balloons image URL:", error));

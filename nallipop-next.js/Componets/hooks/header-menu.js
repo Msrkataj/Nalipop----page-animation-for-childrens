@@ -67,12 +67,12 @@ const HeaderMenu = () => {
                     </div>
                     <div className="footer-section-content-media nav-contact-media">
                         <div className="footer-section-content-media-content">
-                            <Link href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener" target="_blank">
+                            <a href="https://www.facebook.com/profile.php?id=100090355616685" rel="noopener noreferrer" target="_blank">
                                 <FontAwesomeIcon icon={faFacebook}/>
-                            </Link>
-                            <Link href="/" rel="noopener" target="_blank">
+                            </a>
+                            <a href="https://www.instagram.com/animacje_nallipop/" rel="noopener noreferrer" target="_blank">
                                 <FontAwesomeIcon icon={faInstagram}/>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

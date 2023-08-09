@@ -1,10 +1,10 @@
 module.exports = {
-    siteUrl: 'https://www.nallipop.com',
+    siteUrl: 'https://nallipop.pl',
     generateRobotsTxt: true,
     exclude: ['/server-sitemap.xml'],
     robotsTxtOptions: {
         additionalSitemaps: [
-            'https://www.nallipop.com/server-sitemap.xml',
+            'https://nallipop.pl/server-sitemap.xml',
         ],
     },
 }

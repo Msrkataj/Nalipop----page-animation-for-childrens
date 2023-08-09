@@ -1,10 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Link from 'next/link';
-import {Link as Scroll} from "react-scroll"
-import data from '../data/data.json';
 import HeaderMenu from "../hooks/header-menu";
-import Image from "next/image";
-
 
 const HomeHeader = () => {
     const [visible, setVisible] = useState(false);
@@ -35,35 +31,21 @@ const HomeHeader = () => {
     return (
         <>
             <div className="container">
-                <div id="#" className="header">
+                <div className="header">
                     <div className="header__top">
                         <div className="header__top__background header__top__background__attractions"></div>
-                        <Image
-                            className="header__top__image"
-                            src="/assets/top.png"
-                            alt="top"
-                            layout='responsive'
-                            width={1920}
-                            height={1080}
-                        />
+                        <img className="header__top__image" src="/assets/top.webp" alt="top-image"/>
                         <div className="header__top__content">
                             <Link href="/">
-                                <div className="header__top__content__logo">
-                                    <Image
-                                        className="header__top__content__logo"
-                                        src="/assets/logo.png"
-                                        alt="Logo"
-                                        layout='responsive'
-                                        width={1240}
-                                        height={1240}
-                                    />
-                                </div>
+                                <img  className="header__top__content__logo"
+                                      src="/assets/logo.webp"
+                                      alt="Logo"/>
                             </Link>
                             <HeaderMenu/>
                         </div>
                         <div className="header__top__container">
                             <img className="header__top__container__image header__top__container__attractions__image"
-                                 src="/assets/attractions_header.png" alt="attractions"/>
+                                 src="/assets/attractions_header.webp" alt="attractions"/>
                             <div className="header__top__container__clouds header-central-clouds-attractions"/>
                         </div>
                     </div>

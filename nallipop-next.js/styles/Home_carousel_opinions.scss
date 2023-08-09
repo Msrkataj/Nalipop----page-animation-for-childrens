@@ -68,11 +68,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      top: 0;
+      top: -50px;
       left: 0;
       width: 100vw;
-      height: 100%;
+      height: 130%;
       max-width: none;
+      @include mobile-mini-minus {
+        top: -30px;
+      }
       @include tablet {
         width: 100%
       }
@@ -86,6 +89,7 @@
       width: 200%;
       z-index: 1;
       object-fit: cover;
+      border-bottom: 6px solid black;
       @include mobile {
         top: 0;
         left: 0;
@@ -98,7 +102,7 @@
       }
       @include tablet {
         width: 100%;
-
+        border-bottom: none;
       }
     }
   }
@@ -109,23 +113,23 @@
   }
 
   .home_carousel-content .carousel .control-dots .dot {
-    width: 4px;
-    height: 4px;
+    width: 8px;
+    height: 8px;
     background-color: #8151e2;
     opacity: 1;
     @include mobile {
-      width: 8px;
-      height: 8px
+      width: 12px;
+      height: 12px
     }
   }
 
   .home_carousel-content .carousel .control-dots .dot.selected {
-    width: 4px;
-    height: 4px;
+    width: 8px;
+    height: 8px;
     background-color: aqua;
     @include mobile {
-      width: 8px;
-      height: 8px
+      width: 12px;
+      height: 12px
     }
   }
 
@@ -136,7 +140,6 @@
     padding: 4vw 2vw;
     font-size: 5vw;
     @include tablet {
-      margin-bottom: 100px;
       padding: 30px 20px;
       font-size: 4rem;
     }

@@ -1,56 +1,71 @@
 import React from "react";
 import Head from 'next/head';
 import HomeHeader from "../Componets/Home/HomeHeader";
-import Home_first_step from "../Componets/Home/Home_first_step";
-import Home_carousel_attractions from "../Componets/Home/Home_carousel_attractions"
-import Home_carousel_opinions from "../Componets/Home/Home_carousel_opinions"
+import HomeFirstStep from "../Componets/Home/Home_first_step";
+import HomeCarouselAttractions from "../Componets/Home/Home_carousel_attractions"
+import HomeCarouselOpinions from "../Componets/Home/Home_carousel_opinions"
 import HomeForm from "../Componets/Home/Home-form"
 import Footer from "../Componets/Home/Footer";
-import Home_offer from "../Componets/Home/Home_offer";
+import HomeOffer from "../Componets/Home/Home_offer";
+import HomeWhy from "../Componets/Home/Home_why";
 
-export default function Home() {
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Nallipop - Animacje dla dzieci",
+            description: "Animacje Nallipop - dla rodziców Warszawa i okolice, którzy chcą zapewnić dzieciom to co najlepsze. Sprawdź naszą ofertę!",
+            keywords: "animacje, dzieci, oferta, wynajem, zabawa, strona główna",
+            url: "https://nallipop.pl/",
+            telephone: "+48795103108",
+            email: "animacje@nallipop.pl",
+            image: "/assets/logo.webp",
+            address: {
+                "@type": "PostalAddress",
+                "addressLocality": "Warszawa",
+                "addressCountry": "PL"
+            }
+        },
+    };
+}
+
+export default function Home({title, description, keywords, url, telephone, email, image, address}) {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": title,
+        "description": description,
+        "url": url,
+        "address": address,
+        "telephone": telephone,
+        "email": email
+    }
+
     return (
         <>
             <Head>
-                <title>Nallipop - Animacje dla dzieci</title>
-                <meta name="description"
-                      content="Animacje Nallipop - dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze. Sprawdź naszą ofertę!"/>
-                <meta name="keywords" content="animacje, dzieci, oferta, wynajem, zabawa"/>
+                <title>{title}</title>
+                <meta name="description" content={description}/>
+                <meta name="keywords" content={keywords}/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/assets/favicon.png"/>
-                <meta property="og:title" content="Nallipop - Animacje dla dzieci"/>
-                <meta property="og:description"
-                      content="Animacje Nallipop - dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze. Sprawdź naszą ofertę!"/>
-                <meta property="og:image" content="/assets/logo.png"/>
-                <meta property="og:url" content="https://www.nallipop.pl/"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
+                <meta property="og:title" content={title}/>
+                <meta property="og:description" content={description}/>
+                <meta property="og:image" content={image}/>
+                <meta property="og:url" content={url}/>
                 <meta name="twitter:card" content="summary_large_image"/>
                 <script type="application/ld+json">
-                    {`
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Nallipop - Animacje dla dzieci",
-        "description": "Animacje Nallipop - dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze. Sprawdź naszą ofertę!",
-        "url": "https://www.nallipop.pl/",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Warszawa",
-            "addressCountry": "PL"
-        },
-        "telephone": "+48795103108",
-        "email": "contact@nallipop.pl"
-    }
-`}
+                    {JSON.stringify(structuredData)}
                 </script>
             </Head>
             <header>
                 <HomeHeader/>
             </header>
             <main>
-                <Home_first_step/>
-                <Home_offer/>
-                <Home_carousel_attractions/>
-                <Home_carousel_opinions/>
+                <HomeFirstStep/>
+                <HomeWhy/>
+                <HomeOffer/>
+                <HomeCarouselAttractions/>
+                <HomeCarouselOpinions/>
             </main>
             <footer>
                 <HomeForm/>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { isInViewport } from '../../utils/isInViewport';
 
 
 export const useScrollAnimation = (elementSelector) => {
@@ -10,15 +9,15 @@ export const useScrollAnimation = (elementSelector) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                } else {
+                }
+                else if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
                     setIsVisible(false);
                 }
             });
         };
 
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '10px 0px',
-            threshold: 0.05,
+            threshold: [0, 1]
         });
 
         const element = document.querySelector(elementSelector);

@@ -30,7 +30,7 @@ const HomeForm = () => {
                     </div>
                     <div className="form-image form-image-home">
                         <div className="form-image-girl-border form-image-girl-border-home">
-                            <img className="form-image-girl" src="/assets/blonde-girl.png" alt="blonde-girl" />
+                            <img className="form-image-girl" src="/assets/blonde-girl.webp" alt="blonde-girl" />
                         </div>
                     </div>
             </div>

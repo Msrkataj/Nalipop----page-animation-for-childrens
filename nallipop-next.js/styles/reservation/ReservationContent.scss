@@ -139,10 +139,6 @@
         }
       }
     .custom-select__menu {
-      //scale: 2;
-      //@include mobile {
-      //  scale: 1;
-      //}
       .custom-select__option {
         padding-left: 20px;
         font-size: 2rem;
@@ -204,80 +200,6 @@
 }
 
 
-//.react-datepicker {
-//  font-family: inherit;
-//  transform: scale(2); /* Zwiększa wielkość o 100% */
-//  transform-origin: top left;
-//  font-size: 1rem;
-//@include nbpp {
-//  //width: 150px;
-//  //height: 150px;
-//  .react-datepicker__header {
-//    background-color: #f8f9fa;
-//    width: 360px;
-//    font-size: 2rem;
-//    border-bottom: none;
-//  }
-//  .react-datepicker__week,
-//  .react-datepicker__day-names {
-//    margin: 20px 0;
-//    display: flex;
-//    justify-content: space-around;
-//  }
-//  button {
-//    font-size: 2rem;
-//  }
-//  .react-datepicker__navigation-icon {
-//    font-size: 20px;
-//  }
-//  .react-datepicker__current-month {
-//    margin-bottom: 20px;
-//    font-size: 2rem;
-//  }
-//  .react-datepicker__day-name,
-//  .react-datepicker__day,
-//  .react-datepicker__time-name {
-//    color: #495057;
-//  }
-//
-//  .react-datepicker__day--selected,
-//  .react-datepicker__day--keyboard-selected,
-//  .react-datepicker__day:hover {
-//    text-align: center;
-//    padding: 5px 20px 5px 0;
-//    background-color: #495057;
-//    color: #fff;
-//  }
-//  .react-datepicker__month-container {
-//    font-size: 2rem;
-//  }
-//}
-
-
-//.react-datepicker__input-container {
-//  input {
-//    //padding-left: 20px;
-//    ////border-radius: 50px;
-//    //height: 30px;
-//    //width: 80vw;
-//    ////border: 1px solid #ced4da;
-//    //outline: none;
-//
-//    //@include mobile {
-//    //  width: 400px;
-//    //}
-//
-//    //@include nbpp {
-//    //  font-size: 2rem;
-//    //  height: 30px;
-//    //  width: 300px;
-//    //}
-//  }
-//}
-
-//}
-
-
 .react-time-picker__wrapper {
   display: flex;
   justify-content: space-between;
@@ -289,9 +211,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  //@include nbpp {
-  //  width: 150px;
-  //}
 }
 
 .react-time-picker__inputGroup__input {
@@ -393,11 +312,6 @@
         width: 400px;
         height: 400px;
       }
-      //@include notebook_minHeight {
-      //  margin-right: 210px;
-      //  width: 400px;
-      //  height: 400px;
-      //}
       .reservation-about_animations-border {
         display: flex;
         justify-content: center;
@@ -407,7 +321,7 @@
         height: 90%;
 
         .reservation-about_animations-background {
-          background-image: url('/assets/blonde-girl.png');
+          background-image: url('/assets/blonde-girl.webp');
           background-repeat: no-repeat;
           background-size: contain;
           width: 95%;

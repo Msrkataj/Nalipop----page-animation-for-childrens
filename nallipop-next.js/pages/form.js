@@ -12,7 +12,7 @@ const Gallery = () => {
                 <meta name="description"
                       content="Zareserwuj termin i ciesz się z najlepszych animacji dla dzieci! Umów się już teraz."/>
                 <meta name="keywords" content="animacje dla dzieci, rejestracja, klub, formularz, zgłoszenie"/>
-                <link rel="icon" href="/assets/favicon.png"/>
+                <link rel="icon" href="/assets/favicon.webp"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta property="og:title" content="Rejestracja - Dołącz do naszego klubu | Nallipop"/>
                 <meta property="og:description"

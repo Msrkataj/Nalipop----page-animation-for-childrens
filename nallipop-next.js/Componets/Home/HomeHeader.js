@@ -35,42 +35,21 @@ const HomeHeader = () => {
     return (
         <>
             <div className="container">
-                <div id="#" className="header">
+                <div className="header">
                     <div className="header__top">
                         <div className="header__top__background"></div>
-                        <Image
-                            className="header__top__image"
-                            src="/assets/top.png"
-                            alt="top"
-                            layout='responsive'
-                            width={1920}
-                            height={1080}
-                        />
+                        <img className="header__top__image" src="/assets/top.webp" alt="top-image"/>
                         <div className="header__top__content">
-                            <Link href="/">
-                                <div className="header__top__content__logo">
-                                    <Image
-                                        className="header__top__content__logo"
-                                        src="/assets/logo.png"
-                                        alt="Logo"
-                                        layout='responsive'
-                                        width={1240}
-                                        height={1240}
-                                    />
-                                </div>
+                            <Link name="Nallipop - Animacje dla dzieci" href="/" >
+                                    <img  className="header__top__content__logo"
+                                          src="/assets/logo.webp"
+                                          alt="Logo"/>
                             </Link>
                             <HeaderMenu/>
                         </div>
                         <div className="header__top__container">
-                            <div className="header__top__container__image">
-                                <Image
-                                    src="/assets/home_header.png"
-                                    alt="Home Header"
-                                    layout='responsive'
-                                    width={1456}
-                                    height={816}
-                                    quality={100}
-                                />
+                            <div>
+                                <img className="header__top__container__image" src="/assets/home_header.webp" alt="home-image"/>
                             </div>
                             <div className="header__top__container__clouds"/>
                         </div>
@@ -78,7 +57,7 @@ const HomeHeader = () => {
                     <div className="header__central">
                         <div className="header__central__text">
                             <h1>ANIMACJE DLA DZIECI</h1>
-                            <p>Animacje Nallipop - <br/> dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze</p>
+                            <p>Animacje Nallipop - Warszawa i okolice<br/> dla rodziców, którzy chcą zapewnić dzieciom to co najlepsze</p>
                         </div>
                         <div className="button button-header">
                             {data.map((item) => {

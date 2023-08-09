@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import TimePicker from 'react-time-picker';
 import Select from "react-select";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm, ValidationError } from '@formspree/react';
-import data from '../data/data.json';
 
 
 const attractionsOptions = [
@@ -151,8 +150,7 @@ const ReservationContent = () => {
                                     <div className="reservation-about_animations-border">
                                         <div className="reservation-about_animations-background"></div>
                                     </div>
-                                    <h2 className="reservation-title reservation-about_animations-title">O<br/>ANIMACJI
-                                    </h2>
+                                    <h2 className="reservation-title reservation-about_animations-title">O<br/>ANIMACJI</h2>
                                 </div>
                                 <div className="form">
                                 <h2>Liczba dzieci</h2>
@@ -213,9 +211,6 @@ const ReservationContent = () => {
                                         <option value="dom">Dom</option>
                                         <option value="sala">Sala</option>
                                         <option value="plener">Plener</option>
-                                        {/*<option value="komunia">Komunia</option>*/}
-                                        {/*<option value="uroczystość domowa">Uroczystość domowa</option>*/}
-                                        {/*<option value="inne">Inne (proszę napisać w uwagach)</option>*/}
                                     </select>
                                     <h2>Dodatkowo płatne atrakcje</h2>
                                     <Select
@@ -247,7 +242,6 @@ const ReservationContent = () => {
                                     <ValidationError
                                         prefix="comments"
                                         field="comments"
-                                        // errors={state.errors}
                                     />
                                     <div className="button button-reservation">
                                         <button className="button-classic button-footer-classic" type="submit" disabled={state.submitting}>
