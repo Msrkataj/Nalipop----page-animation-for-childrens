@@ -9,6 +9,8 @@ It is fully responsive, meaning it perfectly adapts to various screen resolution
 During the creation of the website, I focused on quality and attention to detail, striving to provide the best experience for users. 
 The "Nallipop" project is continuously being developed and improved to meet the growing expectations of customers and keep up with technological advancements in the industry.
 
+Nallipop.pl
+
 ## ScreenShots: 
 
 <img width="1419" height="1529" alt="Zrzut ekranu 2025-09-22 154551" src="https://github.com/user-attachments/assets/c4b5eaff-b0e5-4caf-aab6-9266a2f2edee" />
